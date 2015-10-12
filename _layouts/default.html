@@ -1,7 +1,3 @@
----
-title: KumuluzEE
----
-
 <!DOCTYPE html>
 <html>
 
@@ -11,19 +7,11 @@ title: KumuluzEE
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    <button class="btn btn-primary btn-raised">Blah</button>
+    {{ content }}
 
     {% include footer.html %}
 
-  <script>
-    $.material.init();
-  </script>
+  <script>$.material.init()</script>
   </body>
 
 </html>

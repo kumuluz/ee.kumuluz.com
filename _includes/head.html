@@ -6,12 +6,50 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ site.twitter_username }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:creator" content="{% if page.author %}@{{ site.data.authors[page.author].twitter }}{% else %}@{{ site.twitter_username }}{% endif %}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/favicons/favicon-194x194.png">
+
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/images/favicons/favicon-194x194.png">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:site_name" content="Kumuluz Blog">
+  <meta property="article:publisher" content="https://www.facebook.com/{{ site.facebook_username }}">
+
+  <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta itemprop="image" content="{{ site.url }}/assets/images/favicons/favicon-194x194.png">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/images/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/images/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/images/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/images/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="{{ site.baseurl }}/assets/images/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="msapplication-TileImage" content="{{ site.baseurl }}/assets/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
-  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/material.min.js"></script>
-  <script type="text/javascript" src="js/ripples.min.js"></script>
+  <script type="text/javascript" src="{{ "/assets/js/jquery-2.1.4.min.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/assets/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/assets/js/material.min.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/assets/js/ripples.min.js" | prepend: site.baseurl }}"></script>
 </head>
