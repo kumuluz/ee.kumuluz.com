@@ -191,6 +191,25 @@ ul.share-buttons{
 	}
 }
 
+.partners{
+	height: 80px;
+	background-color: #FFFFFF;
+	padding-top: 20px;
+	text-align: center;
+
+	ul.partners-list{
+		list-style: none;
+
+		li{
+			display: inline;
+			margin-right: 30px;
+			img{
+				display: inline;
+			}
+		}
+	}
+}
+
 #footer-white {
 	background: $base-color;
 	color: #fff;
