@@ -3,12 +3,12 @@
 @import "material-design/material";
 @import "material-design/ripples";
 
-$roboto: "Roboto";
-$lato: 'Lato', 'Helvetica Neue', Arial;
-$helvetica: "Helvetica Neue", Helvetica, Arial;
-$myriad: Myriad Pro, Lato, Helvetica Neue, Arial;
+@import "_features";
 
-$base-color: #223741;
+$font-family: 'Ubuntu Condensed', sans-serif;
+
+$base-color: #176fd2;
+$top-navbar-height: 80px;
 
 .ripple.ripple-on {
     transition: opacity 0.15s ease-in 0s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
@@ -19,10 +19,21 @@ $base-color: #223741;
     opacity: 0;
 }
 
+.emphasise {
+	color: $base-color;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #000;
+}
+
 .navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
 	&.normal {
 		margin-bottom: 0;
-		min-height: 80px;
+		min-height: $top-navbar-height;
 		background: $base-color;
 		border-radius: 0px;
 		box-shadow: 0px 1px 3px 1px rgba(46,46,46,0.3), inset rgba(255, 255, 255, 0.2) 0 1px 1px;
@@ -34,13 +45,17 @@ $base-color: #223741;
 			.navbar-brand {
 				background: url(/assets/images/kumuluzee.png) no-repeat center center;
 			    background-size: auto 65px;
-			    height: 80px;
+			    height: $top-navbar-height;
 			    width: 100px;
 				color: #fff;
 				padding: 12px 5px;
 				font-weight: 500;
 				font-size: 23px;
 				margin-right: 50px;
+
+				@media screen and (max-width: 786px) {
+					margin-left: 20px;
+				}
 			}
 			.navbar-toggle {
 				margin-top: 17px;
@@ -92,7 +107,8 @@ $base-color: #223741;
 						}
 
 						&:hover {
-							color: #d5d5d5;
+							transition: background 0.2s 0s ease-in;
+							background-color: lighten($base-color, 10%);
 						}
 					}
 					
@@ -135,6 +151,13 @@ $base-color: #223741;
 	}
 }
 
+.content {
+	margin-top: $top-navbar-height;
+	font-family: $font-family;
+	line-height: 30px;
+	font-size: 18px;
+}
+
 .jumbotron {
 	background: url(/assets/images/bg3.png) no-repeat center center;
 	background-size: cover;
@@ -144,17 +167,19 @@ $base-color: #223741;
 
 	p {
 		margin-top: 50px;
+		line-height: 40px;
+		font-size: 26px;
 	}
 
 	.btn {
 		color: #fff;
-		font-weight: bold;
+		background-color: $base-color;
 		text-shadow: none;
 
 		&.btn-extra-lg {
 			height: 55px;
 			line-height: 39px;
-			font-size: 20px;
+			font-size: 26px;
 			min-width: 200px;
 		}
 	}
