@@ -11,11 +11,17 @@ $myriad: Myriad Pro, Lato, Helvetica Neue, Arial;
 $base-color: #223741;
 
 .ripple.ripple-on {
-	opacity: 0.3;
+    transition: opacity 0.15s ease-in 0s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    opacity: 0.3;
+}
+.ripple.ripple-out {
+    transition: opacity 0.1s linear 0s !important;
+    opacity: 0;
 }
 
 .navbar {
 	&.normal {
+		margin-bottom: 0;
 		min-height: 80px;
 		background: $base-color;
 		border-radius: 0px;
@@ -26,8 +32,8 @@ $base-color: #223741;
 
 		.navbar-header {
 			.navbar-brand {
-				background: url(/assets/images/kumuluz.png) no-repeat center center;
-			    background-size: auto 70px;
+				background: url(/assets/images/kumuluzee.png) no-repeat center center;
+			    background-size: auto 65px;
 			    height: 80px;
 			    width: 100px;
 				color: #fff;
@@ -127,7 +133,9 @@ $base-color: #223741;
 			}
 		}
 	}
+}
 
+<<<<<<< HEAD
 	&.hero {
 		margin: 0px;
 		border-radius: 0px;
@@ -193,18 +201,15 @@ $base-color: #223741;
 					border-radius: 4px 0 4px 4px;
 					border: 0px;
 
-					li a {
-						color: #fff;
-						padding: 10px 18px;
-						font-size: 15px;
-						&:hover {
-							color: #e9e9e9;
-							background: none;
-						}
-					}
-				}
-			}
-		}
+.jumbotron {
+	background: url(/assets/images/bg3.png) no-repeat center center;
+	background-size: cover;
+	color: #fff;
+	text-shadow: 2px 2px 2px #000;
+	text-align: center;
+
+	p {
+		margin-top: 50px;
 	}
 
 	&.white {
@@ -345,6 +350,17 @@ $base-color: #223741;
 					}
 				}
 			}
+
+	.btn {
+		color: #fff;
+		font-weight: bold;
+		text-shadow: none;
+
+		&.btn-extra-lg {
+			height: 55px;
+			line-height: 39px;
+			font-size: 20px;
+			min-width: 200px;
 		}
 	}
 }
