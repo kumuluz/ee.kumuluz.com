@@ -41,7 +41,7 @@ $base-color: #223741;
 			}
 		}
 		.navbar-collapse {
-			
+
 			@media(min-width: 768px) {
 				text-align: center;
 			}
@@ -89,7 +89,7 @@ $base-color: #223741;
 							color: #d5d5d5;
 						}
 					}
-					
+
 					&.open {
 						ul.dropdown-menu {
 							a {
@@ -130,11 +130,11 @@ $base-color: #223741;
 
 	&.hero {
 		margin: 0px;
-		border-radius: 0px;		
+		border-radius: 0px;
 		border: 0px;
 		z-index: 999;
 		-webkit-font-smoothing: antialiased;
-		
+
 		@media (min-width: 768px) {
 			background: transparent;
 			padding-top: 10px;
@@ -144,7 +144,7 @@ $base-color: #223741;
 				color: #fff;
 			}
 		}
-		
+
 		.navbar-brand {
 			color: #fff;
 			font-weight: 500;
@@ -154,11 +154,11 @@ $base-color: #223741;
 
 		.navbar-nav {
 			> li {
-				
+
 				&.dropdown > a .caret {
 					border-top-color: #EBEBEB;
 				}
-				
+
 				> a {
 					color: #fff;
 					font-size: 15px;
@@ -246,7 +246,7 @@ $base-color: #223741;
 		}
 
 		.navbar-collapse {
-			
+
 			@media(min-width: 768px) {
 				text-align: center;
 			}
@@ -309,7 +309,7 @@ $base-color: #223741;
 							}
 						}
 					}
-					
+
 					&.open {
 						> a {
 							@media(min-width: 768px) {
@@ -349,6 +349,18 @@ $base-color: #223741;
 	}
 }
 
+ul.share-buttons{
+    list-style: none;
+    position: fixed;
+    padding: 0;
+    left: 0;
+    top: 40%;
+
+	li{
+		margin-bottom: 5px;
+	}
+}
+
 #footer-white {
 	background: $base-color;
 	color: #fff;
@@ -373,7 +385,7 @@ $base-color: #223741;
 			text-decoration: none;
 			opacity: 1;
 			filter: alpha(opacity=100);
-			margin-left: 15px;
+			margin-left: 3px;
 			position: relative;
 			top: -10px;
 			-webkit-transition: all .3s ease;
