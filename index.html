@@ -8,20 +8,20 @@ layout: default
   	  <div class="container">
   	    <div class="row">
   	   	  <div class="col-md-8 col-md-offset-2">
-		    <h1>KumuluzEE</h1>
-		    
-		    <p>A lightweight framework, which simplifies creating and deploying microservice applications using standard Java EE technologies.</p>
-		    
-		    <p>KumuluzEE framework allows selecting the required Java EE components, bootstraps it all together and deploys it in the microservice way.</p>
-		    
-		    <p>
-		      <a href="" class="btn btn-info btn-raised btn-extra-lg">TUTORIAL</a>
-		      <a href="" class="btn btn-info btn-raised btn-extra-lg">GET STARTED</a>
-		    </p>
-		  </div>
-		</div>
-	  </div>
-	</div>
+    		    <h1>KumuluzEE</h1>
+
+    		    <p>A lightweight framework, which simplifies creating and deploying microservice applications using standard Java EE technologies.</p>
+
+    		    <p>KumuluzEE framework allows selecting the required Java EE components, bootstraps it all together and deploys it in the microservice way.</p>
+
+    		    <p>
+    		      <a href="" class="btn btn-info btn-raised btn-extra-lg">TUTORIAL</a>
+    		      <a href="" class="btn btn-info btn-raised btn-extra-lg">GET STARTED</a>
+    		    </p>
+		      </div>
+		    </div>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-9">
@@ -34,8 +34,8 @@ layout: default
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-6">					
-										<p>
+									<div class="col-md-6">
+									  <p>
 											A standard approach for deploying Java EE applications is packing all components into a single EAR/WAR archive and deploying the archive on the application server.
 										</p>
 										<p>
@@ -47,10 +47,10 @@ layout: default
 									</div>
 									<div class="col-md-6">
 										<p>
-											Microservices also have their drawbacks. To deploy them on standalone containers requires several steps, from configuring the containers, defining the dependencies, deploying the services, etc. 
+											Microservices also have their drawbacks. To deploy them on standalone containers requires several steps, from configuring the containers, defining the dependencies, deploying the services, etc.
 										</p>
 										<p>
-											As such Java EE developers currently do not have a framework, which would allow them to simplify and automate the deployment and configuration, required for microservice architecture. 
+											As such Java EE developers currently do not have a framework, which would allow them to simplify and automate the deployment and configuration, required for microservice architecture.
 										</p>
 									</div>
 								</div>
@@ -97,10 +97,10 @@ layout: default
 								<div class="col-md-6 info">
 									<h4>Complete control over Java EE components</h4>
 									<p>
-										The framework is completely modular and as such allows you, with the help of Maven, Gradle or plain old jar files, to handpick the components that you need for your application. 
+										The framework is completely modular and as such allows you, with the help of Maven, Gradle or plain old jar files, to handpick the components that you need for your application.
 									</p>
 									<p>
-										Whether it be only JAX-RS and JPA or a bigger stack with EJB, JAX-WS, JSF, JMS and many more. Underneath it all is an embedded light-weight high performance HTTP and servlet web server of your choice. 
+										Whether it be only JAX-RS and JPA or a bigger stack with EJB, JAX-WS, JSF, JMS and many more. Underneath it all is an embedded light-weight high performance HTTP and servlet web server of your choice.
 									</p>
 								</div>
 								<div class="col-md-6 image">
@@ -132,7 +132,7 @@ layout: default
 								</div>
 							</div>
 							<div class="divider"></div>
-						</div>		
+						</div>
 					</div>
 
 					<div id="cta">
@@ -148,7 +148,40 @@ layout: default
 						<a href="https://github.com/TFaga/KumuluzEE">
 							Get involved
 						</a>
-					</div>      
+					</div>
+        </div>
+      </div>
+    </div>
+    <!-- code example with prism.js and tabs -->
+    <h2>Example code</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="nav nav-tabs" data-tabs="tabs">
+          <li class="active"><a data-toggle="tab" href="#hello_world_java">hello_world.java</a></li>
+          <li><a data-toggle="tab" href="#hello_world_xml">hello_world.xml</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="hello_world_java">
+            <pre><code class="language-java">
+public class HelloWorld {
+
+  public static void main(String[] args) {
+      System.out.println("Hello, World");
+  }
+
+}
+            </code></pre>
+          </div>
+          <div class="tab-pane" id="hello_world_xml">
+            <pre><code class="language-markup">
+&lt;?xml version="1.0"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="hello.xsl"?&gt;
+&lt;hello-world&gt;
+&lt;greeter&gt;An XSLT Programmer&lt;/greeter&gt;
+&lt;greeting&gt;Hello, World!&lt;/greeting&gt;
+&lt;/hello-world&gt;
+            </code></pre>
+          </div>
         </div>
       </div>
     </div>
