@@ -153,15 +153,30 @@ $top-navbar-height: 80px;
 
 .content {
 	margin-top: $top-navbar-height;
+	min-height: 200px;
 	font-family: $font-family;
 	line-height: 30px;
 	font-size: 18px;
+
+	h2 {
+		color: #555;
+		font-weight: 300;
+		font-size: 36px;
+		line-height: 40px;
+		text-align: center;
+		margin-bottom: 30px;
+		text-shadow: 1px 1px 1px #fff;
+	}
+
+	p {
+		font-weight: 300;
+		color: #757575;
+	}
 }
 
 .jumbotron {
 	background: url(/assets/images/bg3.png) no-repeat center center;
 	background-size: cover;
-	color: #fff;
 	text-shadow: 2px 2px 2px #000;
 	text-align: center;
 
@@ -169,6 +184,7 @@ $top-navbar-height: 80px;
 		margin-top: 50px;
 		line-height: 40px;
 		font-size: 26px;
+		color: #fff;
 	}
 
 	.btn {
