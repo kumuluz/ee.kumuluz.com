@@ -202,6 +202,7 @@ ul.share-buttons{
     padding: 0;
     left: 0;
     top: 40%;
+    z-index: 1;
 
 	li{
 		margin-bottom: 5px;
@@ -228,9 +229,9 @@ ul.share-buttons{
 }
 
 #partners{
-	height: 80px;
 	background-color: #FFFFFF;
 	padding-top: 20px;
+	padding-bottom: 10px;
 	text-align: center;
 
 	ul.partners-list{
@@ -262,7 +263,7 @@ ul.share-buttons{
 			text-align: center;
 			margin: auto;
 			margin-bottom: 5px;
-			width:80%;
+			width: 80%;
 		}
 	}
 
@@ -273,7 +274,7 @@ ul.share-buttons{
 		@media(max-width: 767px){
 			text-align: center;
 			margin: auto;
-			width:80%;
+			width: 80%;
 		}
 	}
 }

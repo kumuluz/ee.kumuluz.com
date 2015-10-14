@@ -9,9 +9,9 @@ layout: default
   	    <div class="row">
   	   	  <div class="col-md-8 col-md-offset-2">
 		    		<img height="200" src="/assets/images/kumuluzee.png" />
-		    
+
 				    <p>A <span class="emphasise">lightweight framework</span>, which allows selecting required Java EE components, bootstraps it all together and deploys it in the <span class="emphasise">microservice way.</span></p>
-				    
+
 				    <p>
 				      <a href="https://blog.kumuluz.com/architecture/2015/06/04/microservices-with-java-ee-and-kumuluzee" class="btn btn-raised btn-extra-lg">TUTORIAL</a>
 				      <a href="https://github.com/TFaga/KumuluzEE/wiki/Getting-started" class="btn btn-raised btn-extra-lg">GET STARTED</a>
@@ -32,7 +32,7 @@ layout: default
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-6">					
+								<div class="col-md-6">
 									<p>
 										A standard approach for deploying Java EE applications is packing all components into a single EAR/WAR archive and deploying the archive on the application server.
 									</p>
@@ -45,10 +45,10 @@ layout: default
 								</div>
 								<div class="col-md-6">
 									<p>
-										Microservices also have their drawbacks. To deploy them on standalone containers requires several steps, from configuring the containers, defining the dependencies, deploying the services, etc. 
+										Microservices also have their drawbacks. To deploy them on standalone containers requires several steps, from configuring the containers, defining the dependencies, deploying the services, etc.
 									</p>
 									<p>
-										As such Java EE developers currently do not have a framework, which would allow them to simplify and automate the deployment and configuration, required for microservice architecture. 
+										As such Java EE developers currently do not have a framework, which would allow them to simplify and automate the deployment and configuration, required for microservice architecture.
 										The framework is completely modular and as such allows you, with the help of Maven, Gradle or plain old jar files, to handpick the components that you need for your application.
 									</p>
 									<p>
@@ -101,12 +101,14 @@ public class HelloWorld {
       </div>
     </div>
     <div id="partners">
-      <ul class="partners-list">
-        <li><img src="/assets/images/logos/logo-adobe.svg" width="100" class="img-responsive" alt="feature1" /></li>
-        <li><img src="/assets/images/logos/logo-canary.svg" width="100" class="img-responsive" alt="feature1" /></li>
-        <li><img src="/assets/images/logos/logo-linkedin.svg" width="100" class="img-responsive" alt="feature1" /></li>
-        <li><img src="/assets/images/logos/logo-twitch.svg" width="100" class="img-responsive" alt="feature1" /></li>
-      </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-2"><img src="/assets/images/logos/logo-adobe.svg" width="100" class="img-responsive" alt="feature1" /></div>
+          <div class="col-xs-2"><img src="/assets/images/logos/logo-canary.svg" width="100" class="img-responsive" alt="feature1" /></div>
+          <div class="col-xs-2"><img src="/assets/images/logos/logo-twitch.svg" width="100" class="img-responsive" alt="feature1" /></div>
+          <div class="col-xs-2"><img src="/assets/images/logos/logo-linkedin.svg" width="100" class="img-responsive" alt="feature1" /></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
