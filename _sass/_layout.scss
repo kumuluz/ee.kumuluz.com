@@ -1,14 +1,9 @@
-@import "_variables_override";
+@import "_variables";
 @import "bootstrap/_bootstrap";
 @import "material-design/material";
 @import "material-design/ripples";
 
 @import "_features";
-
-$font-family: 'Ubuntu Condensed', sans-serif;
-
-$base-color: #176fd2;
-$top-navbar-height: 80px;
 
 .ripple.ripple-on {
     transition: opacity 0.15s ease-in 0s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
