@@ -1,0 +1,47 @@
+@import "_variables";
+
+#support {
+
+	table.table {
+		margin-top: 50px;
+		margin-bottom: 50px;
+
+		thead {
+			tr {
+				th {
+					text-align: center;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				height: 50px;
+
+				td {
+					line-height: 50px;
+					text-align: center;
+
+					&:first-child {
+						text-align: left;
+					}
+				}
+
+				&.pricing {
+					border-top: solid 2px $base-color;
+
+					td {
+						font-size: 22px;
+						background-color: lighten($base-color, 15%);
+						color: #fff;
+
+						&:first-child {
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
