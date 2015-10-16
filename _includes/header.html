@@ -13,9 +13,9 @@
 
     <nav class="collapse navbar-collapse navbar-responsive-collapse" role="navigation" id="menu">
         <ul class="nav navbar-nav navbar-left">
-            <li><a href="{{ '/about' | prepend: site.baseUrl }}">ABOUT</a></li>
-            <li><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
-            <li><a href="{{ '/support' | prepend: site.baseUrl }}">SUPPORT</a></li>
+            <li id="about-link"><a href="{{ site.baseUrl }}/">ABOUT</a></li>
+            <li id="features-link"><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
+            <li id="support-link"><a href="{{ '/support' | prepend: site.baseUrl }}">SUPPORT</a></li>
             <li><a href="https://blog.kumuluz.com/">BLOG</a></li>
         </ul>
 
@@ -25,3 +25,19 @@
     </nav>
   </div>
 </header>
+
+<script>
+$(document).ready(function () {
+  console.log(location.pathname)
+
+  if (location.pathname.indexOf('/features') >= 0) {
+    $('#features-link').addClass('active');
+  }
+  else if (location.pathname.indexOf('/support') >= 0) {
+    $('#support-link').addClass('active');
+  }
+  else {
+    $('#about-link').addClass('active');
+  }
+});
+</script>

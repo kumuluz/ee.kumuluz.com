@@ -71,7 +71,7 @@ h4 { font-family: $font-family; }
 			.navbar-nav {
 
 				line-height: 80px;
-				font-size: 18px;
+				font-size: 22px;
 				font-family: $font-family;
 
 				@media(min-width: 768px) {
@@ -89,7 +89,7 @@ h4 { font-family: $font-family; }
 
 					&.active {
 						> a {
-							background: none;
+							background: lighten($base-color, 5%);
 							color: #fff;
 						}
 					}
@@ -110,7 +110,7 @@ h4 { font-family: $font-family; }
 
 						&:hover {
 							transition: background 0.2s 0s ease-in;
-							background-color: lighten($base-color, 10%);
+							background-color: lighten($base-color, 15%);
 						}
 					}
 
