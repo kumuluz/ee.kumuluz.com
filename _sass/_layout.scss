@@ -106,6 +106,10 @@ h4 { font-family: $font-family; }
 
 						&.github {
 							padding: 10px 0;
+
+							&:hover {
+								background-color: $base-color;
+							};
 						}
 
 						&:hover {
@@ -232,6 +236,27 @@ h4 { font-family: $font-family; }
 	}
 }
 
+.twitter-kumuluz {
+	color: #fff;
+	font-size: 20px;
+	font-family: $font-family;
+	line-height: 40px;
+	font-weight: bold;
+	height: 40px;
+	padding: 0;
+
+	&:hover {
+		text-decoration: none;
+		color: #fff;
+		//background-color: lighten($base-color, 15%);
+	}
+
+	&:visited {
+		text-decoration: none;
+		color: #fff;
+	};
+}
+
 ul.share-buttons{
     list-style: none;
     position: fixed;
@@ -286,7 +311,7 @@ ul.share-buttons{
 #footer-white {
 	background: $base-color;
 	color: #fff;
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 	-webkit-font-smoothing: antialiased;
 
@@ -295,7 +320,9 @@ ul.share-buttons{
 	}
 
 	.copyright{
-		@media(max-width: 767px){
+		line-height: 40px;
+
+		@media(max-width: 767px) {
 			text-align: center;
 			margin: auto;
 			margin-bottom: 5px;
@@ -305,7 +332,8 @@ ul.share-buttons{
 
 	.social {
 		text-align: right;
-		padding-top: 0;
+		height: 40px;
+		padding: 0;
 
 		@media(max-width: 767px){
 			text-align: center;
