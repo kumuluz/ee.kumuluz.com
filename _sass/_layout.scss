@@ -16,7 +16,7 @@
 }
 
 .emphasise {
-	color: $base-color;
+	color: $ee-color;
 	font-weight: bold;
 	text-shadow: 1px 1px 1px #000;
 }
@@ -208,7 +208,7 @@ h4 { font-family: $font-family; }
 }
 
 .jumbotron.subtitle {
-	background: lighten($base-color, 15%);
+	background: lighten($base-color, 10%);
 	margin: 0 0 30px 0;
 	padding: 60px 0 0 0;
 
@@ -320,7 +320,7 @@ ul.share-buttons{
 	}
 
 	.copyright{
-		line-height: 40px;
+		line-height: 20px;
 
 		@media(max-width: 767px) {
 			text-align: center;
