@@ -1,0 +1,103 @@
+@import url("http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
+
+
+/* COMMON PRICING STYLES */
+.panel.price,
+.panel.price>.panel-heading{
+    border-radius:0px;
+     -moz-transition: all .3s ease;
+    -o-transition:  all .3s ease;
+    -webkit-transition:  all .3s ease;
+}
+
+
+@media(max-width:1200px){
+    .panel.price{
+        margin-bottom:50px;
+    }
+}
+
+@media(min-width:1200px){
+    .panel.price.first{
+        margin-top:183px;
+    }
+
+    .panel.price.second{
+        margin-top:90px;
+    }
+}
+
+.panel.price>.panel-heading{
+    box-shadow: 0px 5px 0px rgba(50,50,50, .2) inset;
+}
+
+.price .list-group-item{
+    border-top-color: rgb(221, 221, 221);
+    border-top-style: solid;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: left;
+}
+
+.panel.price .list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.panel.price .list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.price .panel-footer {
+    color: #fff;
+    border-bottom:0px;
+    background-color:  rgba(0,0,0, .1);
+    box-shadow: 0px 3px 0px rgba(0,0,0, .3);
+}
+
+.panel.price .btn{
+    color: #fff;
+    background-color: #263c5f;
+    text-shadow: none;
+}
+
+/* blue panel */
+
+.price.panel-blue>.panel-heading {
+    color: #fff;
+    background-color: #355383;
+    border-color: #78AEE1;
+    border-bottom: 1px solid #78AEE1;
+}
+
+
+.price.panel-blue>.panel-body {
+    color: #fff;
+/*    background-color: #73A3D4; */
+}
+
+.price .panel-body.second {
+    margin-bottom: 0px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.price.panel-blue>.panel-body p {
+    color: #444;
+/*    background-color: #73A3D4; */
+}
+
+.price.panel-blue>.panel-body.second .lead{
+    margin-bottom: 0px;
+}
+
+.price.panel-blue>.panel-body .sub{
+    margin-bottom: 0px;
+    color: #757575;
+}
+
+.price.panel-blue .list-group-item {
+    color: #333;
+    background-color: rgba(50,50,50, .01);
+}
+
