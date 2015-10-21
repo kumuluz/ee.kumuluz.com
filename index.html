@@ -3,118 +3,58 @@ layout: default
 ---
 
 <div id="blog">
-  <div id="posts">
-  	<div class="jumbotron wow fadeIn">
-  	  <div class="container">
-  	    <div class="row">
-  	   	  <div class="col-md-8 col-md-offset-2">
-		    		<img height="200" src="/assets/images/kumuluzee.png" />
+  	<div id="posts">
+  		
+  		<div class="jumbotron wow fadeIn">
+  	  		<div class="container">
+  	    		<div class="row">
+  	   	  			<div class="col-md-8 col-md-offset-2">
+    					<img height="200" src="/assets/images/kumuluzee.png" />
 
-				    <p>A <span class="emphasise">lightweight framework</span>, which allows selecting required Java EE components, bootstraps it all together and deploys it in the <span class="emphasise">microservice way.</span></p>
+		    			<p>A <span class="emphasise">lightweight framework</span>, which allows selecting required Java EE components, bootstraps it all together and deploys it in the <span class="emphasise">microservice way.</span></p>
 
-				    <p>
-				      <a href="https://blog.kumuluz.com/architecture/2015/06/04/microservices-with-java-ee-and-kumuluzee" class="btn btn-raised btn-extra-lg">TUTORIAL</a>
-				      <a href="https://github.com/TFaga/KumuluzEE/wiki/Getting-started" class="btn btn-raised btn-extra-lg">GET STARTED</a>
-				    </p>
-				  </div>
+		  			</div>
 				</div>
-		</div>
-    </div>
+	  		</div>
+    	</div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-			<div id="featuers wow fadeIn">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1>Why we set out to create KumuluzEE?</h1>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<p>
-								A standard approach for deploying Java EE applications is packing all components into a single EAR/WAR archive and deploying the archive on the application server.
-							</p>
-							<p>
-								This leads to monolithic architectures which make applications difficult to maintain and scale in cloud (PaaS) environments.
-							</p>
-							<p>
-								The microservice architecture addresses these shortcomings by decomposing an application into a set of stateless microservices. Each microservice has a well-defined functionality and an interface for communication with other services.
-							</p>
-						</div>
-						<div class="col-md-6">
-							<p>
-								Microservices also have their drawbacks. To deploy them on standalone containers requires several steps, from configuring the containers, defining the dependencies, deploying the services, etc.
-							</p>
-							<p>
-								As such Java EE developers currently do not have a framework, which would allow them to simplify and automate the deployment and configuration, required for microservice architecture.
-								The framework is completely modular and as such allows you, with the help of Maven, Gradle or plain old jar files, to handpick the components that you need for your application.
-							</p>
-							<p>
-								Whether it be only JAX-RS and JPA or a bigger stack with EJB, JAX-WS, JSF, JMS and many more. Underneath it all is an embedded light-weight high performance HTTP and servlet web server of your choice.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	    <div class="container">
+	      	<div class="row">
+	      		<div id="duke-award" class="col-md-12 wow fadeIn">
+	      			<!-- <div class="container"> -->
+	      				<div class="row">
+	      					<div class="col-md-12">
+	      						<div class="image">
+	      							<img src="/assets/images/duke-award-small.png" style="margin-top: 20px" />
+	      						</div>
+		      					<div class="description">
+		      						<h1>KumuluzEE  is 2015 Java Duke's Choice Award winner</h1>
+		      						<p>KumuluzEE has won the prestigious 2015 Java Duke's Choice Award. The award celebrates extreme innovation using Java technology.  The primary judging criteria for this prestigious award is innovation, putting small developer shops on equal footing with global giants. Java Duke's Choice Award winners are recognition as an elite member of the Java ecosystem. Previous award winners include Hadoop, Jenkins, TomEE, and several other well-known products.</p>
+		      					</div>
+		      				</div>
+	      				</div>
+	      			<!-- </div> -->
+	      		</div>
+
+
+        	{% include about_why_kumuluz.html %}
 
 				<!-- code example with prism.js and tabs -->
-		<div class="col-md-9">
-	    <div id="exampleCode wow fadeIn" style="min-height: 620px;">
-	    	<div class="container">
-	    		<div class="col-md-8">
-	      		<h2>Example code</h2>
+			{% include about_sample.html %}
 
-	          <ul class="nav nav-tabs" data-tabs="tabs">
-	            <li class="active"><a data-toggle="tab" href="#hello_world_java">OrderResource.java</a></li>
-	            <li><a data-toggle="tab" href="#hello_world_xml">pom.xml</a></li>
-	          </ul>
-	          <div class="tab-content">
-	            <div class="tab-pane active" id="hello_world_java">
-	              <pre><code class="language-java">
-@Path("/orders")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
-@RequestScoped
-public class OrdersResource {
-
-    @PersistenceContext(unitName = "books")
-    private EntityManager em;
-
-    @GET
-    @Path("/{id}")
-    public Response getOrder(@PathParam("id") Integer id) {
-
-        BookOrder o = em.find(BookOrder.class, id);
-
-        if (o == null)
-            return Response.status(Response.Status.NOT_FOUND).build();
-
-        return Response.ok(o).build();
-    }
-}
-	              </code></pre>
-	            </div>
-	            <div class="tab-pane" id="hello_world_xml">
-	              <pre><code class="language-markup">
-&lt;dependency&gt;
-  &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
-  &lt;artifactId&gt;kumuluzee-core&lt;/artifactId&gt;
-  &lt;version&gt;${kumuluzee.version}&lt;/version&gt;
-&lt;/dependency&gt;
-			              </code></pre>
-			            </div>
-			          </div>
-			        </div>
-		        </div>
-		      </div>
-	      </div>
-      </div>
-    </div>
-
-    {% include partners.html %}
+	      	<div class="col-md-12">
+		      	<div class="container">
+		      		<div class="row">
+		      			<div class="col-md-6 col-md-offset-3">
+					      	<p class="">
+						      	<a href="{{ site.posts[0].url | prepend: site.baseurl }}" class="btn btn-raised btn-extra-lg" style="width: 49%">TUTORIAL</a>
+						      	<a href="https://github.com/TFaga/KumuluzEE/wiki/Getting-started" target="_blank" class="btn btn-raised btn-extra-lg" style="width: 49%;">GET STARTED</a>
+				    		</p>
+				    	</div>
+				    </div>
+		      	</div>
+	      	</div>
+	    </div>
     
-  </div>
+  	</div>
 </div>

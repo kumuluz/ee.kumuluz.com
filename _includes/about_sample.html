@@ -1,0 +1,48 @@
+<div class="container"> 
+  <div class="row">
+    <div id="exampleCode" class="col-md-8 wow fadeIn" style="min-height: 620px;">
+      		<h1>Example code</h1>
+
+          	<ul class="nav nav-tabs" data-tabs="tabs">
+	            <li class="active"><a data-toggle="tab" href="#hello_world_java">OrderResource.java</a></li>
+	            <li><a data-toggle="tab" href="#hello_world_xml">pom.xml</a></li>
+	        </ul>
+      		<div class="tab-content">
+	            <div class="tab-pane active" id="hello_world_java">
+	              	<pre><code class="language-java">
+@Path("/orders")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+@RequestScoped
+public class OrdersResource {
+
+    @PersistenceContext(unitName = "books")
+    private EntityManager em;
+
+    @GET
+    @Path("/{id}")
+    public Response getOrder(@PathParam("id") Integer id) {
+
+        BookOrder o = em.find(BookOrder.class, id);
+
+        if (o == null)
+            return Response.status(Response.Status.NOT_FOUND).build();
+
+        return Response.ok(o).build();
+    }
+}
+					</code></pre>
+	            </div>
+            	<div class="tab-pane" id="hello_world_xml">
+					<pre><code class="language-markup">
+&lt;dependency&gt;
+  &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
+  &lt;artifactId&gt;kumuluzee-core&lt;/artifactId&gt;
+  &lt;version&gt;${kumuluzee.version}&lt;/version&gt;
+&lt;/dependency&gt;
+	              	</code></pre>
+	            </div>
+			</div>
+		</div>
+  </div>
+</div>

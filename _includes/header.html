@@ -15,12 +15,15 @@
         <ul class="nav navbar-nav navbar-left">
             <li id="about-link"><a href="{{ site.baseUrl }}/">ABOUT</a></li>
             <li id="features-link"><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
+            <li id="tutorial-link"><a href="{{ site.posts[0].url | prepend: site.baseurl }}">TUTORIAL</a></li>
             <li id="support-link"><a href="{{ '/support' | prepend: site.baseUrl }}">SUPPORT</a></li>
+            <li id="register-link"><a href="{{ '/register' | prepend: site.baseUrl }}">REGISTER</a></li>
             <li><a href="https://blog.kumuluz.com/" target="_blank">BLOG</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right visible-md visible-lg">
-            <li><a href="https://github.com/tfaga/KumuluzEE" class="github"><img src="/assets/images/github.png" /></a></li>
+          
+          <li><a href="https://github.com/tfaga/KumuluzEE" class="github"><img src="/assets/images/github.png" /></a></li>
         </ul>
     </nav>
   </div>
@@ -28,13 +31,17 @@
 
 <script>
 $(document).ready(function () {
-  console.log(location.pathname)
-
   if (location.pathname.indexOf('/features') >= 0) {
     $('#features-link').addClass('active');
   }
   else if (location.pathname.indexOf('/support') >= 0) {
     $('#support-link').addClass('active');
+  }
+  else if (location.pathname.indexOf('/register') >= 0) {
+    $('#register-link').addClass('active');
+  }
+  else if (location.pathname.indexOf('/tutorial') >= 0) {
+    $('#tutorial-link').addClass('active');
   }
   else {
     $('#about-link').addClass('active');
