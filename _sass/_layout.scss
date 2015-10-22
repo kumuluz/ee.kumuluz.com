@@ -55,8 +55,8 @@ h4 { font-family: $font-family; }
 				font-size: 23px;
 				margin-right: 50px;
 
-				@media screen and (max-width: 991px) {
-					display: none;
+				@media screen and (max-width: 768px) {
+					width: 140px;
 				}
 			}
 			.navbar-toggle {

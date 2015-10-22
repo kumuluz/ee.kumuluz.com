@@ -51,7 +51,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
             var error = false;
             var msgError = form.find('#mce-error-response');
             var msgSuccess = form.find('#mce-success-response');
-            var loading = form.find('mce-loading');
+            var loading = form.find('#mce-loading');
 
             var settings = $.extend({
                 'url': form.attr('action'),
@@ -86,7 +86,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                     var emailReg = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
                     if (!emailReg.test(email)) return "Please enter a valid email address.";
 
-                    var phoneReg = /[\d-/+() ]/igm;
+                    var phoneReg = /^[0-9-/+() ]+$/;
                     if (!phoneReg.test(phone)) return "Please enter a valid phone address.";
 
                     return null;
@@ -187,7 +187,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                     submitMsg = $.ajaxChimp.translations[settings.language]['submit'];
                 }
                 
-                msgSuccess.html(submitMsg).show(0);
+                //loading.show();
 
                 return false;
             });
