@@ -103,9 +103,19 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
                 function successCallback(resp) {
                     if (resp.result === 'success') {
-                        msg = 'Submission was successful, we have sent you a confirmation email.';
-                        label.removeClass('error').addClass('valid');
-                        email.removeClass('error').addClass('valid');
+                        msg = '';
+
+                        swal({
+                            title: "Success!", 
+                            text: "Submission was successful, we have sent you a confirmation email.", 
+                            type: "success",
+                            confirmButtonColor: "#263c5f"
+                        });
+
+                        $(".confirm").click(function () {
+                            $( location ).attr("href", '/');
+                        });
+
                         error = false;
                     } else {
                         email.removeClass('valid').addClass('error');
