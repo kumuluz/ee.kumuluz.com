@@ -57,5 +57,12 @@ $(document).ready(function () {
   else {
     $('#about-link').addClass('active');
   }
+
+  $.cookieBar({
+    fixed: true,
+    bottom: true,
+    zindex: 999999,
+    message: 'This site uses cookies to store infromation in order to monitor the frequency of visits. All with the aim of improving user experience.'
+  });
 });
 </script>
