@@ -5,7 +5,7 @@ description: >
   The Kumuluz range of products offers a wide variety of technological innovations,
   spanning from integration platforms all the way to developer frameworks.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://blog.kumuluz.com" # the base hostname & protocol for your site
+url: "https://ee.kumuluz.com" # the base hostname & protocol for your site
 facebook_username: kumuluz
 twitter_username: kumuluz
 github_username: kumuluz
