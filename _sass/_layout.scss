@@ -228,10 +228,33 @@ h4 { font-family: $font-family; }
 	}
 }
 
+input.form-control {
+	height: 35px;
+	background: #fff;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 16px;
+
+	&:focus {
+		height: 35px;
+		background: transparent;
+		padding-left: 5px;
+		padding-right: 5px;
+		font-size: 16px;
+	};
+}
+
 .btn {
 	color: #fff;
 	background-color: $base-color;
 	text-shadow: none;
+
+	&.btn-normal-lg {
+		height: 55px;
+		line-height: 40px;
+		font-size: 22px;
+		min-width: 200px;
+	}
 
 	&.btn-extra-lg {
 		height: 70px;
@@ -239,6 +262,22 @@ h4 { font-family: $font-family; }
 		font-size: 26px;
 		min-width: 200px;
 	}
+
+	&:hover {
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	&:focus {
+		color: rgba(255, 255, 255, 0.85);
+	}
+}
+
+#mce-error-response {
+	color: #E10909;
+}
+
+#mce-success-response {
+	color: #009502;
 }
 
 .jumbotron.subtitle {
@@ -257,6 +296,12 @@ h4 { font-family: $font-family; }
 
 	@media screen and (max-width: 768px) {
 		padding: 0;
+	}
+}
+
+#post {
+	img {
+		width: 100%;
 	}
 }
 
@@ -375,6 +420,7 @@ ul.share-buttons{
 #footer-white {
 	background: $base-color;
 	color: #fff;
+	margin-top: 100px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	-webkit-font-smoothing: antialiased;
