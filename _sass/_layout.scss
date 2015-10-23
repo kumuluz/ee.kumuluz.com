@@ -200,25 +200,24 @@ h4 { font-family: $font-family; }
 
 	#banner-award {
 	    position: absolute;
-	    top: -20px;
+	    top: -10px;
 	    right: 10px;
 	    z-index: 1111;
-	    background-color: #6caae4;
-        box-shadow: 0px 10px 30px rgb(100, 104, 113);
-	    font-size: 26px;
+	    background-color: transparent;
+	    font-size: 20px;
 	    width: 180px;
-	    line-height: 32px;
+	    line-height: 26px;
 	    padding: 0 10px 10px 10px;
 	    color: #fff;
 	    text-shadow: none;
 
 	    .description {
-	    	background-color: darken($ee-color, 20%);
-	    	box-shadow: 0px 2px 5px #000;
+	    	margin-top: 5px;
+	    	background-color: transparent;
 	    }
 
 	    img {
-	    	width: 120px;
+	    	width: 80px;
 	    }
 
 	    @media screen and (max-width: 992px) {
