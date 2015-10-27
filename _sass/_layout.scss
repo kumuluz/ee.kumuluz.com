@@ -5,6 +5,7 @@
 
 @import "_features";
 @import "_support";
+@import "_opinions";
 
 .ripple.ripple-on {
     transition: opacity 0.15s ease-in 0s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
@@ -55,8 +56,13 @@ h4 { font-family: $font-family; }
 				font-size: 23px;
 				margin-right: 50px;
 
+				@media screen and (max-width: 991px) {
+					display: none;
+				}
+
 				@media screen and (max-width: 768px) {
 					width: 140px;
+					display: block;
 				}
 			}
 			.navbar-toggle {
@@ -267,6 +273,41 @@ input.form-control {
 	};
 }
 
+blockquote {
+  	background: #f9f9f9;
+  	border-left: 10px solid $base-color;
+  	margin: 35px 0 0 0;
+  	padding: 10px 10px;
+  	quotes: "\201C""\201D""\2018""\2019";
+
+  	&:before {
+  		color: $base-color;
+	  	content: "\201C";
+	  	font-size: 4em;
+	  	line-height: 0.1em;
+	  	margin-right: 0.25em;
+	  	vertical-align: -0.4em;
+	}
+	
+	p {
+	  display: inline;
+	}
+
+	h4 {
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 26px;
+		margin-top: 25px;
+		text-align: right;
+		text-shadow: 1px 1px 1px #fff;
+		font-style: italic;
+
+		.name {
+			font-weight: bold;
+		}
+	}
+}
+
 .btn {
 	color: #fff;
 	background-color: $base-color;
@@ -446,6 +487,9 @@ ul.share-buttons{
 	margin-top: 100px;
 	padding-top: 30px;
 	padding-bottom: 50px;
+	font-family: $font-family;
+	font-size: 16px;
+	line-height: 20px;
 	-webkit-font-smoothing: antialiased;
 
 	@media(max-width: 991px) {

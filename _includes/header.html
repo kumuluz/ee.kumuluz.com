@@ -16,6 +16,7 @@
             <li id="about-link"><a href="{{ site.baseUrl }}/">ABOUT</a></li>
             <li id="features-link"><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
             <li id="tutorial-link"><a href="{{ site.posts[0].url | prepend: site.baseurl }}">TUTORIAL</a></li>
+            <li id="opinions-link"><a href="{{ '/opinions' | prepend: site.baseurl }}">OPINIONS</a></li>
             <li id="support-link"><a href="{{ '/support' | prepend: site.baseUrl }}">SUPPORT</a></li>
             <li id="subscribe-link"><a href="{{ '/subscribe' | prepend: site.baseUrl }}">SUBSCRIBE</a></li>
             <li><a href="https://blog.kumuluz.com/" target="_blank">BLOG</a></li>
@@ -53,6 +54,9 @@ $(document).ready(function () {
   }
   else if (location.pathname.indexOf('/tutorial') >= 0) {
     $('#tutorial-link').addClass('active');
+  }
+  else if (location.pathname.indexOf('/opinions') >= 0) {
+    $('#opinions-link').addClass('active');
   }
   else {
     $('#about-link').addClass('active');
