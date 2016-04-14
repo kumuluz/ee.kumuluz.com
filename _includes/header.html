@@ -43,7 +43,7 @@
 </script>
 
 <script>
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
   if (location.pathname.indexOf('/features') >= 0) {
     $('#features-link').addClass('active');
   }
@@ -73,4 +73,5 @@ $(document).ready(function () {
     message: 'This site uses cookies to store infromation in order to monitor the frequency of visits. All with the aim of improving user experience.'
   });
 });
+
 </script>
