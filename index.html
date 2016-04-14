@@ -3,72 +3,114 @@ layout: default
 ---
 
 <div id="blog">
-  	<div id="posts">
-  		
-  		<div class="jumbotron wow">
-  	  		<div class="container">
-  	    		<div class="row">
-  	   	  			<div class="col-md-8 col-md-offset-2">
-    					<img height="200" src="/assets/images/kumuluzee.png" />
+    <div id="posts">
 
-		    			<p>A <span class="emphasise">lightweight framework</span> for packing, bootstrapping and deploying Java EE components as <span class="emphasise">microservices</span>.</p>
+        <div class="jumbotron wow">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <img height="200" src="/assets/images/kumuluzee.png" />
 
-		  			</div>
-				</div>
-				<div id="banner-award" class="wow slideInDown" data-wow-duration="2s" data-wow-offset="10"><div><img src="/assets/images/duke-stamp.png" /></div><div class="description">Duke's Choice Award Winner 2015</div></div>
-	  		</div>
-    	</div>
+                        <p>A <span class="emphasise">lightweight framework</span> for developing microservices using standard Java EE technologies and migrating existing Java EE applications to <span class="emphasise">microservices</span>.</p>
+                    </div>
+                </div>
+                <div id="banner-award" class="wow slideInDown" data-wow-duration="2s" data-wow-offset="10">
+                    <div><img src="/assets/images/duke-stamp.png" /></div>
+                    <div class="description">Duke's Choice Award Winner 2015</div>
+                </div>
+            </div>
+        </div>
 
-	    <div class="container">
-	      	<div class="row">
-	      		<div id="duke-award" class="col-md-12 wow">
-      				<div class="row">
-      					<div class="col-md-12">
-      						<div class="image">
-      							<img src="/assets/images/duke-award-small.png" style="margin-top: 20px" />
-      						</div>
-	      					<div class="description">
-	      						<h1>KumuluzEE is the 2015 Java Duke's Choice Award Winner</h1>
-	      						<p>KumuluzEE has won the prestigious 2015 Java Duke's Choice Award. The Duke's Choice Award is the Java community equivalent of winning an Oscar. The award celebrates extreme innovation using Java technology.  The primary judging criteria for this prestigious award is innovation, putting small developer shops on equal footing with global giants. Java Duke's Choice Award winners are recognition as an elite member of the Java ecosystem. Previous award winners include Hadoop, Jenkins, TomEE, and several other well-known products.</p>
-	      					</div>
-	      				</div>
-      				</div>
-	      		</div>
+        <div class="container">
+            <div class="row">
+                <div id="duke-award" class="col-md-12 wow">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="image">
+                                <img src="/assets/images/duke-award-small.png" style="margin-top: 20px" />
+                            </div>
+                            <div class="description">
+                                <h1>KumuluzEE is the 2015 Java Duke's Choice Award Winner</h1>
+                                <p>KumuluzEE has won the prestigious 2015 Java Duke's Choice Award. The Duke's Choice Award is the Java community equivalent of winning an Oscar. The award celebrates extreme innovation using Java technology. The primary judging
+                                    criteria for this prestigious award is innovation, putting small developer shops on equal footing with global giants. Java Duke's Choice Award winners are recognition as an elite member of the Java ecosystem. Previous
+                                    award winners include Hadoop, Jenkins, TomEE, and several other well-known products.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-        	{% include about_why_kumuluz.html %}
+                {% include about_why_kumuluz.html %}
 
-        	<div class="container" style="margin-top: 50px;">	
-				<div class="row">
-					<div id="kumulzee-why" class="col-md-8">
-						<h1>What people are saying about KumuluzEE</h1>
-			        	<blockquote class="quote">
-							KumuluzEE is a great community effort to power Java EE API based microservices, especially on the cloud.
+                <div class="container" style="margin-top: 50px;">
+                    <div class="row">
+                        <div id="kumulzee-why" class="col-md-8">
+                            <h1>What people are saying about KumuluzEE</h1>
+                            <blockquote class="quote">
+                                KumuluzEE is a great community effort to power Java EE API based microservices, especially on the cloud.
 
-							<h4><span class="name">~ Reza Rahman</span>, Java EE Evangelist at Oracle Corporation.</h4>
-						</blockquote>
+                                <h4><span class="name">~ Reza Rahman</span>, Java EE Evangelist at Oracle Corporation.</h4>
+                            </blockquote>
 
-						<a href="/opinions" class="btn btn-raised btn-lg" style="margin: 20px 0 0 20px">Read more</a>
-					</div>
-				</div>
-			</div>
+                            <a href="/opinions" class="btn btn-raised btn-lg" style="margin: 20px 0 0 20px">Read more</a>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- code example with prism.js and tabs -->
-			{% include about_sample.html %}
+                <div class="container" id="migration">
+                	<div class="row">
+                		<div class="col-md-12" style="margin-top: 50px;">
+                			<div class="row">
+                				<div class="col-md-12">
+                					<h1>Migrate existing Java EE application to microservices</h1>
+                				</div>
+                			</div>
+                			<div class="row">
+                				<div class="col-md-12">
+                					<p>
+                						KumuluzEE provides an efficient way to migrate existing Java EE applications to microservices. The major advantage is that you can migrate Java EE applications iteratively, step-by-step. You can take a few services and pack them as microservices, while the rest still runs on your existing Java EE application (such as Oracle WebLogic, WildFly or IBM WebSphere). Full interoperability between microservices and application server is provided.
+                          </p>
+                				</div>
+                			</div>
+                		</div>
+                	</div>
+                </div>
 
-	      	<div class="col-md-12" style="margin-top: 50px;">
-		      	<div class="container">
-		      		<div class="row">
-		      			<div class="col-md-6 col-md-offset-3">
-					      	<p class="">
-						      	<a href="{{ site.posts[0].url | prepend: site.baseurl }}" class="btn btn-raised btn-extra-lg" style="width: 49%">TUTORIAL</a>
-						      	<a href="https://github.com/TFaga/KumuluzEE/wiki/Getting-started" target="_blank" class="btn btn-raised btn-extra-lg" style="width: 49%;">GET STARTED</a>
-				    		</p>
-				    	</div>
-				    </div>
-		      	</div>
-	      	</div>
-	    </div>
-    
-  	</div>
-</div>
+                <div class="container" id="api-management">
+                	<div class="row">
+                		<div class="col-md-12" style="margin-top: 50px;">
+                			<div class="row">
+                				<div class="col-md-12">
+                					<h1>Full integration with Service API Management</h1>
+                				</div>
+                			</div>
+                			<div class="row">
+                				<div class="col-md-12">
+                					<p>
+                						KumuluzEE is fully integrated with KumuluzAPI, a novel Service API Management product that allows you to centrally manage services and APIs implemented as microservices or hosted on a Java EE application server. KumuluzAPI automatically discovers services and is fully integrated with Continuous Integration and Delivery cycles, thus guaranteeing that the API catalog is always in-sync with actual deployments.
+                          </p>
+                				</div>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+
+                <!-- code example with prism.js and tabs -->
+                {% include about_sample.html %}
+
+                <div class="col-md-12" style="margin-top: 50px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <p class="">
+                                    <a href="{{ site.posts[0].url | prepend: site.baseurl }}" class="btn btn-raised btn-extra-lg" style="width: 49%">TUTORIAL</a>
+                                    <a href="https://github.com/TFaga/KumuluzEE/wiki/Getting-started" target="_blank" class="btn btn-raised btn-extra-lg" style="width: 49%;">GET STARTED</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
