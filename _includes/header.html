@@ -15,6 +15,7 @@
         <ul class="nav navbar-nav navbar-left">
             <li id="about-link"><a href="{{ site.baseUrl }}/">ABOUT</a></li>
             <li id="features-link"><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
+            <li id="migration-link"><a href="{{ '/migration' | prepend: site.baseUrl }}">MIGRATION</a></li>
             <li id="tutorial-link"><a href="{{ site.posts[0].url | prepend: site.baseurl }}">TUTORIAL</a></li>
             <li id="opinions-link"><a href="{{ '/opinions' | prepend: site.baseurl }}">OPINIONS</a></li>
             <li id="support-link"><a href="{{ '/support' | prepend: site.baseUrl }}">SUPPORT</a></li>
@@ -45,6 +46,9 @@
 $(document).ready(function () {
   if (location.pathname.indexOf('/features') >= 0) {
     $('#features-link').addClass('active');
+  }
+  else if (location.pathname.indexOf('/migration') >= 0) {
+    $('#migration-link').addClass('active');
   }
   else if (location.pathname.indexOf('/support') >= 0) {
     $('#support-link').addClass('active');
