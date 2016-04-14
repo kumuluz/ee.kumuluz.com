@@ -70,7 +70,7 @@ subtitle: Subscribe
 </div>
 <script type="text/javascript" src="/assets/js/jquery.ajaxchimp.js" ></script>
 <script>
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
 	$('#mc-embedded-subscribe-form').ajaxChimp({
 	    callback: function(response) {
 	      $('form .result').text(response.msg);
