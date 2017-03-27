@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div id="exampleCode" class="col-md-8" style="min-height: 620px; margin-top:50px;">
+    <div id="exampleCode" class="col-md-12" style="min-height: 620px; margin-top:50px;">
       		<h1>Example code</h1>
 
           	<ul class="nav nav-tabs" data-tabs="tabs">
@@ -35,29 +35,34 @@ public class OrdersResource {
 	            </div>
             	<div class="tab-pane" id="hello_world_xml">
 					<pre><code class="language-markup">
-&lt;dependency&gt;
-  &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
-  &lt;artifactId&gt;kumuluzee-core&lt;/artifactId&gt;
-  &lt;version&gt;${kumuluzee.version}&lt;/version&gt;
-&lt;/dependency&gt;
+&lt;properties&gt;
+    &lt;kumuluz.version&gt;2.1.1&lt;/kumuluz.version&gt;
+&lt;/properties&gt;
 
-&lt;dependency&gt;
-  &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
-  &lt;artifactId&gt;kumuluzee-jpa-eclipselink&lt;/artifactId&gt;
-  &lt;version&gt;${kumuluzee.version}&lt;/version&gt;
-&lt;/dependency&gt;
+&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
+            &lt;artifactId&gt;kumuluzee-bom&lt;/artifactId&gt;
+            &lt;version&gt;${kumuluz.version}&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
 
-&lt;dependency&gt;
-  &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
-  &lt;artifactId&gt;kumuluzee-cdi-weld&lt;/artifactId&gt;
-  &lt;version&gt;${kumuluzee.version}&lt;/version&gt;
-&lt;/dependency&gt;
+&lt;dependencies&gt;
+    &lt;!-- MicroProfile 1.0 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
+        &lt;artifactId&gt;kumuluzee-microProfile-1.0&lt;/artifactId&gt;
+    &lt;/dependency&gt;
 
-&lt;dependency&gt;
-  &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
-  &lt;artifactId&gt;kumuluzee-jax-rs-jersey&lt;/artifactId&gt;
-  &lt;version&gt;${kumuluzee.version}&lt;/version&gt;
-&lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.kumuluz.ee&lt;/groupId&gt;
+        &lt;artifactId&gt;kumuluzee-jpa-hibernate&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
 	              	</code></pre>
 	            </div>
 			</div>

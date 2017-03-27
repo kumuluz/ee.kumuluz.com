@@ -10,27 +10,26 @@ layout: default
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <img height="200" src="/assets/images/kumuluzee.png" />
-
-                        <p>A <span class="emphasise">lightweight framework</span> for developing microservices using standard Java EE technologies and migrating existing Java EE applications to <span class="emphasise">microservices</span>.</p>
+                        <p>A lightweight open-source microservice framework. Develop microservices with Java EE technologies. Migrate existing Java EE applications to microservices and cloud-native architecture.</p>
                     </div>
                 </div>
-                <div id="banner-award" class="wow slideInDown" data-wow-duration="2s" data-wow-offset="10">
-                    <div><img src="/assets/images/duke-stamp.png" /></div>
-                    <div class="description">Duke's Choice Award Winner 2015</div>
+                <div id="banner-award">
+                    <a href='http://microprofile.io/'><img src="/assets/images/mprofile.png" /></a>
+                    <div class="description"><a href='http://microprofile.io/' style="color:white; text-decoration: none;">MicroProfile compliant</a></div>
                 </div>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
-                <div id="duke-award" class="col-md-12 wow">
+                <div id="duke-award" class="col-md-12">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="image">
                                 <img src="/assets/images/duke-award-small.png" style="margin-top: 20px" />
                             </div>
                             <div class="description">
-                                <h1>KumuluzEE is the 2015 Java Duke's Choice Award Winner</h1>
+                                <h1>KumuluzEE is the Java Duke's Choice Award Winner</h1>
                                 <p>KumuluzEE has won the prestigious 2015 Java Duke's Choice Award. The Duke's Choice Award is the Java community equivalent of winning an Oscar. The award celebrates extreme innovation using Java technology. The primary judging
                                     criteria for this prestigious award is innovation, putting small developer shops on equal footing with global giants. Java Duke's Choice Award winners are recognition as an elite member of the Java ecosystem. Previous
                                     award winners include Hadoop, Jenkins, TomEE, and several other well-known products.</p>
@@ -39,17 +38,14 @@ layout: default
                     </div>
                 </div>
 
-
-                {% include about_why_kumuluz.html %}
-
-                <div class="container" style="margin-top: 50px;">
+                <div class="container">
                     <div class="row">
-                        <div id="kumulzee-why" class="col-md-8">
+                        <div id="kumulzee-why" class="col-md-12" style="margin-top: 30px;">
                             <h1>What people are saying about KumuluzEE</h1>
                             <blockquote class="quote">
                                 KumuluzEE is a great community effort to power Java EE API based microservices, especially on the cloud.
 
-                                <h4><span class="name">~ Reza Rahman</span>, Java EE Evangelist at Oracle Corporation.</h4>
+                                <h4><span class="name">~ Reza Rahman</span>, Senior Java Technologist, Author, Speaker</h4>
                             </blockquote>
 
                             <a href="/opinions" class="btn btn-raised btn-lg" style="margin: 20px 0 0 20px">Read more</a>
@@ -57,67 +53,293 @@ layout: default
                     </div>
                 </div>
 
-                <div class="container" id="migration">
-                	<div class="row">
-                		<div class="col-md-12" style="margin-top: 50px;">
-                			<div class="row">
-                				<div class="col-md-12">
-                					<h1>Migrate existing Java EE application to microservices</h1>
-                				</div>
-                			</div>
-                			<div class="row">
-                				<div class="col-md-12">
-                					<p>
-                						KumuluzEE provides an efficient way to migrate existing Java EE applications to microservices.
-                            The major advantage is that you can migrate Java EE applications iteratively, step-by-step.
-                            You can take a few services and pack them as microservices, while the rest still runs on your
-                            existing Java EE application servers (such as Oracle WebLogic, WildFly or IBM WebSphere).
-                            Full interoperability between microservices and application server is provided.
-                          </p>
-                				</div>
-                			</div>
-                		</div>
-                	</div>
-                </div>
-
-                <div class="container" id="api-management">
-                	<div class="row">
-                		<div class="col-md-12" style="margin-top: 50px;">
-                			<div class="row">
-                				<div class="col-md-12">
-                					<h1>Full integration with Service API Management</h1>
-                				</div>
-                			</div>
-                			<div class="row">
-                				<div class="col-md-12">
-                					<p>
-                						KumuluzEE is fully integrated with KumuluzAPI, a novel Service API Management product that
-                            allows you to centrally manage services and APIs implemented as microservices or hosted on
-                            a Java EE application server. KumuluzAPI automatically discovers services and is fully
-                            integrated with Continuous Integration and Delivery cycles, thus guaranteeing that the API
-                            catalog is always in-sync with actual deployments.
-                          </p>
-                				</div>
-                			</div>
-                		</div>
-                	</div>
-                </div>
-
                 <!-- code example with prism.js and tabs -->
                 {% include about_sample.html %}
 
-                <div class="col-md-12" style="margin-top: 50px;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3">
-                                <p class="">
-                                    <a href="{{ site.posts[0].url | prepend: site.baseurl }}" class="btn btn-raised btn-extra-lg" style="width: 49%">TUTORIAL</a>
-                                    <a href="https://github.com/TFaga/KumuluzEE/wiki/Getting-started" target="_blank" class="btn btn-raised btn-extra-lg" style="width: 49%;">GET STARTED</a>
-                                </p>
-                            </div>
+                <div class="container">
+                    <div class="row">
+                        <div id="kumulzee-why" class="col-md-12" style="margin-top: 30px;">
+                            <h1>What is KumuluzEE?</h1>
+                            <p>
+                              KumuluzEE is a lightweight framework for developing microservices using standard Java EE technologies and migrating existing Java EE applications to microservices. KumuluzEE packages microservices as standalone JARs. KumuluzEE microservices are lightweight and optimized for size and start-up time. They fit perfectly with Docker containers.
+                            </p>
+                            <p>
+                                KumuluzEE also provides extensions for developing common patterns in cloud-native architectures, including configuration, logging, discovery, circuit-breakers, metrics, security, event streaming and more.
+                            </p>
+
                         </div>
                     </div>
                 </div>
+
+                <div class="container">
+                  <div class="row structure" style="margin-top: 30px;">
+                      <div class="col-xs-12">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.framework.title">KumuluzEE microservice framework</span></h3>
+                                  <p><span data-i18n="structure.framework.description">For creating microservices using JavaEE</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.patterns.title">KumuluzEE REST - Patterns</span></h3>
+                                  <p><span data-i18n="structure.patterns.description">For implementation of common, advanced and flexible REST API functionalities</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.config.title">KumuluzEE Config</span></h3>
+                                  <p><span data-i18n="structure.config.description">Config for configuration (using ENV variables and/or config server, such as etcd or Consul)</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.logs.title">KumuluzEE Logs</span></h3>
+                                  <p><span data-i18n="structure.logs.description">For advanced microservice framework for logging</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.discovery.title">KumuluzEE Discovery</span></h3>
+                                  <p><span data-i18n="structure.discovery.description">For service discovery (etcd or Consul)</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.metrics.title">KumuluzEE Metrics</span></h3>
+                                  <p><span data-i18n="structure.metrics.description">For easy collection and reporting of performance metrics</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.security.title">KumuluzEE Security</span></h3>
+                                  <p><span data-i18n="structure.security.description">For easy integration with OAuth2/OpenID identity and access managemant providers</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.circuit.title">KumuluzEE Circuit Breaker</span></h3>
+                                  <p><span data-i18n="structure.circuit.description">For implementing circuit breakers and decoupling microservices</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block">
+                              <div>
+                                  <h3><span data-i18n="structure.kafka.title">KumuluzEE Kafka</span></h3>
+                                  <p><span data-i18n="structure.kafka.description">For event streaming support using Apache Kafka</span></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="block" style="position:relative; overflow: hidden;">
+                              <div>
+                                  <h3><span data-i18n="structure.blockchain.title">KumuluzEE REST - Blockchain</span></h3>
+                                  <p><span data-i18n="structure.blockchain.description">For Blockchain-enabled REST services</span></p>
+                                  <div class="ribbon"><span data-i18n="comingSoon">Coming soon</span></div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+
+              <div class="container">
+                  <div class="row">
+                      <div id="kumulzee-why" class="col-md-12" style="margin-top: 30px;">
+                          <h1>Microservices with Java EE </h1>
+                          <p>
+                            A standard approach for deploying Java EE applications is packing all components into a single EAR/WAR archive and deploying the archive on the application server. This leads to monolithic architectures which make applications difficult to maintain and scale in cloud (PaaS) environments. The microservice architecture addresses these shortcomings by decomposing an application into a set of stateless microservices. Each microservice has a well-defined functionality and an interface for communication with other services.
+                          </p>
+
+                      </div>
+                  </div>
+              </div>
+
+              <div class="container">
+                  <div class="row">
+                      <div id="kumulzee-why" class="col-md-12" style="margin-top: 30px;">
+                          <h1>Why KumuluzEE</h1>
+                          <ul>
+                            <li>Allows you to develop microservices using standard Java EE technologies.</li>
+                            <li>Allows you to gradually migrate existing Java EE applications to microservices and cloud-native architecture.</li>
+                            <li>Zero lock-in. KumuluzEE does not require any specific code. Everything is configured in pom.xml</li>
+                            <li>Develop and build microservices as stand-alone JARs with minimal footprint.</li>
+                            <li>Leverage your existing Java EE knowledge and extend it to cloud-native architecture. </li>
+                            <li>Extend your microservices with common cloud-native patterns, such as config, discovery, logging, circuit-breakres, etc. KumuluzEE provides all the building blocks.</li>
+                            <li>Have complete control over Java EE components.</li>
+                            <li>KumuluzEE is fully integrated with KumuluzAPI, an innovative microservice API Management and other products for the Kumuluz family. </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-12" style="margin-top: 50px;">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-6 col-md-offset-3">
+                              <p class="">
+                                  <a href="{{ site.posts[0].url | prepend: site.baseurl }}" class="btn btn-raised btn-extra-lg" style="width: 49%">TUTORIAL</a>
+                                  <a href="https://github.com/TFaga/KumuluzEE/wiki/Getting-started" target="_blank" class="btn btn-raised btn-extra-lg" style="width: 49%;">GET STARTED</a>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="container">
+                  <div class="row">
+                      <div id="kumulzee-why" class="col-md-12" style="margin-top: 30px;">
+                          <h1>They trust us</h1>
+                      </div>
+                  </div>
+              </div>
+              <div class="container">
+                <div class="row references">
+                    <span class="clients text-center" style="background: white; display:block; margin-top: 20px;">
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/akrapovic_1.png);">
+                        <span class="animated fadeIn">
+                            <div>Akrapovič</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/osocial.png);">
+                        <span class="animated fadeIn">
+                            <div>Oesterreichische Sozialversicherung, Austria</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/ebcont.jpg);">
+                        <span class="animated fadeIn">
+                            <div>EBCONT group GmbH, Austria</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/cybergrid.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Cybergrid, Austria</div>
+                        </span>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/everis.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Everis, Chile</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/abanka_1.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Abanka</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/adriatic-slovenica.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Adriatic Slovenica</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/snaga.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Snaga</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/energetika_ljubljana.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Energetika Ljubljana</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/zzzs.jpg);">
+                        <span class="animated fadeIn">
+                            <div>ZZZS</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/ministry_public_admin.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Government - Ministry of Public Administration</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/ministry_justice.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Goverment - Ministry of Justice</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/pbs.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Poštna banka Slovenije</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/mmturist.jpg);">
+                        <span class="animated fadeIn">
+                            <div>MM turist</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/solvera_lynx.png);">
+                        <span class="animated fadeIn">
+                            <div>Solvera Lynx</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/irc.jpg);">
+                        <span class="animated fadeIn">
+                            <div>IRC Celje</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/src.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Src</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/informatika.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Informatika d.d.</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/hardlab.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Hardlab</div>
+                        </span>
+                    </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/tovarna_podjemov.jpg);">
+                        <span class="animated fadeIn">
+                            <div>Tovarna podjemov</div>
+                        </span>
+                    </div>
+                    </span>
+                    <div class="col-xs-12 text-center" style="margin-top: 10px;">
+                        <h4><span data-i18n="references.contactUs">Want to be listed here? Please <a href="mailto:info@sunesis.si">contact us</a>!</span></h4>
+                    </div>
+                </div>
+              </div>
+
+
+
             </div>
 
         </div>

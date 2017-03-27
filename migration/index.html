@@ -16,21 +16,14 @@ subtitle: Migrate existing Java EE applications to microservices
 
     <div class="row">
       <div class="col-md-12">
-        <p>For example, let's take a Java EE application, which consists of front-end, such as JSF, JSP or Servlets, back-end using SOAP (JAX-WS)
-          and REST (JAX-RS) services, as well as EJBs, JPA or JDBC, JMS, etc. You have two options:</p>
-
-        <ul>
-          <li>You can migrate the whole application at once.</li>
-          <li>You can migrate an application gradually step-by-step, which is often much easier to fulfill with larger enterprise-scale applications.</li>
-        </ul>
-
-        <p>Step-by-step migration is supported so that you can extract one or more services from existing application and
-          migrate them to microservices. The rest of the application can continue to operate on a your classical Java EE application server.
-          KumuluzEE provides full interoperability for container authentication, CDI, remote EJB calls, remote JMS, data sources, etc.</p>
-
-        <p>For example, from the above-describe Java EE application you could take some web services, or JSF/JSP/Servlet front-end
-          (even partially), or similar, and deploy those parts as microservices. Those microservices will have native interoperability with the
-          rest of the application on your Java EE application server.</p>
+          <p>KumuluzEE provides full support for gradual migration of existing Java EE application to the microservice architecture. The major advantage is that you can migrate Java EE applications iteratively, step-by-step. You can take a few services and pack them as microservices, while the rest still runs on your existing Java EE application servers (such as Oracle WebLogic, WildFly or IBM WebSphere). Full interoperability between microservices and application server is provided.</p>
+          <p>For example, let's take a Java EE application, which consists of front-end, such as JSF, JSP or Servlets, back-end using SOAP (JAX-WS) and REST (JAX-RS) services, as well as EJBs, JPA or JDBC, JMS, etc. You have two options:</p>
+          <ul>
+            <li>You can migrate the whole application at once.</li>
+            <li>You can migrate an application gradually step-by-step, which is often much easier to fulfill with larger enterprise-scale applications.</li>
+          </ul>
+          <p>Step-by-step migration is supported so that you can extract one or more services from existing application and migrate them to microservices. The rest of the application can continue to operate on your classical Java EE application server. KumuluzEE provides full interoperability for container authentication, CDI, remote EJB calls, remote JMS, data sources, etc.</p>
+          <p>For example, from the above-describe Java EE application you could take some web services, or JSF/JSP/Servlet front-end (even partially), or similar, and deploy those parts as microservices. Those microservices will have native interoperability with the rest of the application on your Java EE application server.</p>
       </div>
     </div>
   </div>
