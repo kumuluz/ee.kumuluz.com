@@ -543,7 +543,7 @@ ul.share-buttons{
     height: 100px;
     overflow: hidden;
     position: absolute;
-    right: 0;
+    right: 15px;
     text-align: right;
     top: 0;
     width: 100px;
@@ -552,7 +552,7 @@ ul.share-buttons{
 
 .ribbon span {
     background: rgba(0, 0, 0, 0) linear-gradient(#ed5565 0%, #ed5565 100%) repeat scroll 0 0;
-    box-shadow: 0 3px 10px -5px black;
+    box-shadow: 0 3px 7px -5px black;
     color: #fff;
     display: block;
     font-size: 12px;
