@@ -601,3 +601,17 @@ ul.share-buttons{
 pre {
   padding: 0px 20px !important;
 }
+
+.checkbox-inline {
+  min-width: 300px;
+  margin-left: 15px;
+  cursor: default;
+  label{
+    line-height: normal;
+    cursor: pointer;
+  }
+  input{
+    margin-left: -25px !important;
+    cursor: pointer;
+  }
+}
