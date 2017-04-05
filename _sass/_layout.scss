@@ -55,6 +55,12 @@ h4 { font-family: $font-family; }
 				font-weight: 500;
 				font-size: 23px;
 				margin-right: 50px;
+        margin-left: 100px;
+
+        @media screen and (max-width: 1380px){
+          margin-left: 10px;
+          margin-right: 10px;
+        }
 
 				@media screen and (max-width: 991px) {
 					display: none;
@@ -80,6 +86,13 @@ h4 { font-family: $font-family; }
 				line-height: 80px;
 				font-size: 20px;
 				font-family: $font-family;
+
+        @media(max-width: 1240px){
+          font-size: 90%;
+        }
+        @media(max-width: 795px){
+          font-size: 85%;
+        }
 
 				@media(min-width: 768px) {
 					float: none;
