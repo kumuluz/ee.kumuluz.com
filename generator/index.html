@@ -1,7 +1,7 @@
 ---
 layout: default
 title: POM Generator | KumuluzEE
-subtitle: Quickstart development with online pom generator.
+subtitle: Quickstart development with online pom generator
 ---
 
 <div id="generator">
@@ -11,8 +11,10 @@ subtitle: Quickstart development with online pom generator.
 		<div class="row">
 			<div class="col-md-12">
 				<form class="form-horizontal" onsubmit="return generatePom();">
-						<div class='col-xs-12 col-sm-6'>
+						<div class='col-xs-12'>
  							<h3>Project Metadata</h3>
+						</div>
+						<div class='col-xs-12 col-sm-6'>
 							<div class="form-group">
 			        	<label class="col-xs-12 col-sm-3 control-label" for="groupId">GroupId</label>
 								<div class="col-xs-12 col-sm-8">
@@ -26,7 +28,9 @@ subtitle: Quickstart development with online pom generator.
 									<input class="form-control" type="text" id="artifactId" name="artifactId">
 								</div>
 							</div>
+						</div>
 
+						<div class='col-xs-12 col-sm-6'>
 							<div class="form-group">
 			        	<label class="col-xs-12 col-sm-3 control-label" for="name">Name</label>
 								<div class="col-xs-12 col-sm-8">
@@ -42,96 +46,104 @@ subtitle: Quickstart development with online pom generator.
 							</div>
 						</div>
 
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-xs-12">
 							<h3>Dependencies</h3>
-							<div class="checkbox-inline" style='margin-left:10px;'>
-								<label>
-									<input id="microprofile" onclick="disableMicroprofileValues()" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-micro-profile" />Micro profile
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-			            <input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-core" />Core
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-		            	<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-servlet-jetty" />Servlet 3.1 (Jetty)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-		            	<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-cdi-weld" />CDI 1.2 (RI Weld)
-								</label>
-							</div>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+				            <input class="microprofile core" checked disabled type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-core" />Core
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input id="microprofile" onclick="disableMicroprofileValues()" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-micro-profile" />Micro profile
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+			            	<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-servlet-jetty" />Servlet 3.1 (Jetty)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+			            	<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-cdi-weld" />CDI 1.2 (RI Weld)
+									</label>
+								</div>
 
-							<div class="checkbox-inline">
-								<label>
-									<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jax-rs-jersey" />JAX-RS 2.1. (RI Jersey)
-								</label>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jax-rs-jersey" />JAX-RS 2.1. (RI Jersey)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-json-p-jsonp" />JSON-P 1.0 (RI JSONP)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jsp-jetty" />JSP 2.3 (Jetty Apache Jasper)
+									</label>
+								</div>
+
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-el-uel" />EL 3.0 (RI UEL)
+									</label>
+								</div>
 							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-json-p-jsonp" />JSON-P 1.0 (RI JSONP)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jsp-jetty" />JSP 2.3 (Jetty Apache Jasper)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-el-uel" />EL 3.0 (RI UEL)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-eclipselink" />JPA 2.1 (RI EclipseLink)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-hibernate" />JPA 2.1 (RI Hibernate)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jax-ws-metro" />JAX-WS (RI Metro)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jsf-mojarra" />JSF 2.2 (RI Mojarra)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-websocket-jetty" />WebSocket 1.1 (Jetty)
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}" />Logs log4j2<br/>
-								</label>
-							</div>
-							<div class="checkbox-inline">
-								<label>
-									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-bean-validation-hibernate-validator" />Bean Validation 1.1 (RI Hibernate validator)
-								</label>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-eclipselink" />JPA 2.1 (RI EclipseLink)
+									</label>
+								</div>
+
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-hibernate" />JPA 2.1 (RI Hibernate)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jax-ws-metro" />JAX-WS (RI Metro)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jsf-mojarra" />JSF 2.2 (RI Mojarra)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-websocket-jetty" />WebSocket 1.1 (Jetty)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-bean-validation-hibernate-validator" />Bean Validation 1.1 (RI Hibernate validator)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}" />Logs log4j2<br/>
+									</label>
+								</div>
 							</div>
 		        </div>
 
-						<div class="col-xs-12 col-sm-offset-6 col-sm-6">
+						<div class="col-xs-12">
 							<br/><h3>Add maven dependency plugin</h3>
-							<div class="checkbox-inline" style='margin-left:10px;'>
+							<div class="col-xs-12">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
 		            	<input id="plugin" type="checkbox" name="plugin" value="plugin" />Maven dependency plugin
 								</label>
 		        	</div>
 						</div>
-						<div class="col-xs-12">
-		        	<input class="btn btn-primary" type="submit" value="Generate POM">
+						</div>
+						<div class="col-xs-12 text-center" style='padding-top: 30px;'>
+		        	<input class="btn btn-raised btn-normal-lg" type="submit" value="Generate POM">
 						</div>
 		    </form>
 
@@ -186,8 +198,11 @@ function generatePom() {
 	function disableMicroprofileValues() {
       let checked = $('#microprofile').prop("checked");
       $(".microprofile").each(function(i, elm) {
-          $(elm).prop('disabled', checked);
-          $(elm).prop('checked', checked);
+				if($(elm).hasClass('core'))
+					return;
+
+        $(elm).prop('disabled', checked);
+        $(elm).prop('checked', checked);
       });
   }
 </script>

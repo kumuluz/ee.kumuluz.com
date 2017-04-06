@@ -8,11 +8,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="{{ site.baseurl }}/" class="navbar-brand"></a>
+        <a href="{{ site.baseurl }}/" class="navbar-brand hidden-sm hidden-md hidden-lg"></a>
     </div>
 
     <nav class="collapse navbar-collapse navbar-responsive-collapse" role="navigation" id="menu">
-        <ul class="nav navbar-nav navbar-left">
+        <div class='navbar-image hidden-xs'>
+          <img src="/assets/images/kumuluzee.png" />
+        </div>
+        <ul class="nav navbar-nav">
             <li id="about-link"><a href="{{ site.baseUrl }}/">ABOUT</a></li>
             <li id="generator-link"><a href="{{ '/generator' | prepend: site.baseurl }}">GENERATOR</a></li>
             <li id="features-link"><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
@@ -23,11 +26,9 @@
             <li id="subscribe-link"><a href="{{ '/subscribe' | prepend: site.baseUrl }}">SUBSCRIBE</a></li>
             <li><a href="https://blog.kumuluz.com/" target="_blank">BLOG</a></li>
         </ul>
-
-        <ul class="nav navbar-nav navbar-right visible-md visible-lg">
-
-          <li><a href="https://github.com/tfaga/KumuluzEE" class="github" target="_blank"><img src="/assets/images/github.png" /></a></li>
-        </ul>
+        <div class='navbar-image hidden-xs'>
+          <a href="https://github.com/tfaga/KumuluzEE" class="github" target="_blank"><img src="/assets/images/github.png" /></a>
+        </div>        
     </nav>
   </div>
 </header>
