@@ -5,7 +5,7 @@
 
     <groupId>{{groupId}}</groupId>
     <artifactId>{{artifactId}}</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>{{version}}</version>
     <packaging>jar</packaging>
 
     <name>{{name}}</name>
@@ -16,7 +16,10 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kumuluz.version>{{kumuluzVersion}}</kumuluz.version>
+        {{ #isLogs }}
         <kumuluzee-logs.version>{{kumuluzeeLogsVersion}}</kumuluzee-logs.version>
+        {{ /isLogs }}
+        <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -42,14 +45,13 @@
         </dependency>
         {{ /dependencies }}
     </dependencies>
-    {{ #plugin }}
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.10</version>
+                <version>${maven-dependency-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -62,6 +64,5 @@
             </plugin>
         </plugins>
     </build>
-    {{ /plugin }}
 
 </project>

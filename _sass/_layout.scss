@@ -308,6 +308,14 @@ input.form-control {
 		font-size: 16px;
 	};
 }
+select.form-control, select.form-control:focus {
+  height: 35px;
+  background: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid #757575;
+}
 
 blockquote.quote {
   	background: #f9f9f9;
