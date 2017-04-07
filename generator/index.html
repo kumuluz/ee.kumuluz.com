@@ -168,7 +168,7 @@ function generatePom() {
 			var formData = {
 					groupId: $("#groupId").val() || "com.kumuluzee.sample",
 					artifactId: $("#artifactId").val() || "sample",
-					version: $("#projectVersion").val() || "1.0.0",
+					projectVersion: $("#projectVersion").val() || "1.0.0",
 					name: $("#name").val() || "Sample project",
 					description: $("#description").val() || "Sample KumuluzEE project",
 					kumuluzVersion: $("#version").val() || "2.2.0",
@@ -205,8 +205,6 @@ function generatePom() {
 					url: "/assets/template.xml",
 					dataType: "text",
 					success: function(xml) {
-						console.log(xml);
-						console.log("...");
 							var pom = Mustache.render(xml, formData);
 							// return pom.xml
 							var blob = new Blob([pom], {

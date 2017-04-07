@@ -5,7 +5,7 @@
 
     <groupId>{{groupId}}</groupId>
     <artifactId>{{artifactId}}</artifactId>
-    <version>{{version}}</version>
+    <version>{{projectVersion}}</version>
     <packaging>jar</packaging>
 
     <name>{{name}}</name>
