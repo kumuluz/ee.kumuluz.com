@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  "Microservices with Java EE and KumuluzEE"
-date:   2015-06-04
+date:   2017-05-01
 author: tfaga
-categories: [Tutorial]
+categories: [Architecture]
 tags: [KumluzEE, Java EE, Microservices]
 ---
 
-This article explores the way the microservice architecture can be used together with Java EE using the new KumuluzEE framework.
-It expands on the benefits and drawbacks compared to the monolithic architecture that's popular in Java EE. It shows how to quickly and simply develop two microservices with standard Java EE using KumuluzEE. You can find the examples produced in this article on [GitHub](https://github.com/TFaga/kumuluzee-example).
+This article explores the way the microservices can be used together with Java EE using KumuluzEE.
+It expands on the benefits and drawbacks compared to the monolithic architecture that's popular in Java EE. It shows how to quickly and simply develop two microservices with standard Java EE using KumuluzEE. You can find the examples produced in this article on [GitHub](https://github.com/kumuluz/kumuluzee-samples) under the name `microservice-simple`.
 
 # Why microservices?
 
@@ -33,15 +33,15 @@ Enter KumuluzEE, a framework that automates the tasks, related to the deployment
 
 # Getting started
 
-Let's get started! First let's examine what KumuluzEE provides and how we can start using it to build our microservices. The main benefit is that we don't actually have to learn "yet another framework". KumuluzEE uses the *standard Java EE specification* and components that many developers and DevOps including us are very familiar with. In fact if you use the default configuration (which is perfectly fine for most cases) and manipulate your settings with environment variables that KumuluzEE defines, you don't have to write anything extra at all. You get the microservice benefits "for free". 
+Let's get started! First let's examine what KumuluzEE provides and how we can start using it to build our microservices. The main benefit is that we don't actually have to learn "yet another framework". KumuluzEE uses the *standard Java EE specifications* and components that many developers and DevOps including us are very familiar with. In fact if you use the default configuration (which is perfectly fine for most cases) and control your settings with environment variables that you as well as KumuluzEE defines, you don't have to write anything extra at all. You get the microservice benefits "for free". 
 
 > You can write your microservices the same way you write your Java EE applications, using the same tools you always use. The framework will take care of bootstrapping all the required components to make your application run.
 
 The result are small standalone (and preferably stateless) microservices that can run anywhere (remember "Write once, run anywhere") using technologies that used to require full blown heavyweight application servers. 
 
-## Perfect for running in Dockerized environments
+## Perfect for running in modern Dockerized environments
 
-Using KumuluzEE we can easily break down existing monolithic applications into microservices and start deploying them to the cloud (or more exactly to PaaS). Since microservices with KumuluzEE are basically regular Java applications, they can run in virtually every cloud platform available thus offering an excellent middle ground between modern patterns/models and existing enterprise technologies.
+Using KumuluzEE we can easily break down existing monolithic applications into microservices and start deploying them to the cloud. Since microservices with KumuluzEE are basically regular Java applications, they can run in virtually every cloud platform available or otherwise, thus offering an excellent middle ground between modern patterns/models and existing enterprise technologies.
 
 ## Components
 
@@ -50,25 +50,25 @@ KumuluzEE comes with support for several Java EE specifications that we can sele
 - Servlet 3.1
 - JSP 2.3
 - EL 3.0
+- JSF 2.2
 - CDI 1.2
 - JPA 2.1
 - JAX-RS 2.0
+- Websocket 1.1
 - Bean Validation 1.1
 - JSON-P 1.0
 
-You can choose to include only those that you actually need. This means that you can use only the dependencies that you need, instead of always having the entire runtime present that's using your memory and slowing your microservice down. The next bigger release will include support for the following additional components:
+You can selectively choose to include only those that you actually need. This means that you can select only the dependencies and components that you use, instead of always having the entire runtime present that's using your memory and slowing your microservice down, as well as allow each and every microservice you create to have its own tailored runtime.
 
-- Websocket 1.1
-- JSF 2.2
-- JAX-WS 2.2
+For certain components you can also choose which implementation you would like to include, in case you prefer one or the other. The component list and their implementations that are available is constantly being updated and can be found on [GitHub](https://github.com/kumuluz/kumuluzee).
 
-In the next weeks and months the framework will be further improved with additional supported Java EE APIs.
+KumuluzEE is also fully compliant with MicroProfile 1.0. As we will show later, you can choose to include the MicroProfile 1.0 profile, which already contains JAX-RS, CDI and JSON-P.
 
 # Building Java EE microservices
 
 > The premise is simple; use our existing knowledge of Java EE APIs to create multiple microservices that will be packaged and deployed independently to a scalable cloud platform.
 
-Lets use KumuluzEE to see this in action. Supposed we would like to create an online book catalogue that people can browse and place orders for the books they like. While there would normally be many more functionalities, for brevity we are only going to look at the two of them; browsing available books and placing orders. Our goal will be to create an application with the following requirements:
+Let's take KumuluzEE for a spin and see it in action. Let's start with an example. Supposed we would like to create an online book catalogue that people can browse and place orders for the books they like. While there would normally be many more functionalities, of course, for brevity we are only going to look at the two of them; browsing available books and placing orders. Our goal will be to create an application with the following requirements:
 
 - Users can browse books as a list or detailed view;
 - For every book available users can place orders;
@@ -76,15 +76,15 @@ Lets use KumuluzEE to see this in action. Supposed we would like to create an on
 
 With traditional application servers we would normally create a monolithic EAR package that would include our business logic and several WAR packages. Our architecture would look something like this:
 
-![Monolithic architecture]({{ site.baseurl }}/assets/images/posts/microservices-with-java-ee-and-kumuluzee/monolithic.png)
+![Monolithic architecture]({{ site.baseurl }}/assets/images/posts/microservices-with-java-ee-and-kumuluzee-updated/monolithic.png)
 
-We would have several beans deployed that would handle all the business logic, those would use a JPA module that would handle the connection to an underlying database as well as act as our ORM. We would have a web layer, which would consist of REST interfaces. These would call our business logic. And a static HTML5 JavaScript web application, which would call our REST interfaces. All the components would be packaged together into a single EAR and deployed to the application server.
+We would have several beans deployed that would handle all the business logic, those would use a JPA or some other database module that would handle access to an underlying database and optionally as act as our ORM. We would then expose our app to the world with a series of REST APIs. These would then go on to call our business logic. To show the actual content we would use a static HTML5 JavaScript web app, written in any of the multiple (and growing) modern JS frameworks available today. They would then go on to call our REST API to access all the functionality. All the components would be packaged together into a single EAR and deployed to the application server.
 
-At first this may seem as a perfectly good design. However we can quickly start to identify its shortcomings. When our application starts to grow and we get more and more traffic, we need to start scaling out. Initially we can scale up, however that can only get us so far. Sooner rather than later we need to start distributing our requests. The way we do that is to set up, configure and maintain a cluster of application servers which is usually - let's face it - a not so pleasant experience. And since virtually no cloud provider offers support for such configurations we are on our own. Even if we set it all up, we still have no simple way to provide true elasticity to our application.
+At first this may seem as a perfectly good design. However we can quickly start to identify its shortcomings. When our application starts to grow and we get more and more traffic, we need to start scaling out. We can start to scale up, however that can only get us so far. Sooner rather than later we need to start distributing our requests. The way we do that is to set up, configure and maintain a cluster of application servers which is usually - let's face it - a not so pleasant experience. And since virtually no cloud provider offers support for such configurations we are basically on our own. Even if we do manage set it all up somewhat efficiently, we still have no real simple way to provide true elasticity and scalability to our application.
 
 Let's dig into some more problems:
 
-- Soon we notice that the catalogue part of the application gets way more traffic than the orders part. So we would like to scale only the part that handles the book catalogue. Otherwise we would waste server resources.
+- Soon we notice that the catalogue part of the application gets way more traffic than the orders part. So we would like to scale only the part that handles the book catalogue. Otherwise we would waste servers resources.
 
 - When applying updates, we would like to update each part (functionality) separately. This way, we can incrementally introduce changes and avoid potential disastrous bugs. With the monolithic architecture each change requires a full build and redeployment of the whole application.
 
@@ -102,15 +102,15 @@ Many of these issues don't have a straightforward solution using the traditional
 
 So let's try the microservice approach and refactor our architecture to follow the microservice architectural pattern while continuing to use standard Java EE technologies. To achieve this, we are going to use the KumuluzEE framework:
 
-![Microservice architecture]({{ site.baseurl }}/assets/images/posts/microservices-with-java-ee-and-kumuluzee/microservice.png)
+![Microservice architecture]({{ site.baseurl }}/assets/images/posts/microservices-with-java-ee-and-kumuluzee-updated/microservice.png)
 
 We start by separating our concerns and split the catalogue and orders functionalities into two separately configured and deployed microservices. That way we have created microservices that are only concerned with their respected functionalities. We've also reduced the interference with one another and overall form a better modular and bug free application. Each one of them will communicate with each other through pre-defined REST interfaces. 
 
 If we look at the problems we listed we can see that now with microservices we have a straightforward solution for each and every one of them:
 
-- We can deploy to practically any cloud provider, including docker, and scale (horizontally and vertically) our microservices with a mouse click.
+- We can deploy to practically any cloud provider, including docker, and scale (horizontally and vertically) our microservices with a simple mouse click.
 
-- We can provide dynamic scaling based on current load with services such as Heroku and AWS ELB.
+- We can provide dynamic scaling based on current load with cloud platforms that support it.
 
 - As every microservice is deployed separately, we can scale out (or up) each one of them as much as needed.
 
@@ -118,11 +118,11 @@ If we look at the problems we listed we can see that now with microservices we h
 
 - We can create a separate microservice to contain our front-end static files. We then deploy it directly to a CDN or to a small instance in the cloud that sits behind a CDN.
 
-- Each microservice can be written in a different technology or language. And since the microservices are communicating with each other using REST interfaces through plain HTTP, we can use any combination we want. Such a design also enables us to simply drop in a replacement for an existing microservice without reprogramming all the others.
+- Each microservice can be written in a different technology or language. And since the microservices are communicating with each other using REST interfaces through plain HTTPS, we can use any combination we want. Such a design also enables us to simply drop in a replacement for an existing microservice without reprogramming all the others.
 
 - If one microservice fails, the others still function normally. When a different microservice is dependent on the one that failed, we can skip or temporary disable that particular functionality until it is back up.
 
-We do however need to make sure that the microservices are stateless in nature as specific instances can be destroyed, started or moved at any time. Every resource that a microservice uses should be an external one that is provided via a connection string or parameters. For instance; PostgreSQL as a database, RabbitMQ as a messaging service, Redis as a cache provider and S3 or Swift as file storage.
+We do however need to make sure that the microservices are stateless in nature as specific instances can be destroyed, started or moved at any time. Every resource that a microservice uses should be an external one that we can configure via the environment. For instance; PostgreSQL as a database, RabbitMQ as a messaging service, Redis as a cache provider and S3 or Swift as file storage.
 
 However, this kind of approach does not come without its drawbacks. Setting up and configuring Java EE projects to accompany this kind of architecture may not be so trivial.
 
@@ -132,9 +132,9 @@ Now that we know what we want to do, let's write our microservices (finally)!
 
 ## Maven
 
-We will create two projects, each one will contain its own microservice. For brevity's sake we will create both projects in the same repository. In real-world projects it is recommended to have a separate repository (git or otherwise) for each microservice so that they are treated as separate entities and have separate versioning and revision history as well as deployment.
+We will create two projects, each one will contain its own microservice. To simplify we will create both projects in the same repository. In real-world projects it is recommended to have a separate repository (git or otherwise) for each microservice so that they are treated as separate entities and have separate versioning and revision history as well as deployment.
 
-We will be using Maven to create the application as that is our system of choice and currently the only build system supported. Gradle support will be coming in future versions.
+We will be using Maven to create the application as that is our system of choice and currently the only build system supported.
 
 Our project structure will look like this:
 
@@ -157,7 +157,7 @@ Our project structure will look like this:
 +-- pom.xml
 ~~~
 
-Again this is only to simplify the example. In a real project the `catalogue` and `orders` folders/projects would each be in a separate repository. We have also added a module that will hold our JPA entities as they will be shared with our two microservices. First let's create the top-most `pom.xml` that will only serve in this example to include our main modules. We will be using `acme.com` as our package name and group id throughout the examples.
+Again this is only to simplify the example. In a real project the `catalogue` and `orders` folders/projects would each be in a separate repository. We have also added a module that will hold our JPA entities as they will be shared with our two microservices, again, to simplify the example. First let's create the top-most `pom.xml` that will only serve in this example to include our main modules. We will be using `acme.com` as our package name and group id throughout the examples, however the [GitHub](https://github.com/kumuluz/kumuluzee-samples) page will contain different package and artifact names to better match the overall samples structure.
 
 `FILE ./pom.xml`
 
@@ -203,21 +203,35 @@ $ mvn -B archetype:generate \
 
 ## Add KumuluzEE
 
-Now we need to add the appropriate dependencies. As mentioned the framework is completely modular which means that apart from the core functionality every Java EE component is packaged as a separate module and must be included explicitly as a dependency in order to use it. KumuluzEE will automatically detect which modules are included in the class path and properly configure them.
+Now we need to add the appropriate dependencies. As mentioned the framework is completely modular which means that apart from the core functionality every Java EE component is packaged as a separate module and must be included explicitly as a dependency in order to use it. KumuluzEE will automatically detect which modules are included and properly configure and enable them.
 
-All modules are versioned and released together, which helps reducing cross version conflicts and bugs. So it is recommended to define a property with the current version of KumuluzEE and use it with every dependency.
+All modules are versioned and released together, which helps reducing cross version conflicts and bugs. You can define a property with the current version of KumuluzEE to use it with every dependency or import the KumuluzEE BOM module, which will include the correct module dependency definitions in your project. In this sample we will use the latter.
 
 NOTE: Use the same version for every module as not doing so might result in unexpected behavior.
 
-`FILE ./catalogue/pom.xml`
+We will import the BOM to our parent `pom.xml`, which includes all of KumuluzEE' dependency definitions. This will allow us to include any KumuluzEE module without specifing its version.
+
+`FILE ./pom.xml`
 
 {% highlight xml %}
 <properties>
-    <kumuluzee.version>1.0.0</kumuluzee.version>
+    <kumuluzee.version>2.2.0</kumuluzee.version>
 </properties>
+
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.kumuluz.ee</groupId>
+            <artifactId>kumuluzee-bom</artifactId>
+            <version>${kumuluzee.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
 {% endhighlight %}
 
-First include the `core` module, which includes the bootstrapping logic and configurations.
+First we must include the `core` module to our first microservice `catalogue`. The core includes the main bootstrapping logic and configuration to start your microservice.
 
 `FILE ./catalogue/pom.xml`
 
@@ -225,25 +239,23 @@ First include the `core` module, which includes the bootstrapping logic and conf
 <dependency>
     <groupId>com.kumuluz.ee</groupId>
     <artifactId>kumuluzee-core</artifactId>
-    <version>${kumuluzee.version}</version>
 </dependency>
 {% endhighlight %}
 
-Now the core itself won't do much without something to run. At the very least we have to include an HTTP server that will process our applications requests and forward them to our desired Java EE components. Jetty is the preferred choice for the servlet implementation for its high performance and small footprint. Support for different servers like Tomcat, Grizzly and Undertow is coming soon.
+Now the core itself won't do much without something to run. At the very least we have to include an HTTP server and the servlet component that will process our applications requests and forward them to our desired Java EE components. Jetty is the preferred choice for the servlet implementation for its high performance and small footprint.
 
 `FILE ./catalogue/pom.xml`
 
-{% highlight bash %}
+{% highlight xml %}
 <dependency>
     <groupId>com.kumuluz.ee</groupId>
     <artifactId>kumuluzee-servlet-jetty</artifactId>
-    <version>${kumuluzee.version}</version>
 </dependency>
 {% endhighlight %}
 
 This is the bare minimum required to run a microservice with plain servlets and static files. Let's try it out! KumuluzEE will use a `webapp` folder at the root of your `resource` folder to look for files and configuration regarding it. This is the only difference to the standard Java EE file structure as the `webapp` folder has to be inside the `resource` folder, not alongside it. 
 
-We don't need to include a web.xml file, because KumuluzEE supports annotation scanning. However, when and if you need it, you can simply add it and it will be automatically detected and used.
+We don't need to include a web.xml file, because KumuluzEE supports annotation scanning as per the specification. However, when and if you need it, you can simply add it and it will be automatically detected and used.
 
 Let's add a simple HTML file.
 
@@ -274,7 +286,6 @@ To do so, you must include the `maven-dependency-plugin` to your `pom.xml` file,
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-dependency-plugin</artifactId>
-    <version>2.10</version>
     <executions>
         <execution>
             <id>copy-dependencies</id>
@@ -282,6 +293,9 @@ To do so, you must include the `maven-dependency-plugin` to your `pom.xml` file,
             <goals>
                 <goal>copy-dependencies</goal>
             </goals>
+            <configuration>
+                <includeScope>runtime</includeScope>
+            </configuration>
         </execution>
     </executions>
 </plugin>
@@ -299,81 +313,43 @@ And that is it. We went through our project structure and a basic overview of wh
 
 ## Using standard Java EE to implement our microservices
 
-Let's add the remaining required dependencies. We will need JAX-RS for the REST interfaces (JPA will be included in the `models` module). For simplicity, we will add CDI as well, as it comes with `EntityManager` injection using `@PersistenceContext`. However, we could just as well do without to keep our microservice even lighter.
+We'll continue and add the remaining required dependencies. We will need JAX-RS for the REST interfaces (JPA will be included in the `models` module). For simplicity, we will add CDI as well, as it comes with as it comes with full support for resource injecting (e.g. `EntityManager` injection using `@PersistenceContext`). However, we could just as well do without it to keep our microservice even lighter. For all the components we will add, we will use their reference implementations. However you are free to chose any other ones (e.g. Hibernate for JPA) that are supported. They will function identically with regards to the Java EE specification and APIs.
 
 `FILE ./catalogue/pom.xml`
 
 {% highlight xml %}
 <dependency>
     <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-jax-rs</artifactId>
-    <version>${kumuluzee.version}</version>
+    <artifactId>kumuluzee-jax-rs-jersey</artifactId>
 </dependency>
 <dependency>
     <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-cdi</artifactId>
-    <version>${kumuluzee.version}</version>
+    <artifactId>kumuluzee-cdi-weld</artifactId>
 </dependency>
 {% endhighlight %}
 
-Again if we wanted additional components, as of this writing, we can use these additional ones.
+Again if we wanted additional components we can simply add them to our dependency list along side the ones we just added and it will just work. You can find the updated list at the frameworks github page. 
 
-{% highlight xml %}
-<dependency>
-    <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-jpa</artifactId>
-    <version>${kumuluzee.version}</version>
-</dependency>
-{% endhighlight %}
-
-{% highlight xml %}
-<dependency>
-    <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-jsp</artifactId>
-    <version>${kumuluzee.version}</version>
-</dependency>
-{% endhighlight %}
-
-{% highlight xml %}
-<dependency>
-    <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-bean-validation</artifactId>
-    <version>${kumuluzee.version}</version>
-</dependency>
-{% endhighlight %}
-
-{% highlight xml %}
-<dependency>
-    <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-json-p</artifactId>
-    <version>${kumuluzee.version}</version>
-</dependency>
-{% endhighlight %}
+If you don't want to individually select the components in advance or don't need/want to fully customize your microservice, KumuluzEE also comes with a number of predefined profiles that contain the more popular combinations of components. Including, as of version 2.1.1, the `microProfile-1.0` profile with support for the [MicroProfile 1.0](https://microprofile.io) specification, following the announcement of KumuluzEE joining microprofile.io as a member.
 
 ### JPA module
 
-In the JPA module we will add our `persistence.xml` and entity classes that will be shared with both our microservices even though they will be ran separately. In the example we will use the PostgreSQL database. However, you are free to use any database JPA supports. Just add the driver as a dependency.
+In the JPA module we will add our `persistence.xml` and entity classes that will be shared with both our microservices even though they will be ran separately. In the example we will use a PostgreSQL database. However, you are free to use any database JPA and Java supports. Just add the driver as a dependency.
 
 `FILE ./models/pom.xml`
 
 {% highlight xml %}
-<properties>
-    <kumuluzee.version>1.0.0</kumuluzee.version>
-</properties>
-
-...
-
 <dependency>
     <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-jpa</artifactId>
-    <version>${kumuluzee.version}</version>
+    <artifactId>kumuluzee-jpa-eclipselink</artifactId>
 </dependency>
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>9.4-1201-jdbc41</version>
+    <version>42.0.0</version>
 </dependency>
 {% endhighlight %}
+
 `FILE ./models/src/main/resources/META-INF/persistence.xml`
 
 {% highlight xml %}
@@ -386,16 +362,12 @@ In the JPA module we will add our `persistence.xml` and entity classes that will
              version="2.1">
     <persistence-unit name="books" transaction-type="RESOURCE_LOCAL">
 
+        <non-jta-data-source>jdbc/BooksDS</non-jta-data-source>
+
         <class>com.acme.books.models.Book</class>
-        <class>com.acme.books.models.BookOrder</class>
+        <class>com.acme.books.models.Order</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url"
-                      value="jdbc:postgresql://localhost/books" />
-            <property name="javax.persistence.jdbc.user" value="postgres" />
-            <property name="javax.persistence.jdbc.password" value="postgres" />
-
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
             <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
             <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
@@ -405,27 +377,47 @@ In the JPA module we will add our `persistence.xml` and entity classes that will
 </persistence>
 {% endhighlight %}
 
-The values defined in the xml for the url, username and password can be overwritten by setting the `DATABASE_URL`, `DATABASE_USER` and `DATABASE_PASS` environment variables respectively.
+You can quickly notice we are not using JTA transaction and datasources in our JPA module. We have opted out of using JTA in this example in order to keep the microservice as light as possible as we will only have a single external resource (DB) and as such have no real need for it. 
+
+Configuration of the datasources and other preferences is handled with the KumuluzEE config extension, as this particular part is not handled by any Java EE specification. In short, everything in KumuluzEE (including your own settings) is configured through the main `config.yaml` file located at the root of the resources folder. Every value inside it can be overwriten with environemnt variables or system properties as well as any additional config sources you add (e.g. etcd and similar). A detailed overview of the framework will be described in following blog posts.
+
+`FILE ./catalogue/src/main/resources/config.yaml`
+`FILE ./orders/src/main/resources/config.yaml`
+
+{% highlight yml %}
+kumuluzee:
+  datasources:
+    - jndi-name: jdbc/BooksDS
+      connection-url: jdbc:postgresql://localhost:5432/postgres
+      username: postgres
+      password: postgres
+      max-pool-size: 20
+{% endhighlight %}
+
+Every value defined in the yaml file can be overwritten by setting the approriate environment variable. For example, if we want to override the datasource password we can set the environemnt variable `KUMULUZEE_DATASOURCES[0]_PASSWORD` before we start our microservice. We can quickly see a pattern how we can access and override any variable in the config file.
+
+Next we need to create our entities.
 
 `FILE ./models/src/main/java/com/acme/books/models/Book.java`
 
 {% highlight java %}
 @Entity
-@NamedQuery(name="Book.findAll", query="SELECT b FROM Book b")
+@Table(name = "books")
+@NamedQuery(name = "Book.findAll", query = "SELECT b FROM Book b")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-	
+
     private String title;
-	
+
     private String description;
-	
+
     private String author;
-	
+
     @OneToMany(mappedBy="book")
-    private List<BookOrder> bookOrders;
+    private List<Order> bookOrders;
 
     public Integer getId() {
         return id;
@@ -458,30 +450,32 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
-    public List<BookOrder> getBookOrders() {
+
+    public List<Order> getBookOrders() {
         return bookOrders;
     }
 
-    public void setBookOrders(List<BookOrder> bookOrders) {
+    public void setBookOrders(List<Order> bookOrders) {
         this.bookOrders = bookOrders;
     }
 }
 {% endhighlight %}
 
-`FILE ./models/src/main/java/com/acme/books/models/BookOrder.java`
+`FILE ./models/src/main/java/com/acme/books/models/Order.java`
 
 {% highlight java %}
 @Entity
-@NamedQuery(name="BookOrder.findAll", query="SELECT o FROM BookOrder o")
-public class BookOrder {
+@Table(name = "orders")
+@NamedQuery(name = "BookOrder.findAll", query = "SELECT o FROM Order o")
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-	
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
-	
+
     @ManyToOne
     @JoinColumn(name="book_id")
     private Book book;
@@ -514,43 +508,21 @@ public class BookOrder {
 
 ### Orders module
 
-Now let's implement the orders module. We'll create an order resource that will contain two methods; `placeOrder(Book)` and `getOrder()`. We need to add the correct dependencies, a JAX-RS application and a JAX-RS resource.
+Now let's implement the orders module. We'll create an order resource that will contain two methods; `placeOrder(Book)` and `getOrder()`. We need to add the correct dependencies, a JAX-RS application and a JAX-RS resource. For this microservice we will add the MicroProfile 1.0 profile, which coincidentally, includes the exact correct components we need.
 
 NOTE: Don't forget to add the `webapp` folder to the root of your orders resource directory. You may also need to add a file inside the directory for certain tools to include the folder. In any case you should get very descriptive error messages.
 
 `FILE ./orders/pom.xml`
 
 {% highlight xml %}
-<properties>
-    <kumuluzee.version>1.0.0</kumuluzee.version>
-</properties>
-
-...
-
 <dependency>
     <groupId>com.acme.books</groupId>
     <artifactId>models</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${project.version}</version>
 </dependency>
 <dependency>
     <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-core</artifactId>
-    <version>${kumuluzee.version}</version>
-</dependency>
-<dependency>
-    <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-servlet-jetty</artifactId>
-    <version>${kumuluzee.version}</version>
-</dependency>
-<dependency>
-    <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-jax-rs</artifactId>
-    <version>${kumuluzee.version}</version>
-</dependency>
-<dependency>
-    <groupId>com.kumuluz.ee</groupId>
-    <artifactId>kumuluzee-cdi</artifactId>
-    <version>${kumuluzee.version}</version>
+    <artifactId>kumuluzee-microProfile-1.0</artifactId>
 </dependency>
 
 ...
@@ -566,6 +538,9 @@ NOTE: Don't forget to add the `webapp` folder to the root of your orders resourc
             <goals>
                 <goal>copy-dependencies</goal>
             </goals>
+            <configuration>
+                <includeScope>runtime</includeScope>
+            </configuration>
         </execution>
     </executions>
 </plugin>
@@ -582,25 +557,46 @@ public class OrdersApplication extends javax.ws.rs.core.Application {
 }
 {% endhighlight %}
 
+We will also create a class to hold our configuration parameters we will need. In this case the URL to the catalogue service, so we can correctly query the book details using its identification number. For now we will use a static value, you can take a look at the full example on GitHub to see how to integrate with the KumuluzEE config extension.
+
+{% highlight java %}
+@ApplicationScoped
+public class OrdersProperties {
+
+    private String catalogueUrl = "http://localhost:3000";
+
+    public String getCatalogueUrl() {
+        return catalogueUrl;
+    }
+
+    public void setCatalogueUrl(String catalogueUrl) {
+        this.catalogueUrl = catalogueUrl;
+    }
+}
+{% endhighlight %}
+
 And the resource:
 
 `FILE ./orders/src/main/java/com/acme/books/OrdersResource.java`
 
 {% highlight java %}
 @Path("/orders")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 @RequestScoped
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class OrdersResource {
 
     @PersistenceContext(unitName = "books")
     private EntityManager em;
 
+    @Inject
+    private OrdersProperties ordersProperties;
+
     @GET
     @Path("/{id}")
     public Response getOrder(@PathParam("id") Integer id) {
 
-        BookOrder o = em.find(BookOrder.class, id);
+        Order o = em.find(Order.class, id);
 
         if (o == null)
             return Response.status(Response.Status.NOT_FOUND).build();
@@ -610,9 +606,20 @@ public class OrdersResource {
 
     @POST
     public Response placeOrder(Book b) {
-       
-        BookOrder o = new BookOrder();
-        o.setBook(b);
+
+        if (b == null || b.getId() == null) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+
+        Response bookResponse = ClientBuilder.newClient()
+                .target(ordersProperties.getCatalogueUrl()).path("books").path(b.getId().toString()).request().get();
+
+        if (!bookResponse.getStatusInfo().getFamily().equals(Response.Status.Family.SUCCESSFUL)) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+
+        Order o = new Order();
+        o.setBook(bookResponse.readEntity(Book.class));
         o.setOrderDate(new Date());
 
         em.getTransaction().begin();
@@ -626,7 +633,9 @@ public class OrdersResource {
 }
 {% endhighlight %}
 
-As you can see the microservice is exactly the same as any other Java EE app. As of right now we have to manually manage transactions as the JTA module is not yet available. We can do so by either creating a simple CDI interceptor that will start and commit them or manually do it in every method. Either way, sometimes a bit more transparency may be a good thing.
+As you can see the microservice is exactly the same as any other Java EE app. We opted out of using JTA which means we have to manually manage transactions. In such cases we don't believe that that is in and of itself a bad thing. Sometimes a bit more transparency may be a good thing.
+
+In our `placeOrder(Book)` method you can see an example of communicating with our other microservice via the REST APIs and not directly in code. This way we successfully decoupled our microservices from one another.
 
 > A microservice can and should contain multiple REST resources. To put it differently; it should contain as many REST resources as it needs to perform the functions it is designed to do.
 
@@ -657,11 +666,11 @@ We have already added the required dependencies when we were getting familiar wi
 <dependency>
     <groupId>com.acme.books</groupId>
     <artifactId>models</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${project.version}</version>
 </dependency>
 {% endhighlight %}
 
-All that remains now is the REST resource implementation, that will actually be very similar to our orders resources.
+All that remains now is the REST resource implementation. It will actually be very similar to our orders resources.
 
 `FILE ./catalogue/src/main/java/com/acme/books/BooksApplication.java`
 
@@ -739,12 +748,15 @@ We can now browse our microservices and see them in action on `http://localhost:
 
 # In conclusion
 
-We have shpwn how KumuluzEE can help you creating microservices using standard Java EE specification and APIs. With KumuluzEE we are able to bridge the gap between Java EE and the microservice architecture and focus solely on developing with what we already know but in a completely new way. KumuluzEE seamlessly sets everything up automatically so we don't have too, while still allowing a great deal of customisation to accommodate our needs. On top of that it makes it easy to run our microservices. This opens a world of possible cloud configurations with almost any cloud provider out there that are simply not possible now. It also provides all the other benefits of microservices, including more flexible architecture, easier maintenance, better scalability, etc. without the added configuration overhead.
-
-In the next post we will be focusing on deploying our microservices into Docker and various cloud environments.
+We have shown how KumuluzEE can help you create microservices using standard Java EE specification and APIs. With KumuluzEE we are able to bridge the gap between Java EE and the microservice architecture and focus solely on developing with what we already know but in a completely new way. KumuluzEE seamlessly sets everything up automatically so it just works, while still allowing a great deal of customisation to accommodate our needs. On top of that it makes it easy to run our microservices. This opens a world of possible cloud configurations with almost any cloud provider out there that are simply not possible now. It also provides all the other benefits of microservices, including more flexible architecture, easier maintenance, better scalability, etc. without the added configuration overhead.
 
 # Read on
 
 - Get familiar with [KumuluzEE](https://ee.kumuluz.com)
-- View the code on [GitHub](https://github.com/TFaga/kumuluzee-example)
+- View the code on [GitHub](https://github.com/kumuluz/kumuluzee-samples)
 - Discover [microservices](http://microservices.io)
+- Read about [Micro Profile](https://microprofile.io)
+
+## KumuluzEE Extensions
+
+In this tutorial, we have described the basic steps for developing a microservice. Microservice architecture, or more generally, cloud-native architecture opens several new perspectives, related to microservice configuration, logging, discovery, circuit-breakers, metrics, security, event streaming and more. KumuluzEE provides extensions, which address these topics. The KumuluzEE framework already provides support for configuring microservices using environment variables or property files or YAML files. KumuluzEE extensions provide even broader functionalities, not only for configuration, but also for logging, discovery, circuit-breakers, metrics, security, event streaming and more. We don’t cover them here as each one would need a separate blog post to properly describe. For now you can find them on our home page or on the GitHub page and look out for future blog posts covering them soon.
