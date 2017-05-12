@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Microservices with Java EE and KumuluzEE"
+title:  "Develop microservices with Java EE and KumuluzEE"
 date:   2017-05-01
 author: tfaga
 categories: [Architecture]
@@ -14,7 +14,7 @@ It expands on the benefits and drawbacks compared to the monolithic architecture
 
 The industry standard approach for deploying Java EE applications is packing all components into single EAR/WAR archive and deploying the archive on an application server. Although this approach has several advantages, particularly from the ease-of-development perspective, it leads to monolithic architecture, makes applications difficult to maintain, and - particularly important - makes such applications more difficult and sometimes impossible to scale to meet today's real world demands, especially in PaaS (cloud) environments.
 
-Microservice architecture addresses these shortcomings by decomposing an application into a set of microservices. Each microservice has well-defined functionalities and an interface to communicate with other microservices (such as REST, WSDL, or if needed even RMI). Most often, microservices are stateless. 
+Microservice architecture addresses these shortcomings by decomposing an application into a set of microservices. Each microservice has well-defined functionalities and an interface to communicate with other microservices (such as REST, WSDL, or if needed even RMI). Most often, microservices are stateless.
 
 Instead of packing all microservices into a single archive (EAR/WAR), each microservice is developed and deployed independently of each other. This brings several advantages, such as:
 
@@ -33,11 +33,11 @@ Enter KumuluzEE, a framework that automates the tasks, related to the deployment
 
 # Getting started
 
-Let's get started! First let's examine what KumuluzEE provides and how we can start using it to build our microservices. The main benefit is that we don't actually have to learn "yet another framework". KumuluzEE uses the *standard Java EE specifications* and components that many developers and DevOps including us are very familiar with. In fact if you use the default configuration (which is perfectly fine for most cases) and control your settings with environment variables that you as well as KumuluzEE defines, you don't have to write anything extra at all. You get the microservice benefits "for free". 
+Let's get started! First let's examine what KumuluzEE provides and how we can start using it to build our microservices. The main benefit is that we don't actually have to learn "yet another framework". KumuluzEE uses the *standard Java EE specifications* and components that many developers and DevOps including us are very familiar with. In fact if you use the default configuration (which is perfectly fine for most cases) and control your settings with environment variables that you as well as KumuluzEE defines, you don't have to write anything extra at all. You get the microservice benefits "for free".
 
 > You can write your microservices the same way you write your Java EE applications, using the same tools you always use. The framework will take care of bootstrapping all the required components to make your application run.
 
-The result are small standalone (and preferably stateless) microservices that can run anywhere (remember "Write once, run anywhere") using technologies that used to require full blown heavyweight application servers. 
+The result are small standalone (and preferably stateless) microservices that can run anywhere (remember "Write once, run anywhere") using technologies that used to require full blown heavyweight application servers.
 
 ## Perfect for running in modern Dockerized environments
 
@@ -104,7 +104,7 @@ So let's try the microservice approach and refactor our architecture to follow t
 
 ![Microservice architecture]({{ site.baseurl }}/assets/images/posts/microservices-with-java-ee-and-kumuluzee-updated/microservice.png)
 
-We start by separating our concerns and split the catalogue and orders functionalities into two separately configured and deployed microservices. That way we have created microservices that are only concerned with their respected functionalities. We've also reduced the interference with one another and overall form a better modular and bug free application. Each one of them will communicate with each other through pre-defined REST interfaces. 
+We start by separating our concerns and split the catalogue and orders functionalities into two separately configured and deployed microservices. That way we have created microservices that are only concerned with their respected functionalities. We've also reduced the interference with one another and overall form a better modular and bug free application. Each one of them will communicate with each other through pre-defined REST interfaces.
 
 If we look at the problems we listed we can see that now with microservices we have a straightforward solution for each and every one of them:
 
@@ -253,7 +253,7 @@ Now the core itself won't do much without something to run. At the very least we
 </dependency>
 {% endhighlight %}
 
-This is the bare minimum required to run a microservice with plain servlets and static files. Let's try it out! KumuluzEE will use a `webapp` folder at the root of your `resource` folder to look for files and configuration regarding it. This is the only difference to the standard Java EE file structure as the `webapp` folder has to be inside the `resource` folder, not alongside it. 
+This is the bare minimum required to run a microservice with plain servlets and static files. Let's try it out! KumuluzEE will use a `webapp` folder at the root of your `resource` folder to look for files and configuration regarding it. This is the only difference to the standard Java EE file structure as the `webapp` folder has to be inside the `resource` folder, not alongside it.
 
 We don't need to include a web.xml file, because KumuluzEE supports annotation scanning as per the specification. However, when and if you need it, you can simply add it and it will be automatically detected and used.
 
@@ -328,7 +328,7 @@ We'll continue and add the remaining required dependencies. We will need JAX-RS 
 </dependency>
 {% endhighlight %}
 
-Again if we wanted additional components we can simply add them to our dependency list along side the ones we just added and it will just work. You can find the updated list at the frameworks github page. 
+Again if we wanted additional components we can simply add them to our dependency list along side the ones we just added and it will just work. You can find the updated list at the frameworks github page.
 
 If you don't want to individually select the components in advance or don't need/want to fully customize your microservice, KumuluzEE also comes with a number of predefined profiles that contain the more popular combinations of components. Including, as of version 2.1.1, the `microProfile-1.0` profile with support for the [MicroProfile 1.0](https://microprofile.io) specification, following the announcement of KumuluzEE joining microprofile.io as a member.
 
@@ -377,14 +377,14 @@ In the JPA module we will add our `persistence.xml` and entity classes that will
 </persistence>
 {% endhighlight %}
 
-You can quickly notice we are not using JTA transaction and datasources in our JPA module. We have opted out of using JTA in this example in order to keep the microservice as light as possible as we will only have a single external resource (DB) and as such have no real need for it. 
+You can quickly notice we are not using JTA transaction and datasources in our JPA module. We have opted out of using JTA in this example in order to keep the microservice as light as possible as we will only have a single external resource (DB) and as such have no real need for it.
 
 Configuration of the datasources and other preferences is handled with the KumuluzEE config extension, as this particular part is not handled by any Java EE specification. In short, everything in KumuluzEE (including your own settings) is configured through the main `config.yaml` file located at the root of the resources folder. Every value inside it can be overwriten with environemnt variables or system properties as well as any additional config sources you add (e.g. etcd and similar). A detailed overview of the framework will be described in following blog posts.
 
 `FILE ./catalogue/src/main/resources/config.yaml`
 `FILE ./orders/src/main/resources/config.yaml`
 
-{% highlight yml %}
+{% highlight yaml %}
 kumuluzee:
   datasources:
     - jndi-name: jdbc/BooksDS
@@ -708,7 +708,7 @@ public class BooksResource {
     @GET
     @Path("/{id}")
     public Response getBook(@PathParam("id") Integer id) {
-       
+
         Book b = em.find(Book.class, id);
 
         return Response.ok(b).build();

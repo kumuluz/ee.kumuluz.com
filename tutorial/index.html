@@ -1,0 +1,85 @@
+---
+layout: default
+title: Tutorials | KumuluzEE
+subtitle: Tutorials and Quickstart Samples
+---
+
+<div id="generator">
+	{% include subtitle.html %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Tutorials</h2>
+				<p class="subsubtitle">Guides to help you get started with development.</p><br/>
+
+				<div class="row">
+					<div class="col-md-12 tutorial-block">
+						<a href="{{ site.posts[0].url | prepend: site.baseurl }}">Develop microservices with Java EE and KumuluzEE</a>
+						<p>This article explores the way the microservices can be used together with Java EE using KumuluzEE. It expands on the benefits and drawbacks compared to the monolithic architecture that’s popular in Java EE.</p>
+					</div>
+				</div>
+
+				<br/>
+			</div>
+			<div class="col-md-12">
+				<h2>Quickstart Samples</h2>
+				<p class="subsubtitle">Working examples ready for you to get started.</p><br/>
+
+				<h3>Java EE Microservices</h3>
+				<div class="row">
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/microservices-simple" target="_blank">Microservices simple</a>
+						<p>Simple example of splitting an application into microservices using KumuluzEE.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jax-rs" target="_blank">JAX-RS REST service sample</a>
+						<p>Develop a REST service using standard JAX-RS 2 API and pack it as a KumuluzEE microservice.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jax-ws" target="_blank">JAX-WS SOAP web service sample</a>
+						<p>Develop a SOAP web service using standard JAX-WS 2 API and pack it as a KumuluzEE microservice.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jpa" target="_blank">JPA and CDI sample</a>
+						<p>Develop JPA entities and use CDI within a REST service and pack it as a KumuluzEE microservice.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jsf" target="_blank">Java Server Faces (JSF) sample</a>
+						<p>Develop a sample JSF application and pack it as a KumuluzEE microservice.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jsp" target="_blank">Java Server Pages (JSP) and Servlet sample</a>
+						<p>Develop a sample JSP and Servlet and pack it as a KumuluzEE microservice.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/servlet" target="_blank">Servlet sample</a>
+							<p>Develop a servlet using standard Servlet 3.0 API and pack it as a KumuluzEE microservice.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/websocket" target="_blank">Websocket sample</a>
+						<p>Develop a websocket endpoint using standard WebSocket API and pack it as a KumuluzEE microservice.</p>
+					</div>
+				</div>
+
+				<br/><br/>
+				<h3>KumuluzEE extensions</h3>
+				<div class="row">
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-logs" target="_blank">Logs sample</a>
+						<p>Build a REST service which utilizes a built-in logging framework to log basic metrics and pack it as a KumuluzEE microservice.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-config" target="_blank">Config sample for built-in configuration sources</a>
+						<p>Build a REST service which utilizes a build-in configuration framework to access environmental variables and configuration files and pack it as a KumuluzEE microservice.</p>
+					</div>
+					<div class="col-md-6 tutorial-block">
+						<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-config-etcd" target="_blank">Config sample with etcd</a>
+						<p>Build a REST service which utilizes KumuluzEE Config to access configuration properties stored in etcd and pack it as a KumuluzEE microservice.</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

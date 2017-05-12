@@ -583,6 +583,10 @@ ul.share-buttons{
     vertical-align: middle;
 }
 
+.structure .block a {
+  color: #333;
+}
+
 .ribbon {
     height: 100px;
     overflow: hidden;
@@ -660,4 +664,48 @@ pre {
     margin-left: -25px !important;
     cursor: pointer;
   }
+}
+
+.subsubtitle{
+  margin-top: -20px;
+}
+
+.tutorial-block{
+  a{
+    font-size: 20px;
+  }
+}
+
+.tutorial-side-menu{
+  background: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  h3{
+    background: #355383;
+    color: white;
+    padding: 10px;
+  }
+  h4 {
+    padding: 10px;
+    color: white;
+    background: $base-color;
+  }
+  a.active{
+    background: #c5d2e6;
+  }
+  a{
+    color: #333;
+    font-size: 16px;
+    padding: 0 10px;
+    display: inline-block;
+    border-bottom: 1px solid #e6e6e6;
+    width: 100%;
+    text-decoration: none;
+  }
+  a:hover{
+    color: white;
+    background: #3c5f96;
+    text-decoration: none;
+  }
+
 }

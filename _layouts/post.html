@@ -6,7 +6,38 @@ layout: default
 
 	<div class="container">
 		<div class="row header">
-			<div class="col-md-12">
+			<div class="col-md-3">
+				<div class="tutorial-side-menu">
+					<h3>Tutorials</h3>
+					<a href="{{ site.posts[0].url | prepend: site.baseurl }}">Develop microservices with Java EE and KumuluzEE</a>
+
+					<h3>Samples</h3>
+					<h4>Java EE Microservices</h4>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/microservices-simple" target="_blank">Microservices simple</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jax-rs" target="_blank">JAX-RS REST service sample</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jax-ws" target="_blank">JAX-WS SOAP web service sample</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jpa" target="_blank">JPA and CDI sample</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jsf" target="_blank">Java Server Faces (JSF) sample</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/jsp" target="_blank">Java Server Pages (JSP) and Servlet sample</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/servlet" target="_blank">Servlet sample</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/websocket" target="_blank">Websocket sample</a>
+
+					<h4>KumuluzEE extensions</h4>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-logs" target="_blank">Logs sample</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-config" target="_blank">Config sample for built-in configuration sources</a>
+					<a href="https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-config-etcd" target="_blank">Config sample with etcd</a>
+				</div>
+			</div>
+			<script>
+				var links = document.querySelectorAll(".tutorial-side-menu > a");
+				var href = window.location.href;
+				for(var i=0; i<links.length; i++){
+					if(links[i].href === href){
+						links[i].classList.add("active");
+					}
+				}
+			</script>
+			<div class="col-md-9">
     			{{ content }}
   			</div>
   		</div>
