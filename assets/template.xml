@@ -16,9 +16,18 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kumuluz.version>{{kumuluzVersion}}</kumuluz.version>
+        {{ #isConfig }}
+        <kumuluzee-config.version>{{kumuluzeeConfigVersion}}</kumuluzee-config.version>
+        {{ /isConfig }}
         {{ #isLogs }}
         <kumuluzee-logs.version>{{kumuluzeeLogsVersion}}</kumuluzee-logs.version>
         {{ /isLogs }}
+        {{ #isDiscovery }}
+        <kumuluzee-discovery.version>{{kumuluzeeDiscoveryVersion}}</kumuluzee-discovery.version>
+        {{ /isDiscovery }}
+        {{ #isSecurity }}
+        <kumuluzee-security.version>{{kumuluzeeSecurityVersion}}</kumuluzee-security.version>
+        {{ /isSecurity }}
         <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
     </properties>
 
@@ -66,3 +75,4 @@
     </build>
 
 </project>
+

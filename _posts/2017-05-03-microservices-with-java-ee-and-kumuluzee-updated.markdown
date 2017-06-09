@@ -60,7 +60,7 @@ KumuluzEE comes with support for several Java EE specifications that we can sele
 
 You can selectively choose to include only those that you actually need. This means that you can select only the dependencies and components that you use, instead of always having the entire runtime present that's using your memory and slowing your microservice down, as well as allow each and every microservice you create to have its own tailored runtime.
 
-For certain components you can also choose which implementation you would like to include, in case you prefer one or the other. The component list and their implementations that are available is constantly being updated and can be found on [GitHub](https://github.com/kumuluz/kumuluzee).
+For certain components you can also choose which implementation you would like to include, in case you prefer one or the other. The component list and their implementations that are available is constantly being updated and can be found on [GitHub](https://github.com/kumuluz).
 
 KumuluzEE is also fully compliant with MicroProfile 1.0. As we will show later, you can choose to include the MicroProfile 1.0 profile, which already contains JAX-RS, CDI and JSON-P.
 

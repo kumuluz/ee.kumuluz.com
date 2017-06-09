@@ -32,8 +32,10 @@ subtitle: Quickstart development with online pom generator
 							<div class="form-group">
 			        	<label class="col-xs-12 col-sm-3 control-label" for="version">KumuluzEE</label>
 								<div class="col-xs-12 col-sm-8">
-									<input class="form-control" type="text" id="version" name="version" />
-									<span id='versionplaceholder' ></span>
+									<select id="version" name="version" class="form-control">
+										<!--<option value="2.3.0">2.3.0</option>-->
+										<option value="2.2.0">2.2.0</option>
+									</select>
 								</div>
 							</div>
 						</div>
@@ -102,20 +104,21 @@ subtitle: Quickstart development with online pom generator
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-el-uel" />EL 3.0 (RI UEL)
-									</label>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-eclipselink" />JPA 2.1 (RI EclipseLink)
+										<input id="eclipselink" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-eclipselink" />JPA 2.1 (RI EclipseLink)
 									</label>
 								</div>
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-hibernate" />JPA 2.1 (RI Hibernate)
+										<input id="hibernate" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-hibernate" />JPA 2.1 (RI Hibernate)
+									</label>
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-el-uel" />EL 3.0 (RI UEL)
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
@@ -138,6 +141,11 @@ subtitle: Quickstart development with online pom generator
 										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-bean-validation-hibernate-validator" />Bean Validation 1.1 (RI Hibernate validator)
 									</label>
 								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input type="checkbox" name="dependencies" class="v2-3-0" value="com.kumuluz.ee:kumuluzee-jta-narayana" />JTA 1.2 (Narayana)
+									</label>
+								</div>
 							</div>
 						</div>
 						<div class="col-xs-12">
@@ -145,10 +153,34 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='logs' type="checkbox" name="dependencies" value="com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}" />KumuluzEE Logs
+										<input class='config v2-3-0' type="checkbox" name="dependencies" value="kumuluzee-config-etcd:com.kumuluz.ee.config:${kumuluzee-config.version}" />KumuluzEE Config (etcd)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='discovery v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-etcd:${kumuluzee-discovery.version}" />KumuluzEE Discovery (etcd)
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input disabled type="checkbox" name="dependencies" value="" />KumuluzEE Kafka
 									</label>
 								</div>
 							</div>
+
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='logs' type="checkbox" name="dependencies" value="com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}" />KumuluzEE Logs
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='security v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}" />KumuluzEE Security (Keycloak)
+									</label>
+								</div>
+							</div>
+
 		        </div>
 
 						<div class="col-xs-12 text-center" style='padding-top: 30px;'>
@@ -172,9 +204,17 @@ function generatePom() {
 					name: $("#name").val() || "Sample project",
 					description: $("#description").val() || "Sample KumuluzEE project",
 					kumuluzVersion: $("#version").val() || "2.2.0",
+
+					isLogs: $('.logs').prop('checked'),
 					kumuluzeeLogsVersion: kumuluzeeLogsVersion || "1.1.0",
+					isConfig: $('.config').prop('checked'),
+					kumuluzeeConfigVersion: '1.0.0-SNAPSHOT',
+					isDiscovery: $('.discovery').prop('checked'),
+					kumuluzeeDiscoveryVersion: '1.0.0-SNAPSHOT',
+					isSecurity: $('.security').prop('checked'),
+					kumuluzeeSecurityVersion: '1.0.0-SNAPSHOT',
+
 					dependencies: [],
-					isLogs: $('.logs').prop('checked')
 			};
 
 			// parse dependencies
@@ -232,22 +272,39 @@ function generatePom() {
 				}
 			}
 		});
-		$.get("https://api.github.com/repos/kumuluz/kumuluzee/releases?per_page=10", function(response){
-			if(response && response.length>0){
-				var versions = [];
-				for(var release of response){
-						if(!release.prerelease){
-							versions.push(release.name.substring(1));
-						}
-				}
-				if(versions.length>0){
-					$("#version").remove();
-					$("#versionplaceholder").append("<select id='version' name='version' class='form-control'></select>");
-					for(var version of versions){
-						$("#version").append("<option value='"+version+"'>"+version+"</option>");
-					}
-				}
+
+		// Disable incompatible extensions
+		$("#version").change(onVersionChange);
+		function onVersionChange (e){
+			switch (e.target.value) {
+				case '2.3.0':
+					$(".v2-3-0").each(function(i, elm){
+						$(elm).prop('disabled', false);
+					});
+					return;
+				default:
+					$(".v2-3-0").each(function(i, elm){
+						$(elm).prop('disabled', true);
+						$(elm).prop('checked', false);
+					});
 			}
+		}
+
+		// Temp disable untill released 2.3.0
+		onVersionChange({target:{value:'2.2.0'}});
+
+		// Disable JPA if one is selected
+		$("#eclipselink").change(function(e){
+			if(e.target.disabled)
+				return;
+			$("#hibernate").prop("disabled", e.target.checked);
+			$("#hibernate").prop("checked", false);
+		});
+		$("#hibernate").change(function(e){
+			if(e.target.disabled)
+				return;
+			$("#eclipselink").prop("disabled", e.target.checked);
+			$("#eclipselink").prop("checked", false);
 		});
 	});
 </script>

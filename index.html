@@ -74,82 +74,82 @@ layout: default
                 <div class="container">
                   <div class="row structure" style="margin-top: 30px;">
                       <div class="col-xs-12">
-                          <div class="block" style="min-height:220px">
+                          <div class="block">
                               <div>
                                   <h3><a href="https://github.com/kumuluz/kumuluzee" target="_blank"><span>KumuluzEE microservice framework</span></a></h3>
-                                  <p><span >For creating microservices using JavaEE</span></p>
+                                  <p><span >For creating microservices using JavaEE and packing them as Docker containers.</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px">
+                          <div class="block">
                               <div>
-                                  <h3><span>KumuluzEE REST Patterns</span></h3>
-                                  <p><span>For implementation of common, advanced and flexible REST API functionalities</span></p>
+                                  <h3><a href="https://github.com/kumuluz/kumuluzee-rest" target="_blank"><span>KumuluzEE REST</span></a></h3>
+                                  <p><span>For implementation of common, advanced and flexible REST API functionalities and patterns, such as paging, querying, filtering, rate limiting, etc. Includes support for exposing JPA entites through REST.</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px">
+                          <div class="block">
                               <div>
                                   <h3><a href="https://github.com/kumuluz/kumuluzee-config" target="_blank"><span>KumuluzEE Config</span></a></h3>
-                                  <p><span>Config for configuration (using ENV variables and/or config server, such as etcd or Consul)</span></p>
+                                  <p><span>For dynamic centralized configuration (using ENV variables or config server, such as etcd or Consul).</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px">
+                          <div class="block">
                               <div>
                                   <h3><a href="https://github.com/kumuluz/kumuluzee-logs" target="_blank"><span>KumuluzEE Logs</span></a></h3>
-                                  <p><span>For advanced microservice framework for logging</span></p>
+                                  <p><span>For advanced microservice framework for logging.</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px">
+                          <div class="block">
                               <div>
                                   <h3><a href="https://github.com/kumuluz/kumuluzee-discovery" target="_blank"><span>KumuluzEE Discovery</span></a></h3>
-                                  <p><span>For service discovery (etcd or Consul)</span></p>
+                                  <p><span>For dynamic service discovery (etcd or Consul). Fully compatible with Kubernetes.</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px">
+                          <div class="block">
                               <div>
                                   <h3><span>KumuluzEE Metrics</span></h3>
-                                  <p><span>For easy collection and reporting of performance metrics</span></p>
+                                  <p><span>For easy collection and reporting of performance metrics.</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px">
+                          <div class="block">
                               <div>
                                   <h3><a href="https://github.com/kumuluz/kumuluzee-security" target="_blank"><span>KumuluzEE Security</span></a></h3>
-                                  <p><span>For easy integration with OAuth2/OpenID identity and access managemant providers</span></p>
+                                  <p><span>For easy integration with OAuth2/OpenID identity and access managemant providers.</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px" style="position:relative; overflow: hidden;">
+                          <div class="block" style="position:relative; overflow: hidden;">
                               <div>
                                   <h3><span>KumuluzEE Circuit Breaker</span></h3>
-                                  <p><span>For implementing circuit breakers and decoupling microservices</span></p>
+                                  <p><span>For implementing circuit breakers and decoupling microservices.</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px" style="position:relative; overflow: hidden;">
+                          <div class="block" style="position:relative; overflow: hidden;">
                               <div>
                                   <h3><span>KumuluzEE Kafka</span></h3>
-                                  <p><span>For event streaming support using Apache Kafka</span></p>
+                                  <p><span>For event streaming support using Apache Kafka.</span></p>
                               </div>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="min-height:220px" style="position:relative; overflow: hidden;">
+                          <div class="block" style="position:relative; overflow: hidden;">
                               <div>
                                   <h3><span>KumuluzEE REST Blockchain</span></h3>
-                                  <p><span>For Blockchain-enabled REST services</span></p>
+                                  <p><span>For Blockchain-enabled microservices.</span></p>
                                   <div class="ribbon"><span>Coming soon</span></div>
                               </div>
                           </div>
@@ -178,12 +178,13 @@ layout: default
                           <ul>
                             <li>Allows you to develop microservices using standard Java EE technologies.</li>
                             <li>Allows you to gradually migrate existing Java EE applications to microservices and cloud-native architecture.</li>
-                            <li>Zero lock-in. KumuluzEE does not require any specific code. Everything is configured in pom.xml</li>
+                            <li>Zero lock-in. KumuluzEE does not require any specific code. Everything is configured in pom.xml.</li>
                             <li>Develop and build microservices as stand-alone JARs with minimal footprint.</li>
-                            <li>Leverage your existing Java EE knowledge and extend it to cloud-native architecture. </li>
-                            <li>Extend your microservices with common cloud-native patterns, such as config, discovery, logging, circuit-breakres, etc. KumuluzEE provides all the building blocks.</li>
+                            <li>Leverage your existing Java EE knowledge and extend it to cloud-native architecture.</li>
+                            <li>Extend your microservices with common cloud-native patterns, such as config, discovery, logging, circuit-breakers, etc. KumuluzEE provides all the building blocks.</li>
                             <li>Have complete control over Java EE components.</li>
-                            <li>KumuluzEE is fully integrated with KumuluzAPI, an innovative microservice API Management and other products for the Kumuluz family. </li>
+                            <li>KumuluzEE is fully integrated with KumuluzAPI, an innovative microservice API Management and other products for the Kumuluz family.</li>
+                            <li>Full support for Docker containers and fully compatible with Kubernetes.</li>
                           </ul>
                       </div>
                   </div>
@@ -192,7 +193,7 @@ layout: default
               <div class="col-md-12" style="margin-top: 50px;">
                   <div class="container">
                       <div class="row">
-                          <div class="col-md-10 col-md-offset-1">
+                          <div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
                               <p class="">
                                   <a href="{{ '/tutorial' | prepend: site.baseurl }}" class="btn btn-raised btn-extra-lg" style="width: 32%">TUTORIALS</a>
                                   <a href="https://github.com/kumuluz/kumuluzee/wiki/Getting-started" target="_blank" class="btn btn-raised btn-extra-lg" style="width: 32%;">GET STARTED</a>
@@ -213,125 +214,7 @@ layout: default
               <div class="container">
                 <div class="row references">
                     <span class="clients text-center" style="background: white; display:block; margin-top: 20px;">
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/akrapovic_1.png);">
-                        <span class="animated fadeIn">
-                            <div>Akrapovič</div>
-                        </span>
-                    </div>
 
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/osocial.png);">
-                        <span class="animated fadeIn">
-                            <div>Oesterreichische Sozialversicherung, Austria</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/ebcont.jpg);">
-                        <span class="animated fadeIn">
-                            <div>EBCONT group GmbH, Austria</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/cybergrid.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Cybergrid, Austria</div>
-                        </span>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/everis.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Everis, Chile</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/abanka_1.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Abanka</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/adriatic-slovenica.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Adriatic Slovenica</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/snaga.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Snaga</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/energetika_ljubljana.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Energetika Ljubljana</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/zzzs.jpg);">
-                        <span class="animated fadeIn">
-                            <div>ZZZS</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/ministry_public_admin.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Government - Ministry of Public Administration</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/ministry_justice.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Goverment - Ministry of Justice</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/pbs.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Poštna banka Slovenije</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/mmturist.jpg);">
-                        <span class="animated fadeIn">
-                            <div>MM turist</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/solvera_lynx.png);">
-                        <span class="animated fadeIn">
-                            <div>Solvera Lynx</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/irc.jpg);">
-                        <span class="animated fadeIn">
-                            <div>IRC Celje</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/src.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Src</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/informatika.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Informatika d.d.</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/hardlab.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Hardlab</div>
-                        </span>
-                    </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(/assets/images/customers/tovarna_podjemov.jpg);">
-                        <span class="animated fadeIn">
-                            <div>Tovarna podjemov</div>
-                        </span>
-                    </div>
                     </span>
                     <div class="col-xs-12 text-center" style="margin-top: 10px;">
                         <h4><span>Want to be listed here? Please <a href="mailto:info@sunesis.si">contact us</a>!</span></h4>
@@ -339,6 +222,19 @@ layout: default
                 </div>
               </div>
 
+              <script>
+              $.get( "https://kumuluz.com/customers.json", function( data ) {
+                $(data).each(function(i, elm) {
+                  $('.clients').append(`
+                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 block" style="background-image:url(https://kumuluz.com/${elm.logo});">
+                      <span class="animated fadeIn">
+                        <div>${elm.name}</div>
+                      </span>
+                    </div>
+                  `);
+                });
+              });
+              </script>
 
 
             </div>
