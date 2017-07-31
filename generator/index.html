@@ -33,7 +33,7 @@ subtitle: Quickstart development with online pom generator
 			        	<label class="col-xs-12 col-sm-3 control-label" for="version">KumuluzEE</label>
 								<div class="col-xs-12 col-sm-8">
 									<select id="version" name="version" class="form-control">
-										<!--<option value="2.3.0">2.3.0</option>-->
+										<option value="2.3.0">2.3.0</option>
 										<option value="2.2.0">2.2.0</option>
 									</select>
 								</div>
@@ -153,23 +153,35 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='config v2-3-0' type="checkbox" name="dependencies" value="kumuluzee-config-etcd:com.kumuluz.ee.config:${kumuluzee-config.version}" />KumuluzEE Config (etcd)
+										<input class='config-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}" />KumuluzEE Config (etcd) <p>SNAPSHOT version</p>
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='discovery v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-etcd:${kumuluzee-discovery.version}" />KumuluzEE Discovery (etcd)
+										<input class='config-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}" />KumuluzEE Config (Consul) <p>SNAPSHOT version</p>
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input disabled type="checkbox" name="dependencies" value="" />KumuluzEE Kafka
+										<input class='discovery-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-etcd:${kumuluzee-discovery.version}" />KumuluzEE Discovery (etcd) <p>SNAPSHOT version</p>
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='discovery-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-consul:${kumuluzee-discovery.version}" />KumuluzEE Discovery (Consul) <p>SNAPSHOT version</p>
 									</label>
 								</div>
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
 										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE Metrics
+									</label>
+								</div>
+
+
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='v2-4-0' type="checkbox" name="dependencies" disabled="" />KumuluzEE Fault Tolerance (including circuit breakers)
 									</label>
 								</div>
 
@@ -183,20 +195,35 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='security v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}" />KumuluzEE Security (Keycloak)
+										<input class='security v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}" />KumuluzEE Security (Keycloak) <p>SNAPSHOT version</p>
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='kafka v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}" />KumuluzEE Event Streaming (Kafka) <p>SNAPSHOT version</p>
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='rest v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}" />KumuluzEE REST <p>SNAPSHOT version</p>
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE CORS
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE Health
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE Tools (uberJAR)
 									</label>
 								</div>
 
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE REST
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-4-0' type="checkbox" name="dependencies" disabled="" />KumuluzEE Circuit Breaker
-									</label>
-								</div>
 							</div>
 
 		        </div>
@@ -225,13 +252,16 @@ function generatePom() {
 
 					isLogs: $('.logs').prop('checked'),
 					kumuluzeeLogsVersion: kumuluzeeLogsVersion || "1.1.0",
-					isConfig: $('.config').prop('checked'),
+					isConfig: $('.config-etcd').prop('checked') || $('.config-consul').prop('checked'),
 					kumuluzeeConfigVersion: '1.0.0-SNAPSHOT',
-					isDiscovery: $('.discovery').prop('checked'),
+					isDiscovery: $('.discovery-etcd').prop('checked') || $('.discovery-consul').prop('checked'),
 					kumuluzeeDiscoveryVersion: '1.0.0-SNAPSHOT',
 					isSecurity: $('.security').prop('checked'),
 					kumuluzeeSecurityVersion: '1.0.0-SNAPSHOT',
-
+					isStreaming: $('.kafka').prop('checked'),
+					kumuluzeeStreamingVersion: '1.0.0-SNAPSHOT',
+					isREST: $('.rest').prop('checked'),
+					kumuluzeeRESTVersion: '1.2.0-SNAPSHOT',
 					dependencies: [],
 			};
 
@@ -307,9 +337,6 @@ function generatePom() {
 					});
 			}
 		}
-
-		// Temp disable untill released 2.3.0
-		onVersionChange({target:{value:'2.2.0'}});
 
 		// Disable JPA if one is selected
 		$("#eclipselink").change(function(e){

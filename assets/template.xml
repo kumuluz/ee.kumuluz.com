@@ -25,9 +25,15 @@
         {{ #isDiscovery }}
         <kumuluzee-discovery.version>{{kumuluzeeDiscoveryVersion}}</kumuluzee-discovery.version>
         {{ /isDiscovery }}
+        {{ #isStreaming }}
+        <kumuluzee-streaming.version>{{kumuluzeeStreamingVersion}}</kumuluzee-streaming.version>
+        {{ /isStreaming }}
         {{ #isSecurity }}
         <kumuluzee-security.version>{{kumuluzeeSecurityVersion}}</kumuluzee-security.version>
         {{ /isSecurity }}
+	{{ #isREST }}
+        <kumuluzee-rest.version>{{kumuluzeeRESTVersion}}</kumuluzee-rest.version>
+        {{ /isREST }}
         <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
     </properties>
 
@@ -75,4 +81,3 @@
     </build>
 
 </project>
-
