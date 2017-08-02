@@ -8,8 +8,12 @@
     <version>{{projectVersion}}</version>
     <packaging>jar</packaging>
 
+    {{ #isName }}
     <name>{{name}}</name>
+    {{ /isName }}
+    {{ #isDescription }}
     <description>{{description}}</description>
+    {{ /isDescription }}
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -74,6 +78,9 @@
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
+                        <configuration>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

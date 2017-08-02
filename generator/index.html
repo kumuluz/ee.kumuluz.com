@@ -257,8 +257,10 @@ function generatePom() {
 					groupId: $("#groupId").val() || "com.kumuluzee.sample",
 					artifactId: $("#artifactId").val() || "sample",
 					projectVersion: $("#projectVersion").val() || "1.0.0",
+					isName: $("#name").val() || false,
 					name: $("#name").val() || "Sample project",
 					description: $("#description").val() || "Sample KumuluzEE project",
+					isDescription: $("#description").val() || false,
 					kumuluzVersion: $("#version").val() || "2.2.0",
 
 					isLogs: $('.logs').prop('checked'),
@@ -332,7 +334,7 @@ function generatePom() {
 			}
 		});
 
-		// Disable incompatible extensions
+		// Disable incompatible extensionsd
 		$("#version").change(onVersionChange);
 		function onVersionChange (e){
 			switch (e.target.value) {
