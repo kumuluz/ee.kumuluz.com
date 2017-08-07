@@ -41,6 +41,43 @@ layout: default
                 <div class="container">
                     <div class="row">
                         <div id="kumulzee-why" class="col-md-12" style="margin-top: 30px;">
+                            <h1>Why KumuluzEE</h1>
+                            <ul>
+                              <li>Develop <b>pure</b> Java EE based microservices and pack and execute them as stand-alone (Fat/Uber) JARs.</li>
+                              <li>Develop microservices using <b>standard Java EE APIs</b> and technologies.</li>
+                              <ul>
+                                <li>Leverage your existing Java EE knowledge and extend it to cloud-native architecture.</li>
+                                <li>Gradually migrate existing Java EE applications to microservices and cloud-native architecture.</li>
+                              </ul>
+                              <li>KumuluzEE is a <b>cloud-native, pure and open microservice framework</b>. <b>Light-weight, small footprint, rapid start, container-ready</b>.</li>
+                              <ul>
+                                <li>KumuluzEE is not a traditional Java EE app server, neither does it embed an app-server inside microservices. It provides <b>configurable Java EE environment</b> inside stand-alone JARs, which only require JRE (Java Runtime Environment) to execute.</li>
+                                <li>KumuluzEE <b>generates pure, efficient Java microservices</b>, which start considerably faster and have lower footprint than the majority of other Java microservice frameworks.</li>
+                                <li>KumuluzEE is fully <b>open, standard-based</b> and extensible.</li>
+                              </ul>
+                              <li><b>Zero lock-in</b>. KumuluzEE does not require any specific code. Everything is configured in pom.xml. You have the complete control over Java EE components you are using.</li>
+                              <li>KumuluzEE allows you to extend your microservices with common <b>cloud-native patterns</b>.</li>
+                              <ul>
+                                <li>KumuluzEE provides full support for config, discovery, health, logging, security, fault tolerance, circuit-breakers, event streaming, metrics, REST patterns and more.</li>
+                              </ul>
+                              <li>KumuluzEE microservices can be packed as <b>Docker containers</b> and provide full support for container environments.</li>
+                              <li>KumuluzEE microservices and fully compatible with <b>Kubernetes</b>.</li>
+                              <ul>
+                                <li>Service discovery, configuration, health, metrics and other extensions support specifics of Kubernetes and have been thoroughly tested.</li>
+                              </ul>
+                              <li>KumuluzEE microservices provide first-class support for API gateways.</li>
+                              <ul>
+                                <li>Service discovery, configuration and other extensions can be configured to work with different API gateways.</li>
+                              </ul>
+                              <li>KumuluzEE is fully integrated with <a href="https://kumuluz.com/">KumuluzAPI</a>, an innovative microservice API Management and other <a href="https://kumuluz.com/">Kumuluz</a> and <a href="https://kumuluz.com/">KumuluzDigital</a> products.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div id="kumulzee-why" class="col-md-12" style="margin-top: 30px;">
                             <h1>What people are saying about KumuluzEE</h1>
                             <blockquote class="quote">
                                 KumuluzEE is a great community effort to power Java EE API based microservices, especially on the cloud.
@@ -77,7 +114,7 @@ layout: default
                           <div class="block">
                               <div>
                                   <h3><a href="https://github.com/kumuluz/kumuluzee" target="_blank"><span>KumuluzEE microservice framework</span></a></h3>
-                                  <p><span >For creating microservices using JavaEE and packing them as Docker containers. Includes a <a href="https://github.com/kumuluz/kumuluzee/wiki/Configuration">configuration framework</a> and uber-JAR support.</span></p>
+                                  <p><span >For creating microservices using JavaEE and packing them as Docker containers. Includes a <a href="https://github.com/kumuluz/kumuluzee/wiki/Configuration">configuration framework</a> and <a href="https://github.com/kumuluz/kumuluzee/wiki/Uber-JAR-support" target="_blank">uber-JAR</a> support.</span></p>
                               </div>
                           </div>
                       </div>
@@ -148,16 +185,8 @@ layout: default
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                           <div class="block" style="position:relative; overflow: hidden;">
                               <div>
-                                  <h3><span>KumuluzEE CORS</span></h3>
+                                  <h3><a href="https://github.com/kumuluz/kumuluzee-cors" target="_blank"><span>KumuluzEE CORS</span></a></h3>
                                   <p><span>For Cross-Origin Resource Sharing (CORS) support.</span></p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="block" style="position:relative; overflow: hidden;">
-                              <div>
-                                  <h3><span>KumuluzEE Tools</span></h3>
-                                  <p><span>For various tools, such as packing and running microservices as uber JARs.</span></p>
                               </div>
                           </div>
                       </div>
@@ -187,25 +216,6 @@ layout: default
                             A standard approach for deploying Java EE applications is packing all components into a single EAR/WAR archive and deploying the archive on the application server. This leads to monolithic architectures which make applications difficult to maintain and scale in cloud (PaaS) environments. The microservice architecture addresses these shortcomings by decomposing an application into a set of stateless microservices. Each microservice has a well-defined functionality and an interface for communication with other services.
                           </p>
 
-                      </div>
-                  </div>
-              </div>
-
-              <div class="container">
-                  <div class="row">
-                      <div id="kumulzee-why" class="col-md-12" style="margin-top: 30px;">
-                          <h1>Why KumuluzEE</h1>
-                          <ul>
-                            <li>Allows you to develop microservices using standard Java EE technologies.</li>
-                            <li>Allows you to gradually migrate existing Java EE applications to microservices and cloud-native architecture.</li>
-                            <li>Zero lock-in. KumuluzEE does not require any specific code. Everything is configured in pom.xml.</li>
-                            <li>Develop and build microservices as stand-alone JARs with minimal footprint.</li>
-                            <li>Leverage your existing Java EE knowledge and extend it to cloud-native architecture.</li>
-                            <li>Extend your microservices with common cloud-native patterns, such as config, discovery, logging, circuit-breakers, etc. KumuluzEE provides all the building blocks.</li>
-                            <li>Have complete control over Java EE components.</li>
-                            <li>KumuluzEE is fully integrated with KumuluzAPI, an innovative microservice API Management and other products for the Kumuluz family.</li>
-                            <li>Full support for Docker containers and fully compatible with Kubernetes.</li>
-                          </ul>
                       </div>
                   </div>
               </div>

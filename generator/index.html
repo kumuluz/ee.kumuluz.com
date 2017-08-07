@@ -73,6 +73,18 @@ subtitle: Quickstart development with online pom generator
 								</div>
 							</div>
 						</div>
+
+						<div class="col-xs-12">
+							<h3>Features</h3>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input id="uberJAR" type="checkbox" />Generate Uber JAR
+									</label>
+								</div>
+							</div>
+						</div>
+
 						<div class="col-xs-12">
 							<h3>Components</h3>
 							<div class="col-sm-6">
@@ -185,14 +197,14 @@ subtitle: Quickstart development with online pom generator
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE Metrics
+										<input class='v2-4-0-disabled' type="checkbox" name="dependencies" disabled />KumuluzEE Metrics
 									</label>
 								</div>
 
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0' type="checkbox" name="dependencies" disabled="" />KumuluzEE Fault Tolerance (including circuit breakers)
+										<input class='v2-4-0-disabled' type="checkbox" name="dependencies" disabled="" />KumuluzEE Fault Tolerance (including circuit breakers)
 									</label>
 								</div>
 
@@ -221,17 +233,17 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE CORS
+										<input class='v2-4-0-SNAPSHOT cors' type="checkbox" name="dependencies" value="com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}" />KumuluzEE CORS <small style="color:#757575">SNAPSHOT version</small>
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE Health
+										<input class='v2-4-0-disabled' type="checkbox" name="dependencies" disabled />KumuluzEE Health
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0' type="checkbox" name="dependencies" disabled />KumuluzEE Tools (uberJAR)
+										<input class='v2-4-0-disabled' type="checkbox" name="dependencies" disabled />KumuluzEE Tools (uberJAR)
 									</label>
 								</div>
 
@@ -263,6 +275,8 @@ function generatePom() {
 					isDescription: $("#description").val() || false,
 					kumuluzVersion: $("#version").val() || "2.2.0",
 
+					isUberJAR: $("#uberJAR").prop("checked"),
+
 					isLogs: $('.logs').prop('checked'),
 					kumuluzeeLogsVersion: kumuluzeeLogsVersion || "1.1.0",
 					isConfig: $('.config-etcd').prop('checked') || $('.config-consul').prop('checked'),
@@ -275,6 +289,9 @@ function generatePom() {
 					kumuluzeeStreamingVersion: '1.0.0-SNAPSHOT',
 					isREST: $('.rest').prop('checked'),
 					kumuluzeeRESTVersion: '1.2.0-SNAPSHOT',
+					isCORS: $('.cors').prop('checked'),
+					kumuluzeeCORSVersion: '1.0.0-SNAPSHOT',
+
 					dependencies: [],
 			};
 
@@ -337,6 +354,7 @@ function generatePom() {
 		// Disable incompatible extensionsd
 		$("#version").change(onVersionChange);
 		function onVersionChange (e){
+			disableAllNewVersions();
 			switch (e.target.value) {
 				case '2.4.0-SNAPSHOT':
 					$(".v2-4-0-SNAPSHOT").each(function(i, elm){
@@ -348,27 +366,40 @@ function generatePom() {
 					});
 					return;
 				default:
-					$(".v2-3-0").each(function(i, elm){
-						$(elm).prop('disabled', true);
-						$(elm).prop('checked', false);
-					});
+					return;
 			}
 		}
 
+		function disableAllNewVersions() {
+			$(".v2-3-0, .v2-4-0-SNAPSHOT").each(function(i, elm){
+				$(elm).prop('disabled', true);
+				$(elm).prop('checked', false);
+			});
+		}
+		// Init correct version
+		onVersionChange({target: { value: $("#version").val()}});
+
 		// Disable JPA if one is selected
-		$("#eclipselink").change(function(e){
-			if(e.target.disabled)
-				return;
-			$("#hibernate").prop("disabled", e.target.checked);
-			$("#hibernate").prop("checked", false);
-		});
-		$("#hibernate").change(function(e){
-			if(e.target.disabled)
-				return;
-			$("#eclipselink").prop("disabled", e.target.checked);
-			$("#eclipselink").prop("checked", false);
-		});
+		onlyOne("#eclipselink", "#hibernate");
+		onlyOne(".config-consul", ".config-etcd");
+		onlyOne(".discovery-consul", ".discovery-etcd");
+
 	});
+
+	function onlyOne(first, second) {
+		$(first).change(function(e){
+			if(e.target.disabled)
+				return;
+			$(second).prop("disabled", e.target.checked);
+			$(second).prop("checked", false);
+		});
+		$(second).change(function(e){
+			if(e.target.disabled)
+				return;
+			$(first).prop("disabled", e.target.checked);
+			$(first).prop("checked", false);
+		});
+	}
 </script>
 <script src="/assets/js/mustache.min.js"></script>
 <script src="/assets/js/FileSaver.min.js"></script>

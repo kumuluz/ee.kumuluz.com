@@ -38,6 +38,9 @@
 	{{ #isREST }}
         <kumuluzee-rest.version>{{kumuluzeeRESTVersion}}</kumuluzee-rest.version>
         {{ /isREST }}
+        {{ #isCORS }}
+        <kumuluzee-cors.version>{{kumuluzeeCORSVersion}}</kumuluzee-cors.version>
+        {{ /isCORS }}
         <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
     </properties>
 
@@ -84,6 +87,25 @@
                     </execution>
                 </executions>
             </plugin>
+	    {{ #isUberJAR }}
+            <plugin>
+                <groupId>com.kumuluz.ee</groupId>
+                <artifactId>kumuluzee-loader-maven-plugin</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>package</id>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            <finalName/>
+                            <outputDirectory/>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+ 	    {{ /isUberJAR }}
         </plugins>
     </build>
 
