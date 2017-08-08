@@ -721,3 +721,28 @@ pre {
   }
 
 }
+
+
+.why p {
+  font-size: 17px;
+  font-weight: 400;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #eee;
+  text-align: left;
+  padding-left: 50px;
+  margin-bottom: 0;
+}
+.why p.sub {
+  padding-left: 100px;
+}
+
+.why p img {
+  height: 35px;
+  margin-right: 20px;
+  opacity: .4;
+}
+
+.why p:nth-child(odd) {
+  background: rgba(38, 60, 95, 0.1);
+}
