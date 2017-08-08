@@ -741,6 +741,14 @@ pre {
   height: 35px;
   margin-right: 20px;
   opacity: .4;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 5%;
+}
+.why p span {
+	display: inline-block;
+	vertical-align: middle;
+	width: 90%;
 }
 
 .why p:nth-child(odd) {
