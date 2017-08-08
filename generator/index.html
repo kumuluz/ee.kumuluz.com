@@ -319,8 +319,13 @@ function generatePom() {
           }
       }
 
+			var templateUrl = '/assets/template.xml';
+			if($('#version').val() == '2.4.0-SNAPSHOT'){
+				templateUrl = '/assets/template240.xml';
+			}
+
 			$.ajax({
-					url: "/assets/template.xml",
+					url: templateUrl,
 					dataType: "text",
 					success: function(xml) {
 							var pom = Mustache.render(xml, formData);
