@@ -743,8 +743,18 @@ pre {
   opacity: .4;
   display: inline-block;
   vertical-align: middle;
-  max-width: 5%;
+  max-width: 35px;
 }
+
+@media (max-width: 750px) {
+  .why p img {
+    display: block;
+    margin: auto;
+    padding-right: 50px;
+    max-width: 85px;
+  }
+}
+
 .why p span {
 	display: inline-block;
 	vertical-align: middle;
