@@ -250,15 +250,11 @@ h4 { font-family: $font-family; }
 
 	#banner-award {
 	    position: absolute;
-	    top: -10px;
 	    right: 10px;
+      top: 0;
 	    z-index: 1111;
 	    background-color: transparent;
 	    font-size: 20px;
-	    width: 180px;
-	    line-height: 26px;
-	    padding: 0 10px 10px 10px;
-	    color: #fff;
 	    text-shadow: none;
 
 	    .description {
@@ -267,7 +263,7 @@ h4 { font-family: $font-family; }
 	    }
 
 	    img {
-	    	width: 80px;
+	    	max-width: 200px;
 	    }
 
 	    @media screen and (max-width: 992px) {
@@ -467,6 +463,13 @@ blockquote.quote {
 		@media screen and (max-width: 800px) {
 			display: none;
 		}
+
+    .microprofile-award {
+      margin-top: 20px;
+      padding: 10px;
+      background: $base-color;
+      border-radius: 10px;
+    }
 	}
 
 	.description {
