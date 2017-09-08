@@ -33,9 +33,9 @@ subtitle: Quickstart development with online pom generator
 			        	<label class="col-xs-12 col-sm-3 control-label" for="version">KumuluzEE</label>
 								<div class="col-xs-12 col-sm-8">
 									<select id="version" name="version" class="form-control">
-										<option value="2.4.0-SNAPSHOT">2.4.0-SNAPSHOT</option>
-										<option value="2.4.0-beta.1">2.4.0-beta.1</option>
-										<option value="2.3.0" selected>2.3.0</option>
+										<option value="2.5.0-SNAPSHOT">2.5.0-SNAPSHOT</option>
+										<option value="2.4.0" selected>2.4.0</option>
+										<option value="2.3.0">2.3.0</option>
 										<option value="2.2.0">2.2.0</option>
 									</select>
 								</div>
@@ -227,7 +227,7 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0-SNAPSHOT cors' type="checkbox" name="dependencies" value="com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}" />KumuluzEE CORS <small style="color:#757575">SNAPSHOT version</small>
+										<input class='v2-4-0 cors' type="checkbox" name="dependencies" value="com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}" />KumuluzEE CORS <small style="color:#757575">SNAPSHOT version</small>
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
@@ -315,7 +315,7 @@ function generatePom() {
       }
 
 			var templateUrl = '/assets/template.xml';
-			if($('#version').val() == '2.4.0-SNAPSHOT' || $('#version').val() == '2.4.0-beta.1'){
+			if($('#version').val() == '2.4.0' || $('#version').val() == '2.5.0-SNAPSHOT'){
 				templateUrl = '/assets/template240.xml';
 			}
 
@@ -356,9 +356,9 @@ function generatePom() {
 		function onVersionChange (e){
 			disableAllNewVersions();
 			switch (e.target.value) {
-				case '2.4.0-SNAPSHOT':
-				case '2.4.0-beta.1':
-					$(".v2-4-0-SNAPSHOT").each(function(i, elm){
+				case '2.5.0-SNAPSHOT':
+				case '2.4.0':
+					$(".v2-4-0").each(function(i, elm){
 						$(elm).prop('disabled', false);
 					});
 				case '2.3.0':
@@ -372,7 +372,7 @@ function generatePom() {
 		}
 
 		function disableAllNewVersions() {
-			$(".v2-3-0, .v2-4-0-SNAPSHOT").each(function(i, elm){
+			$(".v2-3-0, .v2-4-0").each(function(i, elm){
 				$(elm).prop('disabled', true);
 				$(elm).prop('checked', false);
 			});
