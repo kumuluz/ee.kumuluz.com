@@ -77,8 +77,7 @@
                 <executions>
                     {{ ^isUberJAR }}
                     <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
+                        <id>package</id>
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
@@ -86,8 +85,7 @@
                     {{ /isUberJAR }}
                     {{ #isUberJAR }}
                     <execution>
-                        <id>repackage</id>
-                        <phase>package</phase>
+                        <id>package</id>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
