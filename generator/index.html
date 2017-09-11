@@ -172,12 +172,12 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 									<label>
-										<input class='config-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}" />with etcd <small style="color:#757575">SNAPSHOT version</small>
+										<input class='config-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}" />with etcd
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 									<label>
-										<input class='config-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}" />with Consul <small style="color:#757575">SNAPSHOT version</small>
+										<input class='config-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}" />with Consul
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left: 0px;">
@@ -187,12 +187,12 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 									<label>
-										<input class='discovery-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-etcd:${kumuluzee-discovery.version}" />with etcd <small style="color:#757575">SNAPSHOT version</small>
+										<input class='discovery-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-etcd:${kumuluzee-discovery.version}" />with etcd
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 									<label>
-										<input class='discovery-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-consul:${kumuluzee-discovery.version}" />with Consul <small style="color:#757575">SNAPSHOT version</small>
+										<input class='discovery-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-consul:${kumuluzee-discovery.version}" />with Consul
 									</label>
 								</div>
 
@@ -222,12 +222,12 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='rest v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}" />KumuluzEE REST <small style="color:#757575">SNAPSHOT version</small>
+										<input class='rest v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}" />KumuluzEE REST
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0 cors' type="checkbox" name="dependencies" value="com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}" />KumuluzEE CORS <small style="color:#757575">SNAPSHOT version</small>
+										<input class='v2-4-0 cors' type="checkbox" name="dependencies" value="com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}" />KumuluzEE CORS
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
@@ -275,17 +275,17 @@ function generatePom() {
 					isLogs: $('.logs').prop('checked'),
 					kumuluzeeLogsVersion: kumuluzeeLogsVersion || "1.1.0",
 					isConfig: $('.config-etcd').prop('checked') || $('.config-consul').prop('checked'),
-					kumuluzeeConfigVersion: '1.0.0-SNAPSHOT',
+					kumuluzeeConfigVersion: '1.0.0',
 					isDiscovery: $('.discovery-etcd').prop('checked') || $('.discovery-consul').prop('checked'),
-					kumuluzeeDiscoveryVersion: '1.0.0-SNAPSHOT',
+					kumuluzeeDiscoveryVersion: '1.0.0',
 					isSecurity: $('.security').prop('checked'),
 					kumuluzeeSecurityVersion: '1.0.0-SNAPSHOT',
 					isStreaming: $('.kafka').prop('checked'),
 					kumuluzeeStreamingVersion: '1.0.0-SNAPSHOT',
 					isREST: $('.rest').prop('checked'),
-					kumuluzeeRESTVersion: '1.2.0-SNAPSHOT',
+					kumuluzeeRESTVersion: '1.1.0',
 					isCORS: $('.cors').prop('checked'),
-					kumuluzeeCORSVersion: '1.0.0-SNAPSHOT',
+					kumuluzeeCORSVersion: '1.0.0',
 
 					dependencies: [],
 			};
