@@ -212,7 +212,7 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='security v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}" />KumuluzEE Security (Keycloak) <small style="color:#757575">SNAPSHOT version</small>
+										<input class='security v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}" />KumuluzEE Security (Keycloak)
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
@@ -279,13 +279,13 @@ function generatePom() {
 					isDiscovery: $('.discovery-etcd').prop('checked') || $('.discovery-consul').prop('checked'),
 					kumuluzeeDiscoveryVersion: '1.0.0',
 					isSecurity: $('.security').prop('checked'),
-					kumuluzeeSecurityVersion: '1.0.0-SNAPSHOT',
+					kumuluzeeSecurityVersion: '1.0.0',
 					isStreaming: $('.kafka').prop('checked'),
 					kumuluzeeStreamingVersion: '1.0.0-SNAPSHOT',
 					isREST: $('.rest').prop('checked'),
 					kumuluzeeRESTVersion: '1.1.0',
 					isCORS: $('.cors').prop('checked'),
-					kumuluzeeCORSVersion: '1.0.0',
+					kumuluzeeCORSVersion: '1.0.1',
 
 					dependencies: [],
 			};
