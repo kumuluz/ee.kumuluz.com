@@ -34,7 +34,8 @@ subtitle: Quickstart development with online pom generator
 								<div class="col-xs-12 col-sm-8">
 									<select id="version" name="version" class="form-control">
 										<option value="2.5.0-SNAPSHOT">2.5.0-SNAPSHOT</option>
-										<option value="2.4.0" selected>2.4.0</option>
+										<option value="2.4.1" selected>2.4.1</option>
+										<option value="2.4.0" >2.4.0</option>
 										<option value="2.3.0">2.3.0</option>
 										<option value="2.2.0">2.2.0</option>
 									</select>
@@ -315,7 +316,7 @@ function generatePom() {
       }
 
 			var templateUrl = '/assets/template.xml';
-			if($('#version').val() == '2.4.0' || $('#version').val() == '2.5.0-SNAPSHOT'){
+			if($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.0-SNAPSHOT'){
 				templateUrl = '/assets/template240.xml';
 			}
 
@@ -357,6 +358,7 @@ function generatePom() {
 			disableAllNewVersions();
 			switch (e.target.value) {
 				case '2.5.0-SNAPSHOT':
+				case '2.4.1':
 				case '2.4.0':
 					$(".v2-4-0").each(function(i, elm){
 						$(elm).prop('disabled', false);
