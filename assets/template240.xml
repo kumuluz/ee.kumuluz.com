@@ -44,6 +44,12 @@
         {{ #isMetrics }}
         <kumuluzee-metrics.version>{{kumuluzeeMetricsVersion}}</kumuluzee-metrics.version>
         {{ /isMetrics }}
+        {{ #isHealth }}
+        <kumuluzee-health.version>{{kumuluzeeHealthVersion}}</kumuluzee-health.version>
+        {{ /isHealth }}
+        {{ #isFaultTolerance }}
+        <kumuluzee-fault-tolerance.version>{{kumuluzeeFaultToleranceVersion}}</kumuluzee-fault-tolerance.version>
+        {{ /isFaultTolerance }}
         <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
     </properties>
 

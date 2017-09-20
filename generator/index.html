@@ -238,7 +238,7 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='kafka v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}" />KumuluzEE Event Streaming (Kafka) <small style="color:#757575">SNAPSHOT version</small>
+										<input class='kafka v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}" />KumuluzEE Event Streaming (Kafka)
 									</label>
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
@@ -253,13 +253,13 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0-disabled' type="checkbox" name="dependencies" disabled />KumuluzEE Health
+										<input class='v2-4-0 health' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}" />KumuluzEE Health
 									</label>
 								</div>
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0-disabled' type="checkbox" name="dependencies" disabled="" />KumuluzEE Fault Tolerance (including circuit breakers)
+										<input class='v2-4-0 fault' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}" />KumuluzEE Fault Tolerance (including circuit breakers)
 									</label>
 								</div>
 
@@ -309,6 +309,10 @@ function generatePom() {
 					kumuluzeeCORSVersion: '1.0.1',
 					isMetrics: $('.metrics').prop('checked'),
 					kumuluzeeMetricsVersion: '1.0.0-SNAPSHOT',
+					isHealth: $('.health').prop('checked'),
+					kumuluzeeHealthVersion: '1.0.0-SNAPSHOT',
+					isFaultTolerance: $('.fault').prop('checked'),
+					kumuluzeeFaultToleranceVersion: '1.0.0-SNAPSHOT',
 
 					dependencies: [],
 			};
