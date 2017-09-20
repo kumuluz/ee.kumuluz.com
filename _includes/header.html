@@ -21,9 +21,9 @@
             <li id="features-link"><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
             <li id="migration-link"><a href="{{ '/migration' | prepend: site.baseUrl }}">MIGRATION</a></li>
             <li id="tutorial-link"><a href="{{ '/tutorial' | prepend: site.baseurl }}">TUTORIALS</a></li>
+            <li id="articles-link"><a href="{{ '/articles' | prepend: site.baseUrl }}">ARTICLES</a></li>
             <li id="opinions-link"><a href="{{ '/opinions' | prepend: site.baseurl }}">OPINIONS</a></li>
-            <li id="support-link"><a href="{{ '/support' | prepend: site.baseUrl }}">SUPPORT</a></li>
-            <li id="subscribe-link"><a href="{{ '/subscribe' | prepend: site.baseUrl }}">SUBSCRIBE</a></li>
+            <li id="support-link"><a href="{{ '/support' | prepend: site.baseUrl }}">SUPPORT</a></li>            
         </ul>
         <div class='navbar-image hidden-xs'>
           <a href="https://github.com/kumuluz" class="github" target="_blank"><img src="/assets/images/github.png" /></a>
@@ -43,8 +43,8 @@ $(document).on('turbolinks:load', function () {
   else if (location.pathname.indexOf('/support') >= 0) {
     $('#support-link').addClass('active');
   }
-  else if (location.pathname.indexOf('/subscribe') >= 0) {
-    $('#subscribe-link').addClass('active');
+  else if (location.pathname.indexOf('/articles') >= 0) {
+    $('#articles-link').addClass('active');
   }
   else if (location.pathname.indexOf('/architecture') >= 0) {
     $('#tutorial-link').addClass('active');

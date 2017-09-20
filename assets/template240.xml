@@ -41,6 +41,9 @@
         {{ #isCORS }}
         <kumuluzee-cors.version>{{kumuluzeeCORSVersion}}</kumuluzee-cors.version>
         {{ /isCORS }}
+        {{ #isMetrics }}
+        <kumuluzee-metrics.version>{{kumuluzeeMetricsVersion}}</kumuluzee-metrics.version>
+        {{ /isMetrics }}
         <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
     </properties>
 

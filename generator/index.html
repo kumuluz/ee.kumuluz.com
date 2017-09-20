@@ -199,7 +199,27 @@ subtitle: Quickstart development with online pom generator
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0-disabled' type="checkbox" name="dependencies" disabled />KumuluzEE Metrics
+										<input class='metrics v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}" />KumuluzEE Metrics
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+									<label>
+										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-prometheus:${kumuluzee-metrics.version}" />Prometheus reporter
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+									<label>
+										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-graphite:${kumuluzee-metrics.version}" />Graphite reporter
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+									<label>
+										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}" />KumuluzEE Logs reporter
+									</label>
+								</div>
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+									<label>
+										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}" />Logstash reporter
 									</label>
 								</div>
 
@@ -287,6 +307,8 @@ function generatePom() {
 					kumuluzeeRESTVersion: '1.1.0',
 					isCORS: $('.cors').prop('checked'),
 					kumuluzeeCORSVersion: '1.0.1',
+					isMetrics: $('.metrics').prop('checked'),
+					kumuluzeeMetricsVersion: '1.0.0-SNAPSHOT',
 
 					dependencies: [],
 			};
@@ -362,6 +384,7 @@ function generatePom() {
 				case '2.4.0':
 					$(".v2-4-0").each(function(i, elm){
 						$(elm).prop('disabled', false);
+						disableChildren('.metrics-comp', true);
 					});
 				case '2.3.0':
 					$(".v2-3-0").each(function(i, elm){
@@ -377,6 +400,7 @@ function generatePom() {
 			$(".v2-3-0, .v2-4-0").each(function(i, elm){
 				$(elm).prop('disabled', true);
 				$(elm).prop('checked', false);
+				disableChildren('.metrics-comp', true);
 			});
 		}
 		// Init correct version
@@ -386,6 +410,9 @@ function generatePom() {
 		onlyOne("#eclipselink", "#hibernate");
 		onlyOne(".config-consul", ".config-etcd");
 		onlyOne(".discovery-consul", ".discovery-etcd");
+
+		// Metrics disable children if parent isn't selected
+		whenParent('.metrics', '.metrics-comp');
 
 	});
 
@@ -401,6 +428,19 @@ function generatePom() {
 				return;
 			$(first).prop("disabled", e.target.checked);
 			$(first).prop("checked", false);
+		});
+	}
+
+	function whenParent(parent, children) {
+		$(parent).change(function(e){
+			disableChildren(children, !e.target.checked);
+		})
+	}
+
+	function disableChildren(children, disabled){
+		$(children).each(function(index, child){
+			$(child).prop('disabled', disabled);
+			$(child).prop('checked', false);
 		});
 	}
 </script>
