@@ -70,7 +70,14 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input id="microprofile" onclick="disableMicroprofileValues()" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.0" />MicroProfile 1.0
+										<input id="microprofile" onclick="disableMicroprofileValues('#microprofile')" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.0" />MicroProfile 1.0
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input id="microprofile-1-1" onclick="disableMicroprofileValues('#microprofile-1-1')" class="v2-4-0" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.1" />MicroProfile 1.1
 									</label>
 								</div>
 							</div>
@@ -267,6 +274,38 @@ subtitle: Quickstart development with online pom generator
 
 		        </div>
 
+						<div class="col-xs-12">
+							<h3>MicroProfile APIs</h3>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='v2-4-0 microprofile-1-1' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:1.1.0" />MicroProfile Config 1.1
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='v2-4-0 mp-health' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}" />MicroProfile Health 1.0 (Service Healthchecks)
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='v2-4-0 mp-fault' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}" />MicroProfile Fault Tolerance 1.0
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class='' type="checkbox" name="dependencies" disabled />MicroProfile Metrics 1.0 (coming soon)
+									</label>
+								</div>
+							</div>
+						</div>
+
 						<div class="col-xs-12 text-center" style='padding-top: 30px;'>
 		        	<input class="btn btn-raised btn-normal-lg" type="submit" value="Generate POM">
 						</div>
@@ -309,9 +348,9 @@ function generatePom() {
 					kumuluzeeCORSVersion: '1.0.2',
 					isMetrics: $('.metrics').prop('checked'),
 					kumuluzeeMetricsVersion: '1.0.0-SNAPSHOT',
-					isHealth: $('.health').prop('checked'),
+					isHealth: $('.health').prop('checked') || $('.mp-health').prop('checked'),
 					kumuluzeeHealthVersion: '1.0.0-SNAPSHOT',
-					isFaultTolerance: $('.fault').prop('checked'),
+					isFaultTolerance: $('.fault').prop('checked') || $('.mp-fault').prop('checked'),
 					kumuluzeeFaultToleranceVersion: '1.0.0-SNAPSHOT',
 
 					dependencies: [],
@@ -333,6 +372,12 @@ function generatePom() {
           var isMicroprofileDep = $(dependencies[i]).hasClass('microprofile');
           if (dependencies[i].checked && !(isMicroprofile && isMicroprofileDep)) {
               var dependency = dependencies[i].value.split(":");
+
+							if(formData.dependencies.find(function(dep){
+								return dep.groupId == dependency[0];
+							}) != null){
+								continue;
+							}
               formData.dependencies.push({
                   groupId: dependency[0],
                   artifactId: dependency[1],
@@ -360,12 +405,18 @@ function generatePom() {
 			});
 			return false;
 	}
-	function disableMicroprofileValues() {
-      let checked = $('#microprofile').prop("checked");
+	function disableMicroprofileValues(checkbox) {
+      let checked = $(checkbox).prop("checked");
       $(".microprofile").each(function(i, elm) {
         $(elm).prop('disabled', checked);
         $(elm).prop('checked', checked);
       });
+			if(checkbox === '#microprofile-1-1'){
+				$(".microprofile-1-1").each(function(i, elm) {
+	        $(elm).prop('disabled', checked);
+	        $(elm).prop('checked', checked);
+	      });
+			}
   }
 
 	$(document).ready(function(){
@@ -414,6 +465,7 @@ function generatePom() {
 		onlyOne("#eclipselink", "#hibernate");
 		onlyOne(".config-consul", ".config-etcd");
 		onlyOne(".discovery-consul", ".discovery-etcd");
+		onlyOne("#microprofile", "#microprofile-1-1");
 
 		// Metrics disable children if parent isn't selected
 		whenParent('.metrics', '.metrics-comp');
