@@ -77,7 +77,7 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input id="microprofile-1-1" onclick="disableMicroprofileValues('#microprofile-1-1')" class="v2-4-0" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.1" />MicroProfile 1.1
+										<input id="microprofile-1-1" onclick="disableMicroprofileValues('#microprofile-1-1')" class="v2-5-0-SNAPSHOT" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.1" />MicroProfile 1.1
 									</label>
 								</div>
 							</div>
@@ -279,7 +279,7 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0 microprofile-1-1' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:1.1.0" />MicroProfile Config 1.1
+										<input class='v2-5-0-SNAPSHOT microprofile-1-1' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:1.1.0-SNAPSHOT" />MicroProfile Config 1.1
 									</label>
 								</div>
 							</div>
@@ -358,7 +358,7 @@ function generatePom() {
 
 			// parse dependencies
       var dependencies = $("input[name='dependencies']");
-			var isMicroprofile = $("#microprofile").prop("checked");
+			var isMicroprofile = $("#microprofile").prop("checked") || $("#microprofile-1-1").prop("checked");
 
 			if(!isMicroprofile){
 				formData.dependencies.push({
@@ -435,6 +435,10 @@ function generatePom() {
 			disableAllNewVersions();
 			switch (e.target.value) {
 				case '2.5.0-SNAPSHOT':
+					$(".v2-5-0-SNAPSHOT").each(function(i, elm){
+						$(elm).prop('disabled', false);
+						disableChildren('.metrics-comp', true);
+					});
 				case '2.4.1':
 				case '2.4.0':
 					$(".v2-4-0").each(function(i, elm){
@@ -452,7 +456,7 @@ function generatePom() {
 		}
 
 		function disableAllNewVersions() {
-			$(".v2-3-0, .v2-4-0").each(function(i, elm){
+			$(".v2-3-0, .v2-4-0, .v2-5-0-SNAPSHOT").each(function(i, elm){
 				$(elm).prop('disabled', true);
 				$(elm).prop('checked', false);
 				disableChildren('.metrics-comp', true);
