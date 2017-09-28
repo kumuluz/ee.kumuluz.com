@@ -369,7 +369,7 @@ function generatePom() {
 			}
 
       for (var i = 0; i < dependencies.length; i++) {
-          var isMicroprofileDep = $(dependencies[i]).hasClass('microprofile');
+          var isMicroprofileDep = $(dependencies[i]).hasClass('microprofile') || $(dependencies[i]).hasClass('microprofile-1-1');
           if (dependencies[i].checked && !(isMicroprofile && isMicroprofileDep)) {
               var dependency = dependencies[i].value.split(":");
 
