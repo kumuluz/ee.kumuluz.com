@@ -16,7 +16,6 @@
           <a href="{{ site.baseurl }}/"><img src="/assets/images/kumuluzee.png" /></a>
         </div>
         <ul class="nav navbar-nav">
-            <li id="about-link"><a href="{{ site.baseUrl }}/">ABOUT</a></li>
             <li id="generator-link"><a href="{{ '/generator?v=28092017' | prepend: site.baseurl }}">GENERATOR</a></li>
             <li id="features-link"><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
             <li id="migration-link"><a href="{{ '/migration' | prepend: site.baseUrl }}">MIGRATION</a></li>
@@ -24,6 +23,7 @@
             <li id="articles-link"><a href="{{ '/articles' | prepend: site.baseUrl }}">ARTICLES</a></li>
             <li id="opinions-link"><a href="{{ '/opinions' | prepend: site.baseurl }}">OPINIONS</a></li>
             <li id="support-link"><a href="{{ '/support' | prepend: site.baseUrl }}">SUPPORT</a></li>
+            <li id="blog-link"><a href="https://blog.kumuluz.com/">BLOG</a></li>
         </ul>
         <div class='navbar-image hidden-xs'>
           <a href="https://github.com/kumuluz" class="github" target="_blank"><img src="/assets/images/github.png" /></a>
@@ -60,9 +60,6 @@ $(document).on('turbolinks:load', function () {
   }
   else if (location.pathname.indexOf('/generator') >= 0) {
     $('#generator-link').addClass('active');
-  }
-  else {
-    $('#about-link').addClass('active');
   }
 });
 $.cookieBar({
