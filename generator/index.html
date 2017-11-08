@@ -81,6 +81,13 @@ subtitle: Quickstart development with online pom generator
 									</label>
 								</div>
 							</div>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input id="microprofile-1-2" onclick="disableMicroprofileValues('#microprofile-1-2')" class="v2-5-0-SNAPSHOT" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.2" />MicroProfile 1.2
+									</label>
+								</div>
+							</div>
 						</div>
 
 						<div class="col-xs-12">
@@ -281,28 +288,35 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-5-0-SNAPSHOT microprofile-1-1' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:1.1.0-SNAPSHOT" />MicroProfile Config 1.1
+										<input class='v2-5-0-SNAPSHOT microprofile-1-1 microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:1.1.0-SNAPSHOT" />MicroProfile Config 1.1
 									</label>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0 mp-health' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}" />MicroProfile Health 1.0 (Service Healthchecks)
+										<input class='v2-4-0 mp-health  microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}" />MicroProfile Health Check 1.0
 									</label>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0 mp-fault' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}" />MicroProfile Fault Tolerance 1.0
+										<input class='v2-4-0 mp-fault  microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}" />MicroProfile Fault Tolerance 1.0
 									</label>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='mp-metrics v2-4-0' type="checkbox" name="dependencies" />MicroProfile Metrics 1.0
+										<input class='mp-metrics v2-4-0  microprofile-1-2' type="checkbox" name="dependencies" />MicroProfile Metrics 1.0
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+									<label>
+										<input class=' microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.jwt:kumuluzee-jwt-auth:1.0.0-SNAPSHOT" />MicroProfile JWT Authentication 1.0
 									</label>
 								</div>
 							</div>
@@ -360,7 +374,7 @@ function generatePom() {
 
 			// parse dependencies
       var dependencies = $("input[name='dependencies']");
-			var isMicroprofile = $("#microprofile").prop("checked") || $("#microprofile-1-1").prop("checked");
+			var isMicroprofile = $("#microprofile").prop("checked") || $("#microprofile-1-1").prop("checked") || $("#microprofile-1-2").prop("checked");
 
 			if(!isMicroprofile){
 				formData.dependencies.push({
@@ -371,7 +385,15 @@ function generatePom() {
 			}
 
       for (var i = 0; i < dependencies.length; i++) {
-          var isMicroprofileDep = $(dependencies[i]).hasClass('microprofile') || $(dependencies[i]).hasClass('microprofile-1-1');
+          var isMicroprofileDep = false;
+					if($("#microprofile").prop("checked"))
+						isMicroprofileDep = $(dependencies[i]).hasClass('microprofile');
+					else if ($("#microprofile-1-1").prop("checked"))
+						isMicroprofileDep = $(dependencies[i]).hasClass('microprofile') || $(dependencies[i]).hasClass('microprofile-1-1');
+					else if($("#microprofile-1-2").prop("checked"))
+						isMicroprofileDep = $(dependencies[i]).hasClass('microprofile') || $(dependencies[i]).hasClass('microprofile-1-1')  || $(dependencies[i]).hasClass('microprofile-1-2');
+
+
           if (dependencies[i].checked && !(isMicroprofile && isMicroprofileDep)) {
               var dependency = dependencies[i].value.split(":");
 
@@ -415,6 +437,12 @@ function generatePom() {
       });
 			if(checkbox === '#microprofile-1-1'){
 				$(".microprofile-1-1").each(function(i, elm) {
+	        $(elm).prop('disabled', checked);
+	        $(elm).prop('checked', checked);
+	      });
+			}
+			if(checkbox === '#microprofile-1-2'){
+				$(".microprofile-1-2").each(function(i, elm) {
 	        $(elm).prop('disabled', checked);
 	        $(elm).prop('checked', checked);
 	      });
@@ -468,10 +496,10 @@ function generatePom() {
 		onVersionChange({target: { value: $("#version").val()}});
 
 		// Disable JPA if one is selected
-		onlyOne("#eclipselink", "#hibernate");
-		onlyOne(".config-consul", ".config-etcd");
-		onlyOne(".discovery-consul", ".discovery-etcd");
-		onlyOne("#microprofile", "#microprofile-1-1");
+		onlyOne(["#eclipselink", "#hibernate"]);
+		onlyOne([".config-consul", ".config-etcd"]);
+		onlyOne([".discovery-consul", ".discovery-etcd"]);
+		onlyOne(["#microprofile", "#microprofile-1-1", "#microprofile-1-2"]);
 
 		// If clicked one, click both
 		clickBoth(".metrics", ".mp-metrics");
@@ -482,19 +510,19 @@ function generatePom() {
 
 	});
 
-	function onlyOne(first, second) {
-		$(first).change(function(e){
-			if(e.target.disabled)
-				return;
-			$(second).prop("disabled", e.target.checked);
-			$(second).prop("checked", false);
-		});
-		$(second).change(function(e){
-			if(e.target.disabled)
-				return;
-			$(first).prop("disabled", e.target.checked);
-			$(first).prop("checked", false);
-		});
+	function onlyOne(array) {
+		for(var i=0; i<array.length; i++){
+			$(array[i]).change(function(e){
+				if(e.target.disabled)
+					return;
+				for(var j=0; j<array.length; j++){
+					if($(array[j])[0] !== $(e.target)[0]){
+						$(array[j]).prop("disabled", e.target.checked);
+						$(array[j]).prop("checked", false);
+					}
+				}
+			});
+		}
 	}
 
 	function clickBoth(first, second) {
