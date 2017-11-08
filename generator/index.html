@@ -211,16 +211,6 @@ subtitle: Quickstart development with online pom generator
 								</div>
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 									<label>
-										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-prometheus:${kumuluzee-metrics.version}" />Prometheus reporter
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
-									<label>
-										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-graphite:${kumuluzee-metrics.version}" />Graphite reporter
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
-									<label>
 										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}" />KumuluzEE Logs reporter
 									</label>
 								</div>
@@ -312,7 +302,7 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='' type="checkbox" name="dependencies" disabled />MicroProfile Metrics 1.0 (coming soon)
+										<input class='mp-metrics v2-4-0' type="checkbox" name="dependencies" />MicroProfile Metrics 1.0
 									</label>
 								</div>
 							</div>
@@ -483,8 +473,12 @@ function generatePom() {
 		onlyOne(".discovery-consul", ".discovery-etcd");
 		onlyOne("#microprofile", "#microprofile-1-1");
 
+		// If clicked one, click both
+		clickBoth(".metrics", ".mp-metrics");
+
 		// Metrics disable children if parent isn't selected
 		whenParent('.metrics', '.metrics-comp');
+		whenParent('.mp-metrics', '.metrics-comp');
 
 	});
 
@@ -500,6 +494,19 @@ function generatePom() {
 				return;
 			$(first).prop("disabled", e.target.checked);
 			$(first).prop("checked", false);
+		});
+	}
+
+	function clickBoth(first, second) {
+		$(first).change(function(e){
+			if(e.target.disabled)
+				return;
+			$(second).prop("checked", e.target.checked);
+		});
+		$(second).change(function(e){
+			if(e.target.disabled)
+				return;
+			$(first).prop("checked", e.target.checked);
 		});
 	}
 
