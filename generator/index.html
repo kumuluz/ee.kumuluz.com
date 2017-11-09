@@ -295,21 +295,21 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0 mp-health  microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}" />MicroProfile Health Check 1.0
+										<input class='v2-4-0 mp-health  microprofile-1-2' type="checkbox" />MicroProfile Health Check 1.0
 									</label>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-4-0 mp-fault  microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}" />MicroProfile Fault Tolerance 1.0
+										<input class='v2-4-0 mp-fault  microprofile-1-2' type="checkbox" />MicroProfile Fault Tolerance 1.0
 									</label>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='mp-metrics v2-4-0  microprofile-1-2' type="checkbox" name="dependencies" />MicroProfile Metrics 1.0
+										<input class='mp-metrics v2-4-0  microprofile-1-2' type="checkbox" />MicroProfile Metrics 1.0
 									</label>
 								</div>
 							</div>
@@ -406,7 +406,7 @@ function generatePom() {
               var dependency = dependencies[i].value.split(":");
 
 							if(formData.dependencies.find(function(dep){
-								return dep.groupId == dependency[0];
+								return dep.groupId == dependency[0] && dep.artifactId == dependency[1];
 							}) != null){
 								continue;
 							}
@@ -417,7 +417,6 @@ function generatePom() {
               });
           }
       }
-
 			var templateUrl = '/assets/template.xml?t='+new Date().getTime();
 			if($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.0-SNAPSHOT'){
 				templateUrl = '/assets/template240.xml?t='+new Date().getTime();
@@ -437,6 +436,7 @@ function generatePom() {
 			});
 			return false;
 	}
+
 	function disableMicroprofileValues(checkbox) {
       let checked = $(checkbox).prop("checked");
       $(".microprofile").each(function(i, elm) {
@@ -514,6 +514,8 @@ function generatePom() {
 
 		// If clicked one, click both
 		clickBoth(".metrics", ".mp-metrics");
+		clickBoth(".health", ".mp-health");
+		clickBoth(".fault", ".mp-fault");
 
 		// Metrics disable children if parent isn't selected
 		whenParent('.metrics', '.metrics-comp');
