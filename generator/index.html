@@ -345,6 +345,7 @@ function generatePom() {
 					description: $("#description").val() || "Sample KumuluzEE project",
 					isDescription: $("#description").val() || false,
 					kumuluzVersion: $("#version").val() || "2.2.0",
+					isPluginSnapshot: $("#version").val().indexOf('SNAPSHOT') !== -1,
 
 					isUberJAR: $("#uberJAR").prop("checked"),
 
@@ -379,6 +380,11 @@ function generatePom() {
 
 					dependencies: [],
 			};
+
+			// check for snapshots
+			if(formData.isPluginSnapshot || formData.isJWTAuth || formData.isConfigMP || formData.isOpenApi || formData.isSwagger || formData.isFaultTolerance || formData.isHealth || formData.isMetrics || formData.isStreaming){
+				formData.hasSnapshots = true;
+			}
 
 			// parse dependencies
       var dependencies = $("input[name='dependencies']");
