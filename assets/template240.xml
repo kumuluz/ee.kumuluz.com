@@ -50,7 +50,18 @@
         {{ #isFaultTolerance }}
         <kumuluzee-fault-tolerance.version>{{kumuluzeeFaultToleranceVersion}}</kumuluzee-fault-tolerance.version>
         {{ /isFaultTolerance }}
-        <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
+        {{ #isSwagger }}
+        <kumuluzee-swagger.version>{{kumuluzeeSwaggerVersion}}</kumuluzee-swagger.version>
+        {{ /isSwagger }}
+        {{ #isOpenApi }}
+        <kumuluzee-openapi.version>{{kumuluzeeOpenApiVersion}}</kumuluzee-openapi.version>
+        {{ /isOpenApi }}
+        {{ #isConfigMP }}
+        <kumuluzee-config-mp.version>{{kumuluzeeConfigMPVersion}}</kumuluzee-config-mp.version>
+        {{ /isConfigMP }}
+        {{ #isJWTAuth }}
+        <kumuluzee.jwt-auth.version>{{kumuluzeeJWTAuthVersion}}</kumuluzee.jwt-auth.version>
+        {{ /isJWTAuth }}
     </properties>
 
     <dependencyManagement>
@@ -82,7 +93,7 @@
           <plugin>
                 <groupId>com.kumuluz.ee</groupId>
                 <artifactId>kumuluzee-maven-plugin</artifactId>
-                <version>{{kumuluzVersion}}</version>
+                <version>${kumuluz.version}</version>
                 <executions>
                     {{ ^isUberJAR }}
                     <execution>

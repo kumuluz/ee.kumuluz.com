@@ -269,13 +269,13 @@ subtitle: Quickstart development with online pom generator
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-5-0-SNAPSHOT' type="checkbox" name="dependencies" value="com.kumuluz.ee.swagger:kumuluzee-swagger:1.0.0-SNAPSHOT" />KumuluzEE Swagger
+										<input class='v2-5-0-SNAPSHOT isSwagger' type="checkbox" name="dependencies" value="com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}" />KumuluzEE Swagger
 									</label>
 								</div>
 
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-5-0-SNAPSHOT' type="checkbox" name="dependencies" value="com.kumuluz.ee.openapi:kumuluzee-openapi:1.0.0-SNAPSHOT" />KumuluzEE OpenAPI
+										<input class='v2-5-0-SNAPSHOT isOpenApi' type="checkbox" name="dependencies" value="com.kumuluz.ee.openapi:kumuluzee-openapi:${kumuluzee-openapi.version}" />KumuluzEE OpenAPI
 									</label>
 								</div>
 
@@ -288,7 +288,7 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class='v2-5-0-SNAPSHOT microprofile-1-1 microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:1.1.0-SNAPSHOT" />MicroProfile Config 1.1
+										<input class='v2-5-0-SNAPSHOT microprofile-1-1 microprofile-1-2 isConfigMP' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}" />MicroProfile Config 1.1
 									</label>
 								</div>
 							</div>
@@ -316,7 +316,7 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-sm-6">
 								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 									<label>
-										<input class=' microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.jwt:kumuluzee-jwt-auth:1.0.0-SNAPSHOT" />MicroProfile JWT Authentication 1.0
+										<input class=' microprofile-1-2 isJWTAuth' type="checkbox" name="dependencies" value="com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee.jwt-auth.version}" />MicroProfile JWT Authentication 1.0
 									</label>
 								</div>
 							</div>
@@ -368,6 +368,14 @@ function generatePom() {
 					kumuluzeeHealthVersion: '1.0.0-SNAPSHOT',
 					isFaultTolerance: $('.fault').prop('checked') || $('.mp-fault').prop('checked'),
 					kumuluzeeFaultToleranceVersion: '1.0.0-SNAPSHOT',
+					isSwagger: $('.isSwagger').prop('checked'),
+					kumuluzeeSwaggerVersion: '1.0.0-SNAPSHOT',
+					isOpenApi: $('.isOpenApi').prop('checked'),
+					kumuluzeeOpenApiVersion: '1.0.0-SNAPSHOT',
+					isConfigMP: $('.isConfigMP').prop('checked'),
+					kumuluzeeConfigMPVersion: '1.1.0-SNAPSHOT',
+					isJWTAuth: $('.isJWTAuth').prop('checked'),
+					kumuluzeeJWTAuthVersion: '1.0.0-SNAPSHOT',
 
 					dependencies: [],
 			};
