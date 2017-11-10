@@ -11,321 +11,342 @@ subtitle: Quickstart development with online pom generator
 		<div class="row">
 			<div class="col-md-12">
 				<form class="form-horizontal" onsubmit="return generatePom();">
-						<div class='col-xs-12'>
- 							<h3>Project Metadata</h3>
-						</div>
-						<div class='col-xs-12 col-sm-6'>
-							<div class="form-group">
-			        	<label class="col-xs-12 col-sm-3 control-label" for="groupId">GroupId</label>
-								<div class="col-xs-12 col-sm-8">
-									<input class="form-control" type="text" id="groupId" name="groupId" placeholder="com.kumuluzee.sample" />
-								</div>
-							</div>
-
-							<div class="form-group">
-			        	<label class="col-xs-12 col-sm-3 control-label" for="artifactId">ArtifactId</label>
-								<div class="col-xs-12 col-sm-8">
-									<input class="form-control" type="text" id="artifactId" name="artifactId" placeholder="sample">
-								</div>
-							</div>
-
-							<div class="form-group">
-			        	<label class="col-xs-12 col-sm-3 control-label" for="version">KumuluzEE</label>
-								<div class="col-xs-12 col-sm-8">
-									<select id="version" name="version" class="form-control">
-										<option value="2.5.0-SNAPSHOT" selected>2.5.0-SNAPSHOT</option>
-										<option value="2.4.1">2.4.1</option>
-										<option value="2.4.0" >2.4.0</option>
-										<option value="2.3.0">2.3.0</option>
-										<option value="2.2.0">2.2.0</option>
-									</select>
-								</div>
+					<div class='col-xs-12'>
+						<h3>Project Metadata</h3>
+					</div>
+					<div class='col-xs-12 col-sm-6'>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label" for="groupId">GroupId</label>
+							<div class="col-xs-12 col-sm-8">
+								<input class="form-control" type="text" id="groupId" name="groupId" placeholder="com.kumuluzee.sample" />
 							</div>
 						</div>
 
-						<div class='col-xs-12 col-sm-6'>
-							<div class="form-group">
-			        	<label class="col-xs-12 col-sm-3 control-label" for="name">Name</label>
-								<div class="col-xs-12 col-sm-8">
-									<input class="form-control" type="text" id="name" name="name" placeholder="Sample project">
-								</div>
-							</div>
-
-							<div class="form-group">
-			        	<label class="col-xs-12 col-sm-3 control-label" for="description">Description</label>
-								<div class="col-xs-12 col-sm-8">
-									<input class="form-control" type="text" id="description" name="description" placeholder="Sample KumuluzEE project">
-								</div>
-							</div>
-							<div class="form-group">
-			        	<label class="col-xs-12 col-sm-3 control-label" for="projectVersion">Version</label>
-								<div class="col-xs-12 col-sm-8">
-									<input class="form-control" type="text" id="projectVersion" name="projectVersion" placeholder="1.0.0" />
-								</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label" for="artifactId">ArtifactId</label>
+							<div class="col-xs-12 col-sm-8">
+								<input class="form-control" type="text" id="artifactId" name="artifactId" placeholder="sample">
 							</div>
 						</div>
 
-						<div class="col-xs-12">
-							<h3>Profiles</h3>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input id="microprofile" onclick="disableMicroprofileValues('#microprofile')" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.0" />MicroProfile 1.0
-									</label>
-								</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label" for="version">KumuluzEE</label>
+							<div class="col-xs-12 col-sm-8">
+								<select id="version" name="version" class="form-control">
+									<option value="2.5.0-SNAPSHOT" selected>2.5.0-SNAPSHOT</option>
+									<option value="2.4.1">2.4.1</option>
+									<option value="2.4.0">2.4.0</option>
+									<option value="2.3.0">2.3.0</option>
+									<option value="2.2.0">2.2.0</option>
+								</select>
 							</div>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input id="microprofile-1-1" onclick="disableMicroprofileValues('#microprofile-1-1')" class="v2-5-0-SNAPSHOT" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.1" />MicroProfile 1.1
-									</label>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input id="microprofile-1-2" onclick="disableMicroprofileValues('#microprofile-1-2')" class="v2-5-0-SNAPSHOT" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.2" />MicroProfile 1.2
-									</label>
-								</div>
+						</div>
+					</div>
+
+					<div class='col-xs-12 col-sm-6'>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label" for="name">Name</label>
+							<div class="col-xs-12 col-sm-8">
+								<input class="form-control" type="text" id="name" name="name" placeholder="Sample project">
 							</div>
 						</div>
 
-						<div class="col-xs-12">
-							<h3>Features</h3>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input id="uberJAR" class="v2-4-0-SNAPSHOT" type="checkbox" />Generate Uber JAR
-									</label>
-								</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label" for="description">Description</label>
+							<div class="col-xs-12 col-sm-8">
+								<input class="form-control" type="text" id="description" name="description" placeholder="Sample KumuluzEE project">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 control-label" for="projectVersion">Version</label>
+							<div class="col-xs-12 col-sm-8">
+								<input class="form-control" type="text" id="projectVersion" name="projectVersion" placeholder="1.0.0" />
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12">
+						<h3>Profiles</h3>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input id="microprofile" onclick="disableMicroprofileValues('#microprofile')" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.0"
+									/>MicroProfile 1.0
+								</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input id="microprofile-1-1" onclick="disableMicroprofileValues('#microprofile-1-1')" class="v2-5-0-SNAPSHOT" type="checkbox"
+									 name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.1" />MicroProfile 1.1
+								</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input id="microprofile-1-2" onclick="disableMicroprofileValues('#microprofile-1-2')" class="v2-5-0-SNAPSHOT" type="checkbox"
+									 name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.2" />MicroProfile 1.2
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12">
+						<h3>Features</h3>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input id="uberJAR" class="v2-4-0-SNAPSHOT" type="checkbox" />Generate Uber JAR
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12">
+						<h3>Components</h3>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-servlet-jetty" />Servlet 3.1 (Jetty)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-cdi-weld" />CDI 1.2 (RI Weld)
+								</label>
+							</div>
+
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jax-rs-jersey" />JAX-RS 2.1. (RI Jersey)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-json-p-jsonp" />JSON-P 1.0 (RI JSONP)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jsp-jetty" />JSP 2.3 (Jetty Apache Jasper)
+								</label>
+							</div>
+
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input id="eclipselink" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-eclipselink" />JPA 2.1 (RI EclipseLink)
+								</label>
+							</div>
+
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input id="hibernate" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-hibernate" />JPA 2.1 (RI Hibernate)
+								</label>
 							</div>
 						</div>
 
-						<div class="col-xs-12">
-							<h3>Components</h3>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-			            	<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-servlet-jetty" />Servlet 3.1 (Jetty)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-			            	<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-cdi-weld" />CDI 1.2 (RI Weld)
-									</label>
-								</div>
-
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jax-rs-jersey" />JAX-RS 2.1. (RI Jersey)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class="microprofile" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-json-p-jsonp" />JSON-P 1.0 (RI JSONP)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jsp-jetty" />JSP 2.3 (Jetty Apache Jasper)
-									</label>
-								</div>
-
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input id="eclipselink" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-eclipselink" />JPA 2.1 (RI EclipseLink)
-									</label>
-								</div>
-
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input id="hibernate" type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jpa-hibernate" />JPA 2.1 (RI Hibernate)
-									</label>
-								</div>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-el-uel" />EL 3.0 (RI UEL)
+								</label>
 							</div>
-
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-el-uel" />EL 3.0 (RI UEL)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jax-ws-metro" />JAX-WS (RI Metro)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jsf-mojarra" />JSF 2.2 (RI Mojarra)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-websocket-jetty" />WebSocket 1.1 (Jetty)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-bean-validation-hibernate-validator" />Bean Validation 1.1 (RI Hibernate validator)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input type="checkbox" name="dependencies" class="v2-3-0" value="com.kumuluz.ee:kumuluzee-jta-narayana" />JTA 1.2 (Narayana)
-									</label>
-								</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jax-ws-metro" />JAX-WS (RI Metro)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-jsf-mojarra" />JSF 2.2 (RI Mojarra)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-websocket-jetty" />WebSocket 1.1 (Jetty)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input type="checkbox" name="dependencies" value="com.kumuluz.ee:kumuluzee-bean-validation-hibernate-validator" />Bean Validation 1.1 (RI Hibernate validator)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input type="checkbox" name="dependencies" class="v2-3-0" value="com.kumuluz.ee:kumuluzee-jta-narayana" />JTA 1.2 (Narayana)
+								</label>
 							</div>
 						</div>
-						<div class="col-xs-12">
-							<h3>Extensions</h3>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left: 0px;">
-									<label>
-										KumuluzEE Config
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
-									<label>
-										<input class='config-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}" />with etcd
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
-									<label>
-										<input class='config-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}" />with Consul
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left: 0px;">
-									<label>
-										KumuluzEE Discovery
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
-									<label>
-										<input class='discovery-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-etcd:${kumuluzee-discovery.version}" />with etcd
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
-									<label>
-										<input class='discovery-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-consul:${kumuluzee-discovery.version}" />with Consul
-									</label>
-								</div>
-
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='metrics v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}" />KumuluzEE Metrics
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
-									<label>
-										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}" />KumuluzEE Logs reporter
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
-									<label>
-										<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}" />Logstash reporter
-									</label>
-								</div>
-
+					</div>
+					<div class="col-xs-12">
+						<h3>Extensions</h3>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left: 0px;">
+								<label>
+									KumuluzEE Config
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='config-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}"
+									/>with etcd
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='config-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}"
+									/>with Consul
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left: 0px;">
+								<label>
+									KumuluzEE Discovery
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='discovery-etcd v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-etcd:${kumuluzee-discovery.version}"
+									/>with etcd
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='discovery-consul v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.discovery:kumuluzee-discovery-consul:${kumuluzee-discovery.version}"
+									/>with Consul
+								</label>
 							</div>
 
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='logs' type="checkbox" name="dependencies" value="com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}" />KumuluzEE Logs
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='security v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}" />KumuluzEE Security (Keycloak)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='kafka v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}" />KumuluzEE Event Streaming (Kafka)
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='rest v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}" />KumuluzEE REST
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-4-0 cors' type="checkbox" name="dependencies" value="com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}" />KumuluzEE CORS
-									</label>
-								</div>
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-4-0 health' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}" />KumuluzEE Health
-									</label>
-								</div>
-
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-4-0 fault' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}" />KumuluzEE Fault Tolerance (including circuit breakers)
-									</label>
-								</div>
-
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-5-0-SNAPSHOT isSwagger' type="checkbox" name="dependencies" value="com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}" />KumuluzEE Swagger
-									</label>
-								</div>
-
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-5-0-SNAPSHOT isOpenApi' type="checkbox" name="dependencies" value="com.kumuluz.ee.openapi:kumuluzee-openapi:${kumuluzee-openapi.version}" />KumuluzEE OpenAPI
-									</label>
-								</div>
-
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='metrics v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}"
+									/>KumuluzEE Metrics
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}"
+									/>KumuluzEE Logs reporter
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}"
+									/>Logstash reporter
+								</label>
 							</div>
 
-		        </div>
-
-						<div class="col-xs-12">
-							<h3>MicroProfile APIs</h3>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-5-0-SNAPSHOT microprofile-1-1 microprofile-1-2 isConfigMP' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}" />MicroProfile Config 1.1
-									</label>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-4-0 mp-health  microprofile-1-2' type="checkbox" />MicroProfile Health Check 1.0
-									</label>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='v2-4-0 mp-fault  microprofile-1-2' type="checkbox" />MicroProfile Fault Tolerance 1.0
-									</label>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class='mp-metrics v2-4-0  microprofile-1-2' type="checkbox" />MicroProfile Metrics 1.0
-									</label>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
-									<label>
-										<input class=' microprofile-1-2 isJWTAuth' type="checkbox" name="dependencies" value="com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee.jwt-auth.version}" />MicroProfile JWT Authentication 1.0
-									</label>
-								</div>
-							</div>
 						</div>
 
-						<div class="col-xs-12 text-center" style='padding-top: 30px;'>
-		        	<input class="btn btn-raised btn-normal-lg" type="submit" value="Generate POM">
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='logs' type="checkbox" name="dependencies" value="com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}"
+									/>KumuluzEE Logs
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='security v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}"
+									/>KumuluzEE Security (Keycloak)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='kafka v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}"
+									/>KumuluzEE Event Streaming (Kafka)
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='rest v2-3-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}"
+									/>KumuluzEE REST
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v2-4-0 cors' type="checkbox" name="dependencies" value="com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}"
+									/>KumuluzEE CORS
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v2-4-0 health' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}"
+									/>KumuluzEE Health
+								</label>
+							</div>
+
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v2-4-0 fault' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}"
+									/>KumuluzEE Fault Tolerance (including circuit breakers)
+								</label>
+							</div>
+
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v2-5-0-SNAPSHOT isSwagger' type="checkbox" name="dependencies" value="com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}"
+									/>KumuluzEE Swagger
+								</label>
+							</div>
+
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v2-5-0-SNAPSHOT isOpenApi' type="checkbox" name="dependencies" value="com.kumuluz.ee.openapi:kumuluzee-openapi:${kumuluzee-openapi.version}"
+									/>KumuluzEE OpenAPI
+								</label>
+							</div>
+
 						</div>
-		    </form>
+
+					</div>
+
+					<div class="col-xs-12">
+						<h3>MicroProfile APIs</h3>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v2-5-0-SNAPSHOT microprofile-1-1 microprofile-1-2 isConfigMP' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}"
+									/>MicroProfile Config 1.1
+								</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v2-4-0 mp-health  microprofile-1-2' type="checkbox" />MicroProfile Health Check 1.0
+								</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v2-4-0 mp-fault  microprofile-1-2' type="checkbox" />MicroProfile Fault Tolerance 1.0
+								</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='mp-metrics v2-4-0  microprofile-1-2' type="checkbox" />MicroProfile Metrics 1.0
+								</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class=' microprofile-1-2 isJWTAuth' type="checkbox" name="dependencies" value="com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee.jwt-auth.version}"
+									/>MicroProfile JWT Authentication 1.0
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 text-center" style='padding-top: 30px;'>
+						<input class="btn btn-raised btn-normal-lg" type="submit" value="Generate POM">
+					</div>
+				</form>
 
 			</div>
 		</div>
@@ -333,140 +354,145 @@ subtitle: Quickstart development with online pom generator
 </div>
 
 <script>
-let kmuluzLogsVersion = "1.1.0";
-function generatePom() {
-			// create object to be passed into template
-			var formData = {
-					groupId: $("#groupId").val() || "com.kumuluzee.sample",
-					artifactId: $("#artifactId").val() || "sample",
-					projectVersion: $("#projectVersion").val() || "1.0.0",
-					isName: $("#name").val() || false,
-					name: $("#name").val() || "Sample project",
-					description: $("#description").val() || "Sample KumuluzEE project",
-					isDescription: $("#description").val() || false,
-					kumuluzVersion: $("#version").val() || "2.2.0",
-					isPluginSnapshot: $("#version").val().indexOf('SNAPSHOT') !== -1,
+	let kmuluzLogsVersion = "1.1.0";
+	function generatePom() {
 
-					isUberJAR: $("#uberJAR").prop("checked"),
+		var isMicroprofile = $("#microprofile").prop("checked") || $("#microprofile-1-1").prop("checked") || $("#microprofile-1-2").prop("checked");
+		var isMP10 = $("#microprofile").prop("checked");
+		var isMP11 = $("#microprofile-1-1").prop("checked");
+		var isMP12 = $("#microprofile-1-2").prop("checked");
 
-					isLogs: $('.logs').prop('checked'),
-					kumuluzeeLogsVersion: kumuluzeeLogsVersion || "1.1.0",
-					isConfig: $('.config-etcd').prop('checked') || $('.config-consul').prop('checked'),
-					kumuluzeeConfigVersion: '1.0.0',
-					isDiscovery: $('.discovery-etcd').prop('checked') || $('.discovery-consul').prop('checked'),
-					kumuluzeeDiscoveryVersion: '1.0.0',
-					isSecurity: $('.security').prop('checked'),
-					kumuluzeeSecurityVersion: '1.0.0',
-					isStreaming: $('.kafka').prop('checked'),
-					kumuluzeeStreamingVersion: '1.0.0-SNAPSHOT',
-					isREST: $('.rest').prop('checked'),
-					kumuluzeeRESTVersion: '1.1.0',
-					isCORS: $('.cors').prop('checked'),
-					kumuluzeeCORSVersion: '1.0.2',
-					isMetrics: $('.metrics').prop('checked'),
-					kumuluzeeMetricsVersion: '1.0.0-SNAPSHOT',
-					isHealth: $('.health').prop('checked') || $('.mp-health').prop('checked'),
-					kumuluzeeHealthVersion: '1.0.0-SNAPSHOT',
-					isFaultTolerance: $('.fault').prop('checked') || $('.mp-fault').prop('checked'),
-					kumuluzeeFaultToleranceVersion: '1.0.0-SNAPSHOT',
-					isSwagger: $('.isSwagger').prop('checked'),
-					kumuluzeeSwaggerVersion: '1.0.0-SNAPSHOT',
-					isOpenApi: $('.isOpenApi').prop('checked'),
-					kumuluzeeOpenApiVersion: '1.0.0-SNAPSHOT',
-					isConfigMP: $('.isConfigMP').prop('checked'),
-					kumuluzeeConfigMPVersion: '1.1.0-SNAPSHOT',
-					isJWTAuth: $('.isJWTAuth').prop('checked'),
-					kumuluzeeJWTAuthVersion: '1.0.0-SNAPSHOT',
+		// create object to be passed into template
+		var formData = {
+			groupId: $("#groupId").val() || "com.kumuluzee.sample",
+			artifactId: $("#artifactId").val() || "sample",
+			projectVersion: $("#projectVersion").val() || "1.0.0",
+			isName: $("#name").val() || false,
+			name: $("#name").val() || "Sample project",
+			description: $("#description").val() || "Sample KumuluzEE project",
+			isDescription: $("#description").val() || false,
+			kumuluzVersion: $("#version").val() || "2.2.0",
+			isPluginSnapshot: $("#version").val().indexOf('SNAPSHOT') !== -1,
 
-					dependencies: [],
-			};
+			isUberJAR: $("#uberJAR").prop("checked"),
 
-			// check for snapshots
-			if(formData.isPluginSnapshot || formData.isJWTAuth || formData.isConfigMP || formData.isOpenApi || formData.isSwagger || formData.isFaultTolerance || formData.isHealth || formData.isMetrics || formData.isStreaming){
-				formData.hasSnapshots = true;
-			}
+			isLogs: $('.logs').prop('checked'),
+			kumuluzeeLogsVersion: kumuluzeeLogsVersion || "1.1.0",
+			isConfig: $('.config-etcd').prop('checked') || $('.config-consul').prop('checked'),
+			kumuluzeeConfigVersion: '1.0.0',
+			isDiscovery: $('.discovery-etcd').prop('checked') || $('.discovery-consul').prop('checked'),
+			kumuluzeeDiscoveryVersion: '1.0.0',
+			isSecurity: $('.security').prop('checked'),
+			kumuluzeeSecurityVersion: '1.0.0',
+			isStreaming: $('.kafka').prop('checked'),
+			kumuluzeeStreamingVersion: '1.0.0-SNAPSHOT',
+			isREST: $('.rest').prop('checked'),
+			kumuluzeeRESTVersion: '1.1.0',
+			isCORS: $('.cors').prop('checked'),
+			kumuluzeeCORSVersion: '1.0.2',
+			isMetrics: $('.metrics').prop('checked') && !isMP12,
+			kumuluzeeMetricsVersion: '1.0.0-SNAPSHOT',
+			isHealth: ($('.health').prop('checked') || $('.mp-health').prop('checked')) && !isMP12,
+			kumuluzeeHealthVersion: '1.0.0-SNAPSHOT',
+			isFaultTolerance: ($('.fault').prop('checked') || $('.mp-fault').prop('checked')) && !isMP12,
+			kumuluzeeFaultToleranceVersion: '1.0.0-SNAPSHOT',
+			isSwagger: $('.isSwagger').prop('checked'),
+			kumuluzeeSwaggerVersion: '1.0.0-SNAPSHOT',
+			isOpenApi: $('.isOpenApi').prop('checked'),
+			kumuluzeeOpenApiVersion: '1.0.0-SNAPSHOT',
+			isConfigMP: $('.isConfigMP').prop('checked') && !isMP11 && !isMP12,
+			kumuluzeeConfigMPVersion: '1.1.0-SNAPSHOT',
+			isJWTAuth: $('.isJWTAuth').prop('checked') && !isMP12,
+			kumuluzeeJWTAuthVersion: '1.0.0-SNAPSHOT',
 
-			// parse dependencies
-      var dependencies = $("input[name='dependencies']");
-			var isMicroprofile = $("#microprofile").prop("checked") || $("#microprofile-1-1").prop("checked") || $("#microprofile-1-2").prop("checked");
+			dependencies: [],
+		};
 
-			if(!isMicroprofile){
+		// check for snapshots
+		if (formData.isPluginSnapshot || formData.isJWTAuth || formData.isConfigMP || formData.isOpenApi || formData.isSwagger || formData.isFaultTolerance || formData.isHealth || formData.isMetrics || formData.isStreaming) {
+			formData.hasSnapshots = true;
+		}
+
+		// parse dependencies
+		var dependencies = $("input[name='dependencies']");
+
+		if (!isMicroprofile) {
+			formData.dependencies.push({
+				groupId: 'com.kumuluz.ee',
+				artifactId: 'kumuluzee-core',
+				version: false
+			});
+		}
+
+		for (var i = 0; i < dependencies.length; i++) {
+			var isMicroprofileDep = false;
+			if ($("#microprofile").prop("checked"))
+				isMicroprofileDep = $(dependencies[i]).hasClass('microprofile');
+			else if ($("#microprofile-1-1").prop("checked"))
+				isMicroprofileDep = $(dependencies[i]).hasClass('microprofile') || $(dependencies[i]).hasClass('microprofile-1-1');
+			else if ($("#microprofile-1-2").prop("checked"))
+				isMicroprofileDep = $(dependencies[i]).hasClass('microprofile') || $(dependencies[i]).hasClass('microprofile-1-1') || $(dependencies[i]).hasClass('microprofile-1-2');
+
+
+			if (dependencies[i].checked && !(isMicroprofile && isMicroprofileDep)) {
+				var dependency = dependencies[i].value.split(":");
+
+				if (formData.dependencies.find(function (dep) {
+					return dep.groupId == dependency[0] && dep.artifactId == dependency[1];
+				}) != null) {
+					continue;
+				}
 				formData.dependencies.push({
-						groupId: 'com.kumuluz.ee',
-						artifactId: 'kumuluzee-core',
-						version: false
+					groupId: dependency[0],
+					artifactId: dependency[1],
+					version: dependency[2]
 				});
 			}
+		}
+		var templateUrl = '/assets/template.xml?t=' + new Date().getTime();
+		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.0-SNAPSHOT') {
+			templateUrl = '/assets/template240.xml?t=' + new Date().getTime();
+		}
 
-      for (var i = 0; i < dependencies.length; i++) {
-          var isMicroprofileDep = false;
-					if($("#microprofile").prop("checked"))
-						isMicroprofileDep = $(dependencies[i]).hasClass('microprofile');
-					else if ($("#microprofile-1-1").prop("checked"))
-						isMicroprofileDep = $(dependencies[i]).hasClass('microprofile') || $(dependencies[i]).hasClass('microprofile-1-1');
-					else if($("#microprofile-1-2").prop("checked"))
-						isMicroprofileDep = $(dependencies[i]).hasClass('microprofile') || $(dependencies[i]).hasClass('microprofile-1-1')  || $(dependencies[i]).hasClass('microprofile-1-2');
-
-
-          if (dependencies[i].checked && !(isMicroprofile && isMicroprofileDep)) {
-              var dependency = dependencies[i].value.split(":");
-
-							if(formData.dependencies.find(function(dep){
-								return dep.groupId == dependency[0] && dep.artifactId == dependency[1];
-							}) != null){
-								continue;
-							}
-              formData.dependencies.push({
-                  groupId: dependency[0],
-                  artifactId: dependency[1],
-                  version: dependency[2]
-              });
-          }
-      }
-			var templateUrl = '/assets/template.xml?t='+new Date().getTime();
-			if($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.0-SNAPSHOT'){
-				templateUrl = '/assets/template240.xml?t='+new Date().getTime();
+		$.ajax({
+			url: templateUrl,
+			dataType: "text",
+			success: function (xml) {
+				var pom = Mustache.render(xml, formData);
+				// return pom.xml
+				var blob = new Blob([pom], {
+					type: "text/plain;charset=utf-8"
+				});
+				saveAs(blob, "pom.xml");
 			}
-
-			$.ajax({
-					url: templateUrl,
-					dataType: "text",
-					success: function(xml) {
-							var pom = Mustache.render(xml, formData);
-							// return pom.xml
-							var blob = new Blob([pom], {
-									type: "text/plain;charset=utf-8"
-							});
-							saveAs(blob, "pom.xml");
-					}
-			});
-			return false;
+		});
+		return false;
 	}
 
 	function disableMicroprofileValues(checkbox) {
-      let checked = $(checkbox).prop("checked");
-      $(".microprofile").each(function(i, elm) {
-        $(elm).prop('disabled', checked);
-        $(elm).prop('checked', checked);
-      });
-			if(checkbox === '#microprofile-1-1'){
-				$(".microprofile-1-1").each(function(i, elm) {
-	        $(elm).prop('disabled', checked);
-	        $(elm).prop('checked', checked);
-	      });
-			}
-			if(checkbox === '#microprofile-1-2'){
-				$(".microprofile-1-2").each(function(i, elm) {
-	        $(elm).prop('disabled', checked);
-	        $(elm).prop('checked', checked);
-	      });
-			}
-  }
+		let checked = $(checkbox).prop("checked");
+		$(".microprofile").each(function (i, elm) {
+			$(elm).prop('disabled', checked);
+			$(elm).prop('checked', checked);
+		});
+		if (checkbox === '#microprofile-1-1') {
+			$(".microprofile-1-1").each(function (i, elm) {
+				$(elm).prop('disabled', checked);
+				$(elm).prop('checked', checked);
+			});
+		}
+		if (checkbox === '#microprofile-1-2') {
+			$(".microprofile-1-2").each(function (i, elm) {
+				$(elm).prop('disabled', checked);
+				$(elm).prop('checked', checked);
+			});
+		}
+	}
 
-	$(document).ready(function(){
-		$.get("https://api.github.com/repos/kumuluz/kumuluzee-logs/releases", function(response){
-			for(var log of response){
-				if(!log.prerelease){
+	$(document).ready(function () {
+		$.get("https://api.github.com/repos/kumuluz/kumuluzee-logs/releases", function (response) {
+			for (var log of response) {
+				if (!log.prerelease) {
 					kumuluzeeLogsVersion = log.name.substring(1);
 					break;
 				}
@@ -475,22 +501,22 @@ function generatePom() {
 
 		// Disable incompatible extensionsd
 		$("#version").change(onVersionChange);
-		function onVersionChange (e){
+		function onVersionChange(e) {
 			disableAllNewVersions();
 			switch (e.target.value) {
 				case '2.5.0-SNAPSHOT':
-					$(".v2-5-0-SNAPSHOT").each(function(i, elm){
+					$(".v2-5-0-SNAPSHOT").each(function (i, elm) {
 						$(elm).prop('disabled', false);
 						disableChildren('.metrics-comp', true);
 					});
 				case '2.4.1':
 				case '2.4.0':
-					$(".v2-4-0").each(function(i, elm){
+					$(".v2-4-0").each(function (i, elm) {
 						$(elm).prop('disabled', false);
 						disableChildren('.metrics-comp', true);
 					});
 				case '2.3.0':
-					$(".v2-3-0").each(function(i, elm){
+					$(".v2-3-0").each(function (i, elm) {
 						$(elm).prop('disabled', false);
 					});
 					return;
@@ -500,17 +526,17 @@ function generatePom() {
 		}
 
 		function disableAllNewVersions() {
-			$("input[type='checkbox']").each(function(i, elm) {
+			$("input[type='checkbox']").each(function (i, elm) {
 				$(elm).prop('checked', false);
 			});
-			$(".v2-3-0, .v2-4-0, .v2-5-0-SNAPSHOT").each(function(i, elm){
+			$(".v2-3-0, .v2-4-0, .v2-5-0-SNAPSHOT").each(function (i, elm) {
 				$(elm).prop('disabled', true);
 				$(elm).prop('checked', false);
 				disableChildren('.metrics-comp', true);
 			});
 		}
 		// Init correct version
-		onVersionChange({target: { value: $("#version").val()}});
+		onVersionChange({ target: { value: $("#version").val() } });
 
 		// Disable JPA if one is selected
 		onlyOne(["#eclipselink", "#hibernate"]);
@@ -530,12 +556,12 @@ function generatePom() {
 	});
 
 	function onlyOne(array) {
-		for(var i=0; i<array.length; i++){
-			$(array[i]).change(function(e){
-				if(e.target.disabled)
+		for (var i = 0; i < array.length; i++) {
+			$(array[i]).change(function (e) {
+				if (e.target.disabled)
 					return;
-				for(var j=0; j<array.length; j++){
-					if($(array[j])[0] !== $(e.target)[0]){
+				for (var j = 0; j < array.length; j++) {
+					if ($(array[j])[0] !== $(e.target)[0]) {
 						$(array[j]).prop("disabled", e.target.checked);
 						$(array[j]).prop("checked", false);
 					}
@@ -545,26 +571,26 @@ function generatePom() {
 	}
 
 	function clickBoth(first, second) {
-		$(first).change(function(e){
-			if(e.target.disabled)
+		$(first).change(function (e) {
+			if (e.target.disabled)
 				return;
 			$(second).prop("checked", e.target.checked);
 		});
-		$(second).change(function(e){
-			if(e.target.disabled)
+		$(second).change(function (e) {
+			if (e.target.disabled)
 				return;
 			$(first).prop("checked", e.target.checked);
 		});
 	}
 
 	function whenParent(parent, children) {
-		$(parent).change(function(e){
+		$(parent).change(function (e) {
 			disableChildren(children, !e.target.checked);
 		})
 	}
 
-	function disableChildren(children, disabled){
-		$(children).each(function(index, child){
+	function disableChildren(children, disabled) {
+		$(children).each(function (index, child) {
 			$(child).prop('disabled', disabled);
 			$(child).prop('checked', false);
 		});
