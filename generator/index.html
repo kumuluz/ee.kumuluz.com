@@ -237,6 +237,18 @@ subtitle: Quickstart development with online pom generator
 								</label>
 							</div>
 
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left: 0px;">
+								<label>
+									KumuluzEE Reactive
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='reactive-comp v2-5-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.reactive:kumuluzee-reactive-vertx:${kumuluzee.reactive-vertx.version}"
+									/>Vert.x
+								</label>
+							</div>
+
 						</div>
 
 						<div class="col-sm-6">
@@ -404,6 +416,9 @@ subtitle: Quickstart development with online pom generator
 			kumuluzeeConfigMPVersion: '1.1.0-SNAPSHOT',
 			isJWTAuth: $('.isJWTAuth').prop('checked') && !isMP12,
 			kumuluzeeJWTAuthVersion: '1.0.0-SNAPSHOT',
+
+			isReactive: $('.reactive-comp').prop('checked'),
+			kumuluzeeReactiveVersion: '1.0.0-SNAPSHOT',
 
 			dependencies: [],
 		};

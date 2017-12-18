@@ -62,6 +62,9 @@
         {{ #isJWTAuth }}
         <kumuluzee.jwt-auth.version>{{kumuluzeeJWTAuthVersion}}</kumuluzee.jwt-auth.version>
         {{ /isJWTAuth }}
+        {{ #isReactive }}
+        <kumuluzee.reactive-vertx.version>{{kumuluzeeReactiveVersion}}</kumuluzee.reactive-vertx.version>
+        {{ /isReactive }}
     </properties>
 
 
