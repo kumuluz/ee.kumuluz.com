@@ -109,7 +109,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                             title: "Success!",
                             text: "Submission was successful, we have sent you a confirmation email.",
                             type: "success",
-                            confirmButtonColor: "#244c9b"
+                            confirmButtonColor: "#263c5f"
                         });
 
                         $(".confirm").click(function () {
