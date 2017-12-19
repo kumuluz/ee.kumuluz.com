@@ -106,10 +106,10 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                         msg = '';
 
                         swal({
-                            title: "Success!", 
-                            text: "Submission was successful, we have sent you a confirmation email.", 
+                            title: "Success!",
+                            text: "Submission was successful, we have sent you a confirmation email.",
                             type: "success",
-                            confirmButtonColor: "#263c5f"
+                            confirmButtonColor: "#244c9b"
                         });
 
                         $(".confirm").click(function () {
@@ -196,7 +196,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                 ) {
                     submitMsg = $.ajaxChimp.translations[settings.language]['submit'];
                 }
-                
+
                 //loading.show();
 
                 return false;
