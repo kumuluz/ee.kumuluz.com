@@ -33,7 +33,8 @@ subtitle: Quickstart development with online pom generator
 							<label class="col-xs-12 col-sm-3 control-label" for="version">KumuluzEE</label>
 							<div class="col-xs-12 col-sm-8">
 								<select id="version" name="version" class="form-control">
-									<option value="2.5.0-SNAPSHOT" selected>2.5.0-SNAPSHOT</option>
+									<option value="2.6.0-SNAPSHOT" selected>2.6.0-SNAPSHOT</option>
+									<option value="2.5.1" selected>2.5.1</option>
 									<option value="2.4.1">2.4.1</option>
 									<option value="2.4.0">2.4.0</option>
 									<option value="2.3.0">2.3.0</option>
@@ -78,7 +79,7 @@ subtitle: Quickstart development with online pom generator
 						<div class="col-sm-6">
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input id="microprofile-1-1" onclick="disableMicroprofileValues('#microprofile-1-1')" class="v2-5-0-SNAPSHOT" type="checkbox"
+									<input id="microprofile-1-1" onclick="disableMicroprofileValues('#microprofile-1-1')" class="v2-5-0" type="checkbox"
 									 name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.1" />MicroProfile 1.1
 								</label>
 							</div>
@@ -86,7 +87,7 @@ subtitle: Quickstart development with online pom generator
 						<div class="col-sm-6">
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input id="microprofile-1-2" onclick="disableMicroprofileValues('#microprofile-1-2')" class="v2-5-0-SNAPSHOT" type="checkbox"
+									<input id="microprofile-1-2" onclick="disableMicroprofileValues('#microprofile-1-2')" class="v2-5-0" type="checkbox"
 									 name="dependencies" value="com.kumuluz.ee:kumuluzee-microProfile-1.2" />MicroProfile 1.2
 								</label>
 							</div>
@@ -298,14 +299,14 @@ subtitle: Quickstart development with online pom generator
 
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input class='v2-5-0-SNAPSHOT isSwagger' type="checkbox" name="dependencies" value="com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}"
+									<input class='v2-5-0 isSwagger' type="checkbox" name="dependencies" value="com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}"
 									/>KumuluzEE Swagger
 								</label>
 							</div>
 
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input class='v2-5-0-SNAPSHOT isOpenApi' type="checkbox" name="dependencies" value="com.kumuluz.ee.openapi:kumuluzee-openapi:${kumuluzee-openapi.version}"
+									<input class='v2-5-0 isOpenApi' type="checkbox" name="dependencies" value="com.kumuluz.ee.openapi:kumuluzee-openapi:${kumuluzee-openapi.version}"
 									/>KumuluzEE OpenAPI
 								</label>
 							</div>
@@ -319,7 +320,7 @@ subtitle: Quickstart development with online pom generator
 						<div class="col-sm-6">
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input class='v2-5-0-SNAPSHOT microprofile-1-1 microprofile-1-2 isConfigMP' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}"
+									<input class='v2-5-0 microprofile-1-1 microprofile-1-2 isConfigMP' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}"
 									/>MicroProfile Config 1.1
 								</label>
 							</div>
@@ -465,7 +466,7 @@ subtitle: Quickstart development with online pom generator
 			}
 		}
 		var templateUrl = '/assets/template.xml?t=' + new Date().getTime();
-		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.0-SNAPSHOT') {
+		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.1' || $('#version').val() == '2.6.0-SNAPSHOT') {
 			templateUrl = '/assets/template240.xml?t=' + new Date().getTime();
 		}
 
@@ -519,8 +520,9 @@ subtitle: Quickstart development with online pom generator
 		function onVersionChange(e) {
 			disableAllNewVersions();
 			switch (e.target.value) {
-				case '2.5.0-SNAPSHOT':
-					$(".v2-5-0-SNAPSHOT").each(function (i, elm) {
+				case '2.6.0-SNAPSHOT':
+				case '2.5.1':
+					$(".v2-5-0").each(function (i, elm) {
 						$(elm).prop('disabled', false);
 						disableChildren('.metrics-comp', true);
 					});
@@ -544,7 +546,7 @@ subtitle: Quickstart development with online pom generator
 			$("input[type='checkbox']").each(function (i, elm) {
 				$(elm).prop('checked', false);
 			});
-			$(".v2-3-0, .v2-4-0, .v2-5-0-SNAPSHOT").each(function (i, elm) {
+			$(".v2-3-0, .v2-4-0, .v2-5-0, .v2-6-0-SNAPSHOT").each(function (i, elm) {
 				$(elm).prop('disabled', true);
 				$(elm).prop('checked', false);
 				disableChildren('.metrics-comp', true);
