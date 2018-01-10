@@ -34,7 +34,7 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-xs-12 col-sm-8">
 								<select id="version" name="version" class="form-control">
 									<option value="2.6.0-SNAPSHOT" selected>2.6.0-SNAPSHOT</option>
-									<option value="2.5.1" selected>2.5.1</option>
+									<option value="2.5.2" selected>2.5.2</option>
 									<option value="2.4.1">2.4.1</option>
 									<option value="2.4.0">2.4.0</option>
 									<option value="2.3.0">2.3.0</option>
@@ -466,7 +466,7 @@ subtitle: Quickstart development with online pom generator
 			}
 		}
 		var templateUrl = '/assets/template.xml?t=' + new Date().getTime();
-		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.1' || $('#version').val() == '2.6.0-SNAPSHOT') {
+		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.2' || $('#version').val() == '2.6.0-SNAPSHOT') {
 			templateUrl = '/assets/template240.xml?t=' + new Date().getTime();
 		}
 
@@ -521,7 +521,7 @@ subtitle: Quickstart development with online pom generator
 			disableAllNewVersions();
 			switch (e.target.value) {
 				case '2.6.0-SNAPSHOT':
-				case '2.5.1':
+				case '2.5.2':
 					$(".v2-5-0").each(function (i, elm) {
 						$(elm).prop('disabled', false);
 						disableChildren('.metrics-comp', true);
