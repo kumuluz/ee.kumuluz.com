@@ -221,19 +221,19 @@ subtitle: Quickstart development with online pom generator
 
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input class='metrics v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}"
+									<input class='metrics v2-4-0 microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}"
 									/>KumuluzEE Metrics
 								</label>
 							</div>
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 								<label>
-									<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}"
+									<input class='metrics-comp v2-4-0 microprofile-1-2-add' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}"
 									/>KumuluzEE Logs reporter
 								</label>
 							</div>
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 								<label>
-									<input class='metrics-comp v2-4-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}"
+									<input class='metrics-comp v2-4-0 microprofile-1-2-add' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}"
 									/>Logstash reporter
 								</label>
 							</div>
@@ -245,7 +245,7 @@ subtitle: Quickstart development with online pom generator
 							</div>
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 								<label>
-									<input class='reactive-comp v2-5-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.reactive:kumuluzee-reactive-vertx:${kumuluzee.reactive-vertx.version}"
+									<input class='reactive-comp repo-snapshot v2-5-0' type="checkbox" name="dependencies" value="com.kumuluz.ee.reactive:kumuluzee-reactive-vertx:${kumuluzee.reactive-vertx.version}"
 									/>Vert.x
 								</label>
 							</div>
@@ -285,14 +285,14 @@ subtitle: Quickstart development with online pom generator
 							</div>
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input class='v2-4-0 health' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}"
+									<input class='v2-4-0 health microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}"
 									/>KumuluzEE Health
 								</label>
 							</div>
 
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input class='v2-4-0 fault' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}"
+									<input class='v2-4-0 fault microprofile-1-2' type="checkbox" name="dependencies" value="com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}"
 									/>KumuluzEE Fault Tolerance (including circuit breakers)
 								</label>
 							</div>
@@ -321,7 +321,7 @@ subtitle: Quickstart development with online pom generator
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
 									<input class='v2-5-0 microprofile-1-1 microprofile-1-2 isConfigMP' type="checkbox" name="dependencies" value="com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}"
-									/>MicroProfile Config 1.1
+									/>MicroProfile Config 1.2
 								</label>
 							</div>
 						</div>
@@ -342,7 +342,7 @@ subtitle: Quickstart development with online pom generator
 						<div class="col-sm-6">
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
 								<label>
-									<input class='mp-metrics v2-4-0  microprofile-1-2' type="checkbox" />MicroProfile Metrics 1.0
+									<input class='mp-metrics v2-4-0  microprofile-1-2' type="checkbox" />MicroProfile Metrics 1.1
 								</label>
 							</div>
 						</div>
@@ -374,6 +374,7 @@ subtitle: Quickstart development with online pom generator
 		var isMP10 = $("#microprofile").prop("checked");
 		var isMP11 = $("#microprofile-1-1").prop("checked");
 		var isMP12 = $("#microprofile-1-2").prop("checked");
+		var v25plus = $('#version').val() == '2.6.0-SNAPSHOT' || $('#version').val() == '2.5.2';
 
 		// create object to be passed into template
 		var formData = {
@@ -392,31 +393,31 @@ subtitle: Quickstart development with online pom generator
 			isLogs: $('.logs').prop('checked'),
 			kumuluzeeLogsVersion: kumuluzeeLogsVersion || "1.1.0",
 			isConfig: $('.config-etcd').prop('checked') || $('.config-consul').prop('checked'),
-			kumuluzeeConfigVersion: '1.0.0',
+			kumuluzeeConfigVersion: v25plus ? '1.1.0' : '1.0.0',
 			isDiscovery: $('.discovery-etcd').prop('checked') || $('.discovery-consul').prop('checked'),
-			kumuluzeeDiscoveryVersion: '1.0.0',
+			kumuluzeeDiscoveryVersion: '1.1.0',
 			isSecurity: $('.security').prop('checked'),
-			kumuluzeeSecurityVersion: '1.0.0',
+			kumuluzeeSecurityVersion: '1.0.1',
 			isStreaming: $('.kafka').prop('checked'),
 			kumuluzeeStreamingVersion: '1.0.0-SNAPSHOT',
 			isREST: $('.rest').prop('checked'),
 			kumuluzeeRESTVersion: '1.1.0',
 			isCORS: $('.cors').prop('checked'),
 			kumuluzeeCORSVersion: '1.0.2',
-			isMetrics: $('.metrics').prop('checked') && !isMP12,
-			kumuluzeeMetricsVersion: '1.0.0-SNAPSHOT',
+			isMetrics: $('.metrics').prop('checked'),
+			kumuluzeeMetricsVersion: '1.0.0',
 			isHealth: ($('.health').prop('checked') || $('.mp-health').prop('checked')) && !isMP12,
-			kumuluzeeHealthVersion: '1.0.0-SNAPSHOT',
+			kumuluzeeHealthVersion: '1.0.0',
 			isFaultTolerance: ($('.fault').prop('checked') || $('.mp-fault').prop('checked')) && !isMP12,
-			kumuluzeeFaultToleranceVersion: '1.0.0-SNAPSHOT',
+			kumuluzeeFaultToleranceVersion: '1.0.0',
 			isSwagger: $('.isSwagger').prop('checked'),
 			kumuluzeeSwaggerVersion: '1.0.0-SNAPSHOT',
 			isOpenApi: $('.isOpenApi').prop('checked'),
 			kumuluzeeOpenApiVersion: '1.0.0-SNAPSHOT',
 			isConfigMP: $('.isConfigMP').prop('checked') && !isMP11 && !isMP12,
-			kumuluzeeConfigMPVersion: '1.1.0-SNAPSHOT',
+			kumuluzeeConfigMPVersion: '1.1.1',
 			isJWTAuth: $('.isJWTAuth').prop('checked') && !isMP12,
-			kumuluzeeJWTAuthVersion: '1.0.0-SNAPSHOT',
+			kumuluzeeJWTAuthVersion: '1.0.0',
 
 			isReactive: $('.reactive-comp').prop('checked'),
 			kumuluzeeReactiveVersion: '1.0.0-SNAPSHOT',
@@ -425,7 +426,7 @@ subtitle: Quickstart development with online pom generator
 		};
 
 		// check for snapshots
-		if (formData.isPluginSnapshot || formData.isJWTAuth || formData.isConfigMP || formData.isOpenApi || formData.isSwagger || formData.isFaultTolerance || formData.isHealth || formData.isMetrics || formData.isStreaming) {
+		if (formData.isPluginSnapshot || formData.isOpenApi || formData.isSwagger || formData.isStreaming || formData.isReactive) {
 			formData.hasSnapshots = true;
 		}
 
@@ -498,7 +499,7 @@ subtitle: Quickstart development with online pom generator
 			});
 		}
 		if (checkbox === '#microprofile-1-2') {
-			$(".microprofile-1-2").each(function (i, elm) {
+			$(".microprofile-1-2, .microprofile-1-2-add").each(function (i, elm) {
 				$(elm).prop('disabled', checked);
 				$(elm).prop('checked', checked);
 			});
