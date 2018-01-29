@@ -227,13 +227,13 @@ subtitle: Quickstart development with online pom generator
 							</div>
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 								<label>
-									<input class='metrics-comp v2-4-0 microprofile-1-2-add' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}"
+									<input class='metrics-comp 1 v2-4-0 microprofile-1-2-add' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}"
 									/>KumuluzEE Logs reporter
 								</label>
 							</div>
 							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
 								<label>
-									<input class='metrics-comp v2-4-0 microprofile-1-2-add' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}"
+									<input class='metrics-comp 2 v2-4-0 microprofile-1-2-add' type="checkbox" name="dependencies" value="com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}"
 									/>Logstash reporter
 								</label>
 							</div>
@@ -404,7 +404,7 @@ subtitle: Quickstart development with online pom generator
 			kumuluzeeRESTVersion: '1.1.0',
 			isCORS: $('.cors').prop('checked'),
 			kumuluzeeCORSVersion: '1.0.2',
-			isMetrics: $('.metrics').prop('checked'),
+			isMetrics: $('.metrics').prop('checked') && ($('.metrics-comp.2').prop('checked') || $('.metrics-comp.1').prop('checked')),
 			kumuluzeeMetricsVersion: '1.0.0',
 			isHealth: ($('.health').prop('checked') || $('.mp-health').prop('checked')) && !isMP12,
 			kumuluzeeHealthVersion: '1.0.0',
@@ -500,8 +500,13 @@ subtitle: Quickstart development with online pom generator
 		}
 		if (checkbox === '#microprofile-1-2') {
 			$(".microprofile-1-2, .microprofile-1-2-add").each(function (i, elm) {
-				$(elm).prop('disabled', checked);
-				$(elm).prop('checked', checked);
+				if($(elm).hasClass('microprofile-1-2-add')){
+					$(elm).prop('disabled', !checked);
+					$(elm).prop('checked', false);
+				} else {
+					$(elm).prop('disabled', checked);
+					$(elm).prop('checked', checked);
+				}
 			});
 		}
 	}
