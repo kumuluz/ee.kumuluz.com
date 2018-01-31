@@ -404,7 +404,7 @@ subtitle: Quickstart development with online pom generator
 			kumuluzeeRESTVersion: '1.1.0',
 			isCORS: $('.cors').prop('checked'),
 			kumuluzeeCORSVersion: '1.0.2',
-			isMetrics: $('.metrics').prop('checked') && ($('.metrics-comp.2').prop('checked') || $('.metrics-comp.1').prop('checked')),
+			isMetrics: false,
 			kumuluzeeMetricsVersion: '1.0.0',
 			isHealth: ($('.health').prop('checked') || $('.mp-health').prop('checked')) && !isMP12,
 			kumuluzeeHealthVersion: '1.0.0',
@@ -424,6 +424,14 @@ subtitle: Quickstart development with online pom generator
 
 			dependencies: [],
 		};
+
+		if($('.metrics').prop('checked')){
+			if(isMicroprofile && $('.metrics-comp.2').prop('checked') || $('.metrics-comp.1').prop('checked')){
+				formData.isMetrics = true;
+			}else if(!isMicroprofile) {
+				formData.isMetrics = true;
+			}
+		}
 
 		// check for snapshots
 		if (formData.isPluginSnapshot || formData.isOpenApi || formData.isSwagger || formData.isStreaming || formData.isReactive) {
