@@ -271,6 +271,18 @@ h4 { font-family: $font-family; }
 	    }
 	}
 
+	.join-blog-banner{
+		margin: -20px;
+		padding: 10px 50px;
+		background: $base-color;
+		margin-top: 20px;
+
+		a {
+			color: white !important;
+			text-shadow: none;
+		}
+	}
+
 
 	@media screen and (max-width: 380px) {
 		img {
