@@ -486,7 +486,7 @@ subtitle: Quickstart development with online pom generator
 			}
 		}
 		var templateUrl = '/assets/template.xml?t=' + new Date().getTime();
-		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.2' || $('#version').val() == '2.6.0-SNAPSHOT') {
+		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.2' || $('#version').val() == '3.0.0-beta.1' || $('#version').val() == '3.0.0-SNAPSHOT') {
 			templateUrl = '/assets/template240.xml?t=' + new Date().getTime();
 		}
 
@@ -576,7 +576,7 @@ subtitle: Quickstart development with online pom generator
 			$("input[type='checkbox']").each(function (i, elm) {
 				$(elm).prop('checked', false);
 			});
-			$(".v2-3-0, .v2-4-0, .v2-5-0, v3-0-0, .v3-0-0-SNAPSHOT").each(function (i, elm) {
+			$(".v2-3-0, .v2-4-0, .v2-5-0, .v3-0-0, .v3-0-0-SNAPSHOT").each(function (i, elm) {
 				$(elm).prop('disabled', true);
 				$(elm).prop('checked', false);
 				disableChildren('.metrics-comp', true);
