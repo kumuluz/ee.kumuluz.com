@@ -67,7 +67,6 @@
         {{ /isReactive }}
     </properties>
 
-
     {{ #hasSnapshots }}
     <repositories>
         <repository>
