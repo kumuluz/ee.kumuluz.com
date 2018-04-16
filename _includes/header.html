@@ -17,8 +17,8 @@
         </div>
         <ul class="nav navbar-nav">
             <li id="generator-link"><a href="{{ '/generator?v=29012018' | prepend: site.baseurl }}">GENERATOR</a></li>
-            <li id="features-link"><a href="{{ '/features' | prepend: site.baseUrl }}">FEATURES</a></li>
-            <li id="migration-link"><a href="{{ '/migration' | prepend: site.baseUrl }}">MIGRATION</a></li>
+            <li id="projects-link"><a href="{{ '/projects' | prepend: site.baseUrl }}">PROJECTS</a></li>
+            <li id="microprofile-link"><a href="{{ '/microprofile' | prepend: site.baseUrl }}">MICROPROFILE</a></li>
             <li id="tutorial-link"><a href="{{ '/tutorial' | prepend: site.baseurl }}">TUTORIALS</a></li>
             <li id="articles-link"><a href="{{ '/articles' | prepend: site.baseUrl }}">ARTICLES</a></li>
             <li id="opinions-link"><a href="{{ '/opinions' | prepend: site.baseurl }}">OPINIONS</a></li>
@@ -37,10 +37,10 @@
 $(document).on('turbolinks:load', function () {
   Turbolinks.clearCache();
 
-  if (location.pathname.indexOf('/features') >= 0) {
+  if (location.pathname.indexOf('/projects') >= 0) {
     $('#features-link').addClass('active');
   }
-  else if (location.pathname.indexOf('/migration') >= 0) {
+  else if (location.pathname.indexOf('/microprofile') >= 0) {
     $('#migration-link').addClass('active');
   }
   else if (location.pathname.indexOf('/support') >= 0) {
