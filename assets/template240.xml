@@ -65,6 +65,17 @@
         {{ #isReactive }}
         <kumuluzee.reactive-vertx.version>{{kumuluzeeReactiveVersion}}</kumuluzee.reactive-vertx.version>
         {{ /isReactive }}
+
+        {{ #isArquillian }}
+        <arquillian.version>{{arquillianVersion}}</arquillian.version>
+        <kumuluzee-arquillian-container.version>{{arquillianContainerVersion}}</kumuluzee-arquillian-container.version>
+        {{ /isArquillian }}
+        {{ #isArquillianJunit }}
+        <junit.version>{{junitVersion}}</junit.version>
+        {{ /isArquillianJunit }}
+        {{ #isArquillianTestng }}
+        <testng.version>{{testngVersion}}</testng.version>
+        {{ /isArquillianTestng }}
     </properties>
 
     {{ #hasSnapshots }}
@@ -108,6 +119,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            {{ #isArquillian }}
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${arquillian.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            {{ /isArquillian }}
         </dependencies>
     </dependencyManagement>
 
@@ -119,6 +139,9 @@
             {{ #version }}
             <version>{{ version }}</version>
             {{ /version }}
+            {{ #scope }}
+            <scope>{{ scope }}</scope>
+            {{ /scope }}
         </dependency>
         {{ /dependencies }}
     </dependencies>

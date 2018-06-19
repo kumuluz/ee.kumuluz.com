@@ -277,6 +277,24 @@ subtitle: Quickstart development with online pom generator
 								</label>
 							</div>
 
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left: 0px;">
+								<label>
+									KumuluzEE Arquillian Adapter
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='arquillian-junit v2-5-3' type="checkbox"
+									/>with jUnit
+								</label>
+							</div>
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9" style="padding-left:50px;">
+								<label>
+									<input class='arquillian-testng v2-5-3' type="checkbox"
+									/>with TestNG
+								</label>
+							</div>
+
 						</div>
 
 						<div class="col-sm-6">
@@ -448,6 +466,14 @@ subtitle: Quickstart development with online pom generator
 			isReactive: $('.reactive-comp').prop('checked'),
 			kumuluzeeReactiveVersion: '1.0.0-SNAPSHOT',
 
+			isArquillian: $('.arquillian-junit').prop('checked') || $('.arquillian-testng').prop('checked'),
+            arquillianVersion: '1.4.0.Final',
+            arquillianContainerVersion: '1.0.0',
+            isArquillianJunit: $('.arquillian-junit').prop('checked'),
+			junitVersion: '4.12',
+            isArquillianTestng: $('.arquillian-testng').prop('checked'),
+            testngVersion: '6.14.3',
+
 			dependencies: [],
 		};
 
@@ -457,6 +483,42 @@ subtitle: Quickstart development with online pom generator
 			}else if(!isMicroprofile) {
 				formData.isMetrics = true;
 			}
+		}
+
+		// Add Arquillian dependencies
+		if (formData.isArquillian) {
+            formData.dependencies.push({
+                groupId: 'com.kumuluz.ee.testing',
+                artifactId: 'kumuluzee-arquillian-container',
+                version: '${kumuluzee-arquillian-container.version}',
+                scope: 'test'
+            });
+		}
+		if (formData.isArquillianJunit) {
+		    formData.dependencies.push({
+				groupId: 'org.jboss.arquillian.junit',
+				artifactId: 'arquillian-junit-container',
+				scope: 'test'
+			});
+            formData.dependencies.push({
+                groupId: 'junit',
+                artifactId: 'junit',
+                version: '${junit.version}',
+                scope: 'test'
+            });
+		}
+		if (formData.isArquillianTestng) {
+            formData.dependencies.push({
+                groupId: 'org.jboss.arquillian.testng',
+                artifactId: 'arquillian-testng-container',
+                scope: 'test'
+            });
+            formData.dependencies.push({
+                groupId: 'org.testng',
+                artifactId: 'testng',
+				version: '${testng.version}',
+                scope: 'test'
+            });
 		}
 
 		// check for snapshots
@@ -567,6 +629,10 @@ subtitle: Quickstart development with online pom generator
 						disableChildren('.metrics-comp', true);
 					});
 				case '2.5.3':
+                    $(".v2-5-3").each(function (i, elm) {
+                        $(elm).prop('disabled', false);
+                        disableChildren('.metrics-comp', true);
+                    });
 				case '2.5.2':
 					$(".v2-5-0").each(function (i, elm) {
 						$(elm).prop('disabled', false);
@@ -610,6 +676,7 @@ subtitle: Quickstart development with online pom generator
 					$('#jta-narayana').next().text('JTA 1.2 (Narayana)');
 					//$('#javamail-ri').next().text('JavaMail 1.6 (RI)');
 					return;
+				case '2.5.3':
 				case '2.5.2':
 				case '2.4.1':
 				case '2.4.0':
@@ -640,7 +707,7 @@ subtitle: Quickstart development with online pom generator
 			$("input[type='checkbox']").each(function (i, elm) {
 				$(elm).prop('checked', false);
 			});
-			$(".v2-3-0, .v2-4-0, .v2-5-0, .v3-0-0, .v3-0-0-SNAPSHOT").each(function (i, elm) {
+			$(".v2-3-0, .v2-4-0, .v2-5-0, .v2-5-3, .v3-0-0, .v3-0-0-SNAPSHOT").each(function (i, elm) {
 				$(elm).prop('disabled', true);
 				$(elm).prop('checked', false);
 				disableChildren('.metrics-comp', true);
@@ -654,6 +721,7 @@ subtitle: Quickstart development with online pom generator
 		onlyOne([".config-consul", ".config-etcd"]);
 		onlyOne([".discovery-consul", ".discovery-etcd"]);
 		onlyOne(["#microprofile", "#microprofile-1-1", "#microprofile-1-2"]);
+		onlyOne([".arquillian-junit", ".arquillian-testng"]);
 
 		// If clicked one, click both
 		clickBoth(".metrics", ".mp-metrics");
