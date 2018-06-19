@@ -394,14 +394,13 @@ subtitle: Quickstart development with online pom generator
 </div>
 
 <script>
-	let kmuluzLogsVersion = "1.1.0";
 	function generatePom() {
 
 		var isMicroprofile = $("#microprofile").prop("checked") || $("#microprofile-1-1").prop("checked") || $("#microprofile-1-2").prop("checked");
 		var isMP10 = $("#microprofile").prop("checked");
 		var isMP11 = $("#microprofile-1-1").prop("checked");
 		var isMP12 = $("#microprofile-1-2").prop("checked");
-		var v25plus = $('#version').val() == '2.6.0-SNAPSHOT' || $('#version').val() == '2.5.2';
+		var v25plus = $('#version').val() == '2.6.0-SNAPSHOT' || $('#version').val() == '2.5.2' || $('#version').val() == '2.5.3';
 
 		// create object to be passed into template
 		var formData = {
@@ -502,7 +501,7 @@ subtitle: Quickstart development with online pom generator
 			}
 		}
 		var templateUrl = '/assets/template.xml?t=' + new Date().getTime();
-		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.2' || $('#version').val() == '3.0.0-beta.1' || $('#version').val() == '3.0.0-SNAPSHOT') {
+		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.2' || $('#version').val() == '3.0.0-beta.1' || $('#version').val() == '3.0.0-SNAPSHOT' || $('#version').val() == '2.5.3') {
 			templateUrl = '/assets/template240.xml?t=' + new Date().getTime();
 		}
 
