@@ -34,7 +34,7 @@ subtitle: Quickstart development with online pom generator
 							<div class="col-xs-12 col-sm-8">
 								<select id="version" name="version" class="form-control">
 									<option value="3.0.0-SNAPSHOT">3.0.0-SNAPSHOT</option>
-									<option value="3.0.0-beta.1">3.0.0-beta.1</option>
+									<option value="3.0.0-beta.2">3.0.0-beta.2</option>
 									<option value="2.5.3" selected>2.5.3</option>
 									<option value="2.5.2">2.5.2</option>
 									<option value="2.4.1">2.4.1</option>
@@ -563,7 +563,7 @@ subtitle: Quickstart development with online pom generator
 			}
 		}
 		var templateUrl = '/assets/template.xml?t=' + new Date().getTime();
-		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.2' || $('#version').val() == '3.0.0-beta.1' || $('#version').val() == '3.0.0-SNAPSHOT' || $('#version').val() == '2.5.3') {
+		if ($('#version').val() == '2.4.0' || $('#version').val() == '2.4.1' || $('#version').val() == '2.5.2' || $('#version').val() == '3.0.0-beta.2' || $('#version').val() == '3.0.0-SNAPSHOT' || $('#version').val() == '2.5.3') {
 			templateUrl = '/assets/template240.xml?t=' + new Date().getTime();
 		}
 
@@ -623,7 +623,7 @@ subtitle: Quickstart development with online pom generator
 			disableAllNewVersions();
 			switch (e.target.value) {
 				case '3.0.0-SNAPSHOT':
-				case '3.0.0-beta.1':
+				case '3.0.0-beta.2':
 					$(".v3-0-0").each(function (i, elm) {
 						$(elm).prop('disabled', false);
 						disableChildren('.metrics-comp', true);
@@ -659,7 +659,7 @@ subtitle: Quickstart development with online pom generator
 			
 			switch (e.target.value) {
 				case '3.0.0-SNAPSHOT':
-				case '3.0.0-beta.1':
+				case '3.0.0-beta.2':
 					$('#servlet-jetty').next().text('Servlet 3.1 (Jetty)');
 					$('#cdi-weld').next().text('CDI 2.0 (RI Weld)');
 					$('#jax-rs-jersey').next().text('JAX-RS 2.1 (RI Jersey)');
