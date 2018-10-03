@@ -33,8 +33,8 @@ subtitle: Quickstart development with online pom generator
 							<label class="col-xs-12 col-sm-3 control-label" for="version">KumuluzEE</label>
 							<div class="col-xs-12 col-sm-8">
 								<select id="version" name="version" class="form-control">
-									<option value="3.0.0-SNAPSHOT">3.0.0-SNAPSHOT</option>
-									<option value="3.0.0-beta.3">3.0.0-beta.3</option>
+									<option value="3.1.0-SNAPSHOT">3.1.0-SNAPSHOT</option>
+									<option value="3.0.0">3.0.0</option>
 									<option value="2.5.3" selected>2.5.3</option>
 									<option value="2.5.2">2.5.2</option>
 									<option value="2.4.1">2.4.1</option>
@@ -628,8 +628,8 @@ subtitle: Quickstart development with online pom generator
 		function onVersionChangeDisable(e) {
 			disableAllNewVersions();
 			switch (e.target.value) {
-				case '3.0.0-SNAPSHOT':
-				case '3.0.0-beta.3':
+				case '3.1.0-SNAPSHOT':
+				case '3.0.0':
 					$(".v3-0-0").each(function (i, elm) {
 						$(elm).prop('disabled', false);
 						disableChildren('.metrics-comp', true);
@@ -664,8 +664,8 @@ subtitle: Quickstart development with online pom generator
 		function onVersionChangeLabels(e) {
 			
 			switch (e.target.value) {
-				case '3.0.0-SNAPSHOT':
-				case '3.0.0-beta.3':
+				case '3.1.0-SNAPSHOT':
+				case '3.0.0':
 					$('#servlet-jetty').next().text('Servlet 3.1 (Jetty)');
 					$('#cdi-weld').next().text('CDI 2.0 (RI Weld)');
 					$('#jax-rs-jersey').next().text('JAX-RS 2.1 (RI Jersey)');
