@@ -362,6 +362,13 @@ subtitle: Quickstart development with online pom generator
 								</label>
 							</div>
 
+							<div class="checkbox-inline col-xs-12 col-sm-offset-3 col-sm-9">
+								<label>
+									<input class='v3-0-0 isGrpc' type="checkbox" name="dependencies" value="com.kumuluz.ee.grpc:kumuluzee-grpc:${kumuluzee-grpc.version}"
+									/>KumuluzEE gRPC
+								</label>
+							</div>
+
 						</div>
 
 					</div>
@@ -468,6 +475,8 @@ subtitle: Quickstart development with online pom generator
 			kumuluzeeConfigMPVersion: '1.2.1',
 			isJWTAuth: $('.isJWTAuth').prop('checked') && !isMP12,
 			kumuluzeeJWTAuthVersion: '1.0.0',
+            isGrpc: $('.isGrpc').prop('checked'),
+            kumuluzeeGrpcVersion: '1.0.0',
 
 			isReactive: $('.reactive-comp').prop('checked'),
 			kumuluzeeReactiveVersion: '1.0.0-SNAPSHOT',

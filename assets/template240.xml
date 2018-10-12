@@ -65,6 +65,9 @@
         {{ #isReactive }}
         <kumuluzee.reactive-vertx.version>{{kumuluzeeReactiveVersion}}</kumuluzee.reactive-vertx.version>
         {{ /isReactive }}
+        {{ #isGrpc }}
+        <kumuluzee-grpc.version>{{kumuluzeeGrpcVersion}}</kumuluzee-grpc.version>
+        {{ /isGrpc }}
 
         {{ #isArquillian }}
         <arquillian.version>{{arquillianVersion}}</arquillian.version>
