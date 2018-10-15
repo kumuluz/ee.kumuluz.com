@@ -264,9 +264,9 @@ export default class GeneratorPage extends Component {
                                                 //this.checkForOtherdependencies(e);
                                             }}/>
                 </div>
-                {/* EXTENSIONS */}
+                {/* PROJECTS */}
                 <div className="extensions">
-                    <SectionTitleComponent number={5} title={"Extensions"}/>
+                    <SectionTitleComponent number={5} title={"Projects"}/>
                     <div className="extension-groups">
                         <div className="first-group group">
                             <div>
