@@ -63,7 +63,7 @@ public class OrdersResource {
                             </CodePageComponent>
                             <CodePageComponent id="pom-xml" lang={"xml"}>
                                 {`<properties>
-    <kumuluz.version>2.5.3</kumuluz.version>
+    <kumuluz.version>3.0.0</kumuluz.version>
 </properties>
 
 <dependencyManagement>
