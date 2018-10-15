@@ -289,6 +289,17 @@ export class GeneratorHelper {
         formData.dependencies.push(...extensions.dependencies);
         formData.propertiesVersions.push(...extensions.versions);
 
+        // Remove duplicate properties
+        const seenProps = [];
+        formData.propertiesVersions = formData.propertiesVersions.filter(prop => {
+            if (seenProps.indexOf(prop) < 0) {
+                seenProps.push(prop);
+                return true;
+            }
+
+            return false;
+        });
+
         // Check for snapshots
         formData.hasSnapshots = GeneratorHelper._hasSnapshot(formData.dependencies, KUMULUZEE_VERSION);
 
