@@ -1,0 +1,63 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/media-mixin";
+
+.ee-external-link-tile-component {
+  background-color: $white;
+  box-shadow: 0 7px 20px $shadow-grey;
+
+  .container {
+    height: 280px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  h1 {
+    padding-top: 32px;
+    color: $blue-400;
+    font-family: $font-fjalla-one;
+    font-size: 23px;
+  }
+  p {
+    margin-top: 20px;
+    color: $blue-grey;
+    font-family: $font-open-sans;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  a {
+    color: $blue-200;
+    font-size: 18px;
+    font-family: $font-open-sans;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+
+    span {
+      margin-right: 8px;
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-external-link-tile-component {
+    margin: 10px 0 10px 0;
+
+    h1, p {
+      text-align: center;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+  }
+}
+@include device-specific($tablet) {
+  .ee-external-link-tile-component {
+    margin: 10px 20px 10px 0;
+  }
+}
+@include device-specific($pc) {
+  .ee-external-link-tile-component {
+    margin: 10px 20px 10px 0;
+  }
+}

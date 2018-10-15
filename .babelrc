@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "transform-async-to-generator",
+    [
+      "prismjs",
+      {
+        "languages": ["java", "markup", "yaml", "clike", "javascript", "json", "graphql", "sql", "yaml"],
+        "plugins": ["line-numbers", "highlight-keywords"],
+        "theme": "default",
+        "css": true
+      }
+    ]
+  ]
+}

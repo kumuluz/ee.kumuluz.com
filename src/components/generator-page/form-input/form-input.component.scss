@@ -1,0 +1,27 @@
+@import "../../../assets/scss/variables";
+
+.ee-form-input-component {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 10px;
+    color: $blue-400;
+    font-family: $font-open-sans;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .form-control {
+    border: 2px solid $white-grey;
+    box-sizing: border-box;
+    font-family: $font-open-sans;
+    font-size: 18px;
+    padding: 10px;
+    color: $blue-grey;
+
+    &::placeholder {
+      opacity: 1;
+      color: $grey-100;
+    }
+  }
+}

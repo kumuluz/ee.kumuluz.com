@@ -1,0 +1,238 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/media-mixin";
+
+.ee-blog-links-component {
+  .tile {
+    background-color: $white;
+    box-shadow: 0 7px 20px $transparent-grey;
+
+    .tags {
+      .tag {
+        background-color: $blue-100;
+        color: $blue-400;
+        font-family: $font-open-sans;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+    .tile-content {
+      .tile-title {
+        color: $blue-400;
+        font-family: $font-fjalla-one;
+      }
+      .link {
+        a {
+          color: $blue-200;
+          text-decoration: none;
+          font-family: $font-open-sans;
+          .text {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .bottom-border {
+      height: 4px;
+      background: $gradient-bottom-border;
+    }
+  }
+}
+@include device-specific($phone) {
+  .ee-blog-links-component {
+    display: flex;
+    justify-content: center;
+
+    .compact-tiles {
+      .shown-tile {
+        display: flex;
+        justify-content: center;
+
+        .tile {
+          width: 90%;
+          margin: 0;
+        }
+      }
+      .toggle-hidden-tiles {
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        margin-top: 10px;
+
+        span {
+          cursor: pointer;
+          color: $blue-400
+        }
+      }
+      .hidden-tiles {
+        overflow:hidden;
+        height:0;
+        -webkit-transition:height 200ms ease-in;
+        -moz-transition:height 200ms ease-in;
+        -o-transition:height 200ms ease-in;
+        transition:height 200ms ease-in;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .tile {
+          width: 90%;
+          margin: 20px 0 0 0;
+        }
+      }
+
+    }
+    .tile {
+      .tags {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+
+        .tag {
+          font-size: 13px;
+          margin-right: 10px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 8px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      .tile-content {
+        margin: 14px 20px 26px 20px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .tile-title {
+          font-size: 23px;
+          text-align: center;
+        }
+        .link {
+          a {
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            img {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include device-specific($tablet) {
+  .ee-blog-links-component {
+    display: flex;
+    justify-content: space-between;
+
+    .tile {
+      margin: 0 10px;
+      width: 31%;
+
+      &:first-child {
+        margin: 0 10px 0 0;
+      }
+      &:last-child {
+        margin: 0 0 0 10px;
+      }
+      .tags {
+        margin-top: 30px;
+        //margin-left: 20px;
+        display: flex;
+        justify-content: center;
+
+        .tag {
+          font-size: 13px;
+          margin-right: 10px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 8px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      .tile-content {
+        margin: 14px 20px 26px 20px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .tile-title {
+          font-size: 23px;
+          text-align: center;
+        }
+        .link {
+          a {
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            img {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include device-specific($pc) {
+  .ee-blog-links-component {
+    display: flex;
+    justify-content: space-between;
+
+    .tile {
+      margin: 0 10px;
+      width: 31%;
+
+      &:first-child {
+        margin: 0 10px 0 0;
+      }
+      &:last-child {
+        margin: 0 0 0 10px;
+      }
+      .tags {
+        margin-top: 30px;
+        margin-left: 20px;
+
+        .tag {
+          font-size: 13px;
+          margin-right: 10px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 8px;
+        }
+      }
+      .tile-content {
+        margin: 14px 30px 26px 20px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .tile-title {
+          font-size: 23px;
+        }
+        .link {
+          a {
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            img {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+@import "../../../assets/scss/media-mixin";
+@import "../../../assets/scss/variables";
+
+.ee-why-kumuluz-component {
+  .reasons {
+    .reason-item {
+      .reason-title {
+        color: $blue-grey;
+        font-family: $font-open-sans;
+        font-weight: bold;
+      }
+      .reason-text {
+        color: $blue-grey;
+        font-family: $font-open-sans;
+        font-weight: 300;
+        font-style: normal;
+        margin-top: 5px;
+      }
+    }
+  }
+  .blog-link {
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 300;
+    color: $blue-400;
+
+    a {
+      color: $blue-200;
+      font-weight: 700;
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-why-kumuluz-component {
+    margin-top: 100px;
+    margin-bottom: 75px;
+    width: 90%;
+
+    .reasons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .reason-item {
+        width: 90%;
+        margin-top: 40px;
+        text-align: center;
+
+        &:first-child {
+          margin-top: 0;
+        }
+        .reason-title {
+          font-size: 18px;
+        }
+        .reason-text {
+          font-size: 18px;
+        }
+      }
+    }
+    .blog-link {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-why-kumuluz-component {
+    margin-top: 100px;
+    margin-bottom: 75px;
+    width: 90%;
+
+    .reasons {
+      display: flex;
+      flex-wrap: wrap;
+
+      .reason-item {
+        width: 50%;
+        margin-top: 30px;
+
+        &:first-child, &:nth-child(2) {
+          margin-top: 0;
+        }
+        .reason-title {
+          font-size: 18px;
+        }
+        .reason-text {
+          font-size: 18px;
+          padding-right: 30px;
+        }
+      }
+    }
+    .blog-link {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+  }
+}
+
+@include device-specific($pc) {
+  .ee-why-kumuluz-component {
+    margin-top: 100px;
+    margin-bottom: 75px;
+    width: 60%;
+
+    .reasons {
+      display: flex;
+      flex-wrap: wrap;
+
+      .reason-item {
+        width: 50%;
+        margin-top: 30px;
+
+        &:first-child, &:nth-child(2) {
+          margin-top: 0;
+        }
+        .reason-title {
+          font-size: 18px;
+        }
+        .reason-text {
+          font-size: 18px;
+          padding-right: 40px;
+        }
+      }
+    }
+    .blog-link {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+  }
+}
+@include device-specific($tablet-landscape) {
+  .ee-why-kumuluz-component {
+    width: 90%;
+  }
+}

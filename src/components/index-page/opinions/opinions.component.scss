@@ -1,0 +1,121 @@
+@import "../../../assets/scss/media-mixin";
+@import "../../../assets/scss/variables";
+
+.ee-opinions-component {
+  width: 100%;
+
+  .blocks {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    margin-left: -12%;
+    margin-right: -12%;
+    margin-top: 140px;
+
+    .block-item {
+      width: 25%;
+      position: relative;
+
+      .block-content-wrapper {
+        .image {
+          display: flex;
+          justify-content: center;
+        }
+        .content {
+          text-align: center;
+          font-family: $font-open-sans;
+          margin-top: 40px;
+          font-size: 18px;
+          color: $blue-grey;
+        }
+        .name {
+          text-align: center;
+          font-size: 18px;
+          font-weight: bold;
+          color: $grey-150;
+          font-family: $font-open-sans;
+          margin-top: 25px;
+        }
+        .role {
+          text-align: center;
+          font-size: 18px;
+          color: $grey-150;
+          font-family: $font-open-sans;
+          margin-top: 10px;
+        }
+      }
+      .block-shadow {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .block-btn {
+      width: 3.5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        cursor: pointer;
+      }
+    }
+    .center-block {
+      .block-shadow {
+        display: none;
+      }
+    }
+    .left-side-block {
+      .block-shadow {
+        left: 20%;
+        background-image: linear-gradient(to right, $white, transparent);
+      }
+    }
+    .right-side-block {
+      .block-shadow {
+        right: 20%;
+        background-image: linear-gradient(to left, $white, transparent);
+      }
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-opinions-component {
+    .blocks {
+      margin-top: 80px;
+      margin-left: 0;
+      margin-right: 0;
+
+      .center-block {
+        width: 90%;
+      }
+      .block-btn {
+        width: auto;
+        margin: 0 10px;
+      }
+    }
+
+    .left-side-block {
+      display: none;
+    }
+    .right-side-block {
+      display: none;
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-opinions-component {
+    .blocks {
+      margin-left: -15%;
+      margin-right: -15%;
+    }
+  }
+}
+
+@include device-specific($pc) {
+
+}

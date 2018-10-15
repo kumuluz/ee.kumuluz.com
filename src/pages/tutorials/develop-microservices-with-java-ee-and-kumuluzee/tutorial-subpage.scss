@@ -1,0 +1,241 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/media-mixin";
+
+.inline-code {
+  font-family: Consolas, $font-open-sans;
+  font-size: 18px;
+  color: $blue-grey;
+}
+.image-section {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 80%;
+  }
+}
+.sticky-navigation {
+  position: fixed;
+  top: 10px;
+  z-index: 10;
+}
+.code-block {
+  margin: 40px 0;
+}
+.checkbox-container {
+  margin-top: 40px;
+  margin-bottom: 60px;
+
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .checkbox-img {
+      margin-right: 8px;
+    }
+    .checkbox-content {
+      color: $blue-grey;
+      font-family: $font-open-sans;
+      font-size: 18px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.ee-tutorial-subpage {
+  .header {
+    padding: 80px 0;
+    @include header-image-gradient('../../../assets/images/blue-cube.svg', 0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .title {
+      h1 {
+        font-family: $font-fjalla-one;
+        font-size: 46px;
+        color: white;
+        font-style: normal;
+        text-align: left;
+      }
+    }
+  }
+
+  .page-content {
+    margin-top: 50px;
+
+    .page-content-section {
+      .navigation {
+        .navigation-menu {
+          .back-button {
+            border-top: 2px solid $grey-line;
+            border-bottom: 2px solid $grey-line;
+
+            a {
+              text-decoration: none;
+              color: $blue-200;
+              display: inline-flex;
+              align-items: center;
+              font-size: 18px;
+              font-family: $font-open-sans;
+              padding: 10px 0;
+              cursor: pointer;
+              font-weight: bold;
+
+              svg {
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+      }
+      .content {
+        padding-bottom: 80px;
+
+        p.title-paragraph {
+          font-size: 21px;
+
+          .inline-code {
+            font-size: 21px;
+          }
+        }
+        p {
+          font-family: $font-open-sans;
+          font-size: 18px;
+          margin-bottom: 20px;
+          color: $blue-grey;
+        }
+        h2 {
+          text-transform: uppercase;
+          font-size: 21px;
+          color: $blue-120;
+          font-family: $font-fjalla-one;
+          margin-top: 60px;
+          margin-bottom: 20px;
+          font-weight: normal;
+        }
+        h3 {
+          text-transform: uppercase;
+          font-size: 18px;
+          color: $blue-120;
+          font-family: $font-fjalla-one;
+          margin-top: 40px;
+          margin-bottom: 20px;
+          font-weight: normal;
+        }
+        a {
+          color: $blue-200;
+        }
+      }
+    }
+  }
+}
+@include device-specific($phone) {
+  .ee-tutorial-subpage {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+    .page-content {
+      width: 100%;
+
+      .page-content-section {
+        .navigation {
+          display: none;
+        }
+        .content {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        p, h2, h3, .checkbox-container {
+          width: 80%;
+        }
+        .checkbox-container {
+          .checkbox-row {
+            align-items: flex-start;
+          }
+        }
+        .code-block {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@include device-specific($tablet) {
+  .ee-tutorial-subpage {
+    .header {
+      .title {
+        width: 90%;
+        h1 {
+          width: 50%;
+        }
+      }
+    }
+    .page-content {
+      display: flex;
+      justify-content: center;
+
+      .page-content-section {
+        width: 80%;
+      }
+    }
+  }
+}
+@include device-specific($pc) {
+  .ee-tutorial-subpage {
+    .header {
+      .title {
+        width: 60%;
+        h1 {
+          width: 50%;
+        }
+      }
+    }
+    .page-content {
+      display: flex;
+      justify-content: center;
+
+      .page-content-section {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+
+        .navigation {
+          @include set-prop-to-calc-size(width, '100% / 3');
+        }
+        .content {
+          @include set-prop-to-calc-size(width, '((100% / 3 * 2) - 20px)');
+        }
+      }
+    }
+  }
+}
+@include device-specific($tablet-landscape) {
+  .ee-tutorial-subpage {
+    .header {
+      .title {
+        width: 90%;
+        h1 {
+          width: 50%;
+        }
+      }
+    }
+    .page-content {
+      display: flex;
+      justify-content: center;
+
+      .page-content-section {
+        width: 80%;
+      }
+    }
+  }
+}

@@ -1,0 +1,214 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/media-mixin";
+
+.ee-what-kumuluz-component {
+  .box-item {
+    .box-content {
+      .box-content-title {
+        font-family: $font-fjalla-one;
+
+        h2 {
+          color: $white;
+          font-weight: normal;
+          font-style: normal;
+        }
+      }
+      .box-content-desc {
+        font-family: $font-open-sans;
+        color: $white;
+      }
+      .box-content-links {
+        .box-content-link {
+          a {
+            font-family: $font-open-sans;
+            font-weight: 700;
+            text-decoration: none;
+            color: $white;
+
+            img {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-what-kumuluz-component {
+    width: 90%;
+    margin-bottom: 75px;
+
+    .box-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 95px;
+
+      .box-image {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        img {
+          width: 115px;
+        }
+      }
+      .box-content {
+        width: 100%;
+        margin-top: 20px;
+
+        .box-content-title {
+          text-align: center;
+
+          h2 {
+            font-size: 23px;
+          }
+        }
+        .box-content-desc {
+          text-align: center;
+          margin-top: 10px;
+          font-size: 18px;
+        }
+        .box-content-links {
+          margin-top: 20px;
+
+          .box-content-link {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+
+            a {
+              display: inline-flex;
+              justify-content: flex-start;
+              align-items: center;
+              font-size: 18px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include device-specific($tablet) {
+  .ee-what-kumuluz-component {
+    width: 90%;
+    margin-bottom: 75px;
+
+    .box-item {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 95px;
+
+      .box-image {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        img {
+          width: 115px;
+        }
+      }
+      .box-content {
+        width: 85%;
+
+        .box-content-title {
+          h2 {
+            font-size: 23px;
+          }
+        }
+        .box-content-desc {
+          margin-top: 10px;
+          font-size: 18px;
+        }
+        .box-content-links {
+          margin-top: 20px;
+
+          .box-content-link {
+            margin-top: 8px;
+
+            a {
+              display: inline-flex;
+              justify-content: flex-start;
+              align-items: center;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($pc) {
+  .ee-what-kumuluz-component {
+    width: 60%;
+    margin-bottom: 75px;
+
+    .box-item {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 95px;
+
+      .box-image {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        img {
+          width: 115px;
+        }
+      }
+      .box-content {
+        width: 85%;
+
+        .box-content-title {
+           h2 {
+             font-size: 23px;
+           }
+        }
+        .box-content-desc {
+          margin-top: 10px;
+          font-size: 18px;
+        }
+        .box-content-links {
+          margin-top: 20px;
+
+          .box-content-link {
+            margin-top: 8px;
+
+            a {
+              display: inline-flex;
+              justify-content: flex-start;
+              align-items: center;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include device-specific($tablet-landscape) {
+  .ee-what-kumuluz-component {
+    width: 80%;
+
+    .box-item {
+      .box-image {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        img {
+          width: 98px;
+        }
+      }
+    }
+  }
+}

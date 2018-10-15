@@ -1,0 +1,178 @@
+@import "../../../assets/scss/media-mixin";
+@import "../../../assets/scss/variables";
+
+.ee-example-code-component {
+  .example-content {
+    background: url("../../../assets/images/grey-cube.png") no-repeat center -20px;
+
+    h1 {
+      font-family: $font-fjalla-one;
+      color: $blue-grey;
+      font-style: normal;
+      font-weight: normal;
+    }
+    h2 {
+      font-family: $font-open-sans;
+      color: $blue-grey;
+      font-style: normal;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+  .example-link-tutorial {
+    color: $blue-400;
+    font-family: $font-open-sans;
+    font-weight: 300;
+
+    a {
+      color: $blue-200;
+      font-weight: 700;
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-example-code-component {
+    margin-top: 150px;
+    width: 100%;
+
+    .example-logo {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 120px;
+      }
+    }
+    .example-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      height: 1020px;
+      background: none;
+
+      h1 {
+        font-size: 32px;
+      }
+      h2 {
+        width: 90%;
+        margin-top: 30px;
+        font-size: 21px;
+      }
+    }
+    .example-code {
+      width: 100%;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    .example-link-tutorial {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-example-code-component {
+    margin-top: 150px;
+    width: 90%;
+
+    .example-logo {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 120px;
+      }
+    }
+    .example-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      height: 1080px;
+
+      h1 {
+        font-size: 32px;
+      }
+      h2 {
+        width: 80%;
+        margin-top: 30px;
+        font-size: 21px;
+      }
+    }
+    .example-code {
+      width: 100%;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    .example-link-tutorial {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+  }
+}
+
+@include device-specific($pc) {
+  .ee-example-code-component {
+    margin-top: 150px;
+    width: 60%;
+
+    .example-logo {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 120px;
+      }
+    }
+    .example-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      height: 1080px;
+
+      h1 {
+        font-size: 32px;
+      }
+      h2 {
+        width: 80%;
+        margin-top: 30px;
+        font-size: 21px;
+      }
+    }
+    .example-code {
+      width: 100% / 3 * 2;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    .example-link-tutorial {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+  }
+}
+
+@include device-specific($tablet-landscape) {
+  .ee-example-code-component {
+    width: 80%;
+
+    .example-code {
+      width: 100%;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

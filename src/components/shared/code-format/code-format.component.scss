@@ -1,0 +1,84 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/media-mixin";
+
+.ee-code-format-component {
+  .pages-list {
+    .active-code-page-item {
+      color: $blue-200;
+    }
+    span {
+      font-family: $font-open-sans;
+      font-weight: 700;
+      cursor: pointer;
+      background-color: $white;
+      box-shadow: 0 -1px 5px rgba(36, 54, 138, 0.2) inset;
+      margin-right: 2px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .code-area {
+    box-shadow: 0 7px 20px rgba(36, 54, 138, 0.2);
+    .code-page-item {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .bottom-blue-line {
+    height: 4px;
+    background: $gradient-bottom-border;
+  }
+}
+
+@include device-specific($phone) {
+  .ee-code-format-component {
+    width: 100%;
+    .pages-list {
+      display: flex;
+      justify-content: center;
+
+      span {
+        display: inline-block;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 15px 20px;
+      }
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-code-format-component {
+    width: 100%;
+    .pages-list {
+      display: flex;
+      justify-content: center;
+
+      span {
+        display: inline-block;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 15px 20px;
+      }
+    }
+  }
+}
+
+@include device-specific($pc) {
+  .ee-code-format-component {
+    width: 100%;
+    .pages-list {
+      display: flex;
+      justify-content: center;
+
+      span {
+        display: inline-block;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 15px 20px;
+      }
+    }
+  }
+}

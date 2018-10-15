@@ -1,0 +1,325 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/media-mixin";
+
+.sticky-navigation {
+  position: fixed;
+  top: 10px;
+  z-index: 10;
+}
+
+.ee-tutorials-page {
+  .header {
+    padding: 80px 0;
+    @include header-image-gradient('../../assets/images/blue-cube.svg', 0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .title {
+      h1 {
+        font-family: $font-fjalla-one;
+        font-size: 46px;
+        color: white;
+        font-style: normal;
+        text-align: left;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+
+    .content-section {
+      padding-top: 50px;
+      display: flex;
+      justify-content: space-between;
+
+      .navigation {
+        .navigation-item {
+          font-family: $font-open-sans;
+          font-size: 18px;
+          padding: 10px 0;
+          border-top: 2px solid $grey-line;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: $blue-grey;
+          cursor: pointer;
+
+          &:last-child {
+            border-bottom: 2px solid $grey-line;
+          }
+
+          img {
+            display: none;
+          }
+
+          &.active {
+            color: $blue-200;
+            font-weight: bold;
+
+            img {
+              display: unset;
+            }
+
+          }
+        }
+      }
+      .sections {
+        h1 {
+          color: $blue-400;
+          font-family: $font-fjalla-one;
+          font-size: 23px;
+        }
+        p {
+          color: $blue-grey;
+          font-size: 21px;
+          font-family: $font-open-sans;
+          font-weight: 300;
+          margin: 20px 0;
+
+          a {
+            color: $blue-200;
+            font-weight: bold;
+          }
+        }
+        .tutorials {
+          .tutorial-item {
+            margin-bottom: 30px;
+
+            a {
+              color: $blue-grey;
+              text-decoration: none;
+              font-size: 18px;
+              font-weight: bold;
+              font-family: $font-open-sans;
+              align-items: center;
+
+              svg {
+                margin-left: 10px;
+              }
+            }
+            .tutorial-content {
+              color: $blue-grey;
+              text-decoration: none;
+              font-size: 18px;
+              font-family: $font-open-sans;
+            }
+
+            &:hover {
+              a {
+                color: $blue-200;
+              }
+            }
+          }
+        }
+        .quickstart-samples {
+          margin-top: 80px;
+          h2 {
+            color: $blue-120;
+            font-family: $font-fjalla-one;
+            font-size: 21px;
+            margin-top: 50px;
+            font-weight: normal;
+            margin-bottom: 20px;
+          }
+          .samples {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .sample-item {
+              margin-bottom: 30px;
+
+              .new-tag {
+                background-color: $blue-200;
+                color: $white;
+                font-family: $font-open-sans;
+                font-size: 12px;
+                font-weight: bold;
+                letter-spacing: 0.1rem;
+                width: 50px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+              }
+              a {
+                color: $blue-grey;
+                font-family: $font-open-sans;
+                font-weight: bold;
+                font-size: 18px;
+                text-decoration: none;
+                align-items: center;
+
+                svg {
+                  margin-left: 10px;
+                }
+              }
+              .sample-item-desc {
+                color: $blue-grey;
+                font-family: $font-open-sans;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+        .documentation {
+          margin-top: 80px;
+
+          .docs-header {
+            margin-left: 50px;
+          }
+          h2 {
+            color: $blue-120;
+            font-family: $font-fjalla-one;
+            font-size: 21px;
+            margin-top: 50px;
+            font-weight: normal;
+            margin-bottom: 20px;
+          }
+          .samples {
+            .sample-item {
+              margin-bottom: 30px;
+
+              .new-tag {
+                background-color: $blue-200;
+                color: $white;
+                font-family: $font-open-sans;
+                font-size: 12px;
+                font-weight: bold;
+                letter-spacing: 0.1rem;
+                width: 50px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+              }
+              a {
+                color: $blue-grey;
+                font-family: $font-open-sans;
+                font-weight: bold;
+                font-size: 18px;
+                text-decoration: none;
+                align-items: center;
+
+                svg {
+                  margin-left: 10px;
+                }
+              }
+              .sample-item-desc {
+                color: $blue-grey;
+                font-family: $font-open-sans;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-tutorials-page {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+
+    .content {
+      .content-section {
+        width: 90%;
+
+        .navigation {
+          display: none;
+        }
+        .sections {
+          .quickstart-samples {
+            .samples {
+              .sample-item {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-tutorials-page {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+
+    .content {
+      .content-section {
+        width: 90%;
+
+        .navigation {
+          display: none;
+        }
+        .sections {
+          .quickstart-samples {
+            .samples {
+              .sample-item {
+                width: 49%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($pc) {
+  .ee-tutorials-page {
+    .header {
+      .title {
+        width: 60%;
+      }
+    }
+
+    .content {
+      .content-section {
+        width: 60%;
+
+        .navigation {
+          @include set-prop-to-calc-size(width, '(100% / 3)');
+        }
+        .sections {
+          @include set-prop-to-calc-size(width, '((100% / 3 * 2) - 20px)');
+          .quickstart-samples {
+            .samples {
+              .sample-item {
+                width: 49%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($tablet-landscape) {
+  .ee-tutorials-page {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+    .content {
+      .content-section {
+        width: 90%;
+      }
+    }
+  }
+}

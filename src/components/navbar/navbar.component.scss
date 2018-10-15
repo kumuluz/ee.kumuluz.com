@@ -1,0 +1,258 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/media-mixin';
+
+$header-pc-min-width: '(min-width: 1745px)';
+$header-tablet-view: '(min-width: 791px) and (max-width: 1744px)';
+
+.ee-navbar-component {
+  width: 100%;
+  background-color: $blue-150;
+
+  nav {
+    .brand-container {
+      .burger-menu {
+        cursor: pointer;
+        @include disable-text-selection();
+      }
+    }
+    .link-container {
+      .links .link-item, .github-link {
+        font-family: $font-open-sans;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-navbar-component {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .brand-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0 10px 10px;
+
+        .brand {
+          width: 70%;
+
+          img {
+            width: 100%;
+          }
+        }
+        .burger-menu {
+          margin-right: 10%;
+          font-size: 2rem;
+        }
+      }
+      .link-container {
+        overflow:hidden;
+        height:0;
+        -webkit-transition:height 200ms ease-in;
+        -moz-transition:height 200ms ease-in;
+        -o-transition:height 200ms ease-in;
+        transition:height 200ms ease-in;
+
+        .links {
+
+          .link-item {
+            text-align: center;
+            font-size: 1.25rem;
+            padding: 10px 0;
+            line-height: 21px;
+            font-weight: 600;
+
+            &:first-child {
+              padding-top: 20px;
+            }
+          }
+        }
+        .github-link {
+          text-align: center;
+          font-size: 1.25rem;
+          padding: 10px 0;
+          line-height: 21px;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+        .divider-container {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+
+          .menu-divider {
+            width: 90%;
+            color: $blue-400;
+          }
+        }
+      }
+    }
+  }
+}
+@include device-specific($header-tablet-view) {
+  .ee-navbar-component {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .brand-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0 20px 20px;
+
+        .brand {
+          width: 30%;
+
+          img {
+            width: 100%;
+          }
+        }
+        .burger-menu {
+          margin-right: 10%;
+          font-size: 2.5rem;
+        }
+      }
+      .link-container {
+        height: 0;
+        overflow: hidden;
+        -webkit-transition:height 200ms ease-in;
+        -moz-transition:height 200ms ease-in;
+        -o-transition:height 200ms ease-in;
+        transition:height 200ms ease-in;
+
+        .links {
+          .link-item {
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.25rem;
+            padding: 10px 0;
+            line-height: 21px;
+
+            &:first-child {
+              padding-top: 20px;
+            }
+          }
+        }
+        .github-link {
+          display: flex;
+          justify-content: center;
+          font-weight: 600;
+          font-size: 1.25rem;
+          padding: 10px 0;
+          line-height: 21px;
+          margin-bottom: 20px;
+
+          a {
+            display: flex;
+            align-items: center;
+
+            .text {
+              margin-left: 10px;
+            }
+          }
+        }
+        .divider-container {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+
+          .menu-divider {
+            width: 90%;
+            color: $blue-400;
+          }
+        }
+      }
+    }
+  }
+}
+@include device-specific($header-pc-min-width) {
+  .ee-navbar-component {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0 40px 0;
+
+    nav {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+
+      .brand-container {
+        width: 23%;
+
+        .brand {
+          width: 100%;
+
+          img {
+            height: 35px;
+            width: auto;
+          }
+        }
+        .burger-menu {
+          display: none;
+        }
+      }
+      .link-container {
+        width: 66%;
+        display: flex;
+
+        .links {
+          width: 89%;
+          display: flex;
+          justify-content: flex-end;
+          margin-right: 45px;
+
+          .link-item {
+            display: flex;
+            align-items: center;
+            margin: 0 8px;
+            line-height: 21px;
+            font-size: 18px;
+            font-weight: 600;
+
+            &:first-child {
+              margin: 0 8px 0 0;
+            }
+            &:last-child {
+              margin: 0 0 0 8px;
+            }
+          }
+        }
+        .github-link {
+          width: 11%;
+          display: flex;
+          align-items: center;
+          line-height: 21px;
+          font-size: 18px;
+          font-weight: 600;
+
+          a {
+            display: flex;
+            align-items: center;
+
+            .text {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

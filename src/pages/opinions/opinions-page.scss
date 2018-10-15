@@ -1,0 +1,172 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/media-mixin";
+
+.ee-opinions-page {
+  .header {
+    padding: 80px 0;
+    @include header-image-gradient('../../assets/images/blue-cube.svg', 0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .title {
+      h1 {
+        font-family: $font-fjalla-one;
+        font-size: 46px;
+        color: white;
+        font-style: normal;
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: $white;
+
+    .people-saying-section {
+      width: 60%;
+
+      h1 {
+        color: $blue-grey;
+        font-family: $font-fjalla-one;
+        font-size: 28px;
+        text-align: center;
+      }
+      .opinions-section {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .opinion-item {
+          width: 48%;
+
+          .opinion-box-item {
+            margin-top: 60px;
+
+            .image {
+              display: flex;
+              justify-content: center;
+            }
+            .box-item-content {
+              text-align: center;
+              margin-top: 30px;
+              color: $blue-grey;
+              font-family: $font-open-sans;
+              font-size: 18px;
+              padding-top: 0;
+            }
+            .name {
+              text-align: center;
+              margin-top: 20px;
+              color: $grey-150;
+              font-family: $font-open-sans;
+              font-size: 18px;
+              font-weight: bold;
+            }
+            .role {
+              text-align: center;
+              margin-top: 10px;
+              color: $grey-150;
+              font-family: $font-open-sans;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    .they-trust-section {
+      display: flex;
+      justify-content: center;
+      margin-top: 140px;
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-opinions-page {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+    .content {
+      .people-saying-section {
+        width: 90%;
+
+        .opinions-section {
+          justify-content: center;
+          margin-top: 40px;
+
+          .opinion-item {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-opinions-page {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+    .content {
+      .people-saying-section {
+        width: 90%;
+
+        .opinions-section {
+          margin-top: 40px;
+
+          .opinion-item {
+            width: 48%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($pc) {
+  .ee-opinions-page {
+    .header {
+      .title {
+        width: 60%;
+      }
+    }
+    .content {
+      .people-saying-section {
+        width: 60%;
+
+        .opinions-section {
+          .opinion-item {
+            width: 48%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($tablet-landscape) {
+  .ee-opinions-page {
+    .header {
+      .title {
+        width: 80%;
+      }
+    }
+    .content {
+      .people-saying-section {
+        width: 90%;
+      }
+    }
+  }
+
+}

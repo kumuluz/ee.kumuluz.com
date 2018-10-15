@@ -1,0 +1,53 @@
+{
+  "name": "ee.kumuluz.com",
+  "version": "1.0.0",
+  "description": "New ee.kumuluz.com website",
+  "private": true,
+  "scripts": {
+    "start": "gatsby develop",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "type-check": "tsc --noEmit",
+    "lint": "tslint --project ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.sunesis.si/kumuluz/ee.kumuluz.com"
+  },
+  "keywords": [
+    "kumuluz"
+  ],
+  "author": "Miha Jamsek <miha_jamsek@windowslive.com> (https://github.com/Jamsek-m)",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-brands-svg-icons": "^5.3.1",
+    "@fortawesome/free-regular-svg-icons": "^5.3.1",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.2",
+    "animejs": "^2.2.0",
+    "file-saver": "^1.3.8",
+    "gatsby": "^1.9.277",
+    "gatsby-link": "^1.6.46",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-sass": "^1.0.26",
+    "mustache": "^2.3.2",
+    "prismjs": "^1.15.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0",
+    "react-waypoint": "^8.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-prismjs": "^1.0.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "eslint": "^5.5.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}

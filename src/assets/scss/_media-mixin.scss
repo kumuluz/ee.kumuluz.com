@@ -1,0 +1,11 @@
+$phone: '(max-width: 790px)';
+$tablet: '(min-width: 791px) and (max-width: 1260px)';
+$tablet-landscape: '(min-width: 791px) and (max-width: 1744px)';
+$pc: '(min-width: 1261px)';
+$hd-plus: '(min-width: 1920px)';
+
+@mixin device-specific($device) {
+  @media only screen and #{$device} {
+    @content
+  }
+}

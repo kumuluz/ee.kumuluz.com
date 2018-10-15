@@ -1,0 +1,101 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/media-mixin";
+
+.ee-get-started-component {
+  h1 {
+    color: $blue-400;
+    font-family: $font-open-sans;
+    font-weight: bold;
+    text-align: center;
+  }
+  h2 {
+    color: $blue-400;
+    font-family: $font-open-sans;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .get-started-button {
+    margin-top: 20px;
+
+    a {
+      background-color: $blue-200;
+      color: $white;
+      font-family: $font-fjalla-one;
+      font-weight: normal;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-get-started-component {
+    margin-top: 80px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 26px;
+    }
+    h2 {
+      font-size: 21px;
+    }
+    .get-started-button {
+      a {
+        display: inline-block;
+        font-size: 20px;
+        padding: 8px 30px;
+      }
+    }
+  }
+}
+@include device-specific($tablet) {
+  .ee-get-started-component {
+    margin-top: 80px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 26px;
+    }
+    h2 {
+      font-size: 21px;
+    }
+    .get-started-button {
+      a {
+        display: inline-block;
+        font-size: 20px;
+        padding: 8px 30px;
+      }
+    }
+  }
+}
+@include device-specific($pc) {
+  .ee-get-started-component {
+    margin-top: 80px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 26px;
+    }
+    h2 {
+      font-size: 21px;
+    }
+    .get-started-button {
+      a {
+        display: inline-block;
+        font-size: 20px;
+        padding: 8px 30px;
+      }
+    }
+  }
+}

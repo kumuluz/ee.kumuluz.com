@@ -1,0 +1,154 @@
+@import "../../../assets/scss/media-mixin";
+@import "../../../assets/scss/variables";
+
+.ee-highlights-component {
+  h1 {
+    color: $blue-grey;
+    font-family: $font-fjalla-one;
+  }
+  p {
+    color: $blue-grey;
+    font-family: $font-open-sans;
+    text-align: center;
+  }
+  .highlights-badges {
+    .badge {
+      div {
+        color: $blue-400;
+        font-family: $font-fjalla-one;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-highlights-component {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 32px;
+    }
+    p {
+      margin-top: 25px;
+      font-size: 21px;
+      width: 100%;
+    }
+    .highlights-badges {
+      margin-bottom: 40px;
+      width: 100%;
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .badge {
+        height: 180px;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .badge-image {
+          height: 83%;
+          display: flex;
+          justify-content: center;
+
+          img {
+            width: 80%;
+          }
+        }
+        div {
+          height: 17%;
+          margin-top: 20px;
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}
+@include device-specific($tablet) {
+  .ee-highlights-component {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 32px;
+    }
+    p {
+      margin-top: 25px;
+      font-size: 21px;
+      width: 75%;
+    }
+    .highlights-badges {
+      width: 100%;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+
+      .badge {
+        height: 180px;
+        width: 20%;
+
+        .badge-image {
+          height: 83%;
+          display: flex;
+          justify-content: center;
+        }
+        div {
+          height: 17%;
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}
+@include device-specific($pc) {
+  .ee-highlights-component {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 32px;
+    }
+    p {
+      margin-top: 25px;
+      font-size: 21px;
+      width: 75%;
+    }
+    .highlights-badges {
+      width: 100%;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+
+      .badge {
+        height: 180px;
+        width: 20%;
+
+        .badge-image {
+          height: 83%;
+          display: flex;
+          justify-content: center;
+        }
+        div {
+          height: 17%;
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}
+@include device-specific($tablet-landscape) {
+  .ee-highlights-component {
+    width: 90%;
+  }
+}

@@ -1,0 +1,131 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/media-mixin";
+
+.ee-collaborations-component {
+  .collaboration-item {
+    .collaboration-content {
+      h1 {
+        color: $blue-400;
+        font-family: $font-fjalla-one;
+        font-weight: normal;
+      }
+      p {
+        color: $blue-grey;
+        font-family: $font-open-sans;
+        font-weight: 300;
+
+        a {
+          color: $blue-200;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-collaborations-component {
+    width: 90%;
+
+    .collaboration-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+
+      .collaboration-logo {
+        display: none;
+      }
+      .collaboration-content {
+        width: 90%;
+
+        h1 {
+          font-size: 23px;
+          margin-bottom: 12px;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-collaborations-component {
+    width: 90%;
+
+    .collaboration-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+
+      .collaboration-logo {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .microprofile-compliance-image {
+          width: 140px;
+        }
+        .duke-award-image {
+          width: 100px;
+        }
+      }
+      .collaboration-content {
+        width: 75%;
+
+        h1 {
+          font-size: 23px;
+          margin-bottom: 12px;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($pc) {
+  .ee-collaborations-component {
+    width: 60%;
+
+    .collaboration-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+
+      .collaboration-logo {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .microprofile-compliance-image {
+          width: 140px;
+        }
+        .duke-award-image {
+          width: 100px;
+        }
+      }
+      .collaboration-content {
+        width: 75%;
+
+        h1 {
+          font-size: 23px;
+          margin-bottom: 12px;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+@include device-specific($tablet-landscape) {
+  .ee-collaborations-component {
+    width: 90%;
+  }
+}

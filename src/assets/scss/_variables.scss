@@ -1,0 +1,65 @@
+// colors
+$black: #000000;
+$white: #FFFFFF;
+$white-grey: #E5E5E5;
+$grey-line: #F4F6F7;
+$transparent-white: rgba(255, 255, 255, 0.85);
+$transparent-grey: rgba(36, 54, 138, 0.2);
+$blue-grey: #485371;
+$blue-400: #24368A;
+$blue-300: #1C49C3;
+$blue-200: #155BFB;
+$blue-150: rgba(21, 91, 251, 0.9);
+$blue-125: #1D8CEB;
+$blue-120: #1B9DFF;
+$blue-100: #98CDFF;
+
+$grey-100: #BCBCBC;
+$grey-150: #A7A7A7;
+$grey-200: #6d6d6d;
+
+// borders
+$shadow-grey: rgba(36, 54, 138, 0.2);
+
+// gradients
+$grad-white-to-b200-to-bottom: linear-gradient(180deg, rgba(29, 140, 235, 0) 0%, $blue-200 95.03%); // deprecated
+$gradient-header: linear-gradient(to bottom, $blue-150, $blue-200);
+$gradient-bottom-border: linear-gradient(to right, $blue-200, $blue-300);
+$gradient-light-blue: linear-gradient(113.27deg, $blue-125 32.16%, $blue-200 114.2%);
+$gradient-dark-blue-footer: linear-gradient(108.41deg, $blue-400 20.1%, $blue-300 81.01%);
+
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+$font-open-sans: 'Open Sans', sans-serif;
+$font-fjalla-one: 'Fjalla One', sans-serif;
+
+// code theme variables
+$code-keyword: #2D9CDB;
+$code-annotation-method: #EB5757;
+$code-string: #27AE60;
+
+@mixin disable-text-selection() {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+@mixin set-prop-to-calc-size($prop, $expr) {
+  #{$prop}: -webkit-calc(#{$expr});
+  #{$prop}: -moz-calc(#{$expr});
+  #{$prop}: calc(#{$expr});
+}
+
+@mixin header-image-gradient($image_url, $from_top) {
+  background-color: $blue-200; // fallback
+  background: url($image_url) 92% $from_top no-repeat; // fallback
+  background: url($image_url) 92% $from_top no-repeat, -moz-linear-gradient(bottom, $blue-150, $blue-200); // FF 3.6+
+  background: url($image_url) 92% $from_top no-repeat, -webkit-gradient(linear, 0 0, 0 100%, from($blue-150), to($blue-200)); // Safari 4+, Chrome 2+
+  background: url($image_url) 92% $from_top no-repeat, -webkit-linear-gradient(bottom, $blue-150, $blue-200); // Safari 5.1+, Chrome 10+
+  background: url($image_url) 92% $from_top no-repeat, -o-linear-gradient(bottom, $blue-150, $blue-200); // Opera 11.10
+  background: url($image_url) 92% $from_top no-repeat, linear-gradient(to bottom, $blue-150, $blue-200); // Standard, IE10
+}

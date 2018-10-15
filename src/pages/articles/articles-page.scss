@@ -1,0 +1,187 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/media-mixin";
+
+.sticky-navigation {
+  position: fixed;
+  top: 10px;
+  z-index: 10;
+}
+
+.ee-articles-page {
+  .header {
+    padding: 80px 0;
+    @include header-image-gradient('../../assets/images/blue-cube.svg', 0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .title {
+      h1 {
+        font-family: $font-fjalla-one;
+        font-size: 46px;
+        color: white;
+        font-style: normal;
+        text-align: left;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    .content-section {
+      display: flex;
+      justify-content: space-between;
+
+      .navigation {
+        .navigation-item {
+          font-family: $font-open-sans;
+          font-size: 18px;
+          padding: 10px 0;
+          border-top: 2px solid $grey-line;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: $blue-grey;
+          cursor: pointer;
+
+          &:last-child {
+            border-bottom: 2px solid $grey-line;
+          }
+
+          img {
+            display: none;
+          }
+
+          &.active {
+            color: $blue-200;
+            font-weight: bold;
+
+            img {
+              display: unset;
+            }
+
+          }
+        }
+      }
+      .articles {
+        h1 {
+          font-family: $font-fjalla-one;
+          color: $blue-400;
+          font-size: 23px;
+        }
+
+        .articles-h1-desc {
+          font-size: 21px;
+          font-family: $font-open-sans;
+          margin-top: 20px;
+          margin-bottom: 50px;
+        }
+
+        article {
+          font-family: $font-open-sans;
+          font-size: 18px;
+          margin-bottom: 30px;
+
+          a.article-title {
+            color: $blue-grey;
+            text-decoration: none;
+
+            h2 {
+              font-weight: bold;
+              font-size: inherit;
+              display: inline;
+              margin-right: 8px;
+            }
+          }
+          p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+          }
+          a:not(article-title) {
+            text-decoration: none;
+            color: $blue-200;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-articles-page {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+    .content {
+      .content-section {
+        width: 90%;
+
+        .navigation {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-articles-page {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+    .content {
+      .content-section {
+        width: 90%;
+
+        .navigation {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($pc) {
+  .ee-articles-page {
+    .header {
+      .title {
+        width: 60%;
+      }
+    }
+    .content {
+      .content-section {
+        width: 60%;
+
+        .navigation {
+          @include set-prop-to-calc-size(width, '100% / 3');
+        }
+        .articles {
+          @include set-prop-to-calc-size(width, '((100% / 3 * 2) - 20px)');
+        }
+      }
+    }
+  }
+}
+
+@include device-specific($tablet-landscape) {
+  .ee-articles-page {
+    .header {
+      .title {
+        width: 90%;
+      }
+    }
+    .content {
+      .content-section {
+        width: 90%;
+      }
+    }
+  }
+}
