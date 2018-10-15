@@ -195,8 +195,7 @@ export class GeneratorHelper {
         // manage Metrics
         const metricsCore = $.id("ext-metrics");
         const isMP12 = $.checked("mp-1.2");
-        const subdependecy = Array.from($.byName("metrics-2")).filter(ext => ext.checked).length > 0;
-        if ((metricsCore.checked && !isMP12) || subdependecy) {
+        if (metricsCore.checked && !isMP12) {
             const label = GeneratorHelper.getValueFromItem(metricsCore.dataObject, kumuluzeeVersion);
             const parsedLabelValue = GeneratorHelper.parseValue(label.value);
             parsedExtensions.push(parsedLabelValue);
