@@ -51,7 +51,7 @@ export default class SupportPage extends Component {
                                     <h2>Free</h2>
                                     <p>Our basic version of KumuluzEE for teams that are just getting started.</p>
                                     <div>
-                                        <span className="button" onClick={() => push("/projects")}>
+                                        <span className="button" onClick={() => push("/tutorials")}>
                                             Get started
                                         </span>
                                     </div>
