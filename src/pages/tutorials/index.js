@@ -6,7 +6,7 @@ import Waypoint from "react-waypoint";
 
 import "./tutorial-page.scss";
 import blueArrowImage from "../../assets/images/arrow.svg";
-import {GITHUB_URL} from "../../content/constants.content";
+import {GITHUB_SAMPLES_URL} from "../../content/constants.content";
 import {microservicesSamples} from "../../content/tutorials-page/microservices-samples";
 import {kumuluzeeProjects} from "../../content/tutorials-page/kumuluzee-projects";
 import Helmet from "react-helmet";
@@ -118,7 +118,7 @@ export default class TutorialPage extends Component {
     renderLink(item) {
         if (item.external) {
             return (
-                <a href={item.url} target="_blank">
+                <a href={item.url} target="_blank" rel="noreferrer noopener">
                     {item.title}
                     <FontAwesomeIcon icon={faChevronRight}/>
                 </a>
@@ -148,13 +148,13 @@ export default class TutorialPage extends Component {
                             <div id="navigation-panel">
                                 {navbarItems.map((item, index) => (
                                     <div id={"navigation-item-" + index} className="navigation-item" key={index}
-                                         onClick={() => {
-                                             const elemToScrollTo = document.getElementById(item.id);
-                                             if (elemToScrollTo) {
-                                                 elemToScrollTo.scrollIntoView();
-                                                 this.setActiveElement("navigation-item-" + index);
-                                             }
-                                         }}>
+                                        onClick={() => {
+                                            const elemToScrollTo = document.getElementById(item.id);
+                                            if (elemToScrollTo) {
+                                                elemToScrollTo.scrollIntoView();
+                                                this.setActiveElement("navigation-item-" + index);
+                                            }
+                                        }}>
                                         <span>{item.title}</span>
                                         <img src={blueArrowImage}/>
                                     </div>
@@ -193,14 +193,14 @@ export default class TutorialPage extends Component {
                                 <h1>Quickstart Samples</h1>
                                 <p>
                                     Working examples ready for you to get started. All samples are available on&#160;
-                                    <a href={GITHUB_URL} target="_blank">GitHub.</a>
+                                    <a href={GITHUB_SAMPLES_URL} target="_blank" rel="noreferrer noopener">GitHub.</a>
                                 </p>
                                 <h2>JAVA EE MICROSERVICES</h2>
                                 <div className="samples">
                                     {microservicesSamples.map((sample, index) => (
                                         <div className="sample-item" key={index}>
                                             {sample.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={sample.url} target="_blank">
+                                            <a href={sample.url} target="_blank" rel="noreferrer noopener">
                                                 {sample.title} <FontAwesomeIcon icon={faChevronRight}/>
                                             </a>
                                             <div className="sample-item-desc">
@@ -215,7 +215,7 @@ export default class TutorialPage extends Component {
                                     {kumuluzeeProjects.map((project, index) => (
                                         <div className="sample-item" key={index}>
                                             {project.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={project.url} target="_blank">
+                                            <a href={project.url} target="_blank" rel="noreferrer noopener">
                                                 {project.title} <FontAwesomeIcon icon={faChevronRight}/>
                                             </a>
                                             <div className="sample-item-desc">
@@ -244,7 +244,7 @@ export default class TutorialPage extends Component {
                                     {documentationItems.microservice.header.map((doc, index) => (
                                         <div className="sample-item" key={index}>
                                             {doc.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={doc.url} target="_blank">
+                                            <a href={doc.url} target="_blank" rel="noreferrer noopener">
                                                 {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
                                             </a>
                                             <div className="sample-item-desc">
@@ -257,7 +257,7 @@ export default class TutorialPage extends Component {
                                     {documentationItems.microservice.body.map((doc, index) => (
                                         <div className="sample-item" key={index}>
                                             {doc.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={doc.url} target="_blank">
+                                            <a href={doc.url} target="_blank" rel="noreferrer noopener">
                                                 {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
                                             </a>
                                             <div className="sample-item-desc">
@@ -271,7 +271,7 @@ export default class TutorialPage extends Component {
                                     {documentationItems.microprofile.map((doc, index) => (
                                         <div className="sample-item" key={index}>
                                             {doc.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={doc.url} target="_blank">
+                                            <a href={doc.url} target="_blank" rel="noreferrer noopener">
                                                 {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
                                             </a>
                                             <div className="sample-item-desc">
