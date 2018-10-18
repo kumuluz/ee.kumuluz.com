@@ -44,7 +44,7 @@ export default class GeneratorPage extends Component {
         this.state = {
             version: "",
             missingDependencyWarnings: []
-        }
+        };
     }
 
     componentDidMount() {
@@ -96,16 +96,16 @@ export default class GeneratorPage extends Component {
         this.disableOtherCheckboxes($event.target, "microprofile");
     }
     disableOtherJPAs($event) {
-        this.disableOtherCheckboxes($event.target, "components", (comp) => comp.id.includes("-jpa-"))
+        this.disableOtherCheckboxes($event.target, "components", (comp) => comp.id.includes("-jpa-"));
     }
     disableOtherConfigs($event) {
-        this.disableOtherCheckboxes($event.target, "config")
+        this.disableOtherCheckboxes($event.target, "config");
     }
     disableOtherDiscoveries($event) {
-        this.disableOtherCheckboxes($event.target, "discovery")
+        this.disableOtherCheckboxes($event.target, "discovery");
     }
     disableOtherTests($event) {
-        this.disableOtherCheckboxes($event.target, "arquillian")
+        this.disableOtherCheckboxes($event.target, "arquillian");
     }
     disableOtherCheckboxes(target, elementName, filterFunc = undefined) {
         let elems;
@@ -123,7 +123,7 @@ export default class GeneratorPage extends Component {
 
     // CLICK BOTH
     checkBoth(clickedElem, dependentElem) {
-        document.getElementById(dependentElem).checked = document.getElementById(clickedElem).checked
+        document.getElementById(dependentElem).checked = document.getElementById(clickedElem).checked;
     }
 
     // DISABLE IF PARENT IS NOT SELECTED
@@ -142,7 +142,7 @@ export default class GeneratorPage extends Component {
         });
     }
 
-   /* _removeFulfilledReqs() {
+    /* _removeFulfilledReqs() {
         const toBeRemoved = [];
         const newWarnings = this.state.missingDependencyWarnings.slice();
         newWarnings.forEach((warning, index) => {
@@ -222,15 +222,15 @@ export default class GeneratorPage extends Component {
                             </div>
                             <div className="kumuluzee">
                                 <FormInputComponent label={"KumuluzEE"} id={"kumuluzee"} type={"select"}
-                                                    optionList={kumuluzEEVersionsList}
-                                                    whenChange={this.checkForKumuluzeeVersion}
+                                    optionList={kumuluzEEVersionsList}
+                                    whenChange={this.checkForKumuluzeeVersion}
                                 />
                             </div>
                         </div>
                         <div className="right-side">
                             <div className="description">
                                 <FormInputComponent label={"Description"} id={"description"}
-                                                    type={"textarea"} rows={5} placeholder={"Sample Kumuluz Project"}/>
+                                    type={"textarea"} rows={5} placeholder={"Sample Kumuluz Project"}/>
                             </div>
                         </div>
                     </div>
@@ -249,20 +249,20 @@ export default class GeneratorPage extends Component {
                     <div className="features">
                         <SectionTitleComponent number={3} title={"Features"}/>
                         <CheckboxGroupComponent version={this.state.version} groupName={"uberjar"}
-                                                items={featuresList}/>
+                            items={featuresList}/>
                     </div>
                 </div>
                 {/* COMPONENTS */}
                 <div className="components">
                     <SectionTitleComponent number={4} title={"Components"}/>
                     <CheckboxGroupComponent version={this.state.version} groupName={"components"}
-                                            items={componentsList} columns={3}
-                                            onSelected={(e) => {
-                                                if (e.target.id.includes("-jpa-")) {
-                                                    this.disableOtherJPAs(e);
-                                                }
-                                                //this.checkForOtherdependencies(e);
-                                            }}/>
+                        items={componentsList} columns={3}
+                        onSelected={(e) => {
+                            if (e.target.id.includes("-jpa-")) {
+                                this.disableOtherJPAs(e);
+                            }
+                            //this.checkForOtherdependencies(e);
+                        }}/>
                 </div>
                 {/* PROJECTS */}
                 <div className="extensions">
@@ -272,26 +272,26 @@ export default class GeneratorPage extends Component {
                             <div>
                                 <h5>KumuluzEE Config</h5>
                                 <CheckboxGroupComponent version={this.state.version} groupName={"config"}
-                                                        items={extensionsList.config}
-                                                        onSelected={this.disableOtherConfigs}/>
+                                    items={extensionsList.config}
+                                    onSelected={this.disableOtherConfigs}/>
                             </div>
                             <div>
                                 <h5>KumuluzEE Discovery</h5>
                                 <CheckboxGroupComponent version={this.state.version} groupName={"discovery"}
-                                                        items={extensionsList.discovery}
-                                                        onSelected={this.disableOtherDiscoveries}/>
+                                    items={extensionsList.discovery}
+                                    onSelected={this.disableOtherDiscoveries}/>
                             </div>
                             <div className="semi-group">
                                 <CheckboxGroupComponent version={this.state.version} groupName={"metrics-1"}
-                                                        items={extensionsList.metrics.level1} onSelected={(e) => {
-                                    if (e.target.id === "ext-metrics") {
-                                        this.checkBoth("ext-metrics", "mpa-metrics");
-                                        this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
-                                    }
-                                }}/>
+                                    items={extensionsList.metrics.level1} onSelected={(e) => {
+                                        if (e.target.id === "ext-metrics") {
+                                            this.checkBoth("ext-metrics", "mpa-metrics");
+                                            this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
+                                        }
+                                    }}/>
                                 <div style={{marginLeft: "20px"}}>
                                     <CheckboxGroupComponent version={this.state.version} groupName={"metrics-2"}
-                                                            items={extensionsList.metrics.level2}/>
+                                        items={extensionsList.metrics.level2}/>
                                 </div>
                             </div>
                         </div>
@@ -299,24 +299,24 @@ export default class GeneratorPage extends Component {
                             <div>
                                 <h5>KumuluzEE Reactive</h5>
                                 <CheckboxGroupComponent version={this.state.version} groupName={"reactive"}
-                                                        items={extensionsList.reactive}/>
+                                    items={extensionsList.reactive}/>
                             </div>
                             <div>
                                 <h5>KumuluzEE Arquillian Adapter</h5>
                                 <CheckboxGroupComponent version={this.state.version} groupName={"arquillian"}
-                                                        items={extensionsList.arquillian}
-                                                        onSelected={this.disableOtherTests}/>
+                                    items={extensionsList.arquillian}
+                                    onSelected={this.disableOtherTests}/>
                             </div>
                         </div>
                         <div className="third-group group">
                             <CheckboxGroupComponent version={this.state.version} groupName={"other"}
-                                                    items={extensionsList.other} onSelected={(e) => {
-                                if (e.target.id === "ext-other-health") {
-                                    this.checkBoth("ext-other-health", "mpa-healthcheck")
-                                } else if (e.target.id === "ext-other-faulttolerance") {
-                                    this.checkBoth("ext-other-faulttolerance", "mpa-faulttolerance")
-                                }
-                            }}/>
+                                items={extensionsList.other} onSelected={(e) => {
+                                    if (e.target.id === "ext-other-health") {
+                                        this.checkBoth("ext-other-health", "mpa-healthcheck");
+                                    } else if (e.target.id === "ext-other-faulttolerance") {
+                                        this.checkBoth("ext-other-faulttolerance", "mpa-faulttolerance");
+                                    }
+                                }}/>
                         </div>
                     </div>
                 </div>
@@ -324,17 +324,17 @@ export default class GeneratorPage extends Component {
                 <div className="microprofileapis">
                     <SectionTitleComponent number={6} title={"MicroProfile APIs"}/>
                     <CheckboxGroupComponent version={this.state.version} groupName={"microprofile-apis"}
-                                            items={microprofileAPIsList} columns={3}
-                                            onSelected={(e) => {
-                                                if (e.target.id === "mpa-healthcheck") {
-                                                    this.checkBoth("mpa-healthcheck", "ext-other-health");
-                                                } else if (e.target.id === "mpa-faulttolerance") {
-                                                    this.checkBoth("mpa-faulttolerance", "ext-other-faulttolerance");
-                                                } else if (e.target.id === "mpa-metrics") {
-                                                    this.checkBoth("mpa-metrics", "ext-metrics");
-                                                    this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
-                                                }
-                                            }}/>
+                        items={microprofileAPIsList} columns={3}
+                        onSelected={(e) => {
+                            if (e.target.id === "mpa-healthcheck") {
+                                this.checkBoth("mpa-healthcheck", "ext-other-health");
+                            } else if (e.target.id === "mpa-faulttolerance") {
+                                this.checkBoth("mpa-faulttolerance", "ext-other-faulttolerance");
+                            } else if (e.target.id === "mpa-metrics") {
+                                this.checkBoth("mpa-metrics", "ext-metrics");
+                                this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
+                            }
+                        }}/>
                 </div>
                 <div className="button-area">
                     <LineDividerComponent/>
