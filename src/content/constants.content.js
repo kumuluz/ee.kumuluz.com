@@ -8,4 +8,4 @@ export const TWITTER_URL = "https://twitter.com/kumuluz";
 export const MICROPROFILE_URL = "https://microprofile.io";
 export const MICROSERVICES_URL = "http://microservices.io/";
 
-export const MAIL_TO_ADDRESS = "mailto:someone@cloud.si";
+export const MAIL_TO_ADDRESS = "mailto:info@sunesis.si";
