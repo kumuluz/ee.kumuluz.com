@@ -10,6 +10,6 @@ export const microprofileList = [
     new Project("MicroProfile Fault Tolerance 1.0", "For fault tolerant microservices.", "https://github.com/kumuluz/kumuluzee-fault-tolerance/blob/master/README.md"),
     new Project("MicroProfile Metrics 1.1", "For collection and reporting of performance metrics.", "https://github.com/kumuluz/kumuluzee-metrics/blob/master/README.md"),
     new Project("MicroProfile JWT Authentication 1.0", "For role based access control using OpenID Connect and JSON Web Tokens.", "https://github.com/kumuluz/kumuluzee-jwt-auth/blob/master/README.md"),
-    new Project("MicroProfile Open Tracing 1.0", "For accessing an OpenTracing compliant Tracer object within your JAX-RS application.", "#"),
-    new Project("MicroProfile REST Client 1.0", "Type-safe approach to invoke RESTful services over HTTP.", "#"),
+    new Project("MicroProfile REST Client 1.0", "Type-safe approach to invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md"),
+    new Project("MicroProfile Open Tracing 1.0", "For accessing an OpenTracing compliant Tracer object within your JAX-RS application.", "#")
 ];
