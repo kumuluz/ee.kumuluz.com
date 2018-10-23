@@ -1,5 +1,7 @@
 import React, {Component} from "react";
+import PropType from "prop-types";
 import Helmet from "react-helmet";
+import ReactGA from "react-ga";
 
 import {FooterComponent, NavbarComponent} from "../components/export.components";
 
@@ -8,8 +10,23 @@ import favicon from "./favicon.ico";
 
 export default class Wrapper extends Component {
 
+    static propTypes = {
+        children: PropType.func
+    };
+
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        if (typeof window !== "undefined") {
+            this.__initGoogleAnalytics();
+        }
+    }
+
+    __initGoogleAnalytics() {
+        ReactGA.initialize("UA-96110617-3");
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
 
