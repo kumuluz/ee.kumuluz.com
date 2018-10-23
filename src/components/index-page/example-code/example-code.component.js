@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable no-useless-escape */
 import React, {Component} from "react";
 import Link from "gatsby-link";
 
@@ -32,7 +34,7 @@ export class ExampleCodeComponent extends Component {
                 <div className="example-content">
                     <h1>EXAMPLE CODE</h1>
                     <h2>
-                        We're also bringing better support for Java 9 and above, with continuously increased
+                        We&apos;re also bringing better support for Java 9 and above, with continuously increased
                         streamlined modules support throughout the betas.
                     </h2>
                     <div className="example-code">

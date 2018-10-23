@@ -47,7 +47,7 @@ export class BlogLinksComponent extends Component {
                 <div className="tile-content">
                     <div className="tile-title">{tile.title}</div>
                     <div className="link">
-                        <a href={tile.link} target="_blank">
+                        <a href={tile.link} target="_blank" rel="noreferrer noopener">
                             <span className="text">View on blog</span>
                             <img src={linkChevronImage}/>
                         </a>
@@ -83,7 +83,7 @@ export class BlogLinksComponent extends Component {
                 chevronIcon: faChevronUp
             });
         } else {
-            this.hiddenTiles.style.height = `0px`;
+            this.hiddenTiles.style.height = "0px";
             blogTilesOpened(false, sumComponentsHeight(false) - 40);
             this.setState({
                 ...this.state,
@@ -137,7 +137,7 @@ export class BlogLinksComponent extends Component {
             <div className="ee-blog-links-component">
                 {returnVersion()}
             </div>
-        )
+        );
     }
 
 }

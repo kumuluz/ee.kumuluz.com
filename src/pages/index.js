@@ -42,7 +42,7 @@ export default class IndexPage extends Component {
                 <div className="blue-gradient-area">
                     <div className="header-container">
                         <div className="microprofile-tag">
-                            <a href={MICROPROFILE_URL} target="_blank" >
+                            <a href={MICROPROFILE_URL} target="_blank" rel="noreferrer noopener">
                                 <img src={microprofileLogo}/>
                             </a>
                         </div>

@@ -1,4 +1,4 @@
-import {NavbarItem} from "./schema/navbar-item.abstract";
+export {NavbarItem} from "./schema/navbar-item.abstract";
 import {InternalLink} from "./schema/internal-link.class";
 import {ExternalLink} from "./schema/external-link.class";
 import {BLOG_URL, GITHUB_URL, MICROPROFILE_URL} from "../constants.content";
@@ -19,4 +19,3 @@ export const githubItem = new ExternalLink(GITHUB_URL, "Github");
 
 export const microprofileItem = new ExternalLink(MICROPROFILE_URL, "Microprofile");
 
-export {NavbarItem} from "./schema/navbar-item.abstract";

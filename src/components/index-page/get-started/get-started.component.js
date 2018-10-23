@@ -24,7 +24,7 @@ export class GetStartedComponent extends Component {
                     </Link>
                 </div>
             </div>
-        )
+        );
     }
 
 }

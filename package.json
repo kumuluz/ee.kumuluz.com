@@ -7,8 +7,7 @@
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "type-check": "tsc --noEmit",
-    "lint": "tslint --project ."
+    "lint": "eslint ./src/**/*.js --fix"
   },
   "repository": {
     "type": "git",

@@ -27,12 +27,12 @@ export class TheyTrustUsComponent extends Component {
                                     </p>
                                 </span>
                             </div>
-                        )})
+                        );})
                     }
                 </div>
                 <div className="contact">
                     Want to be listed here? Please&#160;
-                    <a href={MAIL_TO_ADDRESS} target="_blank">
+                    <a href={MAIL_TO_ADDRESS} target="_blank" rel="noreferrer noopener">
                         contact us!
                     </a>
                 </div>

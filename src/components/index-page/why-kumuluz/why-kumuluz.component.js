@@ -77,7 +77,7 @@ export class WhyKumuluzComponent extends Component {
                 </div>
                 <div className="blog-link">
                     Read more about it on&#160;
-                    <a href={BLOG_URL} target="_blank">our blog!</a>
+                    <a href={BLOG_URL} target="_blank" rel="noreferrer noopener">our blog!</a>
                 </div>
             </div>
         );

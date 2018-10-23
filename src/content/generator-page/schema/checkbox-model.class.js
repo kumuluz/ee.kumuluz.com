@@ -21,10 +21,10 @@ export class CheckboxModel {
 
         const lowestVersion = this.labels[this.labels.length - 1];
         if (enabledByDefault) {
-            this.labels.push(new VersionedLabel("*", lowestVersion.label, lowestVersion.value))
+            this.labels.push(new VersionedLabel("*", lowestVersion.label, lowestVersion.value));
         } else {
             if (!this.labels.find(lbl => lbl.version === "*")) {
-                this.labels.push(new VersionedLabel("*", lowestVersion.label, "none"))
+                this.labels.push(new VersionedLabel("*", lowestVersion.label, "none"));
             }
         }
     }
@@ -42,7 +42,7 @@ export class CheckboxModel {
                     label: valueToCheck.label,
                     value: valueToCheck.value,
                     disabled: false
-                }
+                };
             }
         }
     }

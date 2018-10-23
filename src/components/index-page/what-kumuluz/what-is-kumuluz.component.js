@@ -61,13 +61,13 @@ export class WhatIsKumuluzComponent extends Component {
     renderLink(link) {
         if (link.external) {
             return (
-                <a href={link.url} target="_blank">
+                <a href={link.url} target="_blank" rel="noreferrer noopener">
                     <span>
                         {link.title}
                     </span>
                     <img src={whiteCaretImage}/>
                 </a>
-            )
+            );
         }
         return (
             <Link to={link.url}>
@@ -76,11 +76,10 @@ export class WhatIsKumuluzComponent extends Component {
                 </span>
                 <img src={whiteCaretImage}/>
             </Link>
-        )
+        );
     }
 
     render() {
-        const {} = this.props;
 
         return (
             <div className="ee-what-kumuluz-component">

@@ -79,6 +79,7 @@ export class GeneratorHelper {
             GeneratorHelper.LOGS_RELEASE = data.map(rel => rel.name.substring(1)).find(rel => !rel.prerelease);
         });
         req.addEventListener("error", (res) => {
+            // eslint-disable-next-line no-console
             console.error(res);
         });
         req.send();
@@ -124,7 +125,7 @@ export class GeneratorHelper {
                 artifactId: splitted[1],
                 versionKey: splitted[2],
                 version: splitted[3]
-            }
+            };
         } else {
             throw new Error("Check behaviour, something is wrong: " + JSON.stringify(splitted));
         }
@@ -326,6 +327,7 @@ export class GeneratorHelper {
             FileSaver.saveAs(blob, "pom.xml");
         });
         req.addEventListener("error", (res) => {
+            // eslint-disable-next-line no-console
             console.error(res);
         });
         req.send();

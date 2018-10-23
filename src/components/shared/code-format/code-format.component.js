@@ -19,7 +19,7 @@ export class CodeFormatComponent extends Component {
 
         this.state = {
             selectedPage: ""
-        }
+        };
     }
 
     componentDidMount() {
@@ -34,7 +34,7 @@ export class CodeFormatComponent extends Component {
         //hide all pages that are not to be opened
         for(let stran of pages) {
             if (stran.id !== pageId) {
-               stran.style.display = "none";
+                stran.style.display = "none";
             }
         }
         // show selected page
@@ -43,7 +43,7 @@ export class CodeFormatComponent extends Component {
 
         this.setState({
             selectedPage: pageId
-        })
+        });
     }
 
     render() {
@@ -59,7 +59,7 @@ export class CodeFormatComponent extends Component {
                 <div className="pages-list">
                     {pages.map((page, index) => (
                         <span key={index} className={isPageSelected(page.id) ? "active-code-page-item" : ""}
-                              onClick={() => this.openCodePage(page.id)}>
+                            onClick={() => this.openCodePage(page.id)}>
                             {page.filename}
                         </span>
                     ))}

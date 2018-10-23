@@ -52,7 +52,7 @@ export class HighlightsComponent extends Component{
                     ))}
                 </div>
             </div>
-        )
+        );
     }
 
 }

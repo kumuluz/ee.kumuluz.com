@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import anime from "animejs";
+// import anime from "animejs";
 
 import "./opinions.component.scss";
 import {opinionsList} from "../../../content/export.content";
@@ -52,7 +52,7 @@ export class OpinionsComponent extends Component {
         if (!block) {
             return (
                 <div />
-            )
+            );
         }
 
         let clazz = "block-item";

@@ -11,7 +11,7 @@ export class LineDividerComponent extends Component {
     render() {
         return (
             <div className="ee-line-divider-component" />
-        )
+        );
     }
 
 }

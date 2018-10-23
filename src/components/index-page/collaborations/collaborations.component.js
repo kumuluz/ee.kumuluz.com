@@ -24,7 +24,7 @@ export class CollaborationsComponent extends Component {
                     </div>
                 ))}
             </div>
-        )
+        );
     }
 
 }

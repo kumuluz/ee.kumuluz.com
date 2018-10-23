@@ -28,7 +28,7 @@ export class CheckboxGroupComponent extends Component {
             elem.changeValue = (value, label) => {
                 elem.labelElement.textContent = label;
                 elem.value = value;
-            }
+            };
         });
     }
 
@@ -63,15 +63,15 @@ export class CheckboxGroupComponent extends Component {
                     return (
                         <div key={index} className={clazz + (val.disabled ? " disabled-checkbox": "")}>
                             <input type="checkbox" id={item.id} value={val ? val.value : null} disabled={val.disabled}
-                                   name={groupName} onClick={onSelected ? onSelected : null}/>
+                                name={groupName} onClick={onSelected ? onSelected : null}/>
                             <label htmlFor={item.id}>
 
                             </label>
                             <span>
-                            {val ? val.label : null}
-                        </span>
+                                {val ? val.label : null}
+                            </span>
                         </div>
-                    )
+                    );
                 } )}
             </div>
         );

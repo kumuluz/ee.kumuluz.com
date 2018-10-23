@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React, {Component} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronLeft} from "@fortawesome/free-solid-svg-icons";
@@ -6,7 +7,7 @@ import Link from "gatsby-link";
 
 import "./tutorial-subpage.scss";
 import {GITHUB_SAMPLES_URL, MICROPROFILE_URL, MICROSERVICES_URL} from "../../../content/constants.content";
-import checkboxImage from "../../../assets/images/checkbox.svg"
+import checkboxImage from "../../../assets/images/checkbox.svg";
 import {CodeFormatComponent, CodePageComponent} from "../../../components/shared/export.shared.components";
 import Helmet from "react-helmet";
 import {GoogleAnalyticsService} from "../../../components/shared/google-analytics/google-analytics.service";
@@ -57,7 +58,7 @@ const solutionsCheckboxes = [
 ];
 
 const readOnCheckboxes = [
-    `Get familiar with <a href="/">KumuluzEE</Link>`,
+    "Get familiar with <a href=\"/\">KumuluzEE</Link>",
     `View the code on <a href="${GITHUB_SAMPLES_URL}" target="_blank">GitHub</a>`,
     `Discover <a href="${MICROSERVICES_URL}" target="_blank">microservices</a>`,
     `Read about <a href="${MICROPROFILE_URL}" target="_blank">Micro Profile</a>`
@@ -133,7 +134,7 @@ export default class TutorialArticleSubpage extends Component {
                         </div>
                         <div className="content">
                             <Waypoint onEnter={() => {
-                                this.makeNavbarSticky(false)
+                                this.makeNavbarSticky(false);
                             }}/>
                             <p className="title-paragraph">
                                 This article explores the way the microservices can be used together with Java EE
@@ -141,7 +142,7 @@ export default class TutorialArticleSubpage extends Component {
                                 architecture that’s popular in Java EE. It shows how to quickly and simply develop two
                                 microservices with standard Java EE using KumuluzEE. You can find the examples produced
                                 in this article on&#160;
-                                <a href={GITHUB_SAMPLES_URL} target="_blank">GitHub</a>&#160;under
+                                <a href={GITHUB_SAMPLES_URL} target="_blank" rel="noreferrer noopener">GitHub</a>&#160;under
                                 the name <span className="inline-code">microservice-simple</span>.
                             </p>
                             <h2>WHY MICROSERVICES?</h2>
@@ -228,7 +229,7 @@ export default class TutorialArticleSubpage extends Component {
                                 For certain components you can also choose which implementation you would like to
                                 include, in case you prefer one or the other. The component list and their
                                 implementations that are available is constantly being updated and can be found on&#160;
-                                <a href={GITHUB_SAMPLES_URL} target="_blank">GitHub.</a>
+                                <a href={GITHUB_SAMPLES_URL} target="_blank" rel="noreferrer noopener">GitHub.</a>
                             </p>
                             <p>
                                 KumuluzEE is also fully compliant with MicroProfile 1.0. As we will show later, you
@@ -352,14 +353,14 @@ export default class TutorialArticleSubpage extends Component {
                             <p>
                                 Again this is only to simplify the example. In a real project the
                                 <span className="inline-code">catalogue</span> and <span
-                                className="inline-code">orders</span>
+                                    className="inline-code">orders</span>
                                 folders/projects would each be in a separate repository. We have also added a
                                 module that will hold our JPA entities as they will be shared with our two
                                 microservices, again, to simplify the example. First let’s create the top-most
                                 <span className="inline-code">pom.xml</span> that will only serve in this example to
                                 include our main modules. We will be using <span className="inline-code">acme.com</span>
                                 as our package name and group id throughout the examples, however the&#160;
-                                <a href={GITHUB_SAMPLES_URL} target="_blank">GitHub</a> page will contain different
+                                <a href={GITHUB_SAMPLES_URL} target="_blank" rel="noreferrer noopener">GitHub</a> page will contain different
                                 package and
                                 artifact names to better match the overall samples structure.
                             </p>
@@ -487,7 +488,7 @@ export default class TutorialArticleSubpage extends Component {
                             <p>
                                 This is the bare minimum required to run a microservice with plain servlets and static
                                 files. Let’s try it out! KumuluzEE will use a <span
-                                className="inline-code">webapp</span>
+                                    className="inline-code">webapp</span>
                                 folder at the root of your <span className="inline-code">resource</span> folder to
                                 look for files and configuration regarding it. This is the only difference to the
                                 standard Java EE file structure as the <span className="inline-code">webapp</span>
@@ -524,7 +525,7 @@ export default class TutorialArticleSubpage extends Component {
                             <p>
                                 And this is all you need to do. The <span className="inline-code">kumuluzee-core</span>
                                 package provides the class <span
-                                className="inline-code">com.kumuluz.ee.EeApplication</span>
+                                    className="inline-code">com.kumuluz.ee.EeApplication</span>
                                 with a main method that will bootstrap your app. If you have your project opened in an
                                 IDE (IntelliJ, Eclipse, …), you can now start the microservice creating a new run
                                 configuration, selecting <span className="inline-code">Java application</span> and
@@ -539,7 +540,7 @@ export default class TutorialArticleSubpage extends Component {
                             </p>
                             <p>
                                 To do so, you must include the <span
-                                className="inline-code">maven-dependency-plugin</span>
+                                    className="inline-code">maven-dependency-plugin</span>
                                 to your <span className="inline-code">pom.xml</span> file, which will copy all your
                                 dependencies together with your classes.
                             </p>
@@ -572,7 +573,7 @@ export default class TutorialArticleSubpage extends Component {
                             <div className="code-block">
                                 <CodeFormatComponent pages={[{filename: "Console", id: "console4"}]}>
                                     <CodePageComponent lang={"bash"} id={"console4"}>
-                                        {`$ java -cp catalogue/target/classes:catalogue/target/dependency/* com.kumuluz.ee.EeApplication`}
+                                        {"$ java -cp catalogue/target/classes:catalogue/target/dependency/* com.kumuluz.ee.EeApplication"}
                                     </CodePageComponent>
                                 </CodeFormatComponent>
                             </div>
@@ -591,7 +592,7 @@ export default class TutorialArticleSubpage extends Component {
                                 REST interfaces (JPA will be included in the <span className="inline-code">models</span>
                                 module). For simplicity, we will add CDI as well, as it comes with as it comes with
                                 full support for resource injecting (e.g. <span
-                                className="inline-code">EntityManager</span>
+                                    className="inline-code">EntityManager</span>
                                 injection using <span className="inline-code">@PersistenceContext</span>). However,
                                 we could just as well do without it to keep our microservice even lighter. For all
                                 the components we will add, we will use their reference implementations. However you
@@ -623,7 +624,7 @@ export default class TutorialArticleSubpage extends Component {
                                 profiles that contain the more popular combinations of components. Including, as of
                                 version 2.1.1, the <span className="inline-code">microProfile-1.0</span> profile with
                                 support for the&#160;
-                                <a href={MICROPROFILE_URL} target="_blank">MicroProfile 1.0</a> specification,
+                                <a href={MICROPROFILE_URL} target="_blank" rel="noreferrer noopener">MicroProfile 1.0</a> specification,
                                 following the announcement of KumuluzEE joining microprofile.io as a member.
                             </p>
                             <h3>JPA module</h3>
@@ -715,7 +716,7 @@ export default class TutorialArticleSubpage extends Component {
                                 Every value defined in the yaml file can be overwritten by setting the approriate
                                 environment variable. For example, if we want to override the datasource password we
                                 can set the environemnt variable <span
-                                className="inline-code">KUMULUZEE_DATASOURCES[0]_PASSWORD</span>
+                                    className="inline-code">KUMULUZEE_DATASOURCES[0]_PASSWORD</span>
                                 before we start our microservice. We can quickly see a pattern how we can access and
                                 override any variable in the config file.
                             </p>
@@ -1007,7 +1008,7 @@ public class OrdersResource {
                             </p>
                             <p>
                                 We can also notice that we are injecting our <span
-                                className="inline-code">EntityManager</span>
+                                    className="inline-code">EntityManager</span>
                                 with the <span className="inline-code">@PersistenceContext</span> annotation. Since we
                                 have included CDI to our microservice this will work as expected. We do however need to
                                 make sure that we have included the <span className="inline-code">beans.xml</span> file

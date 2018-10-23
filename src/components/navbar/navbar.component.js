@@ -26,7 +26,7 @@ export class NavbarComponent extends Component {
         if (this.linkMenu.clientHeight === 0) {
             this.linkMenu.style.height = `${this.linkMenu.scrollHeight}px`;
         } else {
-            this.linkMenu.style.height = `0px`;
+            this.linkMenu.style.height = "0px";
         }
     }
 
@@ -44,12 +44,12 @@ export class NavbarComponent extends Component {
     renderLinkItem(item) {
         if(item.external) {
             return (
-                <a href={item.url} target="_blank">{item.title}</a>
-            )
+                <a href={item.url} target="_blank" rel="noreferrer noopener">{item.title}</a>
+            );
         } else {
             return (
                 <Link to={item.url} onClick={this.closeMenuOnNavigation}>{item.title}</Link>
-            )
+            );
         }
     }
 
@@ -77,7 +77,7 @@ export class NavbarComponent extends Component {
                             ))}
                         </div>
                         <div className="github-link">
-                            <a href={githubItem.url} target="_blank">
+                            <a href={githubItem.url} target="_blank" rel="noreferrer noopener">
                                 <FontAwesomeIcon icon={faGithub}/>
                                 <span className="text">{githubItem.title}</span>
                             </a>

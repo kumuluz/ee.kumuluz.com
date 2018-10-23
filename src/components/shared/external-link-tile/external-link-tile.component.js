@@ -18,13 +18,13 @@ export class ExternalLinkTileComponent extends Component {
     renderLinkIfNotHash(link) {
         if (link !== "#") {
             return (
-                <a href={link} target="_blank">
-                      <span>
+                <a href={link} target="_blank" rel="noreferrer noopener">
+                    <span>
                           View on Github
-                      </span>
+                    </span>
                     <img src={chevron}/>
                 </a>
-            )
+            );
         }
     }
 
