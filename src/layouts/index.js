@@ -7,6 +7,7 @@ import {FooterComponent, NavbarComponent} from "../components/export.components"
 
 import "./layout.scss";
 import favicon from "./favicon.ico";
+import {GoogleAnalyticsService} from "../components/shared/google-analytics/google-analytics.service";
 
 export default class Wrapper extends Component {
 
@@ -17,18 +18,6 @@ export default class Wrapper extends Component {
     constructor(props) {
         super(props);
     }
-
-    componentDidMount() {
-        if (typeof window !== "undefined") {
-            this.__initGoogleAnalytics();
-        }
-    }
-
-    __initGoogleAnalytics() {
-        ReactGA.initialize("UA-96110617-3");
-        ReactGA.pageview(window.location.pathname + window.location.search);
-    }
-
 
     render() {
         const {children} = this.props;

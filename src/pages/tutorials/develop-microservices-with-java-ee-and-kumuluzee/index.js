@@ -9,6 +9,7 @@ import {GITHUB_SAMPLES_URL, MICROPROFILE_URL, MICROSERVICES_URL} from "../../../
 import checkboxImage from "../../../assets/images/checkbox.svg"
 import {CodeFormatComponent, CodePageComponent} from "../../../components/shared/export.shared.components";
 import Helmet from "react-helmet";
+import {GoogleAnalyticsService} from "../../../components/shared/google-analytics/google-analytics.service";
 
 const whyMicroservicesCheckboxes = [
     "With microservices, applications are more flexible;",
@@ -81,11 +82,11 @@ export default class TutorialArticleSubpage extends Component {
                     </div>
                 ))}
             </div>
-        )
+        );
     }
 
     componentDidMount() {
-
+        GoogleAnalyticsService.registerPageView();
     }
 
     makeNavbarSticky(makeSticky) {

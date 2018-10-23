@@ -5,11 +5,16 @@ import "./microprofile-page.scss";
 import {ExternalLinkTileComponent} from "../../components/shared/external-link-tile/external-link-tile.component";
 import {microprofileList} from "../../content/export.content";
 import Helmet from "react-helmet";
+import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
 export default class MicroprofilePage extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        GoogleAnalyticsService.registerPageView();
     }
 
     render() {

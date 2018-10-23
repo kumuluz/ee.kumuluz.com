@@ -16,6 +16,7 @@ import {
     microprofilesList
 } from "../../content/generator-page/export.data";
 import Helmet from "react-helmet";
+import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
 export default class GeneratorPage extends Component {
 
@@ -48,6 +49,7 @@ export default class GeneratorPage extends Component {
     }
 
     componentDidMount() {
+        GoogleAnalyticsService.registerPageView();
         this.setState({
             ...this.state,
             version: document.getElementById("kumuluzee").value

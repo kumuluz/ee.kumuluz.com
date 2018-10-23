@@ -4,11 +4,16 @@ import "./opinions-page.scss";
 import {opinionsList} from "../../content/support-page/opinions.content";
 import {TheyTrustUsComponent} from "../../components/index-page/they-trust/they-trust-us.component";
 import Helmet from "react-helmet";
+import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
 export default class OpinionsPage extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        GoogleAnalyticsService.registerPageView();
     }
 
     renderOpinionBox(opinion) {

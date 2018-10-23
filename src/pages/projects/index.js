@@ -4,11 +4,16 @@ import "./projects-page.scss";
 import {ExternalLinkTileComponent} from "../../components/shared/export.shared.components";
 import {projectsList} from "../../content/export.content";
 import Helmet from "react-helmet";
+import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
 export default class ProjectsPage extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        GoogleAnalyticsService.registerPageView();
     }
 
     render() {

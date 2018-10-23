@@ -13,12 +13,17 @@ import "./index-page.scss";
 import microprofileLogo from "../assets/images/microprofile-logo.png";
 
 import {MICROPROFILE_URL} from "../content/constants.content";
+import {GoogleAnalyticsService} from "../components/shared/google-analytics/google-analytics.service";
 
 export default class IndexPage extends Component {
 
     constructor(props) {
         super(props);
         this.alterPageIfBlogLinksOpened = this.alterPageIfBlogLinksOpened.bind(this);
+    }
+
+    componentDidMount() {
+        GoogleAnalyticsService.registerPageView();
     }
 
     alterPageIfBlogLinksOpened(isOpened, moveFor) {

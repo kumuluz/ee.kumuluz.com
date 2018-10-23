@@ -8,6 +8,7 @@ import externalLinkImage from "../../assets/images/external-url.svg";
 import blueArrowImage from "../../assets/images/arrow.svg";
 import Helmet from "react-helmet";
 import {articles} from "../../content/articles-page/articles";
+import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
 
 export default class ArticlesPage extends Component {
@@ -48,6 +49,7 @@ export default class ArticlesPage extends Component {
     }
 
     componentDidMount() {
+        GoogleAnalyticsService.registerPageView();
         this.setActiveElement("navigation-item-0");
         this.previousScroll = typeof window !== "undefined" ? window.pageYOffset || document.documentElement.scrollTop : 0;
     }
@@ -112,14 +114,14 @@ export default class ArticlesPage extends Component {
                                 }}/>
                                 {articles.section0.articles.map((article, index) => (
                                     <article key={index}>
-                                        <a href={article.url} className="article-title" target="_blank">
+                                        <a href={article.url} className="article-title" target="_blank" rel="noreferrer noopener">
                                             <h2>{article.title}</h2>
                                             <FontAwesomeIcon icon={faChevronRight}/>
                                         </a>
                                         <p>
                                             {article.desc}
                                         </p>
-                                        <a href={article.url} target="_blank">
+                                        <a href={article.url} target="_blank" rel="noreferrer noopener">
                                             <img src={externalLinkImage}/>
                                             {article.url}
                                         </a>
@@ -136,15 +138,15 @@ export default class ArticlesPage extends Component {
                                 }}/>
                             </section>
                             {/*<section id="section-1">*/}
-                                {/*<Waypoint onLeave={() => {*/}
-                                    {/*if (this.isScrollingDown()) {*/}
-                                        {/*this.setActiveElement("navigation-item-2");*/}
-                                    {/*}*/}
-                                {/*}} onEnter={() => {*/}
-                                    {/*if (!this.isScrollingDown()) {*/}
-                                        {/*this.setActiveElement("navigation-item-1");*/}
-                                    {/*}*/}
-                                {/*}}/>*/}
+                            {/*<Waypoint onLeave={() => {*/}
+                            {/*if (this.isScrollingDown()) {*/}
+                            {/*this.setActiveElement("navigation-item-2");*/}
+                            {/*}*/}
+                            {/*}} onEnter={() => {*/}
+                            {/*if (!this.isScrollingDown()) {*/}
+                            {/*this.setActiveElement("navigation-item-1");*/}
+                            {/*}*/}
+                            {/*}}/>*/}
                             {/*</section>*/}
                         </div>
                     </div>

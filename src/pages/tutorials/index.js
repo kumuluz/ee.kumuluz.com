@@ -11,6 +11,7 @@ import {microservicesSamples} from "../../content/tutorials-page/microservices-s
 import {kumuluzeeProjects} from "../../content/tutorials-page/kumuluzee-projects";
 import Helmet from "react-helmet";
 import {documentationItems} from "../../content/tutorials-page/documentation";
+import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
 const navbarItems = [
     {
@@ -111,6 +112,7 @@ export default class TutorialPage extends Component {
     }
 
     componentDidMount() {
+        GoogleAnalyticsService.registerPageView();
         this.setActiveElement("navigation-item-0");
         this.previousScroll = typeof window !== "undefined" ? window.pageYOffset || document.documentElement.scrollTop : 0;
     }

@@ -4,15 +4,18 @@ import {push} from "gatsby-link";
 import "./support-page.scss";
 import {LineDividerComponent} from "../../components/shared/export.shared.components";
 import checkboxImage from "../../assets/images/checkbox.svg";
-import {opinionsList} from "../../content/export.content";
-import {TheyTrustUsComponent} from "../../components/index-page/export.index.components";
 import {MAIL_TO_ADDRESS} from "../../content/constants.content";
 import Helmet from "react-helmet";
+import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
 export default class SupportPage extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        GoogleAnalyticsService.registerPageView();
     }
 
     renderCheckboxLine(text) {
