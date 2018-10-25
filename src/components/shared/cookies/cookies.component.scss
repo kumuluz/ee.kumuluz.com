@@ -1,0 +1,92 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/media-mixin";
+
+.accepted-cookies {
+  display: none !important;
+}
+.ee-cookies-component {
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $blue-100;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+
+  .content {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      font-family: $font-open-sans;
+      color: $white;
+      font-size: 18px;
+      margin-right: 20px;
+    }
+    .button {
+      border: none;
+      font-family: $font-open-sans;
+      cursor: pointer;
+      background-color: $blue-400;
+      color: $white;
+      padding: 5px 25px;
+    }
+  }
+}
+
+@include device-specific($tablet-landscape) {
+  .ee-cookies-component {
+    height: 60px;
+
+    .content {
+      width: 95%;
+
+      div {
+        font-size: 16px;
+      }
+      .button {
+        padding: 5px 20px;
+      }
+    }
+  }
+}
+
+@include device-specific($tablet) {
+  .ee-cookies-component {
+    height: 60px;
+
+    .content {
+      width: 95%;
+
+      div {
+        font-size: 16px;
+        width: 80%;
+      }
+      .button {
+        padding: 5px 20px;
+      }
+    }
+  }
+}
+
+@include device-specific($phone) {
+  .ee-cookies-component {
+    height: 80px;
+
+    .content {
+      width: 95%;
+
+      div {
+        font-size: 16px;
+        width: 72%;
+      }
+      .button {
+        padding: 5px 20px;
+      }
+    }
+  }
+}

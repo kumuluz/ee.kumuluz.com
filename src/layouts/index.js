@@ -6,6 +6,7 @@ import {FooterComponent, NavbarComponent} from "../components/export.components"
 
 import "./layout.scss";
 import favicon from "./favicon.ico";
+import {CookiesComponent} from "../components/shared/cookies/cookies.component";
 
 export default class Wrapper extends Component {
 
@@ -31,6 +32,7 @@ export default class Wrapper extends Component {
                     {children()}
                 </div>
                 <FooterComponent/>
+                <CookiesComponent/>
             </div>
         );
     }
