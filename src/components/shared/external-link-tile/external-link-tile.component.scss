@@ -6,11 +6,10 @@
   box-shadow: 0 7px 20px $shadow-grey;
 
   .container {
-    height: 280px;
+    height: 300px;
     padding-left: 25px;
     padding-right: 25px;
   }
-
   h1 {
     padding-top: 32px;
     color: $blue-400;
@@ -24,17 +23,24 @@
     font-size: 18px;
     margin-bottom: 20px;
   }
-  a {
-    color: $blue-200;
-    font-size: 18px;
-    font-family: $font-open-sans;
-    text-decoration: none;
+  .link {
+    margin-bottom: 10px;
 
-    display: inline-flex;
-    align-items: center;
+    a {
+      color: $blue-200;
+      font-size: 18px;
+      font-family: $font-open-sans;
+      text-decoration: none;
 
-    span {
-      margin-right: 8px;
+      display: inline-flex;
+      align-items: center;
+
+      span {
+        margin-right: 8px;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

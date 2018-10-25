@@ -15,15 +15,17 @@ export class ExternalLinkTileComponent extends Component {
         super(props);
     }
 
-    renderLinkIfNotHash(link) {
+    renderLinkIfNotHash(link, text) {
         if (link !== "#") {
             return (
-                <a href={link} target="_blank" rel="noreferrer noopener">
-                    <span>
-                          View on Github
-                    </span>
-                    <img src={chevron}/>
-                </a>
+                <div className="link">
+                    <a href={link} target="_blank" rel="noreferrer noopener">
+                        <span>
+                            {text}
+                        </span>
+                        <img src={chevron}/>
+                    </a>
+                </div>
             );
         }
     }
@@ -39,7 +41,9 @@ export class ExternalLinkTileComponent extends Component {
                     <p>
                         {data.content}
                     </p>
-                    {this.renderLinkIfNotHash(data.url)}
+                    {this.renderLinkIfNotHash(data.url, "View on GitHub")}
+                    {this.renderLinkIfNotHash(data.sampleUrl, "View sample")}
+                    {this.renderLinkIfNotHash(data.npmUrl, "View on NPM")}
                 </div>
                 <LineDividerComponent/>
             </div>

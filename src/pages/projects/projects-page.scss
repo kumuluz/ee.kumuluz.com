@@ -43,6 +43,24 @@
       display: flex;
       flex-wrap: wrap;
     }
+    h2 {
+      color: $blue-400;
+      margin-top: 80px;
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 36px;
+      font-family: $font-fjalla-one;
+      text-align: left;
+      width: 60%;
+    }
+    p.coming-soon {
+      width: 60%;
+      font-family: $font-open-sans;
+      color: $blue-grey;
+      font-size: 24px;
+      font-weight: 700;
+    }
   }
 }
 

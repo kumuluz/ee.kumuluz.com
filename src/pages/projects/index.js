@@ -5,6 +5,7 @@ import {ExternalLinkTileComponent} from "../../components/shared/export.shared.c
 import {projectsList} from "../../content/export.content";
 import Helmet from "react-helmet";
 import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
+import {nodejsProjectList} from "../../content/projects-page/projects.content";
 
 export default class ProjectsPage extends Component {
 
@@ -40,6 +41,16 @@ export default class ProjectsPage extends Component {
                             </div>
                         ))}
                     </div>
+                    <h2>NODE.js PROJECTS</h2>
+                    <div className="tiles">
+                        {nodejsProjectList.map((proj, index) => (
+                            <div className={proj.size === 2 ? "tile order-2" : "tile"} key={index}>
+                                <ExternalLinkTileComponent data={proj}/>
+                            </div>
+                        ))}
+                    </div>
+                    <h2>Go PROJECTS</h2>
+                    <p className="coming-soon">Coming soon</p>
                 </div>
             </div>
         );
