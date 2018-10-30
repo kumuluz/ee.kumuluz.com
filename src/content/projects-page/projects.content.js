@@ -1,7 +1,7 @@
 import {Project} from "./schema/project.class";
 
 export const projectsList = [
-    new Project("KumuluzEE microservice framework", "For creating microservices using Java EE and packing them as Docker containers. Includes a configuration framework and uber-JAR support.", "https://github.com/kumuluz/kumuluzee/blob/master/README.md", "#", 2),
+    new Project("KumuluzEE microservice framework", "For creating microservices using Java EE and packing them as Docker containers. Includes a configuration framework and uber-JAR support.", "https://github.com/kumuluz/kumuluzee/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples", 2),
     new Project("KumuluzEE REST", "For implementation of common, advanced and flexible REST API functionalities and patterns. Includes support for exposing JPA entities through REST.", "https://github.com/kumuluz/kumuluzee-rest/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest"),
     new Project("KumuluzEE Config", "For dynamic centralized configuration (using ENV variables or config server, such as etcd or Consul).", "https://github.com/kumuluz/kumuluzee-config/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-config"),
     new Project("KumuluzEE Logs", "For advanced microservice framework for logging.", "https://github.com/kumuluz/kumuluzee-logs/blob/master/README.md", "#"),

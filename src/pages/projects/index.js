@@ -41,7 +41,7 @@ export default class ProjectsPage extends Component {
                             </div>
                         ))}
                     </div>
-                    <h2>NODE.js PROJECTS</h2>
+                    <h2>NODE.js projects</h2>
                     <div className="tiles">
                         {nodejsProjectList.map((proj, index) => (
                             <div className={proj.size === 2 ? "tile order-2" : "tile"} key={index}>
@@ -49,7 +49,7 @@ export default class ProjectsPage extends Component {
                             </div>
                         ))}
                     </div>
-                    <h2>Go PROJECTS</h2>
+                    <h2>Go projects</h2>
                     <p className="coming-soon">Coming soon</p>
                 </div>
             </div>

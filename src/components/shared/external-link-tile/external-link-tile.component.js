@@ -42,8 +42,8 @@ export class ExternalLinkTileComponent extends Component {
                         {data.content}
                     </p>
                     {this.renderLinkIfNotHash(data.url, "View on GitHub")}
-                    {this.renderLinkIfNotHash(data.sampleUrl, "View sample")}
                     {this.renderLinkIfNotHash(data.npmUrl, "View on NPM")}
+                    {this.renderLinkIfNotHash(data.sampleUrl, "View sample")}
                 </div>
                 <LineDividerComponent/>
             </div>
