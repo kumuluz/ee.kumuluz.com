@@ -15,11 +15,29 @@ export class ExternalLinkTileComponent extends Component {
         super(props);
     }
 
-    renderLinkIfNotHash(link, text) {
-        if (link !== "#") {
+    renderLinkIfNotHash(links, text) {
+        // handle if links is Array
+        if (Array.isArray(links)) {
+            return links.map((link, index) => {
+                if (link.url !== "#") {
+                    return (
+                        <div className="link" key={index}>
+                            <a href={link.url} target="_blank" rel="noreferrer noopener">
+                                <span>
+                                    {link.title}
+                                </span>
+                                <img src={chevron}/>
+                            </a>
+                        </div>
+                    );
+                }
+            });
+        }
+        // handle if links is single string
+        if (links !== "#") {
             return (
                 <div className="link">
-                    <a href={link} target="_blank" rel="noreferrer noopener">
+                    <a href={links} target="_blank" rel="noreferrer noopener">
                         <span>
                             {text}
                         </span>

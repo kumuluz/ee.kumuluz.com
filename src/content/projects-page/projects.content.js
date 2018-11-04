@@ -4,8 +4,18 @@ export const projectsList = [
     new Project("KumuluzEE microservice framework", "For creating microservices using Java EE and packing them as Docker containers. Includes a configuration framework and uber-JAR support.", "https://github.com/kumuluz/kumuluzee/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples", 2),
     new Project("KumuluzEE REST", "For implementation of common, advanced and flexible REST API functionalities and patterns. Includes support for exposing JPA entities through REST.", "https://github.com/kumuluz/kumuluzee-rest/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest"),
     new Project("KumuluzEE Config", "For dynamic centralized configuration (using ENV variables or config server, such as etcd or Consul).", "https://github.com/kumuluz/kumuluzee-config/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-config"),
-    new Project("KumuluzEE Logs", "For advanced microservice framework for logging.", "https://github.com/kumuluz/kumuluzee-logs/blob/master/README.md", "#"),
-    new Project("KumuluzEE Discovery", "For dynamic service discovery (etcd or Consul). Fully compatible with Kubernetes.", "https://github.com/kumuluz/kumuluzee-discovery/blob/master/README.md", "#"),
+    new Project("KumuluzEE Logs", "For advanced microservice framework for logging.", "https://github.com/kumuluz/kumuluzee-logs/blob/master/README.md",
+        [
+            {title: "Sample with JUL", url: "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-logs-jul"},
+            {title: "Sample with Log4j2", url: "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-logs-log4j2"}
+        ]
+    ),
+    new Project("KumuluzEE Discovery", "For dynamic service discovery (etcd or Consul). Fully compatible with Kubernetes.", "https://github.com/kumuluz/kumuluzee-discovery/blob/master/README.md",
+        [
+            {title: "Sample with etcd", url: "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-discovery-etcd"},
+            {title: "Sample with Consul", url: "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-discovery-consul"}
+        ]
+    ),
     new Project("KumuluzEE Metrics", "For easy collection and reporting of performance metrics.", "https://github.com/kumuluz/kumuluzee-metrics/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-metrics"),
     new Project("KumuluzEE Security", "For easy integration with OAuth2/OpenID identity and access management providers.", "https://github.com/kumuluz/kumuluzee-security/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-security-cdi-keycloak"),
     new Project("KumuluzEE Health", "For implementing health checks and exposing microservice health information.", "https://github.com/kumuluz/kumuluzee-health/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-health"),
