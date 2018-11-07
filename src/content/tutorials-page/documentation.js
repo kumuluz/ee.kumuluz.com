@@ -28,7 +28,7 @@ export const documentationItems = {
         ]
     },
     microprofile: [
-        new Sample("MicroProfile Config 1.2", "For microservice configuration.", "https://github.com/kumuluz/kumuluzee-config-mp/blob/master/README.md"),
+        new Sample("MicroProfile Config 1.3", "For microservice configuration.", "https://github.com/kumuluz/kumuluzee-config-mp/blob/master/README.md"),
         new Sample("MicroProfile Health Check 1.0", "For service healthchecks.", "https://github.com/kumuluz/kumuluzee-health/blob/master/README.md"),
         new Sample("MicroProfile Fault Tolerance 1.0", "For fault tolerant microservices.", "https://github.com/kumuluz/kumuluzee-fault-tolerance/blob/master/README.md"),
         new Sample("MicroProfile Metrics 1.1", "For collection and reporting of performance metrics.", "https://github.com/kumuluz/kumuluzee-metrics/blob/master/README.md"),
