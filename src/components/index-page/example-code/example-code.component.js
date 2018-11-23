@@ -23,6 +23,10 @@ export class ExampleCodeComponent extends Component {
             {
                 filename: "pom.xml",
                 id: "pom-xml"
+            },
+            {
+                filename: "pom.xml (MicroProfile)",
+                id: "pom-xml-mp"
             }
         ];
 
@@ -64,6 +68,46 @@ public class OrdersResource {
 }`}
                             </CodePageComponent>
                             <CodePageComponent id="pom-xml" lang={"xml"}>
+                                {`<properties>
+    <kumuluz.version>3.0.0</kumuluz.version>
+</properties>
+
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.kumuluz.ee</groupId>
+            <artifactId>kumuluzee-bom</artifactId>
+            <version>$\{kumuluz.version\}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+<dependencies>
+    <dependency>
+        <groupId>com.kumuluz.ee</groupId>
+        <artifactId>kumuluzee-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee</groupId>
+        <artifactId>kumuluzee-servlet-jetty</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee</groupId>
+        <artifactId>kumuluzee-cdi-weld</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee</groupId>
+        <artifactId>kumuluzee-jax-rs-jersey</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee</groupId>
+        <artifactId>kumuluzee-jpa-hibernate</artifactId>
+    </dependency>
+</dependencies>`}
+                            </CodePageComponent>
+                            <CodePageComponent id="pom-xml-mp" lang={"xml"}>
                                 {`<properties>
     <kumuluz.version>3.0.0</kumuluz.version>
 </properties>
