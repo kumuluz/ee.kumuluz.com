@@ -29,5 +29,6 @@ export const kumuluzeeProjects = [
     new Sample("Reactive samples using Vert.x", "Samples for KumuluzEE Reactive Vert.x project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-reactive-vertx"),
     new Sample("gRPC sample", "Samples for KumuluzEE gRPC project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-grpc", true),
     new Sample("GraphQL sample", "Samples for KumuluzEE GraphQL project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-graphql-advanced", true),
-    new Sample("Ethereum sample", "Samples for KumuluzEE Ethereum project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-ethereum-web3j", true)
+    new Sample("Ethereum sample", "Samples for KumuluzEE Ethereum project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-ethereum-web3j", true),
+    new Sample("Rest Client sample", "Build a REST service, which consumes another REST service using the KumuluzEE Rest Client.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest-client", true)
 ];
