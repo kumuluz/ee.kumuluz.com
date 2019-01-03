@@ -22,7 +22,7 @@ export class FooterComponent extends Component {
                         <FontAwesomeIcon icon={faGithub}/>
                     </a>                </div>
                 <div className="copyright">
-                    Member of KumuluzDigital, the Kumuluz family of products. Copyright &copy; 2013 - 2018. All rights reserved.
+                    Member of KumuluzDigital, the Kumuluz family of products. Copyright &copy; 2013 - 2019. All rights reserved.
                 </div>
                 <div className="sponsor">
                     <a href={KUMULUZ_COM} target="_blank" rel="noreferrer noopener">Kumuluz</a>
