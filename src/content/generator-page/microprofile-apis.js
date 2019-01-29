@@ -15,6 +15,7 @@ export const microprofileAPIsList = [
         new VersionedLabel("2.4.0", "MicroProfile Metrics 1.1", "n/a")
     ], []),
     new CheckboxModel("mpa-jwt-auth", [
-        new VersionedLabel("2.2.0", "MicroProfile JWT Authentication 1.0", "com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee.jwt-auth.version}")
+        new VersionedLabel("2.2.0", "MicroProfile JWT Authentication 1.0", "com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee.jwt-auth.version}"),
+        new VersionedLabel("3.1.0", "MicroProfile JWT Authentication 1.1", "com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee.jwt-auth.version}")
     ], [])
 ];
