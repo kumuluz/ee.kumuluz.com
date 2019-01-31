@@ -65,7 +65,8 @@ export const extensionsList = {
             new VersionedLabel("2.4.0", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.3")
         ], []),
         new CheckboxModel("ext-other-health", [
-            new VersionedLabel("2.4.0", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.0")
+            new VersionedLabel("2.4.0", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.1"),
+            new VersionedLabel("3.1.0", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.2")
         ], []),
         new CheckboxModel("ext-other-faulttolerance", [
             new VersionedLabel("2.4.0", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.0.0")
