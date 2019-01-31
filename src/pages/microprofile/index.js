@@ -29,7 +29,7 @@ export default class MicroprofilePage extends Component {
                 <div className="content">
                     <div className="description">
                         <p className="font-normal">
-                            KumuluzEE is fully compliant with Eclipse MicroProfile 1.0, 1.1 and 1.2 specifications and
+                            KumuluzEE is compliant with Eclipse MicroProfile 1.0, 1.1, 1.2 and 2.0 specifications and
                             implements the following APIs:
                         </p>
                     </div>
