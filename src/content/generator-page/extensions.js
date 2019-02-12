@@ -56,7 +56,8 @@ export const extensionsList = {
             new VersionedLabel("2.3.0", "KumuluzEE Security (Keycloak)", "com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}:1.0.1")
         ], []),
         new CheckboxModel("ext-other-kafka", [
-            new VersionedLabel("2.3.0", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.0.0")
+            new VersionedLabel("2.3.0", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.0.0"),
+            new VersionedLabel("3.0.0", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.1.0")
         ], []),
         new CheckboxModel("ext-other-rest", [
             new VersionedLabel("2.3.0", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.2.3")
