@@ -22,9 +22,11 @@ export const documentationItems = {
             new Sample("KumuluzEE Swagger", "KumuluzEE Swagger project provides powerful tools to incorporate and visualize the Swagger (OpenAPI 2.0) specification to your microservice.", "https://github.com/kumuluz/kumuluzee-swagger/blob/master/README.md"),
             new Sample("KumuluzEE OpenAPI", "KumuluzEE OpenAPI project provides powerful tools to incorporate and visualize the OpenAPI 3 specification to your microservice.", "https://github.com/kumuluz/kumuluzee-openapi/blob/master/README.md"),
             new Sample("KumuluzEE Reactive", "KumuluzEE Reactive project for developing reactive microservices.", "https://github.com/kumuluz/kumuluzee-reactive/blob/master/README.md"),
-            new Sample("KumuluzEE gRPC", "Support for the gRPC framework.", "https://github.com/kumuluz/kumuluzee-grpc/blob/master/README.md", true),
-            new Sample("KumuluzEE GraphQL", "Developing GraphQL APIs.", "https://github.com/kumuluz/kumuluzee-graphql/blob/master/README.md", true),
-            new Sample("KumuluzEE Ethereum", "Support for seamless development of Blockchain applications on the Ethereum platform.", "https://github.com/kumuluz/kumuluzee-ethereum/blob/master/README.md", true)
+            new Sample("KumuluzEE gRPC", "Support for the gRPC framework.", "https://github.com/kumuluz/kumuluzee-grpc/blob/master/README.md"),
+            new Sample("KumuluzEE GraphQL", "Developing GraphQL APIs.", "https://github.com/kumuluz/kumuluzee-graphql/blob/master/README.md"),
+            new Sample("KumuluzEE Ethereum", "Support for seamless development of Blockchain applications on the Ethereum platform.", "https://github.com/kumuluz/kumuluzee-ethereum/blob/master/README.md"),
+            new Sample("KumuluzEE Rest Client", "Type-safe approach to invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md", true),
+            new Sample("KumuluzEE OpenTracing", "Distributed tracing solution for KumuluzEE framework.", "https://github.com/kumuluz/kumuluzee-opentracing/blob/master/README.md", true),
         ]
     },
     microprofile: [
@@ -33,6 +35,7 @@ export const documentationItems = {
         new Sample("MicroProfile Fault Tolerance 1.1", "For fault tolerant microservices.", "https://github.com/kumuluz/kumuluzee-fault-tolerance/blob/master/README.md"),
         new Sample("MicroProfile Metrics 1.1", "For collection and reporting of performance metrics.", "https://github.com/kumuluz/kumuluzee-metrics/blob/master/README.md"),
         new Sample("MicroProfile JWT Authentication 1.1", "For role based access control using OpenID Connect and JSON Web Tokens.", "https://github.com/kumuluz/kumuluzee-jwt-auth/blob/master/README.md"),
-        new Sample("MicroProfile REST Client 1.1.0", "For easy way to define and invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md")
+        new Sample("MicroProfile REST Client 1.1", "For easy way to define and invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md"),
+        new Sample("MicroProfile OpenTracing 1.2", "For accessing an OpenTracing compliant Tracer object within your JAX-RS application.", "https://github.com/kumuluz/kumuluzee-opentracing/blob/master/README.md"),
     ]
 };

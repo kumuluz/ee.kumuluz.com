@@ -52,6 +52,12 @@ const tutorialItems = [
         content: "This article explores the way the microservices can be used together with Java EE using KumuluzEE. It expands on the benefits and drawbacks compared to the monolithic architecture that is popular in Java EE.",
         url: "/tutorials/develop-microservices-with-java-ee-and-kumuluzee",
         external: false
+    },
+    {
+        title: "Tracing KumuluzEE microservices with Jaeger",
+        content: "Managing microservices becomes harder with each new or updated microservice. When an application experiences a slowdown and its »data flow« goes through several different microservices, pinpointing the exact location of a slowdown may be difficult for a developer. This blog post covers the basics of distributed tracing and demonstrates the usage of KumuluzEE OpenTracing extension with Jaeger to fight the challenges mentioned above.",
+        url: "https://blog.kumuluz.com/developers/community/2019/02/11/kumuluzee-opentracing-jaeger",
+        external: true
     }
 ];
 

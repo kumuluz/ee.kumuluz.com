@@ -27,8 +27,9 @@ export const kumuluzeeProjects = [
     new Sample("OpenAPI sample", "Develop a microservice application with support for OpenAPI specification.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-openapi"),
     new Sample("Microservices with KumuluzEE MicroProfile 1.2", "Build a microservice with Eclipse MicroProfile APIs implemented in KumuluzEE MicroProfile 1.2.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-microProfile-1.2"),
     new Sample("Reactive samples using Vert.x", "Samples for KumuluzEE Reactive Vert.x project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-reactive-vertx"),
-    new Sample("gRPC sample", "Samples for KumuluzEE gRPC project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-grpc", true),
-    new Sample("GraphQL sample", "Samples for KumuluzEE GraphQL project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-graphql-advanced", true),
-    new Sample("Ethereum sample", "Samples for KumuluzEE Ethereum project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-ethereum-web3j", true),
-    new Sample("Rest Client sample", "Build a REST service, which consumes another REST service using the KumuluzEE Rest Client.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest-client", true)
+    new Sample("gRPC sample", "Samples for KumuluzEE gRPC project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-grpc"),
+    new Sample("GraphQL sample", "Samples for KumuluzEE GraphQL project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-graphql-advanced"),
+    new Sample("Ethereum sample", "Samples for KumuluzEE Ethereum project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-ethereum-web3j"),
+    new Sample("Rest Client sample", "Build a REST service, which consumes another REST service using the KumuluzEE Rest Client.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest-client", true),
+    new Sample("OpenTracing sample", "Trace a request across two microservices using Jaeger or Zipkin as the backend.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-opentracing", true),
 ];

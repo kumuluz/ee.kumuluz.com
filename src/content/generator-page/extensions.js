@@ -20,15 +20,18 @@ export const extensionsList = {
     metrics: {
         level1: [
             new CheckboxModel("ext-metrics", [
-                new VersionedLabel("2.4.0", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.1")
+                new VersionedLabel("2.4.0", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.1"),
+                new VersionedLabel("2.5.3", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.2")
             ], [])
         ],
         level2: [
             new CheckboxModel("ext-metrics-logs", [
-                new VersionedLabel("2.4.0", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.1")
+                new VersionedLabel("2.4.0", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.1"),
+                new VersionedLabel("2.5.3", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.2")
             ], []),
             new CheckboxModel("ext-metrics-logstash", [
-                new VersionedLabel("2.4.0", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.1")
+                new VersionedLabel("2.4.0", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.1"),
+                new VersionedLabel("2.5.3", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.2")
             ], [])
         ]
     },
@@ -53,7 +56,8 @@ export const extensionsList = {
             new VersionedLabel("2.3.0", "KumuluzEE Security (Keycloak)", "com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}:1.0.1")
         ], []),
         new CheckboxModel("ext-other-kafka", [
-            new VersionedLabel("2.3.0", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.0.0")
+            new VersionedLabel("2.3.0", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.0.0"),
+            new VersionedLabel("3.0.0", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.1.0")
         ], []),
         new CheckboxModel("ext-other-rest", [
             new VersionedLabel("2.3.0", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.2.3")
@@ -62,7 +66,8 @@ export const extensionsList = {
             new VersionedLabel("2.4.0", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.3")
         ], []),
         new CheckboxModel("ext-other-health", [
-            new VersionedLabel("2.4.0", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.0")
+            new VersionedLabel("2.4.0", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.1"),
+            new VersionedLabel("3.1.0", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.2")
         ], []),
         new CheckboxModel("ext-other-faulttolerance", [
             new VersionedLabel("2.4.0", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.0.0")
