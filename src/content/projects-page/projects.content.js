@@ -32,7 +32,6 @@ export const projectsList = [
     new Project("KumuluzEE Rest Client", "Easy way to define and invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest-client"),
     new Project("KumuluzEE OpenTracing", "Distributed tracing solution for KumuluzEE framework.", "https://github.com/kumuluz/kumuluzee-opentracing/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-opentracing"),
     new Project("KumuluzEE AMQP", "Let your microservices communicate over the AMQP messaging protocol.", "https://github.com/kumuluz/kumuluzee-amqp/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-amqp-rabbitmq"),
-    new Project("KumuluzEE OpenAPI MicroProfile", "Implements the Eclipse MicroProfile OpenAPI specification for the OpenAPI support.", "https://github.com/kumuluz/kumuluzee-openapi-mp/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-openapi-mp"),
 ];
 
 export const nodejsProjectList = [
