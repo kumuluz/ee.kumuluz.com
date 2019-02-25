@@ -11,4 +11,10 @@ export const microprofilesList = [
         new VersionedLabel("2.5.2", "MicroProfile 1.2", "com.kumuluz.ee:kumuluzee-microProfile-1.2")
     ], ["comp-cdi", "comp-jsonp", "comp-jaxrs", "mpa-config", "mpa-faulttolerance", "ext-other-faulttolerance",
         "mpa-jwt-auth", "mpa-metrics", "ext-metrics", "mpa-healthcheck", "ext-other-health"]),
+    new CheckboxModel("mp-1.3", [
+        new VersionedLabel("3.2.0-SNAPSHOT", "MicroProfile 1.3", "com.kumuluz.ee:kumuluzee-microProfile-1.3")
+    ], ["comp-cdi", "comp-jsonp", "comp-jaxrs", "mpa-config", "mpa-faulttolerance", "ext-other-faulttolerance",
+        "mpa-jwt-auth", "mpa-metrics", "ext-metrics", "mpa-healthcheck", "ext-other-health",
+        "mpa-openapi", "mpa-opentracing", "mpa-rest-client"
+    ])
 ];
