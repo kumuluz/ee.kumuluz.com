@@ -25,6 +25,7 @@ export class GeneratorHelper {
             }
         };
     }
+
     // end utility
 
     // versions calc
@@ -59,16 +60,20 @@ export class GeneratorHelper {
         }
         return false;
     }
+
     static versionIsSmaller(version1, version2) {
         if (version1.toUpperCase() === version2.toUpperCase()) return false;
         return !GeneratorHelper.versionIsLarger(version1, version2);
     }
+
     static versionIsSmallerOrEqual(version1, version2) {
         return version1.toUpperCase() === version2.toUpperCase() || this.versionIsSmaller(version1, version2);
     }
+
     static versionIsLargerOrEqual(version1, version2) {
         return version1.toUpperCase() === version2.toUpperCase() || this.versionIsLarger(version1, version2);
     }
+
     static getLatestLogsVersion() {
         const URL = "https://api.github.com/repos/kumuluz/kumuluzee-logs/releases";
         const req = new XMLHttpRequest();
@@ -84,6 +89,7 @@ export class GeneratorHelper {
         });
         req.send();
     }
+
     // end versions calc
 
     // functions for parsing given data
@@ -106,7 +112,11 @@ export class GeneratorHelper {
         }
         return "FALSE - PREVERI";
     }
+
     static parseValue(value) {
+        if (value === "n/a") {
+            return null;
+        }
         const splitted = value.split(":");
         if (splitted.length === 2) {
             return {
@@ -130,6 +140,7 @@ export class GeneratorHelper {
             throw new Error("Check behaviour, something is wrong: " + JSON.stringify(splitted));
         }
     }
+
     // end parsing functions
 
     // helper functions
@@ -153,6 +164,7 @@ export class GeneratorHelper {
         });
         return parsedComponents;
     }
+
     static _parseMicroprofiles(kumuluzeeVersion) {
         const microprofiles = Array.from(document.getElementsByName("microprofile"));
         const selectedMicroprofile = microprofiles.find(mp => mp.checked);
@@ -165,6 +177,7 @@ export class GeneratorHelper {
         }
         return null;
     }
+
     static _parseExtensions(kumuluzeeVersion, microprofileDeps) {
         const $ = GeneratorHelper.initializeDollarFunction();
         const parsedExtensions = [];
@@ -242,14 +255,39 @@ export class GeneratorHelper {
             dependencies: parsedExtensions
         };
     }
+
+    static _parseMicroProfileApis(kumuluzeeVersion) {
+        const parsedApis = [];
+        const versions = [];
+
+        const microprofileApis = Array.from(document.getElementsByName("microprofile-apis"));
+        const selectedApis = microprofileApis.filter(api => api.checked);
+        selectedApis.forEach(api => {
+            const label = GeneratorHelper.getValueFromItem(api.dataObject, kumuluzeeVersion);
+            const parsedLabelValue = GeneratorHelper.parseValue(label.value);
+            if (parsedLabelValue != null) {
+                parsedApis.push(parsedLabelValue);
+                const versionKey = parsedLabelValue.versionKey.replace("${", "").replace("}", "");
+                const versionValue = parsedLabelValue.version;
+                const versionItem = `<${versionKey}>${versionValue}</${versionKey}>`;
+                versions.push(versionItem);
+            }
+        });
+        return {
+            versions: versions,
+            dependencies: parsedApis
+        };
+    }
+
     static _hasSnapshot(dependencies, kumuluzeeVersion) {
-        for(let dependency of dependencies) {
+        for (let dependency of dependencies) {
             if (dependency.version && dependency.version.includes("SNAPSHOT")) {
                 return true;
             }
         }
         return kumuluzeeVersion.includes("SNAPSHOT");
     }
+
     // end helper functions
 
     static generateFormData() {
@@ -288,6 +326,11 @@ export class GeneratorHelper {
         const extensions = GeneratorHelper._parseExtensions(KUMULUZEE_VERSION, microprofileDependencies);
         formData.dependencies.push(...extensions.dependencies);
         formData.propertiesVersions.push(...extensions.versions);
+
+        // MicroProfile APIs
+        const microprofileApis = GeneratorHelper._parseMicroProfileApis(KUMULUZEE_VERSION);
+        formData.dependencies.push(...microprofileApis.dependencies);
+        formData.propertiesVersions.push(...microprofileApis.versions);
 
         // Remove duplicate properties
         const seenProps = [];
