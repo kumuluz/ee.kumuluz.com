@@ -8,10 +8,10 @@ import "./layout.scss";
 import favicon from "./favicon.ico";
 import {CookiesComponent} from "../components/shared/cookies/cookies.component";
 
-export default class Wrapper extends Component {
+export class Layout extends Component {
 
     static propTypes = {
-        children: PropType.func
+        children: PropType.object
     };
 
     constructor(props) {
@@ -20,7 +20,6 @@ export default class Wrapper extends Component {
 
     render() {
         const {children} = this.props;
-
         return (
             <div className="ee-wrapper">
                 <Helmet>
@@ -29,7 +28,7 @@ export default class Wrapper extends Component {
                 </Helmet>
                 <NavbarComponent/>
                 <div className="ee-wrapper-content">
-                    {children()}
+                    {children}
                 </div>
                 <FooterComponent/>
                 <CookiesComponent/>

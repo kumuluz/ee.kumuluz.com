@@ -1,10 +1,10 @@
 import React, {Component} from "react";
-// import anime from "animejs";
 
-import "./opinions.component.scss";
-import {opinionsList} from "../../../content/export.content";
 import leftArrow from "../../../assets/images/grey-arrow-left.svg";
 import rightArrow from "../../../assets/images/grey-arrow-right.svg";
+import "./opinions.component.scss";
+
+import {opinionsList} from "../../../content/export.content";
 
 export class OpinionsComponent extends Component {
 

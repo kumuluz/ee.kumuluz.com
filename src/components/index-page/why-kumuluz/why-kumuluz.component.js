@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 
 import "./why-kumuluz.component.scss";
-import {BLOG_URL} from "../../../content/constants.content";
 
+import {BLOG_URL} from "../../../content/constants.content";
 const reasons = [
     {
         title: "Pure JavaEE microservices",
