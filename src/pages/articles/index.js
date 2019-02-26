@@ -93,7 +93,7 @@ export default class ArticlesPage extends Component {
                 <Helmet title="KumuluzEE - Articles"/>
                 <div className="header">
                     <div className="title">
-                        <h1>Tutorials and Quickstart Samples</h1>
+                        <h1>Articles</h1>
                     </div>
                 </div>
                 <div className="content">
@@ -105,7 +105,7 @@ export default class ArticlesPage extends Component {
                             <Waypoint onLeave={() => this.makeNavbarSticky(true)}/>
                         </div>
                         <div className="articles">
-                            <h1>Articles</h1>
+                            <h1>Articles about KumuluzEE</h1>
                             <div className="articles-h1-desc">Users talking about our product</div>
                             <section id="section-0">
                                 <Waypoint onEnter={() => {
