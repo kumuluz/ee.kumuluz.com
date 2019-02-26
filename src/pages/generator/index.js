@@ -53,6 +53,7 @@ export default class GeneratorPage extends Component {
 
     componentDidMount() {
         GoogleAnalyticsService.registerPageView();
+        this.__resetAllCheckboxes();
         this.setState({
             ...this.state,
             metricsSelected: false,
@@ -62,7 +63,7 @@ export default class GeneratorPage extends Component {
         GeneratorHelper.getLatestLogsVersion();
     }
 
-    componentWillUnmount() {
+    __resetAllCheckboxes() {
         const allGroups = [
             "microprofile",
             "components",
@@ -75,7 +76,8 @@ export default class GeneratorPage extends Component {
             "arquillian",
             "opentracing",
             "other",
-            "microprofile-apis"
+            "microprofile-apis",
+            "uberjar"
         ];
         const resetElements = (groupName) => {
             const elements = Array.from(document.getElementsByName(groupName));
@@ -86,6 +88,10 @@ export default class GeneratorPage extends Component {
         allGroups.forEach(group => {
             resetElements(group);
         });
+    }
+
+    componentWillUnmount() {
+        this.__resetAllCheckboxes();
     }
 
     selectAllDependentItems($event) {
