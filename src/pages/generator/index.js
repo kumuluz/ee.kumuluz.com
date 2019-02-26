@@ -60,7 +60,32 @@ export default class GeneratorPage extends Component {
         });
         this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
         GeneratorHelper.getLatestLogsVersion();
+    }
 
+    componentWillUnmount() {
+        const allGroups = [
+            "microprofile",
+            "components",
+            "logs",
+            "config",
+            "discovery",
+            "metrics-1",
+            "metrics-2",
+            "reactive",
+            "arquillian",
+            "opentracing",
+            "other",
+            "microprofile-apis"
+        ];
+        const resetElements = (groupName) => {
+            const elements = Array.from(document.getElementsByName(groupName));
+            elements.forEach(elem => {
+                elem.checked = false;
+            });
+        };
+        allGroups.forEach(group => {
+            resetElements(group);
+        });
     }
 
     selectAllDependentItems($event) {
@@ -199,9 +224,6 @@ export default class GeneratorPage extends Component {
                 });
             }
         });
-
-
-
     }*/
 
     render() {
