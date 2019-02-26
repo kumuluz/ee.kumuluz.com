@@ -3,10 +3,10 @@ import {CheckboxModel, VersionedLabel} from "./schema/checkbox-model.class";
 export const extensionsList = {
     config: [
         new CheckboxModel("ext-config-etcd", [
-            new VersionedLabel("2.3.0", "with etcd", "com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}:1.0.0")
+            new VersionedLabel("2.3.0", "with etcd", "com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}:1.1.0")
         ], []),
         new CheckboxModel("ext-config-consul", [
-            new VersionedLabel("2.3.0", "with Consul", "com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}:1.0.0")
+            new VersionedLabel("2.3.0", "with Consul", "com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}:1.1.0")
         ], [])
     ],
     discovery: [
@@ -76,17 +76,17 @@ export const extensionsList = {
             new VersionedLabel("2.3.0", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.2.3")
         ], []),
         new CheckboxModel("ext-other-cors", [
-            new VersionedLabel("2.4.0", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.3")
+            new VersionedLabel("2.4.0", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.5")
         ], []),
         new CheckboxModel("ext-other-health", [
             new VersionedLabel("2.4.0", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.1"),
             new VersionedLabel("3.1.0", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.2")
         ], []),
         new CheckboxModel("ext-other-faulttolerance", [
-            new VersionedLabel("2.4.0", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.0.0")
+            new VersionedLabel("2.4.0", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.1.3")
         ], []),
         new CheckboxModel("ext-other-swagger", [
-            new VersionedLabel("3.0.0", "KumuluzEE Swagger", "com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}:1.2.0"),
+            new VersionedLabel("3.0.0", "KumuluzEE Swagger", "com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}:1.2.1"),
             new VersionedLabel("2.2.0", "KumuluzEE Swagger", "com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}:1.0.0-SNAPSHOT")
         ], []),
         new CheckboxModel("ext-other-openapi", [
@@ -94,7 +94,7 @@ export const extensionsList = {
             new VersionedLabel("2.2.0", "KumuluzEE OpenAPI", "com.kumuluz.ee.openapi:kumuluzee-openapi:${kumuluzee-openapi.version}:1.0.0-SNAPSHOT")
         ], []),
         new CheckboxModel("ext-other-grpc", [
-            new VersionedLabel("3.0.0", "KumuluzEE gRPC", "com.kumuluz.ee.grpc:kumuluzee-grpc:${kumuluzee-grpc.version}:1.0.0")
+            new VersionedLabel("3.0.0", "KumuluzEE gRPC", "com.kumuluz.ee.grpc:kumuluzee-grpc:${kumuluzee-grpc.version}:1.1.0")
         ], []),
         new CheckboxModel("ext-other-graphql", [
             new VersionedLabel("3.0.0", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.0")
