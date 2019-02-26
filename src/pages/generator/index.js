@@ -46,6 +46,7 @@ export default class GeneratorPage extends Component {
 
         this.state = {
             version: "",
+            metricsSelected: false,
             missingDependencyWarnings: []
         };
     }
@@ -54,6 +55,7 @@ export default class GeneratorPage extends Component {
         GoogleAnalyticsService.registerPageView();
         this.setState({
             ...this.state,
+            metricsSelected: false,
             version: document.getElementById("kumuluzee").value
         });
         this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
@@ -302,11 +304,13 @@ export default class GeneratorPage extends Component {
                                         if (e.target.id === "ext-metrics") {
                                             this.checkBoth("ext-metrics", "mpa-metrics");
                                             this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
+                                            this.setState({...this.state, metricsSelected: e.target.checked});
                                         }
                                     }}/>
                                 <div style={{marginLeft: "20px"}}>
-                                    <CheckboxGroupComponent version={this.state.version} groupName={"metrics-2"}
+                                    <CheckboxGroupComponent version={this.state.version} groupName={"metrics-2"} disabled={!this.state.metricsSelected}
                                         items={extensionsList.metrics.level2}/>
+                                    {!this.state.metricsSelected}
                                 </div>
                             </div>
                         </div>

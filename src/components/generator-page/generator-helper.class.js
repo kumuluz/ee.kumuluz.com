@@ -209,19 +209,21 @@ export class GeneratorHelper {
         manageGroup("other");
 
         // manage Metrics
-        const metricsCore = $.id("ext-metrics");
-        const isMP12 = $.checked("mp-1.2");
-        if (metricsCore.checked && !isMP12) {
-            const label = GeneratorHelper.getValueFromItem(metricsCore.dataObject, kumuluzeeVersion);
-            const parsedLabelValue = GeneratorHelper.parseValue(label.value);
-            parsedExtensions.push(parsedLabelValue);
+        if (!microprofileDeps.includes("ext-metrics")) {
+            const metricsCore = $.id("ext-metrics");
+            const isMP12 = $.checked("mp-1.2");
+            if (metricsCore.checked && !isMP12) {
+                const label = GeneratorHelper.getValueFromItem(metricsCore.dataObject, kumuluzeeVersion);
+                const parsedLabelValue = GeneratorHelper.parseValue(label.value);
+                parsedExtensions.push(parsedLabelValue);
 
-            const versionKey = parsedLabelValue.versionKey.replace("${", "").replace("}", "");
-            const versionValue = parsedLabelValue.version;
-            const versionItem = `<${versionKey}>${versionValue}</${versionKey}>`;
-            versions.push(versionItem);
+                const versionKey = parsedLabelValue.versionKey.replace("${", "").replace("}", "");
+                const versionValue = parsedLabelValue.version;
+                const versionItem = `<${versionKey}>${versionValue}</${versionKey}>`;
+                versions.push(versionItem);
+            }
+            manageGroup("metrics-2");
         }
-        manageGroup("metrics-2");
 
         // manage Arquillian testing
         const testing = testingExtensionDependencies;
@@ -258,7 +260,7 @@ export class GeneratorHelper {
         };
     }
 
-    static _parseMicroProfileApis(kumuluzeeVersion) {
+    static _parseMicroProfileApis(kumuluzeeVersion, microprofileDeps) {
         const parsedApis = [];
         const versions = [];
 
@@ -267,7 +269,7 @@ export class GeneratorHelper {
         selectedApis.forEach(api => {
             const label = GeneratorHelper.getValueFromItem(api.dataObject, kumuluzeeVersion);
             const parsedLabelValue = GeneratorHelper.parseValue(label.value);
-            if (parsedLabelValue != null) {
+            if (parsedLabelValue != null && !microprofileDeps.includes(api.id)) {
                 parsedApis.push(parsedLabelValue);
                 const versionKey = parsedLabelValue.versionKey.replace("${", "").replace("}", "");
                 const versionValue = parsedLabelValue.version;
@@ -330,7 +332,7 @@ export class GeneratorHelper {
         formData.propertiesVersions.push(...extensions.versions);
 
         // MicroProfile APIs
-        const microprofileApis = GeneratorHelper._parseMicroProfileApis(KUMULUZEE_VERSION);
+        const microprofileApis = GeneratorHelper._parseMicroProfileApis(KUMULUZEE_VERSION, microprofileDependencies);
         formData.dependencies.push(...microprofileApis.dependencies);
         formData.propertiesVersions.push(...microprofileApis.versions);
 
