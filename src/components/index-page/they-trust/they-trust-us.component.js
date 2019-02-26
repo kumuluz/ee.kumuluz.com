@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import {referenceList} from "../../../content/index-page/references.content";
 
 import "./they-trust-us.component.scss";
+
+import {referenceList} from "../../../content/index-page/references.content";
 import {MAIL_TO_ADDRESS} from "../../../content/constants.content";
 
 export class TheyTrustUsComponent extends Component {
@@ -20,7 +21,7 @@ export class TheyTrustUsComponent extends Component {
                     {referenceList.map((reference, index) => {
                         return (
                             <div className="reference-item" key={index}>
-                                <img src={reference.image} />
+                                <img src={reference.image} alt="reference"/>
                                 <span>
                                     <p>
                                         {reference.name}

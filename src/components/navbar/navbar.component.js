@@ -1,14 +1,13 @@
 import React, {Component} from "react";
-import Link from "gatsby-link";
-
-import {githubItem, navbarItems} from "../../content/export.content";
-
-import "./navbar.component.scss";
+import {Link} from "gatsby";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 
 import kumuluzeeLogo from "../../assets/images/kumuluzee-logo.svg";
+import "./navbar.component.scss";
+
+import {githubItem, navbarItems} from "../../content/export.content";
 import {determineScreenSize, MOBILE_MENU_VISIBLE_BELOW} from "../../layouts/common";
 
 export class NavbarComponent extends Component {
@@ -54,14 +53,13 @@ export class NavbarComponent extends Component {
     }
 
     render() {
-
         return (
             <div className="ee-navbar-component">
                 <nav>
                     <div className="brand-container">
                         <div className="brand">
                             <Link to="/" onClick={this.closeMenuOnNavigation}>
-                                <img src={kumuluzeeLogo}/>
+                                <img src={kumuluzeeLogo} alt="kumuluzee-logo"/>
                             </Link>
                         </div>
                         <div className="burger-menu" onClick={this.toggleMobileMenu}>
@@ -90,5 +88,4 @@ export class NavbarComponent extends Component {
             </div>
         );
     }
-
 }

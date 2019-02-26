@@ -1,9 +1,10 @@
 import React, {Component} from "react";
 import PropType from "prop-types";
+
 import {LineDividerComponent} from "../export.shared.components";
 
-import "./external-link-tile.component.scss";
 import chevron from "../../../assets/images/link-chevron.svg";
+import "./external-link-tile.component.scss";
 
 export class ExternalLinkTileComponent extends Component {
 
@@ -26,7 +27,7 @@ export class ExternalLinkTileComponent extends Component {
                                 <span>
                                     {link.title}
                                 </span>
-                                <img src={chevron}/>
+                                <img src={chevron} alt="chevron"/>
                             </a>
                         </div>
                     );
@@ -41,7 +42,7 @@ export class ExternalLinkTileComponent extends Component {
                         <span>
                             {text}
                         </span>
-                        <img src={chevron}/>
+                        <img src={chevron} alt="chevron"/>
                     </a>
                 </div>
             );

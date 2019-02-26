@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-
-import "./blog-links.component.scss";
-import linkChevronImage from "../../../assets/images/link-chevron.svg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 
+import linkChevronImage from "../../../assets/images/link-chevron.svg";
+import "./blog-links.component.scss";
+
+import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 import {blogLinks} from "../../../content/export.content";
 import {determineScreenSize, MEDIA_MOBILE} from "../../../layouts/common";
 

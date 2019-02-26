@@ -1,17 +1,20 @@
 import React, {Component} from "react";
+import Helmet from "react-helmet";
+import {Link} from "gatsby";
+import {Waypoint} from "react-waypoint";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
-import Link from "gatsby-link";
-import Waypoint from "react-waypoint";
 
-import "./tutorial-page.scss";
+import {Layout} from "../../layouts/layout";
+import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
+
 import blueArrowImage from "../../assets/images/arrow.svg";
+import "./tutorial-page.scss";
+
 import {GITHUB_SAMPLES_URL} from "../../content/constants.content";
 import {microservicesSamples} from "../../content/tutorials-page/microservices-samples";
 import {kumuluzeeProjects} from "../../content/tutorials-page/kumuluzee-projects";
-import Helmet from "react-helmet";
 import {documentationItems} from "../../content/tutorials-page/documentation";
-import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
 const navbarItems = [
     {
@@ -142,159 +145,159 @@ export default class TutorialPage extends Component {
 
     render() {
         return (
-            <div className="ee-tutorials-page">
-                <Helmet title="KumuluzEE - Tutorials"/>
-                <div className="header">
-                    <div className="title">
-                        <h1>Tutorials and Quickstart Samples</h1>
+            <Layout>
+                <div className="ee-tutorials-page">
+                    <Helmet title="KumuluzEE - Tutorials"/>
+                    <div className="header">
+                        <div className="title">
+                            <h1>Tutorials and Quickstart Samples</h1>
+                        </div>
                     </div>
-                </div>
 
-                <div className="content">
-                    <div className="content-section">
-                        <div className="navigation" id="tutorial-navigation">
-                            <div id="navigation-panel">
-                                {navbarItems.map((item, index) => (
-                                    <div id={"navigation-item-" + index} className="navigation-item" key={index}
-                                        onClick={() => {
-                                            const elemToScrollTo = document.getElementById(item.id);
-                                            if (elemToScrollTo) {
-                                                elemToScrollTo.scrollIntoView();
-                                                this.setActiveElement("navigation-item-" + index);
-                                            }
-                                        }}>
-                                        <span>{item.title}</span>
-                                        <img src={blueArrowImage}/>
+                    <div className="content">
+                        <div className="content-section">
+                            <div className="navigation" id="tutorial-navigation">
+                                <div id="navigation-panel">
+                                    {navbarItems.map((item, index) => (
+                                        <div id={"navigation-item-" + index} className="navigation-item" key={index}
+                                            onClick={() => {
+                                                const elemToScrollTo = document.getElementById(item.id);
+                                                if (elemToScrollTo) {
+                                                    elemToScrollTo.scrollIntoView();
+                                                    this.setActiveElement("navigation-item-" + index);
+                                                }
+                                            }}>
+                                            <span>{item.title}</span>
+                                            <img src={blueArrowImage} alt="go-to-arrow"/>
+                                        </div>
+                                    ))}
+                                </div>
+                                <Waypoint onLeave={() => this.makeNavbarSticky(true)}/>
+                            </div>
+                            <div className="sections">
+
+                                <div className="tutorials" id="tutorials">
+                                    <h1>Tutorials</h1>
+                                    <Waypoint onEnter={() => {
+                                        this.makeNavbarSticky(false);
+                                    }}/>
+                                    <p>Guides to help you get started with development.</p>
+                                    <div>
+                                        {tutorialItems.map((tut, index) => (
+                                            <div className="tutorial-item" key={index}>
+                                                {this.renderLink(tut)}
+                                                {tut.content ? <div className="tutorial-content">{tut.content}</div> : null}
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
-                            <Waypoint onLeave={() => this.makeNavbarSticky(true)}/>
-                        </div>
-                        <div className="sections">
+                                    <Waypoint onLeave={() => {
+                                        if (this.isScrollingDown()) {
+                                            this.setActiveElement("navigation-item-1");
+                                        }
+                                    }} onEnter={() => {
+                                        if (!this.isScrollingDown()) {
+                                            this.setActiveElement("navigation-item-0");
+                                        }
+                                    }}/>
+                                </div>
 
-                            <div className="tutorials" id="tutorials">
-                                <h1>Tutorials</h1>
-                                <Waypoint onEnter={() => {
-                                    this.makeNavbarSticky(false);
-                                }}/>
-                                <p>Guides to help you get started with development.</p>
-                                <div>
-                                    {tutorialItems.map((tut, index) => (
-                                        <div className="tutorial-item" key={index}>
-                                            {this.renderLink(tut)}
-                                            {tut.content ? <div className="tutorial-content">{tut.content}</div> : null}
-                                        </div>
-                                    ))}
+                                <div className="quickstart-samples" id="quickstart-samples">
+                                    <h1>Quickstart Samples</h1>
+                                    <p>
+                                        Working examples ready for you to get started. All samples are available on&#160;
+                                        <a href={GITHUB_SAMPLES_URL} target="_blank" rel="noreferrer noopener">GitHub.</a>
+                                    </p>
+                                    <h2>JAVA EE MICROSERVICES</h2>
+                                    <div className="samples">
+                                        {microservicesSamples.map((sample, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {sample.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={sample.url} target="_blank" rel="noreferrer noopener">
+                                                    {sample.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {sample.desc}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <h2>KumuluzEE Projects</h2>
+                                    {/*kumuluzee-projects*/}
+                                    <div className="samples">
+                                        {kumuluzeeProjects.map((project, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {project.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={project.url} target="_blank" rel="noreferrer noopener">
+                                                    {project.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {project.desc}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <Waypoint onLeave={() => {
+                                        if (this.isScrollingDown()) {
+                                            this.setActiveElement("navigation-item-2");
+                                        }
+                                    }} onEnter={() => {
+                                        if (!this.isScrollingDown()) {
+                                            this.setActiveElement("navigation-item-1");
+                                        }
+                                    }}/>
                                 </div>
-                                <Waypoint onLeave={() => {
-                                    if (this.isScrollingDown()) {
-                                        this.setActiveElement("navigation-item-1");
-                                    }
-                                }} onEnter={() => {
-                                    if (!this.isScrollingDown()) {
-                                        this.setActiveElement("navigation-item-0");
-                                    }
-                                }}/>
-                            </div>
 
-                            <div className="quickstart-samples" id="quickstart-samples">
-                                <h1>Quickstart Samples</h1>
-                                <p>
-                                    Working examples ready for you to get started. All samples are available on&#160;
-                                    <a href={GITHUB_SAMPLES_URL} target="_blank" rel="noreferrer noopener">GitHub.</a>
-                                </p>
-                                <h2>JAVA EE MICROSERVICES</h2>
-                                <div className="samples">
-                                    {microservicesSamples.map((sample, index) => (
-                                        <div className="sample-item" key={index}>
-                                            {sample.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={sample.url} target="_blank" rel="noreferrer noopener">
-                                                {sample.title} <FontAwesomeIcon icon={faChevronRight}/>
-                                            </a>
-                                            <div className="sample-item-desc">
-                                                {sample.desc}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                <h2>KumuluzEE Projects</h2>
-                                {/*kumuluzee-projects*/}
-                                <div className="samples">
-                                    {kumuluzeeProjects.map((project, index) => (
-                                        <div className="sample-item" key={index}>
-                                            {project.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={project.url} target="_blank" rel="noreferrer noopener">
-                                                {project.title} <FontAwesomeIcon icon={faChevronRight}/>
-                                            </a>
-                                            <div className="sample-item-desc">
-                                                {project.desc}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                <Waypoint onLeave={() => {
-                                    if (this.isScrollingDown()) {
-                                        this.setActiveElement("navigation-item-2");
-                                    }
-                                }} onEnter={() => {
-                                    if (!this.isScrollingDown()) {
-                                        this.setActiveElement("navigation-item-1");
-                                    }
-                                }}/>
-                            </div>
+                                <div className="documentation" id="documentation">
+                                    <h1>Documentation</h1>
+                                    <p>Documentation describing how to use KumuluzEE is available on GitHub.</p>
 
-                            <div className="documentation" id="documentation">
-                                <h1>Documentation</h1>
-                                <p>Documentation describing how to use KumuluzEE is available on GitHub.</p>
-
-                                <h2>KumuluzEE microservice framework</h2>
-                                <div className="samples docs-header">
-                                    {documentationItems.microservice.header.map((doc, index) => (
-                                        <div className="sample-item" key={index}>
-                                            {doc.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={doc.url} target="_blank" rel="noreferrer noopener">
-                                                {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
-                                            </a>
-                                            <div className="sample-item-desc">
-                                                {doc.desc}
+                                    <h2>KumuluzEE microservice framework</h2>
+                                    <div className="samples docs-header">
+                                        {documentationItems.microservice.header.map((doc, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {doc.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={doc.url} target="_blank" rel="noreferrer noopener">
+                                                    {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {doc.desc}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="samples">
-                                    {documentationItems.microservice.body.map((doc, index) => (
-                                        <div className="sample-item" key={index}>
-                                            {doc.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={doc.url} target="_blank" rel="noreferrer noopener">
-                                                {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
-                                            </a>
-                                            <div className="sample-item-desc">
-                                                {doc.desc}
+                                        ))}
+                                    </div>
+                                    <div className="samples">
+                                        {documentationItems.microservice.body.map((doc, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {doc.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={doc.url} target="_blank" rel="noreferrer noopener">
+                                                    {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {doc.desc}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                <h2>Microprofile</h2>
-                                <div className="samples">
-                                    {documentationItems.microprofile.map((doc, index) => (
-                                        <div className="sample-item" key={index}>
-                                            {doc.isNew ? <span className="new-tag">NEW</span> : null}
-                                            <a href={doc.url} target="_blank" rel="noreferrer noopener">
-                                                {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
-                                            </a>
-                                            <div className="sample-item-desc">
-                                                {doc.desc}
+                                        ))}
+                                    </div>
+                                    <h2>Microprofile</h2>
+                                    <div className="samples">
+                                        {documentationItems.microprofile.map((doc, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {doc.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={doc.url} target="_blank" rel="noreferrer noopener">
+                                                    {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {doc.desc}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-            </div>
+            </Layout>
         );
     }
 }

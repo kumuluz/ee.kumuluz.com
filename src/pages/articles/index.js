@@ -1,15 +1,17 @@
 import React, {Component} from "react";
+import Helmet from "react-helmet";
+import {Waypoint} from "react-waypoint";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
-import Waypoint from "react-waypoint";
 
-import "./articles-page.scss";
-import externalLinkImage from "../../assets/images/external-url.svg";
-import blueArrowImage from "../../assets/images/arrow.svg";
-import Helmet from "react-helmet";
-import {articles} from "../../content/articles-page/articles";
+import {Layout} from "../../layouts/layout";
 import {GoogleAnalyticsService} from "../../components/shared/google-analytics/google-analytics.service";
 
+import externalLinkImage from "../../assets/images/external-url.svg";
+import blueArrowImage from "../../assets/images/arrow.svg";
+import "./articles-page.scss";
+
+import {articles} from "../../content/articles-page/articles";
 
 export default class ArticlesPage extends Component {
 
@@ -82,76 +84,68 @@ export default class ArticlesPage extends Component {
                 }
             }}>
                 <span>{articles[articleKey].title}</span>
-                <img src={blueArrowImage}/>
+                <img src={blueArrowImage} alt="go-to-arrow"/>
             </div>
         ));
     }
 
     render() {
         return (
-            <div className="ee-articles-page">
-                <Helmet title="KumuluzEE - Articles"/>
-                <div className="header">
-                    <div className="title">
-                        <h1>Articles</h1>
+            <Layout>
+                <div className="ee-articles-page">
+                    <Helmet title="KumuluzEE - Articles"/>
+                    <div className="header">
+                        <div className="title">
+                            <h1>Articles</h1>
+                        </div>
                     </div>
-                </div>
-                <div className="content">
-                    <div className="content-section">
-                        <div className="navigation" id="tutorial-navigation">
-                            <div id="navigation-panel">
-                                {this.renderNavigation()}
+                    <div className="content">
+                        <div className="content-section">
+                            <div className="navigation" id="tutorial-navigation">
+                                <div id="navigation-panel">
+                                    {this.renderNavigation()}
+                                </div>
+                                <Waypoint onLeave={() => this.makeNavbarSticky(true)}/>
                             </div>
-                            <Waypoint onLeave={() => this.makeNavbarSticky(true)}/>
-                        </div>
-                        <div className="articles">
-                            <h1>Articles about KumuluzEE</h1>
-                            <div className="articles-h1-desc">Users talking about our product</div>
-                            <section id="section-0">
-                                <Waypoint onEnter={() => {
-                                    this.makeNavbarSticky(false);
-                                    this.setActiveElement("navigation-item-0");
-                                }}/>
-                                {articles.section0.articles.map((article, index) => (
-                                    <article key={index}>
-                                        <a href={article.url} className="article-title" target="_blank" rel="noreferrer noopener">
-                                            <h2>{article.title}</h2>
-                                            <FontAwesomeIcon icon={faChevronRight}/>
-                                        </a>
-                                        <p>
-                                            {article.desc}
-                                        </p>
-                                        <a href={article.url} target="_blank" rel="noreferrer noopener">
-                                            <img src={externalLinkImage}/>
-                                            {article.url}
-                                        </a>
-                                    </article>
-                                ))}
-                                <Waypoint onLeave={() => {
-                                    if (this.isScrollingDown()) {
-                                        this.setActiveElement("navigation-item-1");
-                                    }
-                                }} onEnter={() => {
-                                    if (!this.isScrollingDown()) {
+                            <div className="articles">
+                                <h1>Articles about KumuluzEE</h1>
+                                <div className="articles-h1-desc">Users talking about our product</div>
+                                <section id="section-0">
+                                    <Waypoint onEnter={() => {
+                                        this.makeNavbarSticky(false);
                                         this.setActiveElement("navigation-item-0");
-                                    }
-                                }}/>
-                            </section>
-                            {/*<section id="section-1">*/}
-                            {/*<Waypoint onLeave={() => {*/}
-                            {/*if (this.isScrollingDown()) {*/}
-                            {/*this.setActiveElement("navigation-item-2");*/}
-                            {/*}*/}
-                            {/*}} onEnter={() => {*/}
-                            {/*if (!this.isScrollingDown()) {*/}
-                            {/*this.setActiveElement("navigation-item-1");*/}
-                            {/*}*/}
-                            {/*}}/>*/}
-                            {/*</section>*/}
+                                    }}/>
+                                    {articles.section0.articles.map((article, index) => (
+                                        <article key={index}>
+                                            <a href={article.url} className="article-title" target="_blank"
+                                                rel="noreferrer noopener">
+                                                <h2>{article.title}</h2>
+                                                <FontAwesomeIcon icon={faChevronRight}/>
+                                            </a>
+                                            <p>
+                                                {article.desc}
+                                            </p>
+                                            <a href={article.url} target="_blank" rel="noreferrer noopener">
+                                                <img src={externalLinkImage} alt="external-link-image"/>
+                                                {article.url}
+                                            </a>
+                                        </article>
+                                    ))}
+                                    <Waypoint onLeave={() => {
+                                        if (this.isScrollingDown()) {
+                                            this.setActiveElement("navigation-item-1");
+                                        }
+                                    }} onEnter={() => {
+                                        if (!this.isScrollingDown()) {
+                                            this.setActiveElement("navigation-item-0");
+                                        }
+                                    }}/>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Layout>
         );
     }
 }

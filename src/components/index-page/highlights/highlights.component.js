@@ -45,7 +45,7 @@ export class HighlightsComponent extends Component{
                     {badges.map((badge, index) => (
                         <div className="badge" key={index}>
                             <div className="badge-image">
-                                <img src={badge.image}/>
+                                <img src={badge.image} alt="badge-image"/>
                             </div>
                             <div>{badge.title}</div>
                         </div>

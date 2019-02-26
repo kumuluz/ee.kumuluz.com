@@ -1,11 +1,12 @@
 /* eslint-disable indent */
 /* eslint-disable no-useless-escape */
 import React, {Component} from "react";
-import Link from "gatsby-link";
+import {Link} from "gatsby";
 
-import "./example-code.component.scss";
-import codeExampleImage from "../../../assets/images/code-example.svg";
 import {CodeFormatComponent, CodePageComponent} from "../../shared/export.shared.components";
+
+import codeExampleImage from "../../../assets/images/code-example.svg";
+import "./example-code.component.scss";
 
 export class ExampleCodeComponent extends Component {
 
@@ -33,7 +34,7 @@ export class ExampleCodeComponent extends Component {
         return (
             <div className="ee-example-code-component">
                 <div className="example-logo">
-                    <img src={codeExampleImage}/>
+                    <img src={codeExampleImage} alt="code-example"/>
                 </div>
                 <div className="example-content">
                     <h1>EXAMPLE CODE</h1>

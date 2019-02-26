@@ -1,14 +1,13 @@
 import React, {Component} from "react";
-import Link from "gatsby-link";
+import {Link} from "gatsby";
 
-import "./what-is-kumuluz.component.scss";
 import javaEEMicroservicesImage from "../../../assets/images/javaee-microservices.svg";
 import whatIsKumuluzImage from "../../../assets/images/what-is-kumuluz.svg";
 import whiteCaretImage from "../../../assets/images/white-caret.svg";
 import fullyCloudImage from "../../../assets/images/fully-cloud.svg";
+import "./what-is-kumuluz.component.scss";
 
 import {MICROPROFILE_URL} from "../../../content/constants.content";
-
 const boxes = [
     {
         image: whatIsKumuluzImage,
@@ -65,7 +64,7 @@ export class WhatIsKumuluzComponent extends Component {
                     <span>
                         {link.title}
                     </span>
-                    <img src={whiteCaretImage}/>
+                    <img src={whiteCaretImage} alt="caret"/>
                 </a>
             );
         }
@@ -74,7 +73,7 @@ export class WhatIsKumuluzComponent extends Component {
                 <span>
                     {link.title}
                 </span>
-                <img src={whiteCaretImage}/>
+                <img src={whiteCaretImage} alt="caret"/>
             </Link>
         );
     }
@@ -86,7 +85,7 @@ export class WhatIsKumuluzComponent extends Component {
                 {boxes.map((box, index) => (
                     <div className="box-item" key={index}>
                         <div className="box-image">
-                            <img src={box.image} />
+                            <img src={box.image} alt="component-image"/>
                         </div>
                         <div className="box-content">
                             <div className="box-content-title">
