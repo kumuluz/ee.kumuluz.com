@@ -1,5 +1,5 @@
 
-export const MOBILE_MENU_VISIBLE_BELOW = 1745;
+export const MOBILE_MENU_VISIBLE_BELOW = 993;
 export const MEDIA_MOBILE = 790;
 
 export const determineScreenSize = () => {
