@@ -93,7 +93,7 @@ export default class ArticlesPage extends Component {
         return (
             <Layout>
                 <div className="ee-articles-page">
-                    <Helmet title="KumuluzEE - Articles"/>
+                    <Helmet title="KumuluzEE - Articles" htmlAttributes={{lang: "en"}}/>
                     <div className="header">
                         <div className="title">
                             <h1>Articles</h1>

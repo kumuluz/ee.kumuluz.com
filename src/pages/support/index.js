@@ -38,7 +38,7 @@ export default class SupportPage extends Component {
         return (
             <Layout>
                 <div className="ee-support-page">
-                    <Helmet title="KumuluzEE - Support"/>
+                    <Helmet title="KumuluzEE - Support" htmlAttributes={{lang: "en"}}/>
                     <div className="header">
                         <div className="title">
                             <h1>Choose the plan that suits you best</h1>

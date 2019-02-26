@@ -40,7 +40,7 @@ export default class IndexPage extends Component {
         return (
             <Layout>
                 <div className="ee-index-page">
-                    <Helmet title="KumuluzEE"/>
+                    <Helmet title="KumuluzEE" htmlAttributes={{lang: "en"}}/>
                     <div className="blue-gradient-area">
                         <div className="header-container">
                             <div className="microprofile-tag">

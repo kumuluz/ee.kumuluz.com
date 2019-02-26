@@ -239,7 +239,7 @@ export default class GeneratorPage extends Component {
         return (
             <Layout>
                 <div className="ee-generator-page">
-                    <Helmet title="KumuluzEE - Generator"/>
+                    <Helmet title="KumuluzEE - Generator" htmlAttributes={{lang: "en"}}/>
                     <div className="header">
                         <div className="title">
                             <h1>Quickstart development with online pom generator</h1>

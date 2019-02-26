@@ -37,7 +37,7 @@ export default class OpinionsPage extends Component {
         return (
             <Layout>
                 <div className="ee-opinions-page">
-                    <Helmet title="KumuluzEE - Opinions"/>
+                    <Helmet title="KumuluzEE - Opinions" htmlAttributes={{lang: "en"}}/>
                     <div className="header">
                         <div className="title">
                             <h1>KumuluzEE is in use today</h1>

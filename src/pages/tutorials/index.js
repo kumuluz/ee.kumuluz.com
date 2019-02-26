@@ -147,7 +147,7 @@ export default class TutorialPage extends Component {
         return (
             <Layout>
                 <div className="ee-tutorials-page">
-                    <Helmet title="KumuluzEE - Tutorials"/>
+                    <Helmet title="KumuluzEE - Tutorials" htmlAttributes={{lang: "en"}}/>
                     <div className="header">
                         <div className="title">
                             <h1>Tutorials and Quickstart Samples</h1>

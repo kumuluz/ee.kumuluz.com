@@ -24,7 +24,7 @@ export default class ProjectsPage extends Component {
         return (
             <Layout>
                 <div className="ee-projects-page">
-                    <Helmet title="KumuluzEE - Projects"/>
+                    <Helmet title="KumuluzEE - Projects" htmlAttributes={{lang: "en"}}/>
                     <div className="header">
                         <div className="title">
                             <h1>Support the common cloud-native patterns with KumuluzEE projects</h1>

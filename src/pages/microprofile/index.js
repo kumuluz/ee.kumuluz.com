@@ -23,7 +23,7 @@ export default class MicroprofilePage extends Component {
         return (
             <Layout>
                 <div className="ee-microprofile-page">
-                    <Helmet title="KumuluzEE - MicroProfile"/>
+                    <Helmet title="KumuluzEE - MicroProfile" htmlAttributes={{lang: "en"}}/>
                     <div className="header">
                         <div className="title">
                             <h1>Support for the Eclipse MicroProfile specification</h1>

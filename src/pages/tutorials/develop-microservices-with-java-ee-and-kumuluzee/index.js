@@ -114,7 +114,7 @@ export default class TutorialArticleSubpage extends Component {
         return (
             <Layout>
                 <div className="ee-tutorial-subpage">
-                    <Helmet title="KumuluzEE - Develop microservices with Java EE and KumuluzEE"/>
+                    <Helmet title="KumuluzEE - Develop microservices with Java EE and KumuluzEE" htmlAttributes={{lang: "en"}}/>
                     <div className="header">
                         <div className="title">
                             <h1>Develop microservices with Java EE and KumuluzEE</h1>
