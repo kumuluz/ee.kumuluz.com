@@ -329,7 +329,10 @@ export default class GeneratorPage extends Component {
                             <div>
                                 <h5>KumuluzEE OpenTracing</h5>
                                 <CheckboxGroupComponent version={this.state.version} groupName={"opentracing"}
-                                    items={extensionsList.opentracing} onSelected={this.disableOtherOpenTracing}/>
+                                    items={extensionsList.opentracing} onSelected={(e) => {
+                                        this.disableOtherOpenTracing(e);
+                                        this.checkBoth("ext-opentracing-jaeger", "mpa-opentracing");
+                                    }}/>
                             </div>
                         </div>
                         <div className="third-group group">
@@ -357,6 +360,8 @@ export default class GeneratorPage extends Component {
                             } else if (e.target.id === "mpa-metrics") {
                                 this.checkBoth("mpa-metrics", "ext-metrics");
                                 this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
+                            } else if (e.target.id === "mpa-opentracing") {
+                                this.checkBoth("mpa-opentracing", "ext-opentracing-jaeger");
                             }
                         }}/>
                 </div>

@@ -17,6 +17,7 @@
   }
   .column-3 {
     @include set-prop-to-calc-size(width, '100% / 3');
+    height: 50px;
   }
 
   & > div {
