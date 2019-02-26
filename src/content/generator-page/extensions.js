@@ -17,6 +17,22 @@ export const extensionsList = {
             new VersionedLabel("2.3.0", "with Consul", "com.kumuluz.ee.discovery:kumuluzee-discovery-consul:${kumuluzee-discovery.version}:1.1.0")
         ], [])
     ],
+    logs: [
+        new CheckboxModel("ext-logs-jul", [
+            new VersionedLabel("2.2.0", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.3.0")
+        ], []),
+        new CheckboxModel("ext-logs-log4j2", [
+            new VersionedLabel("2.2.0", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.3.0")
+        ], [])
+    ],
+    opentracing: [
+        new CheckboxModel("ext-opentracing-jaeger", [
+            new VersionedLabel("3.1.0", "with Jaeger", "com.kumuluz.ee.opentracing:kumuluzee-opentracing-jaeger:${kumuluzee-opentracing.version}:1.2.1")
+        ], []),
+        new CheckboxModel("ext-opentracing-zipkin", [
+            new VersionedLabel("3.1.0", "with Zipkin", "com.kumuluz.ee.opentracing:kumuluzee-opentracing-zipkin:${kumuluzee-opentracing.version}:1.2.1")
+        ], [])
+    ],
     metrics: {
         level1: [
             new CheckboxModel("ext-metrics", [
@@ -49,9 +65,6 @@ export const extensionsList = {
         ], [])
     ],
     other: [
-        new CheckboxModel("ext-other-logs", [
-            new VersionedLabel("2.2.0", "KumuluzEE Logs", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.0.0")
-        ], []),
         new CheckboxModel("ext-other-keycloak", [
             new VersionedLabel("2.3.0", "KumuluzEE Security (Keycloak)", "com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}:1.0.1")
         ], []),
@@ -85,6 +98,9 @@ export const extensionsList = {
         ], []),
         new CheckboxModel("ext-other-graphql", [
             new VersionedLabel("3.0.0", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.0")
+        ], []),
+        new CheckboxModel("ext-other-amqp", [
+            new VersionedLabel("3.2.0", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0-SNAPSHOT")
         ], [])
     ]
 };

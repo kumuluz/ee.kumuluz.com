@@ -29,6 +29,8 @@ export default class GeneratorPage extends Component {
         this.disableOtherConfigs = this.disableOtherConfigs.bind(this);
         this.disableOtherDiscoveries = this.disableOtherDiscoveries.bind(this);
         this.disableOtherTests = this.disableOtherTests.bind(this);
+        this.disableOtherOpenTracing = this.disableOtherOpenTracing.bind(this);
+        this.disableOtherLogs = this.disableOtherLogs.bind(this);
 
         // both
         this.checkBoth = this.checkBoth.bind(this);
@@ -108,6 +110,12 @@ export default class GeneratorPage extends Component {
     }
     disableOtherTests($event) {
         this.disableOtherCheckboxes($event.target, "arquillian");
+    }
+    disableOtherLogs($event) {
+        this.disableOtherCheckboxes($event.target, "logs");
+    }
+    disableOtherOpenTracing($event) {
+        this.disableOtherCheckboxes($event.target, "opentracing");
     }
     disableOtherCheckboxes(target, elementName, filterFunc = undefined) {
         let elems;
@@ -272,6 +280,11 @@ export default class GeneratorPage extends Component {
                     <div className="extension-groups">
                         <div className="first-group group">
                             <div>
+                                <h5>KumuluzEE Logs</h5>
+                                <CheckboxGroupComponent version={this.state.version} groupName={"logs"}
+                                    items={extensionsList.logs} onSelected={this.disableOtherLogs}/>
+                            </div>
+                            <div>
                                 <h5>KumuluzEE Config</h5>
                                 <CheckboxGroupComponent version={this.state.version} groupName={"config"}
                                     items={extensionsList.config}
@@ -308,6 +321,11 @@ export default class GeneratorPage extends Component {
                                 <CheckboxGroupComponent version={this.state.version} groupName={"arquillian"}
                                     items={extensionsList.arquillian}
                                     onSelected={this.disableOtherTests}/>
+                            </div>
+                            <div>
+                                <h5>KumuluzEE OpenTracing</h5>
+                                <CheckboxGroupComponent version={this.state.version} groupName={"opentracing"}
+                                    items={extensionsList.opentracing} onSelected={this.disableOtherOpenTracing}/>
                             </div>
                         </div>
                         <div className="third-group group">

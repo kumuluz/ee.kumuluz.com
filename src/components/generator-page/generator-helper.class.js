@@ -204,6 +204,8 @@ export class GeneratorHelper {
         manageGroup("config");
         manageGroup("discovery");
         manageGroup("reactive");
+        manageGroup("logs");
+        manageGroup("opentracing");
         manageGroup("other");
 
         // manage Metrics
