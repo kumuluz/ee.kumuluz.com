@@ -32,4 +32,5 @@ export const kumuluzeeProjects = [
     new Sample("Ethereum sample", "Samples for KumuluzEE Ethereum project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-ethereum-web3j"),
     new Sample("Rest Client sample", "Build a REST service, which consumes another REST service using the KumuluzEE Rest Client.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest-client", true),
     new Sample("OpenTracing sample", "Trace a request across two microservices using Jaeger or Zipkin as the backend.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-opentracing", true),
+    new Sample("AMQP sample with RabbitMQ", "Produce and consume AMQP messages using the RabbitMQ message broker.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-amqp-rabbitmq", true),
 ];
