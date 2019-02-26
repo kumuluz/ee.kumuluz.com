@@ -27,6 +27,7 @@ export const documentationItems = {
             new Sample("KumuluzEE Ethereum", "Support for seamless development of Blockchain applications on the Ethereum platform.", "https://github.com/kumuluz/kumuluzee-ethereum/blob/master/README.md"),
             new Sample("KumuluzEE Rest Client", "Type-safe approach to invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md", true),
             new Sample("KumuluzEE OpenTracing", "Distributed tracing solution for KumuluzEE framework.", "https://github.com/kumuluz/kumuluzee-opentracing/blob/master/README.md", true),
+            new Sample("KumuluzEE AMQP", "Support for Advanced Message Queueing Protocol, such as RabbitMQ and ActiveMQ.", "https://github.com/kumuluz/kumuluzee-amqp/blob/master/README.md", true),
         ]
     },
     microprofile: [
