@@ -70,7 +70,7 @@ public class OrdersResource {
                             </CodePageComponent>
                             <CodePageComponent id="pom-xml" lang={"xml"}>
                                 {`<properties>
-    <kumuluz.version>3.0.0</kumuluz.version>
+    <kumuluz.version>3.2.0</kumuluz.version>
 </properties>
 
 <dependencyManagement>
@@ -110,7 +110,7 @@ public class OrdersResource {
                             </CodePageComponent>
                             <CodePageComponent id="pom-xml-mp" lang={"xml"}>
                                 {`<properties>
-    <kumuluz.version>3.0.0</kumuluz.version>
+    <kumuluz.version>3.2.0</kumuluz.version>
 </properties>
 
 <dependencyManagement>
@@ -126,10 +126,10 @@ public class OrdersResource {
 </dependencyManagement>
 
 <dependencies>
-    <!-- MicroProfile 1.2 -->
+    <!-- MicroProfile 2.1 -->
     <dependency>
         <groupId>com.kumuluz.ee</groupId>
-        <artifactId>kumuluzee-microProfile-1.2</artifactId>
+        <artifactId>kumuluzee-microProfile-2.1</artifactId>
     </dependency>
 
     <dependency>
