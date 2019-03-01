@@ -5,6 +5,7 @@ export const kumuluzEEVersionsList = [
     new KumuluzeeVersion("3.2.0", true),
     new KumuluzeeVersion("3.1.0"),
     new KumuluzeeVersion("3.0.0"),
+    new KumuluzeeVersion("2.6.0"),
     new KumuluzeeVersion("2.5.3"),
     new KumuluzeeVersion("2.5.2"),
     new KumuluzeeVersion("2.4.1"),
