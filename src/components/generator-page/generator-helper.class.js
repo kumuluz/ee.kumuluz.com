@@ -63,15 +63,18 @@ export class GeneratorHelper {
 
     static versionIsSmaller(version1, version2) {
         if (version1.toUpperCase() === version2.toUpperCase()) return false;
+        if (version1 !== "*" && version2 === "*") {
+            return true;
+        }
         return !GeneratorHelper.versionIsLarger(version1, version2);
     }
 
     static versionIsSmallerOrEqual(version1, version2) {
-        return version1.toUpperCase() === version2.toUpperCase() || this.versionIsSmaller(version1, version2);
+        return version1.toUpperCase() === version2.toUpperCase() || GeneratorHelper.versionIsSmaller(version1, version2);
     }
 
     static versionIsLargerOrEqual(version1, version2) {
-        return version1.toUpperCase() === version2.toUpperCase() || this.versionIsLarger(version1, version2);
+        return version1.toUpperCase() === version2.toUpperCase() || GeneratorHelper.versionIsLarger(version1, version2);
     }
 
     static getLatestLogsVersion() {
@@ -96,17 +99,17 @@ export class GeneratorHelper {
     static getValueFromItem(item, version) {
         const labels = item.labels;
         labels.sort((n1, n2) => {
-            if (GeneratorHelper.versionIsLarger(n1.version, n2.version)) {
+            if (GeneratorHelper.versionIsLarger(n1.minVersion, n2.minVersion)) {
                 return -1;
             }
-            if (GeneratorHelper.versionIsSmaller(n1.version, n2.version)) {
+            if (GeneratorHelper.versionIsSmaller(n1.minVersion, n2.minVersion)) {
                 return 1;
             }
             return 0;
         });
 
         for (let label of labels) {
-            if (GeneratorHelper.versionIsLargerOrEqual(version, label.version)) {
+            if (GeneratorHelper.versionIsLargerOrEqual(version, label.minVersion)) {
                 return label;
             }
         }

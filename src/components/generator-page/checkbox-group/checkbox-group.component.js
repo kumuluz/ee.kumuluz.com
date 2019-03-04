@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import PropType from "prop-types";
+import * as PropType from "prop-types";
 
 import "./checkbox-group.component.scss";
 
@@ -36,23 +36,6 @@ export class CheckboxGroupComponent extends Component {
             };
         });
     }
-
-    /*_getValue(version, labels) {
-        for(let valueToCheck of labels) {
-            if (valueToCheck.value === "none") {
-                return {
-                    label: valueToCheck.label
-                };
-            }
-
-            if (GeneratorHelper.versionIsLargerOrEqual(version, valueToCheck.version)) {
-                return {
-                    label: valueToCheck.label,
-                    value: valueToCheck.value
-                }
-            }
-        }
-    }*/
 
     render() {
         const {items, groupName, onSelected, columns, version, disabled} = this.props;

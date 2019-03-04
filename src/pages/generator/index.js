@@ -44,11 +44,9 @@ export default class GeneratorPage extends Component {
         // all dependencies
         this.selectAllDependentItems = this.selectAllDependentItems.bind(this);
         //this.checkForOtherdependencies = this.checkForOtherdependencies.bind(this);
-
         this.checkForKumuluzeeVersion = this.checkForKumuluzeeVersion.bind(this);
-
         this.state = {
-            version: "",
+            version: kumuluzEEVersionsList.find(version => version.recommended).label || "3.2.0",
             metricsSelected: false,
             missingDependencyWarnings: []
         };
@@ -262,7 +260,7 @@ export default class GeneratorPage extends Component {
                         <div className="second-row">
                             <div className="left-side">
                                 <div className="artifactid">
-                                    <FormInputComponent label={"ArtifactId"} id={"artifact-id"} placeholder={"sample"}/>
+                                    <FormInputComponent label={"ArtifactId"} id={"artifact-id"} placeholder={"sample-project"}/>
                                 </div>
                                 <div className="kumuluzee">
                                     <FormInputComponent label={"KumuluzEE"} id={"kumuluzee"} type={"select"}

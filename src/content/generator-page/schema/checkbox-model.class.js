@@ -14,17 +14,17 @@ export class CheckboxModel {
         this.dependencies = dependencies;
 
         this.labels.sort((l1, l2) => {
-            if (l1.version.toUpperCase() < l2.version.toUpperCase()) return 1;
-            if (l1.version.toUpperCase() > l2.version.toUpperCase()) return -1;
+            if (l1.minVersion.toUpperCase() < l2.minVersion.toUpperCase()) return 1;
+            if (l1.minVersion.toUpperCase() > l2.minVersion.toUpperCase()) return -1;
             return 0;
         });
 
         const lowestVersion = this.labels[this.labels.length - 1];
         if (enabledByDefault) {
-            this.labels.push(new VersionedLabel("*", lowestVersion.label, lowestVersion.value));
+            this.labels.push(new VersionedLabel("*", "*", lowestVersion.label, lowestVersion.value));
         } else {
-            if (!this.labels.find(lbl => lbl.version === "*")) {
-                this.labels.push(new VersionedLabel("*", lowestVersion.label, "none"));
+            if (!this.labels.find(lbl => lbl.minVersion === "*")) {
+                this.labels.push(new VersionedLabel("*", "*", lowestVersion.label, "none"));
             }
         }
     }
@@ -37,7 +37,8 @@ export class CheckboxModel {
                     disabled: true
                 };
             }
-            if (GeneratorHelper.versionIsLargerOrEqual(version, valueToCheck.version)) {
+            if (GeneratorHelper.versionIsLargerOrEqual(version, valueToCheck.minVersion)
+                && GeneratorHelper.versionIsSmallerOrEqual(version, valueToCheck.maxVersion)) {
                 return {
                     label: valueToCheck.label,
                     value: valueToCheck.value,
@@ -50,8 +51,9 @@ export class CheckboxModel {
 
 export class VersionedLabel {
 
-    constructor(version, label, value) {
-        this.version = version;
+    constructor(minVersion, maxVersion, label, value) {
+        this.minVersion = minVersion;
+        this.maxVersion = maxVersion;
         this.label = label;
         this.value = value;
     }
