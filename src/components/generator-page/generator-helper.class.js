@@ -1,11 +1,12 @@
 import mustache from "mustache";
-import FileSaver from "file-saver";
+import * as FileSaver from "file-saver";
 import {kumuluzEEVersionsList} from "../../content/generator-page/export.data";
 import {testingExtensionDependencies} from "../../content/generator-page/extensions";
+import {VersionUtil} from "./version.util";
 
 export class GeneratorHelper {
 
-    // utility functions
+    // utility function
     static initializeDollarFunction() {
         return {
             id: (elemId) => {
@@ -26,90 +27,21 @@ export class GeneratorHelper {
         };
     }
 
-    // end utility
-
-    // versions calc
-    static versionIsLarger(version1, version2) {
-        let v1 = version1.split(".");
-        let v2 = version2.split(".");
-
-        if (v1[0] > v2[0]) return true;
-        if (v1[0] < v2[0]) return false;
-
-        if (v1[1] > v2[1]) return true;
-        if (v1[1] < v2[1]) return false;
-
-        v1 = v1[2].split("-");
-        v2 = v2[2].split("-");
-
-        if (v1[0] > v2[0]) return true;
-        if (v1[0] < v2[0]) return false;
-
-        if (v1[0] > v2[0]) return true;
-        if (v1[0] < v2[0]) return false;
-
-        if (v1.length >= 2 && v2.length === 1) {
-            return true;
-        }
-        if (v2.length >= 2 && v1.length === 1) {
-            return false;
-        }
-        if (v1.length >= 2 && v2.length >= 2) {
-            if (v1[1].toUpperCase() === "SNAPSHOT" && v2[1].toUpperCase() === "BETA") return true;
-            if (v1[1].toUpperCase() === "BETA" && v2[1].toUpperCase() === "SNAPSHOT") return false;
-        }
-        return false;
-    }
-
-    static versionIsSmaller(version1, version2) {
-        if (version1.toUpperCase() === version2.toUpperCase()) return false;
-        if (version1 !== "*" && version2 === "*") {
-            return true;
-        }
-        return !GeneratorHelper.versionIsLarger(version1, version2);
-    }
-
-    static versionIsSmallerOrEqual(version1, version2) {
-        return version1.toUpperCase() === version2.toUpperCase() || GeneratorHelper.versionIsSmaller(version1, version2);
-    }
-
-    static versionIsLargerOrEqual(version1, version2) {
-        return version1.toUpperCase() === version2.toUpperCase() || GeneratorHelper.versionIsLarger(version1, version2);
-    }
-
-    static getLatestLogsVersion() {
-        const URL = "https://api.github.com/repos/kumuluz/kumuluzee-logs/releases";
-        const req = new XMLHttpRequest();
-        req.open("GET", URL, true);
-        req.setRequestHeader("Content-Type", "application/json");
-        req.addEventListener("load", (e) => {
-            const data = JSON.parse(e.target.response);
-            GeneratorHelper.LOGS_RELEASE = data.map(rel => rel.name.substring(1)).find(rel => !rel.prerelease);
-        });
-        req.addEventListener("error", (res) => {
-            // eslint-disable-next-line no-console
-            console.error(res);
-        });
-        req.send();
-    }
-
-    // end versions calc
-
     // functions for parsing given data
     static getValueFromItem(item, version) {
         const labels = item.labels;
         labels.sort((n1, n2) => {
-            if (GeneratorHelper.versionIsLarger(n1.minVersion, n2.minVersion)) {
+            if (VersionUtil.versionIsLarger(n1.minVersion, n2.minVersion)) {
                 return -1;
             }
-            if (GeneratorHelper.versionIsSmaller(n1.minVersion, n2.minVersion)) {
+            if (VersionUtil.versionIsSmaller(n1.minVersion, n2.minVersion)) {
                 return 1;
             }
             return 0;
         });
 
         for (let label of labels) {
-            if (GeneratorHelper.versionIsLargerOrEqual(version, label.minVersion)) {
+            if (VersionUtil.versionIsLargerOrEqual(version, label.minVersion)) {
                 return label;
             }
         }
@@ -359,9 +291,8 @@ export class GeneratorHelper {
     static generatePomFromGenerator() {
         const formData = GeneratorHelper.generateFormData();
 
-        const versionIsHigherThan_2_4_0 = GeneratorHelper.versionIsLargerOrEqual(formData.kumuluzVersion, "2.4.0");
+        const versionIsHigherThan_2_4_0 = VersionUtil.versionIsLargerOrEqual(formData.kumuluzVersion, "2.4.0");
         const templateUrl = `/generator-template/template${versionIsHigherThan_2_4_0 ? "240" : ""}.xml?t=${new Date().getTime()}`;
-        // const templateUrl = `/generator-template/templatetest.xml?t=${new Date().getTime()}`;
 
         GeneratorHelper.buildPom(formData, templateUrl);
     }

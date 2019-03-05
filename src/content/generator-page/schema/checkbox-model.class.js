@@ -1,4 +1,4 @@
-import {GeneratorHelper} from "../../../components/generator-page/generator-helper.class";
+import {VersionUtil} from "../../../components/generator-page/version.util";
 
 export class CheckboxModel {
 
@@ -37,8 +37,8 @@ export class CheckboxModel {
                     disabled: true
                 };
             }
-            if (GeneratorHelper.versionIsLargerOrEqual(version, valueToCheck.minVersion)
-                && GeneratorHelper.versionIsSmallerOrEqual(version, valueToCheck.maxVersion)) {
+            if (VersionUtil.versionIsLargerOrEqual(version, valueToCheck.minVersion)
+                && VersionUtil.versionIsSmallerOrEqual(version, valueToCheck.maxVersion)) {
                 return {
                     label: valueToCheck.label,
                     value: valueToCheck.value,

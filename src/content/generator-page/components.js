@@ -4,8 +4,9 @@ export const componentsList = [
     /*
         To add new component:
         first param: string id of checkbox (unique)
-        second param: set which version of KumuluzEE enables which version of component
-        third param: array of ids it depends on (empty if it is standalone)
+        second param: set which minimal version of KumuluzEE is required for component
+        third param: set which maximal version of KumuluzEE is allowed for component
+        fourth param: array of ids it depends on (empty if it is standalone)
      */
     new CheckboxModel("comp-servlet", [
         new VersionedLabel("2.2.0", "*", "Servlet 3.1 (Jetty)", "com.kumuluz.ee:kumuluzee-servlet-jetty")

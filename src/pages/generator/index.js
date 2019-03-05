@@ -43,7 +43,6 @@ export default class GeneratorPage extends Component {
 
         // all dependencies
         this.selectAllDependentItems = this.selectAllDependentItems.bind(this);
-        //this.checkForOtherdependencies = this.checkForOtherdependencies.bind(this);
         this.checkForKumuluzeeVersion = this.checkForKumuluzeeVersion.bind(this);
         this.state = {
             version: kumuluzEEVersionsList.find(version => version.recommended).label || "3.2.0",
@@ -61,7 +60,6 @@ export default class GeneratorPage extends Component {
             version: document.getElementById("kumuluzee").value
         });
         this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
-        GeneratorHelper.getLatestLogsVersion();
     }
 
     __resetAllCheckboxes() {
