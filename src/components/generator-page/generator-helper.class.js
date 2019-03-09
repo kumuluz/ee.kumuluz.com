@@ -1,7 +1,7 @@
 import mustache from "mustache";
 import * as FileSaver from "file-saver";
 import {kumuluzEEVersionsList} from "../../content/generator-page/export.data";
-import {testingExtensionDependencies} from "../../content/generator-page/extensions";
+import {graphQLUiDependency, testingExtensionDependencies} from "../../content/generator-page/extensions";
 import {VersionUtil} from "./version.util";
 
 export class GeneratorHelper {
@@ -187,6 +187,11 @@ export class GeneratorHelper {
                 const versionItem = `<${testngKey}>${testing.testng.version}</${testngKey}>`;
                 versions.push(versionItem);
             }
+        }
+
+        // handle graphQL dependency
+        if ($.checked("ext-other-graphql")) {
+            parsedExtensions.push(graphQLUiDependency);
         }
 
         return {

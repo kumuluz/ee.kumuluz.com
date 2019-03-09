@@ -97,7 +97,7 @@ export const extensionsList = {
             new VersionedLabel("3.0.0", "*", "KumuluzEE gRPC", "com.kumuluz.ee.grpc:kumuluzee-grpc:${kumuluzee-grpc.version}:1.1.0")
         ], []),
         new CheckboxModel("ext-other-graphql", [
-            new VersionedLabel("3.0.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.0")
+            new VersionedLabel("3.0.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.1")
         ], []),
         new CheckboxModel("ext-other-amqp", [
             new VersionedLabel("3.2.0", "*", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0-SNAPSHOT")
@@ -141,4 +141,11 @@ export const testingExtensionDependencies = {
         version: "6.14.3",
         scope: "test"
     }
+};
+
+export const graphQLUiDependency = {
+    groupId: "com.kumuluz.ee.graphql",
+    artifactId: "kumuluzee-graphql-ui",
+    versionKey: "${kumuluzee-graphql.version}",
+    version: "1.0.1"
 };
