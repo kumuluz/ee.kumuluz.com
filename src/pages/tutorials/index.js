@@ -12,8 +12,8 @@ import blueArrowImage from "../../assets/images/arrow.svg";
 import "./tutorial-page.scss";
 
 import {GITHUB_SAMPLES_URL} from "../../content/constants.content";
+import {kumuluzeeProjects, kumuluzeeNodejsProjects, kumuluzeeGoProjects} from "../../content/export.content";
 import {microservicesSamples} from "../../content/tutorials-page/microservices-samples";
-import {kumuluzeeProjects} from "../../content/tutorials-page/kumuluzee-projects";
 import {documentationItems} from "../../content/tutorials-page/documentation";
 
 const navbarItems = [

@@ -7,8 +7,7 @@ import {ExternalLinkTileComponent} from "../../components/shared/export.shared.c
 
 import "./projects-page.scss";
 
-import {projectsList} from "../../content/export.content";
-import {nodejsProjectList} from "../../content/projects-page/projects.content";
+import {projectsList, goProjectList, nodejsProjectList} from "../../content/export.content";
 
 export default class ProjectsPage extends Component {
 
