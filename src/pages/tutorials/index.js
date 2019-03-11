@@ -292,6 +292,34 @@ export default class TutorialPage extends Component {
                                             </div>
                                         ))}
                                     </div>
+                                    <h2>Node.js</h2>
+                                    <div className="samples">
+                                        {documentationItems.nodejs.map((doc, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {doc.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={doc.url} target="_blank" rel="noreferrer noopener">
+                                                    {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {doc.desc}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <h2>Go</h2>
+                                    <div className="samples">
+                                        {documentationItems.go.map((doc, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {doc.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={doc.url} target="_blank" rel="noreferrer noopener">
+                                                    {doc.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {doc.desc}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -39,5 +39,13 @@ export const documentationItems = {
         new Sample("MicroProfile REST Client 1.1", "For easy way to define and invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md"),
         new Sample("MicroProfile OpenTracing 1.2.1", "For accessing an OpenTracing compliant Tracer object within your JAX-RS application.", "https://github.com/kumuluz/kumuluzee-opentracing/blob/master/README.md"),
         new Sample("MicroProfile OpenAPI 1.0.1", "Provides tools to incorporate the OpenAPI 3 specification to your microservices in a standardized way.", "https://github.com/kumuluz/kumuluzee-openapi-mp/blob/master/README.md", true),
+    ],
+    nodejs: [
+        new Sample("KumuluzEE Node.js Config", "For microservice configuration in Node.js.", "https://github.com/kumuluz/kumuluzee-nodejs-config/blob/master/README.md"),
+        new Sample("KumuluzEE Node.js Discovery", "For dynamic service discovery in Node.js.", "https://github.com/kumuluz/kumuluzee-nodejs-discovery/blob/master/README.md"),
+    ],
+    go: [
+        new Sample("KumuluzEE Go Config", "For microservice configuration in Go.", "https://github.com/kumuluz/kumuluzee-go-config/blob/master/README.md"),
+        new Sample("KumuluzEE Go Discovery", "For dynamic service discovery in Go.", "https://github.com/kumuluz/kumuluzee-go-discovery/blob/master/README.md"),
     ]
 };
