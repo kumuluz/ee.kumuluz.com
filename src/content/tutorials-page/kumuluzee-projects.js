@@ -34,3 +34,13 @@ export const kumuluzeeProjects = [
     new Sample("OpenTracing sample", "Trace a request across two microservices using Jaeger or Zipkin as the backend.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-opentracing", true),
     new Sample("AMQP sample with RabbitMQ", "Produce and consume AMQP messages using the RabbitMQ message broker.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-amqp-rabbitmq", true),
 ];
+
+export const kumuluzeeNodejsProjects = [
+    new Sample("Config", "Build a REST service which utilizes Node.js configuration project.", "https://github.com/kumuluz/kumuluzee-nodejs-samples/tree/master/kumuluzee-nodejs-config"),
+    new Sample("Discovery", "Develop a Node.js microservice and register it with Consul or etcd.", "https://github.com/kumuluz/kumuluzee-nodejs-samples/tree/master/kumuluzee-nodejs-discovery"),
+];
+
+export const kumuluzeeGoProjects = [
+    new Sample("Config", "Build a REST service which utilizes Go configuration project.", "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/kumuluzee-go-config"),
+    new Sample("Discovery", "Develop a Go microservice and register it with Consul or etcd.", "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/kumuluzee-go-discovery"),
+];

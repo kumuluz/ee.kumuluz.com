@@ -236,6 +236,36 @@ export default class TutorialPage extends Component {
                                             </div>
                                         ))}
                                     </div>
+                                    <h2>KumuluzEE Node.js Projects</h2>
+                                    {/*nodejs-projects*/}
+                                    <div className="samples">
+                                        {kumuluzeeNodejsProjects.map((project, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {project.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={project.url} target="_blank" rel="noreferrer noopener">
+                                                    {project.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {project.desc}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <h2>KumuluzEE Go Projects</h2>
+                                    {/*kumuluzee-projects*/}
+                                    <div className="samples">
+                                        {kumuluzeeGoProjects.map((project, index) => (
+                                            <div className="sample-item" key={index}>
+                                                {project.isNew ? <span className="new-tag">NEW</span> : null}
+                                                <a href={project.url} target="_blank" rel="noreferrer noopener">
+                                                    {project.title} <FontAwesomeIcon icon={faChevronRight}/>
+                                                </a>
+                                                <div className="sample-item-desc">
+                                                    {project.desc}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
                                     <Waypoint onLeave={() => {
                                         if (this.isScrollingDown()) {
                                             this.setActiveElement("navigation-item-2");
