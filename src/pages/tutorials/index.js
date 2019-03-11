@@ -63,7 +63,7 @@ const tutorialItems = [
         external: true
     },
     {
-        title: "KumuluzEE Microservices in Go and Java",
+        title: "KumuluzEE microservices in Go and Java",
         content: "In this tutorial we develop two microservices, one in Java and one in Go. Developed microservices use the KumuluzEE Config and Discovery extensions to simplify the configuration management and the service discovery in applications composed from microservices built with different technologies.",
         url: "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/tutorial-microservice-config-discovery",
         external: true
