@@ -56,7 +56,13 @@ export default class ProjectsPage extends Component {
                             ))}
                         </div>
                         <h2>Go projects</h2>
-                        <p className="coming-soon">Coming soon</p>
+                        <div className="tiles">
+                            {goProjectList.map((proj, index) => (
+                                <div className={proj.size === 2 ? "tile order-2" : "tile"} key={index}>
+                                    <ExternalLinkTileComponent data={proj}/>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </Layout>

@@ -36,3 +36,8 @@ export const nodejsProjectList = [
     new Project("KumuluzEE Node.js Config", "KumuluzEE support for Node.js and JavaScript for dynamic configuration management.", "https://github.com/kumuluz/kumuluzee-nodejs-config/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-nodejs-samples/tree/master/kumuluzee-nodejs-config").onNPM("https://www.npmjs.com/package/@kumuluz/kumuluzee-config"),
     new Project("KumuluzEE Node.js Discovery", "KumuluzEE support for Node.js and JavaScript for dynamic service discovery.", "https://github.com/kumuluz/kumuluzee-nodejs-discovery/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-nodejs-samples/tree/master/kumuluzee-nodejs-discovery").onNPM("https://www.npmjs.com/package/@kumuluz/kumuluzee-discovery")
 ];
+
+export const goProjectList = [
+    new Project("KumuluzEE Go Config", "KumuluzEE support for Go programming language for dynamic configuration management.", "https://github.com/kumuluz/kumuluzee-go-config/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/kumuluzee-go-config"),
+    new Project("KumuluzEE Go Discovery", "KumuluzEE support for Go programming language for dynamic service discovery.", "https://github.com/kumuluz/kumuluzee-go-discovery/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/kumuluzee-go-discovery")
+];
