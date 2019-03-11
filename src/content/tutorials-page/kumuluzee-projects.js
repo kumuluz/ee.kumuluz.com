@@ -41,6 +41,6 @@ export const kumuluzeeNodejsProjects = [
 ];
 
 export const kumuluzeeGoProjects = [
-    new Sample("Go Config sample", "Build a REST service which utilizes Go configuration project.", "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/kumuluzee-go-config"),
-    new Sample("Go Discovery sample", "Develop a Go microservice and register it with Consul or etcd.", "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/kumuluzee-go-discovery"),
+    new Sample("Go Config sample", "Build a REST service which utilizes Go configuration project.", "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/kumuluzee-go-config", true),
+    new Sample("Go Discovery sample", "Develop a Go microservice and register it with Consul or etcd.", "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/kumuluzee-go-discovery", true),
 ];
