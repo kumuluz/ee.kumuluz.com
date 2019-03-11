@@ -61,6 +61,12 @@ const tutorialItems = [
         content: "Managing microservices becomes harder with each new or updated microservice. When an application experiences a slowdown and its »data flow« goes through several different microservices, pinpointing the exact location of a slowdown may be difficult for a developer. This blog post covers the basics of distributed tracing and demonstrates the usage of KumuluzEE OpenTracing extension with Jaeger to fight the challenges mentioned above.",
         url: "https://blog.kumuluz.com/developers/community/2019/02/11/kumuluzee-opentracing-jaeger",
         external: true
+    },
+    {
+        title: "KumuluzEE Microservices in Go and Java",
+        content: "In this tutorial we develop two microservices, one in Java and one in Go. Developed microservices use the KumuluzEE Config and Discovery extensions to simplify the configuration management and the service discovery in applications composed from microservices built with different technologies.",
+        url: "https://github.com/kumuluz/kumuluzee-go-samples/tree/master/tutorial-microservice-config-discovery",
+        external: true
     }
 ];
 
