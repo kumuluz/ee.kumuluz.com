@@ -45,7 +45,7 @@ export const documentationItems = {
         new Sample("KumuluzEE Node.js Discovery", "For dynamic service discovery in Node.js.", "https://github.com/kumuluz/kumuluzee-nodejs-discovery/blob/master/README.md"),
     ],
     go: [
-        new Sample("KumuluzEE Go Config", "For microservice configuration in Go.", "https://github.com/kumuluz/kumuluzee-go-config/blob/master/README.md"),
-        new Sample("KumuluzEE Go Discovery", "For dynamic service discovery in Go.", "https://github.com/kumuluz/kumuluzee-go-discovery/blob/master/README.md"),
+        new Sample("KumuluzEE Go Config", "For microservice configuration in Go.", "https://github.com/kumuluz/kumuluzee-go-config/blob/master/README.md", true),
+        new Sample("KumuluzEE Go Discovery", "For dynamic service discovery in Go.", "https://github.com/kumuluz/kumuluzee-go-discovery/blob/master/README.md", true),
     ]
 };
