@@ -26,6 +26,7 @@ export const microprofileAPIsList = [
         new VersionedLabel("2.5.3", "*", "MicroProfile OpenAPI 1.0.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.0.1")
     ], []),
     new CheckboxModel("mpa-opentracing", [
-        new VersionedLabel("2.5.3", "*", "MicroProfile OpenTracing 1.2.1", "n/a")
+        new VersionedLabel("2.5.3", "*", "MicroProfile OpenTracing 1.2.1", "n/a"),
+        new VersionedLabel("3.1.0", "*", "MicroProfile OpenTracing 1.3.1", "n/a")
     ], [])
 ];
