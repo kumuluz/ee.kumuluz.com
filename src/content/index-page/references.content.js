@@ -21,6 +21,7 @@ import solveraLynx from "../../assets/images/references/solvera_lynx.png";
 import src from "../../assets/images/references/src.jpg";
 import tovarnaPodjemov from "../../assets/images/references/tovarna_podjemov.jpg";
 import zzzs from "../../assets/images/references/zzzs.jpg";
+import citytech from "../../assets/images/references/citytech.png";
 
 export const referenceList = [
     new Reference(akrapovic, "Akrapovič"),
@@ -43,5 +44,6 @@ export const referenceList = [
     new Reference(src, "Src"),
     new Reference(informatika, "Informatika d.d."),
     new Reference(hardlab, "Hardlab"),
-    new Reference(tovarnaPodjemov, "Tovarna podjemov")
+    new Reference(tovarnaPodjemov, "Tovarna podjemov"),
+    new Reference(citytech, "Citytech")
 ];
