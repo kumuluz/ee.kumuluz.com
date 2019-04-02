@@ -22,7 +22,8 @@ export const articles = {
             new Article("Dolphin Platform & KumuluzEE: JavaEE Microservices with dynamic and rich frontends", "Have you heard of KumuluzEE that is one of the 2015 Java Duke’s Choice Award winners? Well, if you haven’t heard about this cool project you should have a look. KumuluzEE is a JavaEE ba…", "http://www.guigarage.com/2015/11/dolphin-platform-kumuluzee-javaee-microservices-with-dynamic-and-rich-frontends/"),
             new Article("Video: Philipe Tjon A Hen - KumuluzEE - developing microservices using Java EE technologies", "KumuluzEE is een lichtgewicht framework om microservices mee te bouwen die gebruik maken van standaard JavaEE technologie. Kunnen we gebruikmakend van standa...", "https://www.youtube.com/watch?v=oLHy2VI00G0"),
             new Article("KumuluzEE on Oracle Application Container Cloud", "In this blog post, I will describe how to deploy the CloudEE Duke application packaged in a Kumuluz EE über-jar to Oracle Application Container Cloud...", "http://www.agilejava.eu/2018/03/22/kumuluzee-on-oracle-application-container-cloud/"),
-            new Article("GraphQL with KumuluzEE", "KumuluzEE GraphQL has been easy-to-use and is a good source of inspiration for the MicroProfile GraphQL specification and its future implementations.", "https://jefrajames.wordpress.com/2019/03/08/graphql-with-kumuluzee/")
+            new Article("GraphQL with KumuluzEE", "KumuluzEE GraphQL has been easy-to-use and is a good source of inspiration for the MicroProfile GraphQL specification and its future implementations.", "https://jefrajames.wordpress.com/2019/03/08/graphql-with-kumuluzee/"),
+            new Article("Tracing KumuluzEE Microservices With Jaeger and Zipkin", "In this post, we run through how to create basic microservices and then perform tracing on them with these helpful platforms.", "https://dzone.com/articles/tracing-kumuluzee-microservices-with-jaeger-and-zi")
         ]
     }
 };

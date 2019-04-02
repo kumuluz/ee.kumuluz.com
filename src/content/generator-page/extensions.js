@@ -27,10 +27,12 @@ export const extensionsList = {
     ],
     opentracing: [
         new CheckboxModel("ext-opentracing-jaeger", [
-            new VersionedLabel("3.1.0", "*", "with Jaeger", "com.kumuluz.ee.opentracing:kumuluzee-opentracing-jaeger:${kumuluzee-opentracing.version}:1.2.1")
+            new VersionedLabel("2.5.3", "*", "with Jaeger", "com.kumuluz.ee.opentracing:kumuluzee-opentracing-jaeger:${kumuluzee-opentracing.version}:1.2.1"),
+            new VersionedLabel("3.1.0", "*", "with Jaeger", "com.kumuluz.ee.opentracing:kumuluzee-opentracing-jaeger:${kumuluzee-opentracing.version}:1.3.1")
         ], []),
         new CheckboxModel("ext-opentracing-zipkin", [
-            new VersionedLabel("3.1.0", "*", "with Zipkin", "com.kumuluz.ee.opentracing:kumuluzee-opentracing-zipkin:${kumuluzee-opentracing.version}:1.2.1")
+            new VersionedLabel("2.5.3", "*", "with Zipkin", "com.kumuluz.ee.opentracing:kumuluzee-opentracing-zipkin:${kumuluzee-opentracing.version}:1.2.1"),
+            new VersionedLabel("3.1.0", "*", "with Zipkin", "com.kumuluz.ee.opentracing:kumuluzee-opentracing-zipkin:${kumuluzee-opentracing.version}:1.3.1")
         ], [])
     ],
     metrics: {
