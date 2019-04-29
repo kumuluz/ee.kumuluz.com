@@ -68,7 +68,7 @@ export const extensionsList = {
     ],
     other: [
         new CheckboxModel("ext-other-keycloak", [
-            new VersionedLabel("2.3.0", "*", "KumuluzEE Security (Keycloak)", "com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}:1.0.1")
+            new VersionedLabel("2.3.0", "*", "KumuluzEE Security (Keycloak)", "com.kumuluz.ee.security:kumuluzee-security-keycloak:${kumuluzee-security.version}:1.1.0")
         ], []),
         new CheckboxModel("ext-other-kafka", [
             new VersionedLabel("2.3.0", "*", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.0.0"),
@@ -99,7 +99,7 @@ export const extensionsList = {
             new VersionedLabel("3.0.0", "*", "KumuluzEE gRPC", "com.kumuluz.ee.grpc:kumuluzee-grpc:${kumuluzee-grpc.version}:1.1.0")
         ], []),
         new CheckboxModel("ext-other-graphql", [
-            new VersionedLabel("3.0.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.1")
+            new VersionedLabel("3.0.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.2")
         ], []),
         new CheckboxModel("ext-other-amqp", [
             new VersionedLabel("3.2.0", "*", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0-SNAPSHOT")
@@ -149,5 +149,5 @@ export const graphQLUiDependency = {
     groupId: "com.kumuluz.ee.graphql",
     artifactId: "kumuluzee-graphql-ui",
     versionKey: "${kumuluzee-graphql.version}",
-    version: "1.0.1"
+    version: "1.0.2"
 };
