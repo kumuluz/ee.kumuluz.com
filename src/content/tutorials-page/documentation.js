@@ -38,7 +38,7 @@ export const documentationItems = {
         new Sample("MicroProfile JWT Authentication 1.1", "For role based access control using OpenID Connect and JSON Web Tokens.", "https://github.com/kumuluz/kumuluzee-jwt-auth/blob/master/README.md"),
         new Sample("MicroProfile REST Client 1.1", "For easy way to define and invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md"),
         new Sample("MicroProfile OpenTracing 1.2.1", "For accessing an OpenTracing compliant Tracer object within your JAX-RS application.", "https://github.com/kumuluz/kumuluzee-opentracing/blob/master/README.md"),
-        new Sample("MicroProfile OpenAPI 1.0.1", "Provides tools to incorporate the OpenAPI 3 specification to your microservices in a standardized way.", "https://github.com/kumuluz/kumuluzee-openapi-mp/blob/master/README.md", true),
+        new Sample("MicroProfile OpenAPI 1.1.2", "Provides tools to incorporate the OpenAPI 3 specification to your microservices in a standardized way.", "https://github.com/kumuluz/kumuluzee-openapi-mp/blob/master/README.md", true),
     ],
     nodejs: [
         new Sample("KumuluzEE Node.js Config", "For microservice configuration in Node.js.", "https://github.com/kumuluz/kumuluzee-nodejs-config/blob/master/README.md"),
