@@ -39,17 +39,20 @@ export const extensionsList = {
         level1: [
             new CheckboxModel("ext-metrics", [
                 new VersionedLabel("2.4.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.1"),
-                new VersionedLabel("2.5.3", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.2")
+                new VersionedLabel("2.5.3", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.2"),
+                new VersionedLabel("3.3.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.3"),
             ], [])
         ],
         level2: [
             new CheckboxModel("ext-metrics-logs", [
                 new VersionedLabel("2.4.0", "*", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.1"),
-                new VersionedLabel("2.5.3", "*", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.2")
+                new VersionedLabel("2.5.3", "*", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.2"),
+                new VersionedLabel("3.3.0", "*", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.3"),
             ], []),
             new CheckboxModel("ext-metrics-logstash", [
                 new VersionedLabel("2.4.0", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.1"),
-                new VersionedLabel("2.5.3", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.2")
+                new VersionedLabel("2.5.3", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.2"),
+                new VersionedLabel("3.3.0", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.3"),
             ], [])
         ]
     },
