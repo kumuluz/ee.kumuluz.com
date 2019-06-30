@@ -21,7 +21,7 @@ export const microprofileAPIsList = [
     new CheckboxModel("mpa-rest-client", [
         new VersionedLabel("2.5.3", "*", "MicroProfile Rest Client 1.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.1.0"),
         new VersionedLabel("3.1.0", "*", "MicroProfile Rest Client 1.2.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.2.1"),
-        new VersionedLabel("3.2.0", "*", "MicroProfile Rest Client 1.2.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.2.2")
+        new VersionedLabel("3.2.0", "*", "MicroProfile Rest Client 1.2.2", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.2.2")
     ], []),
     new CheckboxModel("mpa-openapi", [
         new VersionedLabel("2.5.3", "*", "MicroProfile OpenAPI 1.0.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.0.1"),

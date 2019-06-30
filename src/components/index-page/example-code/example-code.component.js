@@ -38,10 +38,10 @@ export class ExampleCodeComponent extends Component {
                 </div>
                 <div className="example-content">
                     <h1>EXAMPLE CODE</h1>
-                    <h2>
-                        We&apos;re also bringing better support for Java 9 and above, with continuously increased
-                        streamlined modules support throughout the betas.
-                    </h2>
+                    {/*<h2>*/}
+                    {/*    We&apos;re also bringing better support for Java 9 and above, with continuously increased*/}
+                    {/*    streamlined modules support throughout the betas.*/}
+                    {/*</h2>*/}
                     <div className="example-code">
                         <CodeFormatComponent pages={pages}>
                             <CodePageComponent id="order-resource" lang={"java"}>
