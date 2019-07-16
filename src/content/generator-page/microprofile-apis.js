@@ -5,7 +5,8 @@ export const microprofileAPIsList = [
         new VersionedLabel("2.5.2", "*", "MicroProfile Config 1.3", "com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}:1.3.0")
     ], []),
     new CheckboxModel("mpa-healthcheck", [
-        new VersionedLabel("2.4.0", "*", "MicroProfile Health Check 1.0", "n/a")
+        new VersionedLabel("2.4.0", "*", "MicroProfile Health Check 1.0", "n/a"),
+        new VersionedLabel("3.1.0", "*", "MicroProfile Health Check 2.0", "n/a")
     ], []),
     new CheckboxModel("mpa-faulttolerance", [
         new VersionedLabel("2.4.0", "*", "MicroProfile Fault Tolerance 1.0", "n/a"),
