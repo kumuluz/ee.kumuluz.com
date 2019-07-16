@@ -3,6 +3,7 @@ import * as FileSaver from "file-saver";
 import {kumuluzEEVersionsList} from "../../content/generator-page/export.data";
 import {graphQLUiDependency, testingExtensionDependencies} from "../../content/generator-page/extensions";
 import {VersionUtil} from "./version.util";
+import {GoogleAnalyticsService} from "../shared/google-analytics/google-analytics.service";
 
 export class GeneratorHelper {
 
@@ -294,6 +295,7 @@ export class GeneratorHelper {
     }
 
     static generatePomFromGenerator() {
+        GoogleAnalyticsService.registerEvent("Generator", "generate-pom");
         const formData = GeneratorHelper.generateFormData();
 
         const versionIsHigherThan_2_4_0 = VersionUtil.versionIsLargerOrEqual(formData.kumuluzVersion, "2.4.0");
