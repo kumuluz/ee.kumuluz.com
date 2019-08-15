@@ -13,7 +13,8 @@ export const microprofileAPIsList = [
         new VersionedLabel("3.0.0", "*", "MicroProfile Fault Tolerance 2.0", "n/a")
     ], []),
     new CheckboxModel("mpa-metrics", [
-        new VersionedLabel("2.4.0", "*", "MicroProfile Metrics 1.1", "n/a")
+        new VersionedLabel("2.4.0", "*", "MicroProfile Metrics 1.1", "n/a"),
+        new VersionedLabel("3.4.1", "*", "MicroProfile Metrics 2.0", "n/a"),
     ], []),
     new CheckboxModel("mpa-jwt-auth", [
         new VersionedLabel("2.2.0", "*", "MicroProfile JWT Authentication 1.0", "com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee-jwt-auth.version}:1.0.1"),
@@ -22,7 +23,8 @@ export const microprofileAPIsList = [
     new CheckboxModel("mpa-rest-client", [
         new VersionedLabel("2.5.3", "*", "MicroProfile Rest Client 1.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.1.0"),
         new VersionedLabel("3.1.0", "*", "MicroProfile Rest Client 1.2.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.2.1"),
-        new VersionedLabel("3.2.0", "*", "MicroProfile Rest Client 1.2.2", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.2.2")
+        new VersionedLabel("3.2.0", "*", "MicroProfile Rest Client 1.2.2", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.2.2"),
+        new VersionedLabel("3.5.0", "*", "MicroProfile Rest Client 1.3.3", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.3.3")
     ], []),
     new CheckboxModel("mpa-openapi", [
         new VersionedLabel("2.5.3", "*", "MicroProfile OpenAPI 1.0.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.0.1"),
