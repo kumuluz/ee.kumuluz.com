@@ -30,7 +30,7 @@ export const projectsList = [
     new Project("KumuluzEE GraphQL", "Native support for GraphQL.", "https://github.com/kumuluz/kumuluzee-graphql/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-graphql-jpa-simple"),
     new Project("KumuluzEE Ethereum", "For Ethereum-enabled microservices.", "https://github.com/kumuluz/kumuluzee-ethereum/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-ethereum-web3j"),
     new Project("KumuluzEE AMQP", "Support for Advanced Message Queueing Protocol, such as RabbitMQ and ActiveMQ.", "https://github.com/kumuluz/kumuluzee-amqp/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-amqp-rabbitmq"),
-    new Project("KumuluzEE Feature Flags", "Support for for development with feature flags.", "https://github.com/kumuluz/kumuluzee-feature-flags/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-feature-flags-unleash")
+    new Project("KumuluzEE Feature Flags", "Support for development with feature flags.", "https://github.com/kumuluz/kumuluzee-feature-flags/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-feature-flags-unleash")
 ];
 
 export const nodejsProjectList = [
