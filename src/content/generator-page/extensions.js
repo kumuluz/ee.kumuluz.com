@@ -113,7 +113,10 @@ export const extensionsList = {
         ], []),
         new CheckboxModel("ext-other-amqp", [
             new VersionedLabel("3.2.0", "*", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0-SNAPSHOT")
-        ], [])
+        ], []),
+        new CheckboxModel("ext-other-feature-flags", [
+            new VersionedLabel("3.2.0", "*", "KumuluzEE Feature Flags", "com.kumuluz.ee.feature-flags:kumuluzee-feature-flags-unleash:${kumuluzee-feature-flags.version}:1.0.0-SNAPSHOT")
+        ], []),
     ]
 };
 
