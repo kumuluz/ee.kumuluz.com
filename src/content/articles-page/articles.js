@@ -5,6 +5,8 @@ export const articles = {
         title: "Selected articles",
         id: "section-0",
         articles: [
+            new Article("An Analysis of Frameworks for Microservices", "Our results show that although the KumuluzEE supports few characteristics of the microservices architecture, it is easier to use, especially, for newcomers.", "https://ieeexplore.ieee.org/document/8786337"),
+            new Article("Microservices in the Cloud, Part One", "Everything you need to know!", "https://dzone.com/articles/microservices-in-the-cloud-part-one"),
             new Article("Java EE Microservices on Kubernetes with KumuluzEE - DZone Microservices", "Deploy and autoscale KumuluzEE microservices on Kubernetes with service discovery, configuration and health checks.", "https://dzone.com/articles/java-ee-microservices-on-kubernetes-with-kumuluzee"),
             new Article("Java EE 8 Microservices", "Build the foundation of Cloud Native applications with microservices using Java EE 8.", "https://www.packtpub.com/application-development/java-ee-8-microservices-video"),
             new Article("Eclipse Microservices and Service Discovery", "Discover service discovery, an essential part of microservice architecture becomes necessary when we start using containers and container orchestration mechanisms.", "https://jaxenter.com/eclipse-microservices-service-discovery-138577.html"),
