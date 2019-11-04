@@ -57,7 +57,7 @@ export default class SupportPage extends Component {
                                 <div className="tile left-tile">
                                     <div className="tile-header">
                                         <h2>Free</h2>
-                                        <p>Our basic version of KumuluzEE for teams that are just getting started.</p>
+                                        <p>KumuluzEE with all extensions and Microprofile compliance.</p>
                                         <div>
                                             <span className="button" onClick={() => navigate("/tutorials")}>
                                                 Get started

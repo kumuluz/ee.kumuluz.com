@@ -25,9 +25,12 @@ export const documentationItems = {
             new Sample("KumuluzEE gRPC", "Support for the gRPC framework.", "https://github.com/kumuluz/kumuluzee-grpc/blob/master/README.md"),
             new Sample("KumuluzEE GraphQL", "Developing GraphQL APIs.", "https://github.com/kumuluz/kumuluzee-graphql/blob/master/README.md"),
             new Sample("KumuluzEE Ethereum", "Support for seamless development of Blockchain applications on the Ethereum platform.", "https://github.com/kumuluz/kumuluzee-ethereum/blob/master/README.md"),
-            new Sample("KumuluzEE Rest Client", "Type-safe approach to invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md", true),
-            new Sample("KumuluzEE OpenTracing", "Distributed tracing solution for KumuluzEE framework.", "https://github.com/kumuluz/kumuluzee-opentracing/blob/master/README.md", true),
-            new Sample("KumuluzEE AMQP", "Support for Advanced Message Queueing Protocol, such as RabbitMQ and ActiveMQ.", "https://github.com/kumuluz/kumuluzee-amqp/blob/master/README.md", true),
+            new Sample("KumuluzEE Rest Client", "Type-safe approach to invoke RESTful services over HTTP.", "https://github.com/kumuluz/kumuluzee-rest-client/blob/master/README.md"),
+            new Sample("KumuluzEE OpenTracing", "Distributed tracing solution for KumuluzEE framework.", "https://github.com/kumuluz/kumuluzee-opentracing/blob/master/README.md"),
+            new Sample("KumuluzEE AMQP", "Support for Advanced Message Queueing Protocol, such as RabbitMQ and ActiveMQ.", "https://github.com/kumuluz/kumuluzee-amqp/blob/master/README.md"),
+            new Sample("KumuluzEE Version", "KumuluzEE Version provides mechanisms to expose version details of your microservices.", "https://github.com/kumuluz/kumuluzee-version/blob/master/README.md", true),
+            new Sample("KumuluzEE Feature Flags", "KumuluzEE Feature Flags enables you to easily manage feature flags in your application.", "https://github.com/kumuluz/kumuluzee-feature-flags/blob/master/README.md", true),
+            new Sample("KumuluzEE JCache", "KumuluzEE JCache allows usage of JCache annotations and JCache programmatic API in your KumuluzEE applications.", "https://github.com/kumuluz/kumuluzee-jcache/blob/master/README.md", true),
         ]
     },
     microprofile: [

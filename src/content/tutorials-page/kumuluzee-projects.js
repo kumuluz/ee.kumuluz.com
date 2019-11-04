@@ -30,9 +30,12 @@ export const kumuluzeeProjects = [
     new Sample("gRPC sample", "Samples for KumuluzEE gRPC project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-grpc"),
     new Sample("GraphQL sample", "Samples for KumuluzEE GraphQL project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-graphql-advanced"),
     new Sample("Ethereum sample", "Samples for KumuluzEE Ethereum project.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-ethereum-web3j"),
-    new Sample("Rest Client sample", "Build a REST service, which consumes another REST service using the KumuluzEE Rest Client.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest-client", true),
-    new Sample("OpenTracing sample", "Trace a request across two microservices using Jaeger or Zipkin as the backend.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-opentracing", true),
-    new Sample("AMQP sample with RabbitMQ", "Produce and consume AMQP messages using the RabbitMQ message broker.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-amqp-rabbitmq", true),
+    new Sample("Rest Client sample", "Build a REST service, which consumes another REST service using the KumuluzEE Rest Client.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-rest-client"),
+    new Sample("OpenTracing sample", "Trace a request across two microservices using Jaeger or Zipkin as the backend.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-opentracing"),
+    new Sample("AMQP sample with RabbitMQ", "Produce and consume AMQP messages using the RabbitMQ message broker.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-amqp-rabbitmq"),
+    new Sample("KumuluzEE Version sample", "KumuluzEE Version provides mechanisms to expose version details of your microservices.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-version", true),
+    new Sample("KumuluzEE Feature Flags sample with Unleash", "KumuluzEE Feature Flags enables you to easily manage feature flags in your application.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-feature-flags-unleash", true),
+    new Sample("KumuluzEE JCache sample", "KumuluzEE JCache allows usage of JCache annotations and JCache programmatic API in your KumuluzEE applications.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-jcache", true),
 ];
 
 export const kumuluzeeNodejsProjects = [
