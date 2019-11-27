@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import PropType from "prop-types";
+import * as PropType from "prop-types";
 import Helmet from "react-helmet";
 
 import {FooterComponent, NavbarComponent} from "../components/export.components";

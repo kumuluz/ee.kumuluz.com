@@ -91,7 +91,7 @@ export const extensionsList = {
             new VersionedLabel("2.4.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.1"),
             // Two extension versions with same min and max kumuluzee versions is not supported
             // new VersionedLabel("3.1.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.2"),
-            new VersionedLabel("3.1.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.0.1")
+            new VersionedLabel("3.1.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.1.0")
         ], []),
         new CheckboxModel("ext-other-faulttolerance", [
             new VersionedLabel("2.4.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.1.3"),
@@ -118,7 +118,7 @@ export const extensionsList = {
             new VersionedLabel("3.2.0", "*", "KumuluzEE Feature Flags", "com.kumuluz.ee.feature-flags:kumuluzee-feature-flags-unleash:${kumuluzee-feature-flags.version}:1.0.0-SNAPSHOT")
         ], []),
         new CheckboxModel("ext-other-version", [
-            new VersionedLabel("3.2.0", "*", "KumuluzEE Version", "com.kumuluz.ee.version:kumuluzee-version:${kumuluzee-version.version}:1.0.0-SNAPSHOT")
+            new VersionedLabel("3.2.0", "*", "KumuluzEE Version", "com.kumuluz.ee.version:kumuluzee-version:${kumuluzee-version.version}:1.0.0")
         ], []),
         new CheckboxModel("ext-other-jcache", [
             new VersionedLabel("3.2.0", "*", "KumuluzEE JCache", "com.kumuluz.ee.jcache:kumuluzee-jcache-caffeine:${kumuluzee-jcache.version}:1.0.0-SNAPSHOT")
