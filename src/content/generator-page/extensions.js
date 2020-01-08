@@ -118,8 +118,8 @@ export const extensionsList = {
             new VersionedLabel("3.2.0", "*", "KumuluzEE Feature Flags", "com.kumuluz.ee.feature-flags:kumuluzee-feature-flags-unleash:${kumuluzee-feature-flags.version}:1.0.0-SNAPSHOT")
         ], []),
         new CheckboxModel("ext-other-version", [
-            new VersionedLabel("3.2.0", "*", "KumuluzEE Version", "com.kumuluz.ee.version:kumuluzee-version:${kumuluzee-version.version}:1.0.0"),
             new VersionedLabel("3.2.0", "*", "KumuluzEE Version", "com.kumuluz.ee.version:kumuluzee-version:${kumuluzee-version.version}:1.1.0"),
+            new VersionedLabel("3.2.0", "*", "KumuluzEE Version", "com.kumuluz.ee.version:kumuluzee-version:${kumuluzee-version.version}:1.0.0"),
         ], []),
         new CheckboxModel("ext-other-jcache", [
             new VersionedLabel("3.2.0", "*", "KumuluzEE JCache", "com.kumuluz.ee.jcache:kumuluzee-jcache-caffeine:${kumuluzee-jcache.version}:1.0.0-SNAPSHOT")
