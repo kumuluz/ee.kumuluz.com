@@ -2,7 +2,8 @@ import {KumuluzeeVersion} from "./schema/kumuluzee-version.class";
 
 export const kumuluzEEVersionsList = [
     new KumuluzeeVersion("3.7.0-SNAPSHOT"),
-    new KumuluzeeVersion("3.6.0", true),
+    new KumuluzeeVersion("3.6.1", true),
+    new KumuluzeeVersion("3.6.0"),
     new KumuluzeeVersion("3.5.0"),
     new KumuluzeeVersion("3.4.1"),
     new KumuluzeeVersion("3.3.0"),
