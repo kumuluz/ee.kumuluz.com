@@ -49,4 +49,16 @@ export const microprofilesList = [
         "mpa-jwt-auth", "mpa-metrics", "ext-metrics", "mpa-healthcheck", "ext-other-health",
         "mpa-openapi", "mpa-opentracing", "ext-opentracing-jaeger", "mpa-rest-client"
     ]),
+    new CheckboxModel("mp-3.1", [
+        new VersionedLabel("3.7.0", "*", "MicroProfile 3.1", "com.kumuluz.ee:kumuluzee-microProfile-3.1")
+    ], ["comp-cdi", "comp-jsonp", "comp-jsonb", "comp-jaxrs", "comp-servlet", "mpa-config", "mpa-faulttolerance", "ext-other-faulttolerance",
+        "mpa-jwt-auth", "mpa-metrics", "ext-metrics", "mpa-healthcheck", "ext-other-health",
+        "mpa-openapi", "mpa-opentracing", "ext-opentracing-jaeger", "mpa-rest-client"
+    ]),
+    new CheckboxModel("mp-3.2", [
+        new VersionedLabel("3.7.0", "*", "MicroProfile 3.2", "com.kumuluz.ee:kumuluzee-microProfile-3.2")
+    ], ["comp-cdi", "comp-jsonp", "comp-jsonb", "comp-jaxrs", "comp-servlet", "mpa-config", "mpa-faulttolerance", "ext-other-faulttolerance",
+        "mpa-jwt-auth", "mpa-metrics", "ext-metrics", "mpa-healthcheck", "ext-other-health",
+        "mpa-openapi", "mpa-opentracing", "ext-opentracing-jaeger", "mpa-rest-client"
+    ])
 ];

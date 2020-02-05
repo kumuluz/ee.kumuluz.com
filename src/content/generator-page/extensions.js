@@ -42,6 +42,8 @@ export const extensionsList = {
                 new VersionedLabel("2.5.3", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.2"),
                 new VersionedLabel("3.3.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.3"),
                 new VersionedLabel("3.4.1", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:2.0.1"),
+                new VersionedLabel("3.6.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:2.1.0"),
+                new VersionedLabel("3.7.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:2.2.1")
             ], [])
         ],
         level2: [
