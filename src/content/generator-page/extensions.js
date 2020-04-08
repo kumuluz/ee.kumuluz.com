@@ -3,10 +3,12 @@ import {CheckboxModel, VersionedLabel} from "./schema/checkbox-model.class";
 export const extensionsList = {
     config: [
         new CheckboxModel("ext-config-etcd", [
-            new VersionedLabel("2.3.0", "*", "with etcd", "com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}:1.2.0")
+            new VersionedLabel("2.3.0", "*", "with etcd", "com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}:1.2.0"),
+            new VersionedLabel("3.8.0", "*", "with etcd", "com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}:1.2.1"),
         ], []),
         new CheckboxModel("ext-config-consul", [
-            new VersionedLabel("2.3.0", "*", "with Consul", "com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}:1.2.0")
+            new VersionedLabel("2.3.0", "*", "with Consul", "com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}:1.2.0"),
+            new VersionedLabel("3.8.0", "*", "with Consul", "com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}:1.2.1"),
         ], [])
     ],
     discovery: [
@@ -19,10 +21,12 @@ export const extensionsList = {
     ],
     logs: [
         new CheckboxModel("ext-logs-jul", [
-            new VersionedLabel("2.2.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.3.1")
+            new VersionedLabel("2.2.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.3.1"),
+            new VersionedLabel("3.8.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.4.0")
         ], []),
         new CheckboxModel("ext-logs-log4j2", [
-            new VersionedLabel("2.2.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.3.1")
+            new VersionedLabel("2.2.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.3.1"),
+            new VersionedLabel("3.8.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.4.0"),
         ], [])
     ],
     opentracing: [
@@ -43,7 +47,8 @@ export const extensionsList = {
                 new VersionedLabel("3.3.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:1.1.3"),
                 new VersionedLabel("3.4.1", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:2.0.1"),
                 new VersionedLabel("3.6.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:2.1.0"),
-                new VersionedLabel("3.7.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:2.2.1")
+                new VersionedLabel("3.7.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:2.2.1"),
+                new VersionedLabel("3.9.0", "*", "KumuluzEE Metrics", "com.kumuluz.ee.metrics:kumuluzee-metrics-core:${kumuluzee-metrics.version}:2.3.0"),
             ], [])
         ],
         level2: [
@@ -52,12 +57,14 @@ export const extensionsList = {
                 new VersionedLabel("2.5.3", "*", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.2"),
                 new VersionedLabel("3.3.0", "*", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:1.1.3"),
                 new VersionedLabel("3.4.1", "*", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:2.0.1"),
+                new VersionedLabel("3.9.0", "*", "KumuluzEE Logs reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logs:${kumuluzee-metrics.version}:2.3.0"),
             ], []),
             new CheckboxModel("ext-metrics-logstash", [
                 new VersionedLabel("2.4.0", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.1"),
                 new VersionedLabel("2.5.3", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.2"),
                 new VersionedLabel("3.3.0", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:1.1.3"),
                 new VersionedLabel("3.4.1", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:2.0.1"),
+                new VersionedLabel("3.9.0", "*", "Logstash reporter", "com.kumuluz.ee.metrics:kumuluzee-metrics-logstash:${kumuluzee-metrics.version}:2.3.0"),
             ], [])
         ]
     },
@@ -93,11 +100,13 @@ export const extensionsList = {
             new VersionedLabel("2.4.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.1"),
             // Two extension versions with same min and max kumuluzee versions is not supported
             // new VersionedLabel("3.1.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.2"),
-            new VersionedLabel("3.1.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.1.1")
+            new VersionedLabel("3.1.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.1.1"),
+            new VersionedLabel("3.9.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.2.0"),
         ], []),
         new CheckboxModel("ext-other-faulttolerance", [
             new VersionedLabel("2.4.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.1.3"),
-            new VersionedLabel("3.0.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-smallrye:${kumuluzee-fault-tolerance.version}:2.0.0")
+            new VersionedLabel("3.0.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-smallrye:${kumuluzee-fault-tolerance.version}:2.0.0"),
+            new VersionedLabel("3.9.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-smallrye:${kumuluzee-fault-tolerance.version}:2.1.0"),
         ], []),
         new CheckboxModel("ext-other-swagger", [
             new VersionedLabel("3.0.0", "*", "KumuluzEE Swagger", "com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}:1.2.2"),
