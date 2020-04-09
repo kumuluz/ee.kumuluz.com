@@ -176,11 +176,10 @@ export default class GeneratorPage extends Component {
         });
     }
 
-    checkForKumuluzeeVersion($event) {
-        const version = $event.target.value;
+    checkForKumuluzeeVersion(selectedVersion) {
         this.setState({
             ...this.state,
-            version: version
+            version: selectedVersion
         });
     }
 

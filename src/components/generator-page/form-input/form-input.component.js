@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import PropType from "prop-types";
+import * as PropType from "prop-types";
 
 import "./form-input.component.scss";
 
@@ -29,13 +29,21 @@ export class FormInputComponent extends Component {
         if (type === "select") {
             this.setState({
                 selectVal: optionList.find(opt => opt.recommended).label
+            }, () => {
+                if (this.props.whenChange) {
+                    this.props.whenChange(this.state.selectVal);
+                }
             });
         }
     }
 
-    changeSelectValue(newVal) {
+    changeSelectValue($event) {
         this.setState({
-            selectVal: newVal
+            selectVal: $event.target.value
+        }, () => {
+            if (this.props.whenChange) {
+                this.props.whenChange(this.state.selectVal);
+            }
         });
     }
 
@@ -50,12 +58,9 @@ export class FormInputComponent extends Component {
             );
         } else if (type === "select") {
             return (
-                <select className="form-control" id={id} value={this.state.selectVal ? this.state.selectVal : ""} onChange={(e) => {
-                    this.changeSelectValue(e.target.value);
-                    if(whenChange) {
-                        whenChange(e);
-                    }
-                }}>
+                <select className="form-control" id={id}
+                    value={this.state.selectVal ? this.state.selectVal : ""}
+                    onChange={this.changeSelectValue}>
                     {optionList.map((opt, index) => (
                         <option key={index} value={opt.label}>{opt.label}</option>
                     ))}
