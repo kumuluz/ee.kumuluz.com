@@ -8,7 +8,7 @@ export class CheckboxModel {
      * @param {string[]} dependencies array of unique ids this component depends on
      * @param {boolean} enabledByDefault if true it will take lowest version as value, if false it will disable checkbox that doesn't match any version
      */
-    constructor(id, labels, dependencies, enabledByDefault = false) {
+    constructor(id, labels, dependencies = [], enabledByDefault = false) {
         this.id = id;
         this.labels = labels;
         this.dependencies = dependencies;
