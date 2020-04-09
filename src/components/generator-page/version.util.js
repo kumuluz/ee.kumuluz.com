@@ -6,11 +6,11 @@ export class VersionUtil {
         let v1 = version1.split(".");
         let v2 = version2.split(".");
 
-        if (v1[0] > v2[0]) return true;
-        if (v1[0] < v2[0]) return false;
+        if (parseInt(v1[0], 10) > parseInt(v2[0], 10)) return true;
+        if (parseInt(v1[0], 10) < parseInt(v2[0], 10)) return false;
 
-        if (v1[1] > v2[1]) return true;
-        if (v1[1] < v2[1]) return false;
+        if (parseInt(v1[1], 10) > parseInt(v2[1], 10)) return true;
+        if (parseInt(v1[1], 10) < parseInt(v2[1], 10)) return false;
 
         v1 = v1[2].split("-");
         v2 = v2[2].split("-");
