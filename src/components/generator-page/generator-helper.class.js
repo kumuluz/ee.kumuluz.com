@@ -299,7 +299,18 @@ export class GeneratorHelper {
         const formData = GeneratorHelper.generateFormData();
 
         const versionIsHigherThan_2_4_0 = VersionUtil.versionIsLargerOrEqual(formData.kumuluzVersion, "2.4.0");
-        const templateUrl = `/generator-template/template${versionIsHigherThan_2_4_0 ? "240" : ""}.xml?t=${new Date().getTime()}`;
+        const versionIsHigherThan_3_0_0 = VersionUtil.versionIsLargerOrEqual(formData.kumuluzVersion, "3.0.0");
+
+        let templateUrl;
+        if (versionIsHigherThan_3_0_0) {
+            templateUrl = `/generator-template/template300.xml?t=${new Date().getTime()}`;
+        } else {
+            if (versionIsHigherThan_2_4_0) {
+                templateUrl = `/generator-template/template240.xml?t=${new Date().getTime()}`;
+            } else {
+                templateUrl = `/generator-template/template.xml?t=${new Date().getTime()}`;
+            }
+        }
 
         GeneratorHelper.buildPom(formData, templateUrl);
     }
