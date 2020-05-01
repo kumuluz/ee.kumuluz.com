@@ -3,6 +3,12 @@
 export class VersionUtil {
 
     static versionIsLarger(version1, version2) {
+        if (version1 === "*") {
+            return true;
+        } else if (version2 === "*") {
+            return false;
+        }
+
         let v1 = version1.split(".");
         let v2 = version2.split(".");
 
