@@ -5,10 +5,15 @@ export const extensionsList = {
         new CheckboxModel("ext-config-etcd", [
             new VersionedLabel("2.3.0", "*", "with etcd", "com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}:1.2.0"),
             new VersionedLabel("3.8.0", "*", "with etcd", "com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}:1.2.1"),
+            new VersionedLabel("3.9.0", "*", "with etcd", "com.kumuluz.ee.config:kumuluzee-config-etcd:${kumuluzee-config.version}:1.3.0"),
         ], []),
         new CheckboxModel("ext-config-consul", [
             new VersionedLabel("2.3.0", "*", "with Consul", "com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}:1.2.0"),
             new VersionedLabel("3.8.0", "*", "with Consul", "com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}:1.2.1"),
+            new VersionedLabel("3.9.0", "*", "with Consul", "com.kumuluz.ee.config:kumuluzee-config-consul:${kumuluzee-config.version}:1.3.0"),
+        ], []),
+        new CheckboxModel("ext-config-zookeeper", [
+            new VersionedLabel("3.9.0", "*", "with ZooKeeper", "com.kumuluz.ee.config:kumuluzee-config-zookeeper:${kumuluzee-config.version}:1.3.0"),
         ], [])
     ],
     discovery: [
