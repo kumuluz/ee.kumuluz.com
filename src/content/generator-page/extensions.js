@@ -100,10 +100,12 @@ export const extensionsList = {
             new VersionedLabel("3.0.0", "*", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.2.0")
         ], []),
         new CheckboxModel("ext-other-rest", [
-            new VersionedLabel("2.3.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.2.3")
+            new VersionedLabel("2.3.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.2.3"),
+            new VersionedLabel("3.9.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.3.0"),
         ], []),
         new CheckboxModel("ext-other-cors", [
-            new VersionedLabel("2.4.0", "*", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.5")
+            new VersionedLabel("2.4.0", "*", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.5"),
+            new VersionedLabel("3.9.0", "*", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.6"),
         ], []),
         new CheckboxModel("ext-other-health", [
             new VersionedLabel("2.4.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:1.0.1"),
