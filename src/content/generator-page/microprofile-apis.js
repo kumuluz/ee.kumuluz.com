@@ -25,7 +25,8 @@ export const microprofileAPIsList = [
     ], []),
     new CheckboxModel("mpa-jwt-auth", [
         new VersionedLabel("2.2.0", "*", "MicroProfile JWT Authentication 1.0", "com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee-jwt-auth.version}:1.0.1"),
-        new VersionedLabel("3.1.0", "*", "MicroProfile JWT Authentication 1.1", "com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee-jwt-auth.version}:1.1.2")
+        new VersionedLabel("3.1.0", "*", "MicroProfile JWT Authentication 1.1", "com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee-jwt-auth.version}:1.1.2"),
+        new VersionedLabel("3.9.0", "*", "MicroProfile JWT Authentication 1.1", "com.kumuluz.ee.jwt:kumuluzee-jwt-auth:${kumuluzee-jwt-auth.version}:1.1.3"),
     ], []),
     new CheckboxModel("mpa-rest-client", [
         new VersionedLabel("2.5.3", "*", "MicroProfile Rest Client 1.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.1.0"),
