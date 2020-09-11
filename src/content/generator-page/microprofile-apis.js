@@ -35,11 +35,13 @@ export const microprofileAPIsList = [
         new VersionedLabel("3.5.0", "*", "MicroProfile Rest Client 1.3.3", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.3.3"),
         new VersionedLabel("3.8.0", "*", "MicroProfile Rest Client 1.4.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.4.1"),
         new VersionedLabel("3.9.0", "*", "MicroProfile Rest Client 1.4.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.4.1.1"),
+        new VersionedLabel("3.10.0", "*", "MicroProfile Rest Client 1.4.1", "com.kumuluz.ee.rest-client:kumuluzee-rest-client:${kumuluzee-rest-client.version}:1.4.1.2"),
     ], []),
     new CheckboxModel("mpa-openapi", [
         new VersionedLabel("2.5.3", "*", "MicroProfile OpenAPI 1.0.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.0.1"),
         new VersionedLabel("3.3.0", "*", "MicroProfile OpenAPI 1.1.2", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.1.2"),
-        new VersionedLabel("3.9.0", "*", "MicroProfile OpenAPI 1.2.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.2.1")
+        new VersionedLabel("3.9.0", "*", "MicroProfile OpenAPI 1.2.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.2.1"),
+        new VersionedLabel("3.10.0", "*", "MicroProfile OpenAPI 1.2.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.2.2"),
     ], []),
     new CheckboxModel("mpa-opentracing", [
         new VersionedLabel("2.5.3", "*", "MicroProfile OpenTracing 1.2.1", "n/a"),

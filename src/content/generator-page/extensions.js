@@ -105,6 +105,7 @@ export const extensionsList = {
         new CheckboxModel("ext-other-rest", [
             new VersionedLabel("2.3.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.2.3"),
             new VersionedLabel("3.9.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.3.0"),
+            new VersionedLabel("3.10.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.3.1"),
         ], []),
         new CheckboxModel("ext-other-cors", [
             new VersionedLabel("2.4.0", "*", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.5"),
@@ -134,7 +135,8 @@ export const extensionsList = {
             new VersionedLabel("3.0.0", "*", "KumuluzEE gRPC", "com.kumuluz.ee.grpc:kumuluzee-grpc:${kumuluzee-grpc.version}:1.1.0")
         ], []),
         new CheckboxModel("ext-other-graphql", [
-            new VersionedLabel("3.0.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.2")
+            new VersionedLabel("3.0.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.2"),
+            new VersionedLabel("3.10.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.3")
         ], []),
         new CheckboxModel("ext-other-amqp", [
             new VersionedLabel("3.2.0", "*", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0-SNAPSHOT")
