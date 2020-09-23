@@ -15,7 +15,7 @@ export class TheyTrustUsComponent extends Component {
         return (
             <div className="ee-they-trust-us-component">
                 <div>
-                    <h1>THEY TRUST US</h1>
+                    <h1 id="they-trust-us">THEY TRUST US</h1>
                 </div>
                 <div className="references">
                     {referenceList.map((reference, index) => {
