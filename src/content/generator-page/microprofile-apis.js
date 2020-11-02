@@ -9,7 +9,8 @@ export const microprofileAPIsList = [
         new VersionedLabel("2.4.0", "*", "MicroProfile Health Check 1.0", "n/a"),
         new VersionedLabel("3.1.0", "*", "MicroProfile Health Check 2.0", "n/a"),
         new VersionedLabel("3.7.0", "*", "MicroProfile Health Check 2.1", "n/a"),
-        new VersionedLabel("3.9.0", "*", "MicroProfile Health Check 2.2", "n/a")
+        new VersionedLabel("3.9.0", "*", "MicroProfile Health Check 2.2", "n/a"),
+        new VersionedLabel("3.10.0", "*", "MicroProfile Health Check 2.3", "n/a"),
     ], []),
     new CheckboxModel("mpa-faulttolerance", [
         new VersionedLabel("2.4.0", "*", "MicroProfile Fault Tolerance 1.0", "n/a"),
