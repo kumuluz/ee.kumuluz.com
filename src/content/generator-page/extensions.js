@@ -123,6 +123,7 @@ export const extensionsList = {
             new VersionedLabel("2.4.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.1.3"),
             new VersionedLabel("3.0.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-smallrye:${kumuluzee-fault-tolerance.version}:2.0.0"),
             new VersionedLabel("3.9.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-smallrye:${kumuluzee-fault-tolerance.version}:2.1.0"),
+            new VersionedLabel("3.10.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-smallrye:${kumuluzee-fault-tolerance.version}:2.1.1"),
         ], []),
         new CheckboxModel("ext-other-swagger", [
             new VersionedLabel("3.0.0", "*", "KumuluzEE Swagger", "com.kumuluz.ee.swagger:kumuluzee-swagger:${kumuluzee-swagger.version}:1.2.2"),
