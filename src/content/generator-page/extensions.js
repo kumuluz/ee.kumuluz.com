@@ -107,6 +107,7 @@ export const extensionsList = {
             new VersionedLabel("2.3.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.2.3"),
             new VersionedLabel("3.9.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.3.0"),
             new VersionedLabel("3.10.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.3.1"),
+            new VersionedLabel("3.11.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.4.0"),
         ], []),
         new CheckboxModel("ext-other-cors", [
             new VersionedLabel("2.4.0", "*", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.5"),
@@ -119,6 +120,7 @@ export const extensionsList = {
             new VersionedLabel("3.1.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.1.1"),
             new VersionedLabel("3.9.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.2.0"),
             new VersionedLabel("3.10.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.3.0"),
+            new VersionedLabel("3.11.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.4.0"),
         ], []),
         new CheckboxModel("ext-other-faulttolerance", [
             new VersionedLabel("2.4.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.1.3"),
@@ -142,7 +144,8 @@ export const extensionsList = {
             new VersionedLabel("3.10.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.3")
         ], []),
         new CheckboxModel("ext-other-amqp", [
-            new VersionedLabel("3.2.0", "*", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0-SNAPSHOT")
+            // new VersionedLabel("3.2.0", "*", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0-SNAPSHOT"),
+            new VersionedLabel("3.10.0", "*", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0"),
         ], []),
         new CheckboxModel("ext-other-feature-flags", [
             new VersionedLabel("3.2.0", "*", "KumuluzEE Feature Flags", "com.kumuluz.ee.feature-flags:kumuluzee-feature-flags-unleash:${kumuluzee-feature-flags.version}:1.0.0-SNAPSHOT")
