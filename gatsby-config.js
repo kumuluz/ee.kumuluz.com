@@ -7,8 +7,15 @@ module.exports = {
         {
             resolve: "gatsby-plugin-sass",
             options: {
-                precision: 10
+                sassOptions: {
+                    precision: 10
+                }
             }
         }
-    ]
+    ],
+    /*
+    flags: {
+        DEV_SSR: false
+    }
+    */
 };
