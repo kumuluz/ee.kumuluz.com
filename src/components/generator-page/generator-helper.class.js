@@ -1,7 +1,10 @@
 import mustache from "mustache";
 import * as FileSaver from "file-saver";
 import {kumuluzEEVersionsList} from "../../content/generator-page/export.data";
-import {graphQLUiDependency, testingExtensionDependencies} from "../../content/generator-page/extensions";
+import {
+    graphQLUiDependencies,
+    testingExtensionDependencies
+} from "../../content/generator-page/extensions";
 import {VersionUtil} from "./version.util";
 import {GoogleAnalyticsService} from "../shared/google-analytics/google-analytics.service";
 
@@ -192,7 +195,18 @@ export class GeneratorHelper {
 
         // handle graphQL dependency
         if ($.checked("ext-other-graphql")) {
-            parsedExtensions.push(graphQLUiDependency);
+            const graphqlElem = $.id("ext-other-graphql");
+            const label = GeneratorHelper.getValueFromItem(graphqlElem.dataObject, kumuluzeeVersion);
+            const parsedLabelValue = GeneratorHelper.parseValue(label.value);
+            
+            const graphqlVersion = parsedLabelValue.version;
+            const selectedFoundVersions = Object.keys(graphQLUiDependencies).filter(uiVersion => {
+                return VersionUtil.versionIsLargerOrEqual(graphqlVersion, uiVersion);
+            });
+            const selectedFoundVersion = selectedFoundVersions[selectedFoundVersions.length - 1];
+            
+            const dependency = graphQLUiDependencies[selectedFoundVersion];
+            parsedExtensions.push(dependency);
         }
 
         return {

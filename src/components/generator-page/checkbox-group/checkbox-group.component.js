@@ -11,7 +11,8 @@ export class CheckboxGroupComponent extends Component {
         onSelected: PropType.func,
         columns: PropType.number,
         version: PropType.string,
-        disabled: PropType.bool
+        disabled: PropType.bool,
+        deriveGroupName: PropType.func,
     };
 
     static defaultProps = {
@@ -38,7 +39,7 @@ export class CheckboxGroupComponent extends Component {
     }
 
     render() {
-        const {items, groupName, onSelected, columns, version, disabled} = this.props;
+        const {items, groupName, onSelected, columns, version, disabled, deriveGroupName} = this.props;
         const clazz = columns ? "column-" + columns : "";
         const componentClazz = columns ? "ee-checkbox-group-component has-columns" : "ee-checkbox-group-component";
 
@@ -46,11 +47,12 @@ export class CheckboxGroupComponent extends Component {
             <div className={componentClazz}>
                 {items.map((item, index) =>{
                     const val = item.getValue(version);
+                    const elementName = deriveGroupName ? deriveGroupName(item) : groupName;
 
                     return (
                         <div key={index} className={clazz + (disabled || val.disabled ? " disabled-checkbox": "")}>
                             <input type="checkbox" id={item.id} value={val ? val.value : null} disabled={disabled || val.disabled}
-                                name={groupName} onClick={onSelected ? onSelected : null}/>
+                                name={elementName} onClick={onSelected ? onSelected : null}/>
                             <label htmlFor={item.id}>
 
                             </label>

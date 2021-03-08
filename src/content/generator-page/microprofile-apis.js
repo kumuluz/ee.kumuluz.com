@@ -48,5 +48,8 @@ export const microprofileAPIsList = [
     new CheckboxModel("mpa-opentracing", [
         new VersionedLabel("2.5.3", "*", "MicroProfile OpenTracing 1.2.1", "n/a"),
         new VersionedLabel("3.1.0", "*", "MicroProfile OpenTracing 1.3.1", "n/a")
-    ], [])
+    ], []),
+    new CheckboxModel("mpa-graphql", [
+        new VersionedLabel("3.11.0", "*", "MicroProfile GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql-mp:${kumuluzee-graphql-mp.version}:1.1.0"),
+    ], []),
 ];

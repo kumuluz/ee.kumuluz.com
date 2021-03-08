@@ -141,7 +141,8 @@ export const extensionsList = {
         ], []),
         new CheckboxModel("ext-other-graphql", [
             new VersionedLabel("3.0.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.2"),
-            new VersionedLabel("3.10.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.3")
+            new VersionedLabel("3.10.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql:${kumuluzee-graphql.version}:1.0.3"),
+            new VersionedLabel("3.11.0", "*", "KumuluzEE GraphQL", "com.kumuluz.ee.graphql:kumuluzee-graphql-mp:${kumuluzee-graphql-mp.version}:1.1.0"),
         ], []),
         new CheckboxModel("ext-other-amqp", [
             // new VersionedLabel("3.2.0", "*", "KumuluzEE AMQP", "com.kumuluz.ee.amqp:kumuluzee-amqp-rabbitmq:${kumuluzee-amqp.version}:1.0.0-SNAPSHOT"),
@@ -198,9 +199,22 @@ export const testingExtensionDependencies = {
     }
 };
 
+export const graphQLUiDependencies = {
+    "1.0.0": {
+        groupId: "com.kumuluz.ee.graphql",
+        artifactId: "kumuluzee-graphql-ui",
+        versionKey: "${kumuluzee-graphql.version}",
+    },
+    "1.1.0": {
+        groupId: "com.kumuluz.ee.graphql",
+        artifactId: "kumuluzee-graphql-ui",
+        versionKey: "${kumuluzee-graphql-mp.version}",
+    }
+};
+
 export const graphQLUiDependency = {
     groupId: "com.kumuluz.ee.graphql",
     artifactId: "kumuluzee-graphql-ui",
-    versionKey: "${kumuluzee-graphql.version}",
-    version: "1.0.2"
+    versionKey: "${kumuluzee-graphql-mp.version}",
+    version: "1.1.0"
 };

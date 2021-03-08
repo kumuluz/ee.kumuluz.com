@@ -369,6 +369,8 @@ export default class GeneratorPage extends Component {
                                             this.checkBoth("ext-other-health", "mpa-healthcheck");
                                         } else if (e.target.id === "ext-other-faulttolerance") {
                                             this.checkBoth("ext-other-faulttolerance", "mpa-faulttolerance");
+                                        } else if (e.target.id === "ext-other-graphql") {
+                                            this.checkBoth("ext-other-graphql", "mpa-graphql");
                                         }
                                     }}/>
                             </div>
@@ -389,6 +391,8 @@ export default class GeneratorPage extends Component {
                                     this.checkForCheckedParent("ext-metrics", ["ext-metrics-logs", "ext-metrics-logstash"]);
                                 } else if (e.target.id === "mpa-opentracing") {
                                     this.checkBoth("mpa-opentracing", "ext-opentracing-jaeger");
+                                } else if (e.target.id === "mpa-graphql") {
+                                    this.checkBoth("mpa-graphql", "ext-other-graphql");
                                 }
                             }}/>
                     </div>
