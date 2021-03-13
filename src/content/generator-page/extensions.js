@@ -101,13 +101,14 @@ export const extensionsList = {
             new VersionedLabel("2.3.0", "*", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.0.0"),
             new VersionedLabel("3.0.0", "*", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.1.0"),
             new VersionedLabel("3.0.0", "*", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.2.0"),
-            new VersionedLabel("3.11.0", "*", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.2.1"),
+            new VersionedLabel("3.11.0", "*", "KumuluzEE Event Streaming (Kafka)", "com.kumuluz.ee.streaming:kumuluzee-streaming-kafka:${kumuluzee-streaming.version}:1.2.2"),
         ], []),
         new CheckboxModel("ext-other-rest", [
             new VersionedLabel("2.3.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.2.3"),
             new VersionedLabel("3.9.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.3.0"),
             new VersionedLabel("3.10.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.3.1"),
             new VersionedLabel("3.11.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.4.0"),
+            new VersionedLabel("3.12.0", "*", "KumuluzEE REST", "com.kumuluz.ee.rest:kumuluzee-rest-core:${kumuluzee-rest.version}:1.5.1"),
         ], []),
         new CheckboxModel("ext-other-cors", [
             new VersionedLabel("2.4.0", "*", "KumuluzEE CORS", "com.kumuluz.ee.cors:kumuluzee-cors:${kumuluzee-cors.version}:1.0.5"),
@@ -166,18 +167,18 @@ export const testingExtensionDependencies = {
         groupId: "com.kumuluz.ee.testing",
         artifactId: "kumuluzee-arquillian-container",
         versionKey: "${kumuluzee-arquillian-container.version}",
-        version: "1.1.0",
+        version: "1.1.1",
         scope: "test"
     },
     arquillianBOMVersion: {
         versionKey: "${arquillian.version}",
-        version: "1.4.0.Final"
+        version: "1.6.0.Final"
     },
     junit: {
         groupId: "junit",
         artifactId: "junit",
         versionKey: "${junit.version}",
-        version: "4.12",
+        version: "4.13.2",
         scope: "test"
     },
     junitContainer: {
@@ -194,7 +195,7 @@ export const testingExtensionDependencies = {
         groupId: "org.testng",
         artifactId: "testng",
         versionKey: "${testng.version}",
-        version: "6.14.3",
+        version: "7.4.0",
         scope: "test"
     }
 };
