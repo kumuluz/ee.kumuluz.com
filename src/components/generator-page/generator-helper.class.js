@@ -51,9 +51,17 @@ export class GeneratorHelper {
         }
         return "FALSE - PREVERI";
     }
-
+    
+    /**
+     * Parses value to object
+     * @param value
+     * @returns {{groupId: *, artifactId: *}|null|{groupId: *, artifactId: *, version: *}|{groupId: *, artifactId: *, version: *, versionKey: *}}
+     */
     static parseValue(value) {
         if (value === "n/a") {
+            return null;
+        }
+        if (!value) {
             return null;
         }
         const splitted = value.split(":");
@@ -224,7 +232,7 @@ export class GeneratorHelper {
         selectedApis.forEach(api => {
             const label = GeneratorHelper.getValueFromItem(api.dataObject, kumuluzeeVersion);
             const parsedLabelValue = GeneratorHelper.parseValue(label.value);
-            if (parsedLabelValue != null && !microprofileDeps.includes(api.id)) {
+            if (parsedLabelValue !== null && !microprofileDeps.includes(api.id)) {
                 parsedApis.push(parsedLabelValue);
                 const versionKey = parsedLabelValue.versionKey.replace("${", "").replace("}", "");
                 const versionValue = parsedLabelValue.version;
@@ -288,8 +296,14 @@ export class GeneratorHelper {
 
         // MicroProfile APIs
         const microprofileApis = GeneratorHelper._parseMicroProfileApis(KUMULUZEE_VERSION, microprofileDependencies);
-        formData.dependencies.push(...microprofileApis.dependencies);
-        formData.propertiesVersions.push(...microprofileApis.versions);
+        
+        const filteredMPApis = {
+            dependencies: microprofileApis.dependencies.filter(dep => !extensions.dependencies.find(dp2 => dp2.groupId === dep.groupId && dp2.artifactId === dep.artifactId)),
+            versions: microprofileApis.versions.filter(ver => !extensions.versions.find(v2 => v2 === ver)),
+        };
+        
+        formData.dependencies.push(...filteredMPApis.dependencies);
+        formData.propertiesVersions.push(...filteredMPApis.versions);
 
         // Remove duplicate properties
         const seenProps = [];

@@ -211,10 +211,3 @@ export const graphQLUiDependencies = {
         versionKey: "${kumuluzee-graphql-mp.version}",
     }
 };
-
-export const graphQLUiDependency = {
-    groupId: "com.kumuluz.ee.graphql",
-    artifactId: "kumuluzee-graphql-ui",
-    versionKey: "${kumuluzee-graphql-mp.version}",
-    version: "1.1.0"
-};
