@@ -3,7 +3,7 @@ import {CheckboxModel, VersionedLabel} from "./schema/checkbox-model.class";
 export const microprofileAPIsList = [
     new CheckboxModel("mpa-config", [
         new VersionedLabel("2.5.2", "*", "MicroProfile Config 1.3", "com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}:1.3.0"),
-        new VersionedLabel("3.9.0", "*", "MicroProfile Config 1.4", "com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}:1.4.0")
+        new VersionedLabel("3.9.0", "*", "MicroProfile Config 1.4", "com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}:1.4.1")
     ], []),
     new CheckboxModel("mpa-healthcheck", [
         new VersionedLabel("2.4.0", "*", "MicroProfile Health Check 1.0", "n/a"),
@@ -43,7 +43,7 @@ export const microprofileAPIsList = [
         new VersionedLabel("3.3.0", "*", "MicroProfile OpenAPI 1.1.2", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.1.2"),
         new VersionedLabel("3.9.0", "*", "MicroProfile OpenAPI 1.2.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.2.1"),
         new VersionedLabel("3.10.0", "*", "MicroProfile OpenAPI 1.2.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.2.2"),
-        new VersionedLabel("3.11.0", "*", "MicroProfile OpenAPI 1.2.1", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.3.0"),
+        new VersionedLabel("3.11.0", "*", "MicroProfile OpenAPI 1.4.0", "com.kumuluz.ee.openapi:kumuluzee-openapi-mp:${kumuluzee-openapi-mp.version}:1.4.0"),
     ], []),
     new CheckboxModel("mpa-opentracing", [
         new VersionedLabel("2.5.3", "*", "MicroProfile OpenTracing 1.2.1", "n/a"),
