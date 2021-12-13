@@ -28,16 +28,16 @@ export const extensionsList = {
         new CheckboxModel("ext-logs-jul", [
             new VersionedLabel("2.2.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.3.1"),
             new VersionedLabel("3.8.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.4.0"),
-            new VersionedLabel("3.10.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.4.2")
+            new VersionedLabel("3.10.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.4.3")
         ], []),
         new CheckboxModel("ext-logs-log4j2", [
             new VersionedLabel("2.2.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.3.1"),
             new VersionedLabel("3.8.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.4.0"),
-            new VersionedLabel("3.10.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.4.2"),
+            new VersionedLabel("3.10.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.4.3"),
         ], []),
         new CheckboxModel("ext-logs-fluent", [
             new VersionedLabel("3.8.0", "*", "with Fluentd", "com.kumuluz.ee.logs:kumuluzee-logs-fluentd:${kumuluzee-logs.version}:1.4.0"),
-            new VersionedLabel("3.10.0", "*", "with Fluentd", "com.kumuluz.ee.logs:kumuluzee-logs-fluentd:${kumuluzee-logs.version}:1.4.2")
+            new VersionedLabel("3.10.0", "*", "with Fluentd", "com.kumuluz.ee.logs:kumuluzee-logs-fluentd:${kumuluzee-logs.version}:1.4.3")
         ])
     ],
     opentracing: [
