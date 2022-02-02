@@ -150,7 +150,7 @@
       }
     }
     .example-code {
-      width: 100% / 3 * 2;
+      width: calc(100% / 3 * 2);
       margin-top: 50px;
       display: flex;
       justify-content: center;

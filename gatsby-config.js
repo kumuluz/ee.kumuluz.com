@@ -4,14 +4,7 @@ module.exports = {
     },
     plugins: [
         "gatsby-plugin-react-helmet",
-        {
-            resolve: "gatsby-plugin-sass",
-            options: {
-                sassOptions: {
-                    precision: 10
-                }
-            }
-        }
+        "gatsby-plugin-sass",
     ],
     /*
     flags: {
