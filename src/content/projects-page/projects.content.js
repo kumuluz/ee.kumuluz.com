@@ -32,7 +32,8 @@ export const projectsList = [
     new Project("KumuluzEE AMQP", "Support for Advanced Message Queueing Protocol, such as RabbitMQ and ActiveMQ.", "https://github.com/kumuluz/kumuluzee-amqp/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-amqp-rabbitmq"),
     new Project("KumuluzEE Feature Flags", "Support for development with feature flags.", "https://github.com/kumuluz/kumuluzee-feature-flags/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-feature-flags-unleash"),
     new Project("KumuluzEE JCache", "Implement caching in KumuluzEE microservices using JCache annotations.", "https://github.com/kumuluz/kumuluzee-jcache/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-jcache"),
-    new Project("KumuluzEE Version", "Expose version details of your microservices.", "https://github.com/kumuluz/kumuluzee-version/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-version")
+    new Project("KumuluzEE Version", "Expose version details of your microservices.", "https://github.com/kumuluz/kumuluzee-version/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-version"),
+    new Project("KumuluzEE Database Schema Migrations", "Database schema migrations extensions for the lightweight KumuluzEE framework.", "https://github.com/kumuluz/kumuluzee-database-schema-migrations/blob/master/README.md", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-database-schema-migrations-liquibase"),
 ];
 
 export const nodejsProjectList = [
