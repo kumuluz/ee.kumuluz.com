@@ -28,16 +28,19 @@ export const extensionsList = {
         new CheckboxModel("ext-logs-jul", [
             new VersionedLabel("2.2.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.3.1"),
             new VersionedLabel("3.8.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.4.0"),
-            new VersionedLabel("3.10.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.4.4")
+            new VersionedLabel("3.10.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.4.4"),
+            new VersionedLabel("3.12.0", "*", "with Jul", "com.kumuluz.ee.logs:kumuluzee-logs-jul:${kumuluzee-logs.version}:1.4.6"),
         ], []),
         new CheckboxModel("ext-logs-log4j2", [
             new VersionedLabel("2.2.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.3.1"),
             new VersionedLabel("3.8.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.4.0"),
             new VersionedLabel("3.10.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.4.4"),
+            new VersionedLabel("3.12.0", "*", "with Log4j2", "com.kumuluz.ee.logs:kumuluzee-logs-log4j2:${kumuluzee-logs.version}:1.4.6"),
         ], []),
         new CheckboxModel("ext-logs-fluent", [
             new VersionedLabel("3.8.0", "*", "with Fluentd", "com.kumuluz.ee.logs:kumuluzee-logs-fluentd:${kumuluzee-logs.version}:1.4.0"),
-            new VersionedLabel("3.10.0", "*", "with Fluentd", "com.kumuluz.ee.logs:kumuluzee-logs-fluentd:${kumuluzee-logs.version}:1.4.4")
+            new VersionedLabel("3.10.0", "*", "with Fluentd", "com.kumuluz.ee.logs:kumuluzee-logs-fluentd:${kumuluzee-logs.version}:1.4.4"),
+            new VersionedLabel("3.12.0", "*", "with Fluentd", "com.kumuluz.ee.logs:kumuluzee-logs-fluentd:${kumuluzee-logs.version}:1.4.6"),
         ])
     ],
     opentracing: [
@@ -122,6 +125,7 @@ export const extensionsList = {
             new VersionedLabel("3.9.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.2.0"),
             new VersionedLabel("3.10.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.3.0"),
             new VersionedLabel("3.11.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.4.0"),
+            new VersionedLabel("3.12.0", "*", "KumuluzEE Health", "com.kumuluz.ee.health:kumuluzee-health:${kumuluzee-health.version}:2.4.3"),
         ], []),
         new CheckboxModel("ext-other-faulttolerance", [
             new VersionedLabel("2.4.0", "*", "KumuluzEE Fault Tolerance (including circuit breakers)", "com.kumuluz.ee.fault.tolerance:kumuluzee-fault-tolerance-hystrix:${kumuluzee-fault-tolerance.version}:1.1.3"),
@@ -157,7 +161,7 @@ export const extensionsList = {
             new VersionedLabel("3.2.0", "*", "KumuluzEE Version", "com.kumuluz.ee.version:kumuluzee-version:${kumuluzee-version.version}:1.0.0"),
         ], []),
         new CheckboxModel("ext-other-jcache", [
-            new VersionedLabel("3.2.0", "*", "KumuluzEE JCache", "com.kumuluz.ee.jcache:kumuluzee-jcache-caffeine:${kumuluzee-jcache.version}:1.0.0-SNAPSHOT")
+            new VersionedLabel("3.12.0", "*", "KumuluzEE JCache", "com.kumuluz.ee.jcache:kumuluzee-jcache-caffeine:${kumuluzee-jcache.version}:1.0.0")
         ], []),
     ]
 };
