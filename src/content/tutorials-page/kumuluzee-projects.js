@@ -36,6 +36,7 @@ export const kumuluzeeProjects = [
     new Sample("KumuluzEE Version sample", "KumuluzEE Version provides mechanisms to expose version details of your microservices.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-version", true),
     new Sample("KumuluzEE Feature Flags sample with Unleash", "KumuluzEE Feature Flags enables you to easily manage feature flags in your application.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-feature-flags-unleash", true),
     new Sample("KumuluzEE JCache sample", "KumuluzEE JCache allows usage of JCache annotations and JCache programmatic API in your KumuluzEE applications.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-jcache", true),
+    new Sample("KumuluzEE Database Schema Migrations sample", "KumuluzEE Database Schema Migrations project for database schema migrations with Liquibase.", "https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-database-schema-migrations-liquibase", true),
 ];
 
 export const kumuluzeeNodejsProjects = [

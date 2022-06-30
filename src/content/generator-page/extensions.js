@@ -163,6 +163,9 @@ export const extensionsList = {
         new CheckboxModel("ext-other-jcache", [
             new VersionedLabel("3.12.0", "*", "KumuluzEE JCache", "com.kumuluz.ee.jcache:kumuluzee-jcache-caffeine:${kumuluzee-jcache.version}:1.0.0")
         ], []),
+        new CheckboxModel("ext-other-migrations-liquibase", [
+            new VersionedLabel("3.10.0", "*", "KumuluzEE Database Schema Migrations (Liquibase)", "com.kumuluz.ee.database-schema-migrations:kumuluzee-database-schema-migrations-liquibase:${kumuluzee-database-schema-migrations.version}:1.0.0")
+        ], []),
     ]
 };
 
