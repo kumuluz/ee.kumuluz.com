@@ -3,7 +3,8 @@ import {CheckboxModel, VersionedLabel} from "./schema/checkbox-model.class";
 export const microprofileAPIsList = [
     new CheckboxModel("mpa-config", [
         new VersionedLabel("2.5.2", "*", "MicroProfile Config 1.3", "com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}:1.3.0"),
-        new VersionedLabel("3.9.0", "*", "MicroProfile Config 1.4", "com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}:1.4.1")
+        new VersionedLabel("3.9.0", "*", "MicroProfile Config 1.4", "com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}:1.4.1"),
+        new VersionedLabel("4.1.0", "*", "MicroProfile Config 2.0", "com.kumuluz.ee.config:kumuluzee-config-mp:${kumuluzee-config-mp.version}:2.0.0"),
     ], []),
     new CheckboxModel("mpa-healthcheck", [
         new VersionedLabel("2.4.0", "*", "MicroProfile Health Check 1.0", "n/a"),
